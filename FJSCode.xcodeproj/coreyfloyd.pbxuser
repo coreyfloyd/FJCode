@@ -1,0 +1,146 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* FJSCode */ = {
+		activeExec = 0;
+		executables = (
+			C461FE820FC5C0610036595E /* FJSCode */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = C461FE820FC5C0610036595E /* FJSCode */;
+		activeSDKPreference = iphoneos3.0;
+		activeTarget = C461FEB20FC5C1510036595E /* FJSCodeDebug */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* FJSCode */,
+		);
+		codeSenseManager = C461FE900FC5C07B0036595E /* Code sense */;
+		executables = (
+			C461FE820FC5C0610036595E /* FJSCode */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					364,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					324,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 264618081;
+			PBXWorkspaceStateSaveDate = 264618081;
+		};
+		perUserProjectItems = {
+			C461FEB80FC5C1680036595E /* PBXBookmark */ = C461FEB80FC5C1680036595E /* PBXBookmark */;
+			C461FEB90FC5C1680036595E /* PBXTextBookmark */ = C461FEB90FC5C1680036595E /* PBXTextBookmark */;
+			C461FECF0FC5C1DD0036595E /* PBXTextBookmark */ = C461FECF0FC5C1DD0036595E /* PBXTextBookmark */;
+		};
+		sourceControlManager = C461FE8F0FC5C07B0036595E /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	C461FE820FC5C0610036595E /* FJSCode */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = FJSCode;
+		sourceDirectories = (
+		);
+	};
+	C461FE8F0FC5C07B0036595E /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	C461FE900FC5C07B0036595E /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	C461FE940FC5C0980036595E /* FJView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {542, 350}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 0}";
+		};
+	};
+	C461FEB20FC5C1510036595E /* FJSCodeDebug */ = {
+		activeExec = 0;
+	};
+	C461FEB80FC5C1680036595E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = C461FE940FC5C0980036595E /* FJView.m */;
+	};
+	C461FEB90FC5C1680036595E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C461FE940FC5C0980036595E /* FJView.m */;
+		name = "FJView.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	C461FECF0FC5C1DD0036595E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C461FE940FC5C0980036595E /* FJView.m */;
+		name = "FJView.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+}
