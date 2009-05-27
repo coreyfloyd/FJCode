@@ -135,7 +135,7 @@
 		[self constructTableGroups];
 	}
 	
-	NSObject<FJSCellModel> *cellData =
+	NSObject<FJSCellController> *cellData =
 		[[tableGroups objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
 	if ([cellData respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)])
 	{
