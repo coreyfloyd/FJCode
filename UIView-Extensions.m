@@ -135,7 +135,7 @@
     }
     
     if(!theFirstResponder)
-        NSLog(@"responder not found");
+        //NSLog(@"responder not found");
     return theFirstResponder;
     
 }
