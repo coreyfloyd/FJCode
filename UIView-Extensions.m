@@ -134,7 +134,7 @@
         }
     }
     
-    if(!theFirstResponder)
+    //if(!theFirstResponder)
         //NSLog(@"responder not found");
     return theFirstResponder;
     

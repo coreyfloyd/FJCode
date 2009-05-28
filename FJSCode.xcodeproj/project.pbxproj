@@ -12,9 +12,13 @@
 		C43FAC0D0FCC604800EB4F92 /* FJSGenericTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C43FAC0B0FCC604800EB4F92 /* FJSGenericTableViewController.h */; };
 		C43FAC0E0FCC604800EB4F92 /* FJSGenericTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43FAC0C0FCC604800EB4F92 /* FJSGenericTableViewController.m */; };
 		C43FAC100FCC62DE00EB4F92 /* FJSCellController.h in Headers */ = {isa = PBXBuildFile; fileRef = C43FAC0F0FCC62DE00EB4F92 /* FJSCellController.h */; };
-		C43FAC120FCC63B200EB4F92 /* FJSCellModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C43FAC110FCC63B200EB4F92 /* FJSCellModel.h */; };
+		C43FAC120FCC63B200EB4F92 /* FJSCellDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = C43FAC110FCC63B200EB4F92 /* FJSCellDataSource.h */; };
 		C43FACA50FCC713B00EB4F92 /* OverlayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C464CF6E0FC5FDFC00758E05 /* OverlayViewController.h */; };
 		C43FACA60FCC714600EB4F92 /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C464CF6F0FC5FDFC00758E05 /* OverlayViewController.m */; };
+		C43FB0AA0FCD24AF00EB4F92 /* FJSNetworkedCellDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = C43FB0A80FCD24AF00EB4F92 /* FJSNetworkedCellDataSource.h */; };
+		C43FB0B70FCD2BB500EB4F92 /* FJSNetworkedTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C43FB0B50FCD2BB500EB4F92 /* FJSNetworkedTableViewController.h */; };
+		C43FB0B80FCD2BB500EB4F92 /* FJSNetworkedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43FB0B60FCD2BB500EB4F92 /* FJSNetworkedTableViewController.m */; };
+		C43FB1580FCDEC7D00EB4F92 /* FJSNetworkedCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C43FB1570FCDEC7D00EB4F92 /* FJSNetworkedCellDataSource.m */; };
 		C461FEBF0FC5C19E0036595E /* FJSCode.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FEA00FC5C0980036595E /* FJSCode.h */; };
 		C461FEC20FC5C1A20036595E /* LoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FE950FC5C0980036595E /* LoadingView.h */; };
 		C461FEC30FC5C1A30036595E /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE960FC5C0980036595E /* LoadingView.m */; };
@@ -54,7 +58,11 @@
 		C43FAC0B0FCC604800EB4F92 /* FJSGenericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSGenericTableViewController.h; sourceTree = "<group>"; };
 		C43FAC0C0FCC604800EB4F92 /* FJSGenericTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSGenericTableViewController.m; sourceTree = "<group>"; };
 		C43FAC0F0FCC62DE00EB4F92 /* FJSCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCellController.h; sourceTree = "<group>"; };
-		C43FAC110FCC63B200EB4F92 /* FJSCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCellModel.h; sourceTree = "<group>"; };
+		C43FAC110FCC63B200EB4F92 /* FJSCellDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCellDataSource.h; sourceTree = "<group>"; };
+		C43FB0A80FCD24AF00EB4F92 /* FJSNetworkedCellDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSNetworkedCellDataSource.h; sourceTree = "<group>"; };
+		C43FB0B50FCD2BB500EB4F92 /* FJSNetworkedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSNetworkedTableViewController.h; sourceTree = "<group>"; };
+		C43FB0B60FCD2BB500EB4F92 /* FJSNetworkedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSNetworkedTableViewController.m; sourceTree = "<group>"; };
+		C43FB1570FCDEC7D00EB4F92 /* FJSNetworkedCellDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSNetworkedCellDataSource.m; sourceTree = "<group>"; };
 		C461FE910FC5C0980036595E /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		C461FE920FC5C0980036595E /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		C461FE930FC5C0980036595E /* FJView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJView.h; sourceTree = "<group>"; };
@@ -157,12 +165,24 @@
 		C43FAC0A0FCC602D00EB4F92 /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
+				C43FB0B90FCD2C6E00EB4F92 /* Network */,
 				C43FAC0B0FCC604800EB4F92 /* FJSGenericTableViewController.h */,
 				C43FAC0C0FCC604800EB4F92 /* FJSGenericTableViewController.m */,
 				C43FAC0F0FCC62DE00EB4F92 /* FJSCellController.h */,
-				C43FAC110FCC63B200EB4F92 /* FJSCellModel.h */,
+				C43FAC110FCC63B200EB4F92 /* FJSCellDataSource.h */,
 			);
 			name = TableViews;
+			sourceTree = "<group>";
+		};
+		C43FB0B90FCD2C6E00EB4F92 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C43FB0A80FCD24AF00EB4F92 /* FJSNetworkedCellDataSource.h */,
+				C43FB1570FCDEC7D00EB4F92 /* FJSNetworkedCellDataSource.m */,
+				C43FB0B50FCD2BB500EB4F92 /* FJSNetworkedTableViewController.h */,
+				C43FB0B60FCD2BB500EB4F92 /* FJSNetworkedTableViewController.m */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		C461FE8E0FC5C07B0036595E /* Library */ = {
@@ -257,7 +277,9 @@
 				C43FAB690FCC424000EB4F92 /* IFActionToolbar.h in Headers */,
 				C43FAC0D0FCC604800EB4F92 /* FJSGenericTableViewController.h in Headers */,
 				C43FAC100FCC62DE00EB4F92 /* FJSCellController.h in Headers */,
-				C43FAC120FCC63B200EB4F92 /* FJSCellModel.h in Headers */,
+				C43FAC120FCC63B200EB4F92 /* FJSCellDataSource.h in Headers */,
+				C43FB0AA0FCD24AF00EB4F92 /* FJSNetworkedCellDataSource.h in Headers */,
+				C43FB0B70FCD2BB500EB4F92 /* FJSNetworkedTableViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +338,8 @@
 				C43FACA60FCC714600EB4F92 /* OverlayViewController.m in Sources */,
 				C43FAB680FCC424000EB4F92 /* IFActionToolbar.m in Sources */,
 				C43FAC0E0FCC604800EB4F92 /* FJSGenericTableViewController.m in Sources */,
+				C43FB0B80FCD2BB500EB4F92 /* FJSNetworkedTableViewController.m in Sources */,
+				C43FB1580FCDEC7D00EB4F92 /* FJSNetworkedCellDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
