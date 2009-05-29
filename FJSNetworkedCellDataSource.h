@@ -11,6 +11,11 @@
 @protocol FJSNetworkedCellDataSourceDelegate
 
 - (void)didReceiveNewData:(id<FJSCellDataSource>)newData;
+- (void)noNewDataAvailable;
+
+@optional
+- (void)dataUpdateFailedWithError:(NSError*)error;
+
 
 @end
 
@@ -31,6 +36,7 @@
     
     id<FJSNetworkedCellDataSourceDelegate> delegate;
     NSMutableDictionary *data;
+    NSDate *timeOfLastUpdate;
     
 }
 

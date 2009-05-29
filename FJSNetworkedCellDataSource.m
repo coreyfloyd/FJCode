@@ -12,6 +12,8 @@
 @implementation FJSNetworkedCellDataSource
 
 @synthesize data;
+@synthesize delegate;
+@synthesize timeOfLastUpdate;
 
 #pragma mark -
 #pragma mark FJSNetworkedCellDataSource
@@ -31,8 +33,12 @@
     
 }
 - (id)objectForKey:(NSString *)key{
-    
     return [data objectForKey:key];
+}
+
+- (int)count{
+    return [data count];
+    
 }
 - (void)removeObjectForKey:(NSString *)key{
     [data removeObjectForKey:key];
@@ -48,7 +54,7 @@
     
     if([keyPath isEqualToString:@"data"]){
         
-        [delegate didReceiveNewData:data];
+        [delegate didReceiveNewData:self];
         
     }
 }
@@ -61,6 +67,7 @@
         
     }
     
+    return self;
 }
 
 - (void)dealloc{

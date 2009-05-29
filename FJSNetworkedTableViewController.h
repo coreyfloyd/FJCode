@@ -12,8 +12,6 @@
 
 
 @interface FJSNetworkedTableViewController : FJSGenericTableViewController <FJSNetworkedCellDataSourceDelegate>{
-
-    id<FJSNetworkedCellDataSource> delegate;
     
 }
 

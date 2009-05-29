@@ -246,6 +246,25 @@
 }
  */
 
+- (id)init {
+    if (self = [super init]) {
+        
+        self.model=nil;
+        
+    }
+    return self;
+}
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        
+        self.model=nil;
+        
+    }
+    return self;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
 	// rows (such as choices) that were updated in child view controllers need to be updated

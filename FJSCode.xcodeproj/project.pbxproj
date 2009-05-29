@@ -31,6 +31,8 @@
 		C461FECA0FC5C1A80036595E /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE9A0FC5C0980036595E /* UIColor+extensions.m */; };
 		C461FECB0FC5C1A90036595E /* UIView-Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FE9D0FC5C0980036595E /* UIView-Extensions.h */; };
 		C461FECC0FC5C1A90036595E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE9E0FC5C0980036595E /* UIView-Extensions.m */; };
+		C4A189750FCF5DB200E70A29 /* MyCLController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A189730FCF5DB200E70A29 /* MyCLController.h */; };
+		C4A189760FCF5DB200E70A29 /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A189740FCF5DB200E70A29 /* MyCLController.m */; };
 		C4F6CFE80FCA3FA100F6AD69 /* FJSScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE700FC8D0F000F6AD69 /* FJSScrollViewController.h */; };
 		C4F6CFE90FCA3FA100F6AD69 /* FJSImageScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE790FC8D29D00F6AD69 /* FJSImageScrollViewController.h */; };
 		C4F6CFEA0FCA3FA100F6AD69 /* FJSScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE720FC8D0F000F6AD69 /* FJSScrollView.h */; };
@@ -81,6 +83,8 @@
 		C461FEB30FC5C1510036595E /* libFJSCodeDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFJSCodeDebug.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C464CF6E0FC5FDFC00758E05 /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayViewController.h; sourceTree = "<group>"; };
 		C464CF6F0FC5FDFC00758E05 /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
+		C4A189730FCF5DB200E70A29 /* MyCLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCLController.h; sourceTree = "<group>"; };
+		C4A189740FCF5DB200E70A29 /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCLController.m; sourceTree = "<group>"; };
 		C4F6CE6B0FC8D0F000F6AD69 /* FJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSViewController.h; sourceTree = "<group>"; };
 		C4F6CE6C0FC8D0F000F6AD69 /* FJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSViewController.m; sourceTree = "<group>"; };
 		C4F6CE6D0FC8D0F000F6AD69 /* FJSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSImageViewController.h; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 		C461FE8E0FC5C07B0036595E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C4A189720FCF5D9D00E70A29 /* CoreLocation */,
 				C43FAC0A0FCC602D00EB4F92 /* TableViews */,
 				C43FAB610FCC422000EB4F92 /* Bars */,
 				C4F6D0090FCA533900F6AD69 /* Categories */,
@@ -200,6 +205,15 @@
 				1D3623250D0F684500981E51 /* FJSCodeAppDelegate.m */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		C4A189720FCF5D9D00E70A29 /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				C4A189730FCF5DB200E70A29 /* MyCLController.h */,
+				C4A189740FCF5DB200E70A29 /* MyCLController.m */,
+			);
+			name = CoreLocation;
 			sourceTree = "<group>";
 		};
 		C4F6CE6F0FC8D0F000F6AD69 /* FJSScrollView */ = {
@@ -280,6 +294,7 @@
 				C43FAC120FCC63B200EB4F92 /* FJSCellDataSource.h in Headers */,
 				C43FB0AA0FCD24AF00EB4F92 /* FJSNetworkedCellDataSource.h in Headers */,
 				C43FB0B70FCD2BB500EB4F92 /* FJSNetworkedTableViewController.h in Headers */,
+				C4A189750FCF5DB200E70A29 /* MyCLController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +355,7 @@
 				C43FAC0E0FCC604800EB4F92 /* FJSGenericTableViewController.m in Sources */,
 				C43FB0B80FCD2BB500EB4F92 /* FJSNetworkedTableViewController.m in Sources */,
 				C43FB1580FCDEC7D00EB4F92 /* FJSNetworkedCellDataSource.m in Sources */,
+				C4A189760FCF5DB200E70A29 /* MyCLController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,13 @@
     
 }
 
+- (void)noNewDataAvailable{
+    
+    //Data is up to date, possibly notify user?
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

@@ -6,7 +6,11 @@
 //  Copyright 2008 Matt Gallagher. All rights reserved.
 //
 
+#import "FJSCellDataSource.h"
+
 @protocol FJSCellController
+
+@property(nonatomic,retain)id<FJSCellDataSource> model;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 

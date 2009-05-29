@@ -25,7 +25,6 @@
 #import "OverlayViewController.h"
 #import "LoadingView.h"
 
-#import "FJSCellModel.h"
 #import "FJSGenericTableViewController.h"
 #import "FJSCellController.h"
 

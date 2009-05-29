@@ -6,12 +6,17 @@
 //  Copyright 2009 The Iconfactory. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
+
 @protocol FJSCellDataSource <NSObject>
 
 @property(nonatomic,retain)NSMutableDictionary *data;
+@property(nonatomic,retain)NSDate *timeOfLastUpdate;
 
 - (void)setObject:(id)value forKey:(NSString *)key;
 - (id)objectForKey:(NSString *)key;
+- (int)count;
 
 
 @optional
