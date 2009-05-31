@@ -8,7 +8,7 @@
 
 #import "FJSCellDataSource.h"
 
-@protocol FJSNetworkedCellDataSourceDelegate
+@protocol FJSNetworkedCellDataSourceDelegate <NSObject>
 
 - (void)didReceiveNewData:(id<FJSCellDataSource>)newData;
 - (void)noNewDataAvailable;

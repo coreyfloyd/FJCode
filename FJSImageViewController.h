@@ -16,6 +16,9 @@
 }
 @property(nonatomic,retain)UIImage *image;
 
-- (id)initWithImage:(NSString *)url;
+- (id)initWithImage:(UIImage *)anImage;
+- (void)setImageWithImageNamed:(NSString *)anImageName;
+- (id)initWithImageNamed:(NSString *)anImageName;
+
 
 @end

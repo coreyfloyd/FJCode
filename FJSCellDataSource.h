@@ -12,6 +12,7 @@
 @protocol FJSCellDataSource <NSObject>
 
 @property(nonatomic,retain)NSMutableDictionary *data;
+@property(nonatomic,assign)id delegate;
 @property(nonatomic,retain)NSDate *timeOfLastUpdate;
 
 - (void)setObject:(id)value forKey:(NSString *)key;

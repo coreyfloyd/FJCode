@@ -34,7 +34,7 @@
 	
 }
 
-- (void)slideToFrame:(CGRect)aFrame delay:(CGFloat)delay duration:(CGFloat)duration{
+- (void)translateToFrame:(CGRect)aFrame delay:(CGFloat)delay duration:(CGFloat)duration{
 	
 	[UIView beginAnimations:@"slide" context:nil];
 	[UIView setAnimationDelay:delay];

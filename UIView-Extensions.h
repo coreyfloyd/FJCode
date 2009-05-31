@@ -12,7 +12,7 @@
 
 - (void)fadeInWithDelay:(CGFloat)delay duration:(CGFloat)duration;
 - (void)fadeOutWithDelay:(CGFloat)delay duration:(CGFloat)duration;
-- (void)slideToFrame:(CGRect)aFrame delay:(CGFloat)delay duration:(CGFloat)duration;
+- (void)translateToFrame:(CGRect)aFrame delay:(CGFloat)delay duration:(CGFloat)duration;
 - (void)shrinkToSize:(CGSize)aSize withDelay:(CGFloat)delay duration:(CGFloat)duration;
 - (void)changeColor:(UIColor *)aColor withDelay:(CGFloat)delay duration:(CGFloat)duration;
 - (void)rotate:(float)degrees;

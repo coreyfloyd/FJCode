@@ -24,7 +24,6 @@
         
 }
 
-
 #pragma mark -
 #pragma mark FJSCellDataSource
 
