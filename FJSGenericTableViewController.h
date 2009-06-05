@@ -11,7 +11,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FJSCellDataSource.h"
+#import"FJSGenericTableViewDataSource.h"
 
 @interface FJSGenericTableViewController : UITableViewController
 {
@@ -20,10 +20,10 @@
 	NSArray *tableHeaders;
 	NSArray *tableFooters;
 
-	NSObject<FJSCellDataSource> *model;
+	NSObject<FJSGenericTableViewDataSource> *model;
 }
 
-@property (nonatomic, retain) NSObject<FJSCellDataSource> *model;
+@property (nonatomic, retain)NSObject<FJSGenericTableViewDataSource> *model;
 
 - (void)updateAndReload;
 

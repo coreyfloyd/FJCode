@@ -8,12 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @protocol FJSCellDataSource <NSObject>
-
-@property(nonatomic,retain)NSMutableDictionary *data;
-@property(nonatomic,assign)id delegate;
-@property(nonatomic,retain)NSDate *timeOfLastUpdate;
 
 - (void)setObject:(id)value forKey:(NSString *)key;
 - (id)objectForKey:(NSString *)key;
@@ -22,5 +17,16 @@
 
 @optional
 - (void)removeObjectForKey:(NSString *)key;
+
+@end
+
+
+@interface FJSCellDataSource : NSObject <FJSCellDataSource>{
+    
+    NSMutableDictionary *data;
+    
+}
+- (id)initWithData:(NSDictionary*)someData;
+
 
 @end

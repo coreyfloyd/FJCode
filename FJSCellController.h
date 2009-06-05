@@ -10,7 +10,7 @@
 
 @protocol FJSCellController
 
-@property(nonatomic,retain)id<FJSCellDataSource> model;
+@property(nonatomic,retain)NSDictionary *model;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 

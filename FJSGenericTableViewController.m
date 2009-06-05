@@ -279,10 +279,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+
 	// rows (such as choices) that were updated in child view controllers need to be updated
 	[self.tableView reloadData];
 	
-    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -295,18 +296,18 @@
 #pragma mark -
 #pragma mark accessor
 
-- (void)setModel:(NSObject<FJSCellDataSource> *)aModel{
+- (void)setModel:(NSObject<FJSGenericTableViewDataSource>*) aModel{
    
     if (model != aModel) {
         
-        [model setDelegate:nil];
+        //[model setDelegate:nil];
         [model removeObserver:self forKeyPath:@"data"];
         
         [aModel retain];
         [model release];
         model = aModel;
         
-        [model setDelegate:self];
+        //[model setDelegate:self];
         [model addObserver:self forKeyPath:@"data" options:NSKeyValueObservingOptionNew context:nil];
         
         if(model!=nil)
