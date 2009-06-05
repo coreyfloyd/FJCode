@@ -47,6 +47,9 @@
 #pragma mark -
 #pragma mark NSObject
 
+//observing in the view controller 
+
+/*
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     
     //NSLog(keyPath);
@@ -68,10 +71,11 @@
     
     return self;
 }
+ */
 
 - (void)dealloc{
     
-    [self removeObserver:self forKeyPath:@"data"];
+    //[self removeObserver:self forKeyPath:@"data"];
     [data release];
     [super dealloc];
 }

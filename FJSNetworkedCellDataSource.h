@@ -10,12 +10,8 @@
 
 @protocol FJSNetworkedCellDataSourceDelegate <NSObject>
 
-- (void)didReceiveNewData:(id<FJSCellDataSource>)newData;
-- (void)noNewDataAvailable;
-
 @optional
-- (void)dataUpdateFailedWithError:(NSError*)error;
-
+- (void)didUpdateData:(BOOL)isUpdated withError:(NSError*)error;
 
 @end
 

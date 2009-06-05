@@ -23,15 +23,38 @@
 
 @synthesize model;
 
-#if FIRMWARE_21_COMPATIBILITY
-- (void)awakeFromNib
-{
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown:) name:UIKeyboardWillShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHidden:) name:UIKeyboardWillHideNotification object:nil];
+#pragma mark -
+#pragma mark UIKeyboard
 
-	[super awakeFromNib];
+#if FIRMWARE_21_COMPATIBILITY
+
+- (void)keyboardShown:(NSNotification *)notification
+{
+	CGRect keyboardBounds;
+	[[[notification userInfo] valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
+	
+	CGRect tableViewFrame = [self.tableView frame];
+	tableViewFrame.size.height -= keyboardBounds.size.height;
+    
+	[self.tableView setFrame:tableViewFrame];
 }
+
+- (void)keyboardHidden:(NSNotification *)notification
+{
+	CGRect keyboardBounds;
+	[[[notification userInfo] valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
+	
+	CGRect tableViewFrame = [self.tableView frame];
+	tableViewFrame.size.height += keyboardBounds.size.height;
+    
+	[self.tableView setFrame:tableViewFrame];
+}
+
 #endif
+
+
+#pragma mark -
+#pragma mark FJSGenericTableViewController
 
 //
 // constructTableGroups
@@ -74,6 +97,10 @@
 	[self constructTableGroups];
 	[self.tableView reloadData];
 }
+
+
+#pragma mark -
+#pragma mark UITableViewController
 
 //
 // numberOfSectionsInTableView:
@@ -194,35 +221,20 @@
 //
 // Release any cache data.
 //
-- (void)didReceiveMemoryWarning
-{
-	[super didReceiveMemoryWarning];
-	
-	[self clearTableGroups];
-}
 
 //
 // dealloc
 //
 // Release instance memory
 //
-- (void)dealloc
-{
-#if FIRMWARE_21_COMPATIBILITY
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-#endif
-
-	self.model = nil;
-
-	[self clearTableGroups];
-	[super dealloc];
-}
 
 - (void)validate:(id)sender
 {
 	[self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark -
+#pragma mark UIViewController
 
 /*
 - (void)loadView
@@ -246,16 +258,6 @@
 }
  */
 
-- (id)init {
-    if (self = [super init]) {
-        
-        self.model=nil;
-        
-    }
-    return self;
-}
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         
@@ -265,6 +267,16 @@
     return self;
 }
 
+#if FIRMWARE_21_COMPATIBILITY
+- (void)awakeFromNib
+{
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown:) name:UIKeyboardWillShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHidden:) name:UIKeyboardWillHideNotification object:nil];
+    
+	[super awakeFromNib];
+}
+#endif
+
 - (void)viewWillAppear:(BOOL)animated
 {
 	// rows (such as choices) that were updated in child view controllers need to be updated
@@ -273,31 +285,73 @@
     [super viewWillAppear:animated];
 }
 
+- (void)didReceiveMemoryWarning
+{
+	[super didReceiveMemoryWarning];
+	
+	[self clearTableGroups];
+}
+
+#pragma mark -
+#pragma mark accessor
+
+- (void)setModel:(NSObject<FJSCellDataSource> *)aModel{
+   
+    if (model != aModel) {
+        
+        [model setDelegate:nil];
+        [model removeObserver:self forKeyPath:@"data"];
+        
+        [aModel retain];
+        [model release];
+        model = aModel;
+        
+        [model setDelegate:self];
+        [model addObserver:self forKeyPath:@"data" options:NSKeyValueObservingOptionNew context:nil];
+        
+        if(model!=nil)
+            [self updateAndReload];
+        
+    }
+}
+
+#pragma mark -
+#pragma mark NSObject
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    
+    //NSLog(keyPath);
+    
+    if([keyPath isEqualToString:@"data"]){
+        
+        [self updateAndReload];
+        
+    }
+}
+
+
+- (id)init {
+    if (self = [super init]) {
+        
+        self.model=nil;
+        
+    }
+    return self;
+}
+
+- (void)dealloc
+{
 #if FIRMWARE_21_COMPATIBILITY
-
-- (void)keyboardShown:(NSNotification *)notification
-{
-	CGRect keyboardBounds;
-	[[[notification userInfo] valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
-	
-	CGRect tableViewFrame = [self.tableView frame];
-	tableViewFrame.size.height -= keyboardBounds.size.height;
-
-	[self.tableView setFrame:tableViewFrame];
-}
-
-- (void)keyboardHidden:(NSNotification *)notification
-{
-	CGRect keyboardBounds;
-	[[[notification userInfo] valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
-	
-	CGRect tableViewFrame = [self.tableView frame];
-	tableViewFrame.size.height += keyboardBounds.size.height;
-
-	[self.tableView setFrame:tableViewFrame];
-}
-
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 #endif
+    
+	self.model = nil;
+    
+	[self clearTableGroups];
+	[super dealloc];
+}
+
 
 @end
 
