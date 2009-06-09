@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FJSViewController.h"
 
 
-@interface FJSImageViewController : UIViewController {
+@interface FJSImageViewController : FJSViewController {
 	
 	UIImage *image;
 

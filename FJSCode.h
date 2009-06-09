@@ -15,8 +15,6 @@
 #import "NSString+extensions.h"
 #import "UIView-Extensions.h"
 
-#import "FJSScrollViewController.h"
-#import "FJSImageScrollViewController.h"
 #import "FJSScrollView.h"
 
 #import "FJSViewController.h"

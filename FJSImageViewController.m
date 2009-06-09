@@ -13,6 +13,41 @@
 
 @synthesize image;
 
+
+
+- (void)resizeToImageDimensions{
+    
+    CGSize imageSize = self.image.size;
+    CGRect viewFrame = self.view.frame;
+    viewFrame.size = imageSize;
+    [self.view setFrame:viewFrame];
+    
+}
+
+- (void)createImageView{
+    
+    UIImageView *localImage = [[UIImageView alloc] initWithFrame:CGRectZero];
+    self.view = localImage;
+    [localImage release];
+    
+}
+
+- (void)setData:(NSDictionary *)aData
+{
+    if (data != aData) {
+        [aData retain];
+        [data release];
+        data = aData;
+        
+        self.image = [data objectForKey:@"image"];
+    }
+}
+
+- (void)setImageWithImageNamed:(NSString *)anImageName{
+        
+    self.image = [UIImage imageNamed:anImageName];
+}
+
 - (void)setImage:(UIImage *)anImage{
     
     if (image != anImage) {
@@ -20,59 +55,50 @@
         [image release];
         image = anImage;
         
-		UIImageView *localImage = [[UIImageView alloc] initWithImage:image];
-		[localImage setFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
-		self.view = localImage;
-		[localImage release];
-            
+        [(UIImageView*)self.view setImage:image];
+
     }
 }
 
-- (void)setImageWithImageNamed:(NSString *)anImageName{
+- (id)initWithImage:(UIImage *)anImage frame:(CGRect)frame {
     
-    UIImage *anImage = [UIImage imageNamed:anImageName];
-    
-    if (image != anImage) {
-        [anImage retain];
-        [image release];
-        image = anImage;
+    if(self = [self initWithImage:anImage]){
         
-		UIImageView *localImage = [[UIImageView alloc] initWithImage:image];
-		[localImage setFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
-		self.view = localImage;
-		[localImage release];
+        [self.view setFrame:frame];
+    }
+    
+    return self;
+}
+
+- (id)initWithImageNamed:(NSString *)anImageName {
+	    
+	if(self = [self initWithImage:[UIImage imageNamed:anImageName]]){
+        
         
     }
+    return self;
 }
 
 
 - (id)initWithImage:(UIImage *)anImage {
 	
+	if(self = [self init]){
+		self.image = anImage;
+        [(UIImageView*)self.view setImage:image];
+    }
+    return self;
+}
+
+
+- (id)init{
+	
 	if(self = [super init]){
+    
+        [self createImageView];
         
-		image = anImage;
-		UIImageView *localImage = [[UIImageView alloc] initWithImage:image];
-		[localImage setFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
-		self.view = localImage;
-		[localImage release];
     }
     return self;
 }
-
-
-- (id)initWithImageNamed:(NSString *)anImageName {
-	
-	if(self = [super init]){
-	
-		image = [UIImage imageNamed:anImageName];
-		UIImageView *localImage = [[UIImageView alloc] initWithImage:image];
-		[localImage setFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
-		self.view = localImage;
-		[localImage release];
-    }
-    return self;
-}
-
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	// Return YES for supported orientations

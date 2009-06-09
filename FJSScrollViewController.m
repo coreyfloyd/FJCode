@@ -9,7 +9,7 @@
 #import "FJSScrollViewController.h"
 #import "FJSViewController.h"
 #import "UIView-Extensions.h"
-#import "FJSScrollView.h"
+#import "FJSSelectableScrollView.h"
 
 @interface FJSScrollViewController()
 
@@ -107,7 +107,7 @@ const NSUInteger kNumObjects	= 7;
     
     if(!scrollView){
         
-        FJSScrollView *aScrollView = [[FJSScrollView alloc] init];
+        FJSSelectableScrollView *aScrollView = [[FJSSelectableScrollView alloc] init];
         self.scrollView = aScrollView;
         
         CGPoint origin = CGPointMake(0,0);

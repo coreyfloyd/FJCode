@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class FJSViewController;
-@class FJSScrollView;
+@class FJSSelectableScrollView;
 
 @interface FJSScrollViewController : UIViewController <UIScrollViewDelegate> {
 
 	NSArray *data;
     
-    FJSScrollView *scrollView;
+    FJSSelectableScrollView *scrollView;
     NSMutableArray *viewControllers;
     FJSViewController *highlightedViewController;
 
@@ -31,7 +31,7 @@
 @property(nonatomic,retain)NSArray *data;
 @property(nonatomic,assign)NSInteger currentPage;
 @property(nonatomic,assign)NSInteger lastPage;
-@property(nonatomic,retain)FJSScrollView *scrollView;
+@property(nonatomic,retain)FJSSelectableScrollView *scrollView;
 
 
 - (id)initWithData:(NSArray*)nameArray;

@@ -12,6 +12,7 @@
 
 @property(nonatomic,retain)NSDictionary *model;
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
