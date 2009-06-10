@@ -9,6 +9,24 @@
 /* Begin PBXBuildFile section */
 		C4049DB80FDDB3C3001693C1 /* FJSImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */; };
 		C4049DB90FDDB3C3001693C1 /* FJSImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4049DB70FDDB3C3001693C1 /* FJSImageDownloader.m */; };
+		C41910670FDF546600D23A82 /* FJSMultiSelectTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C41910650FDF546600D23A82 /* FJSMultiSelectTableViewCell.h */; };
+		C41910680FDF546600D23A82 /* FJSMultiSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C41910660FDF546600D23A82 /* FJSMultiSelectTableViewCell.m */; };
+		C41910720FDF54FB00D23A82 /* FJSMultiSelectTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C419106E0FDF54FB00D23A82 /* FJSMultiSelectTableViewController.h */; };
+		C41910730FDF54FB00D23A82 /* FJSMultiSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C419106F0FDF54FB00D23A82 /* FJSMultiSelectTableViewController.m */; };
+		C41910740FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.h in Headers */ = {isa = PBXBuildFile; fileRef = C41910700FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.h */; };
+		C41910750FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = C41910710FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.m */; };
+		C41910840FDF554E00D23A82 /* FJSTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C41910800FDF554E00D23A82 /* FJSTableViewController.h */; };
+		C41910850FDF554E00D23A82 /* FJSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C41910810FDF554E00D23A82 /* FJSTableViewController.m */; };
+		C41910860FDF554E00D23A82 /* FJSTableViewCellController.h in Headers */ = {isa = PBXBuildFile; fileRef = C41910820FDF554E00D23A82 /* FJSTableViewCellController.h */; };
+		C41910870FDF554E00D23A82 /* FJSTableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = C41910830FDF554E00D23A82 /* FJSTableViewCellController.m */; };
+		C41910940FDF55C400D23A82 /* MultiRowDeleteTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C419108C0FDF55C400D23A82 /* MultiRowDeleteTableViewController.h */; };
+		C41910950FDF55C400D23A82 /* MultiRowDeleteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C419108D0FDF55C400D23A82 /* MultiRowDeleteTableViewController.m */; };
+		C41910960FDF55C400D23A82 /* AbstractGenericViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C419108E0FDF55C400D23A82 /* AbstractGenericViewController.h */; };
+		C41910970FDF55C400D23A82 /* AbstractGenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C419108F0FDF55C400D23A82 /* AbstractGenericViewController.m */; };
+		C41910980FDF55C400D23A82 /* SelectionListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C41910900FDF55C400D23A82 /* SelectionListViewController.h */; };
+		C41910990FDF55C400D23A82 /* SelectionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C41910910FDF55C400D23A82 /* SelectionListViewController.m */; };
+		C419109A0FDF55C400D23A82 /* TextFieldEditingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C41910920FDF55C400D23A82 /* TextFieldEditingViewController.h */; };
+		C419109B0FDF55C400D23A82 /* TextFieldEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C41910930FDF55C400D23A82 /* TextFieldEditingViewController.m */; };
 		C43FAB680FCC424000EB4F92 /* IFActionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C43FAB660FCC424000EB4F92 /* IFActionToolbar.m */; };
 		C43FAB690FCC424000EB4F92 /* IFActionToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = C43FAB670FCC424000EB4F92 /* IFActionToolbar.h */; };
 		C43FAC0D0FCC604800EB4F92 /* FJSGenericTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C43FAC0B0FCC604800EB4F92 /* FJSGenericTableViewController.h */; };
@@ -73,6 +91,24 @@
 		8D1107310486CEB800E47090 /* FJSCode-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FJSCode-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSImageDownloader.h; sourceTree = "<group>"; };
 		C4049DB70FDDB3C3001693C1 /* FJSImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSImageDownloader.m; sourceTree = "<group>"; };
+		C41910650FDF546600D23A82 /* FJSMultiSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSMultiSelectTableViewCell.h; sourceTree = "<group>"; };
+		C41910660FDF546600D23A82 /* FJSMultiSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSMultiSelectTableViewCell.m; sourceTree = "<group>"; };
+		C419106E0FDF54FB00D23A82 /* FJSMultiSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSMultiSelectTableViewController.h; sourceTree = "<group>"; };
+		C419106F0FDF54FB00D23A82 /* FJSMultiSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSMultiSelectTableViewController.m; sourceTree = "<group>"; };
+		C41910700FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSMultiSelectTableViewCellController.h; sourceTree = "<group>"; };
+		C41910710FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSMultiSelectTableViewCellController.m; sourceTree = "<group>"; };
+		C41910800FDF554E00D23A82 /* FJSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTableViewController.h; sourceTree = "<group>"; };
+		C41910810FDF554E00D23A82 /* FJSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTableViewController.m; sourceTree = "<group>"; };
+		C41910820FDF554E00D23A82 /* FJSTableViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTableViewCellController.h; sourceTree = "<group>"; };
+		C41910830FDF554E00D23A82 /* FJSTableViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTableViewCellController.m; sourceTree = "<group>"; };
+		C419108C0FDF55C400D23A82 /* MultiRowDeleteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiRowDeleteTableViewController.h; sourceTree = "<group>"; };
+		C419108D0FDF55C400D23A82 /* MultiRowDeleteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiRowDeleteTableViewController.m; sourceTree = "<group>"; };
+		C419108E0FDF55C400D23A82 /* AbstractGenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractGenericViewController.h; sourceTree = "<group>"; };
+		C419108F0FDF55C400D23A82 /* AbstractGenericViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractGenericViewController.m; sourceTree = "<group>"; };
+		C41910900FDF55C400D23A82 /* SelectionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionListViewController.h; sourceTree = "<group>"; };
+		C41910910FDF55C400D23A82 /* SelectionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionListViewController.m; sourceTree = "<group>"; };
+		C41910920FDF55C400D23A82 /* TextFieldEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEditingViewController.h; sourceTree = "<group>"; };
+		C41910930FDF55C400D23A82 /* TextFieldEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldEditingViewController.m; sourceTree = "<group>"; };
 		C43FAB660FCC424000EB4F92 /* IFActionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFActionToolbar.m; sourceTree = "<group>"; };
 		C43FAB670FCC424000EB4F92 /* IFActionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFActionToolbar.h; sourceTree = "<group>"; };
 		C43FAC0B0FCC604800EB4F92 /* FJSGenericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSGenericTableViewController.h; sourceTree = "<group>"; };
@@ -208,6 +244,45 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		C419106D0FDF54DF00D23A82 /* Multi Select Table */ = {
+			isa = PBXGroup;
+			children = (
+				C419106E0FDF54FB00D23A82 /* FJSMultiSelectTableViewController.h */,
+				C419106F0FDF54FB00D23A82 /* FJSMultiSelectTableViewController.m */,
+				C41910700FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.h */,
+				C41910710FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.m */,
+				C41910650FDF546600D23A82 /* FJSMultiSelectTableViewCell.h */,
+				C41910660FDF546600D23A82 /* FJSMultiSelectTableViewCell.m */,
+			);
+			name = "Multi Select Table";
+			sourceTree = "<group>";
+		};
+		C419107F0FDF552C00D23A82 /* TableViews Old */ = {
+			isa = PBXGroup;
+			children = (
+				C41910800FDF554E00D23A82 /* FJSTableViewController.h */,
+				C41910810FDF554E00D23A82 /* FJSTableViewController.m */,
+				C41910820FDF554E00D23A82 /* FJSTableViewCellController.h */,
+				C41910830FDF554E00D23A82 /* FJSTableViewCellController.m */,
+			);
+			name = "TableViews Old";
+			sourceTree = "<group>";
+		};
+		C419108B0FDF55A600D23A82 /* Table Views LaMarche */ = {
+			isa = PBXGroup;
+			children = (
+				C419108C0FDF55C400D23A82 /* MultiRowDeleteTableViewController.h */,
+				C419108D0FDF55C400D23A82 /* MultiRowDeleteTableViewController.m */,
+				C419108E0FDF55C400D23A82 /* AbstractGenericViewController.h */,
+				C419108F0FDF55C400D23A82 /* AbstractGenericViewController.m */,
+				C41910900FDF55C400D23A82 /* SelectionListViewController.h */,
+				C41910910FDF55C400D23A82 /* SelectionListViewController.m */,
+				C41910920FDF55C400D23A82 /* TextFieldEditingViewController.h */,
+				C41910930FDF55C400D23A82 /* TextFieldEditingViewController.m */,
+			);
+			name = "Table Views LaMarche";
+			sourceTree = "<group>";
+		};
 		C43FAB610FCC422000EB4F92 /* Bars */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +313,9 @@
 				C4049DB50FDDB3B2001693C1 /* Network */,
 				C4A189720FCF5D9D00E70A29 /* CoreLocation */,
 				C43FAC0A0FCC602D00EB4F92 /* TableViews */,
+				C419107F0FDF552C00D23A82 /* TableViews Old */,
+				C419106D0FDF54DF00D23A82 /* Multi Select Table */,
+				C419108B0FDF55A600D23A82 /* Table Views LaMarche */,
 				C43FAB610FCC422000EB4F92 /* Bars */,
 				C4F6D0090FCA533900F6AD69 /* Categories */,
 				C4F6D0080FCA532200F6AD69 /* Views */,
@@ -367,6 +445,15 @@
 				C4E59C200FDF15BE000785F0 /* NSString+SBJSON.h in Headers */,
 				C4E59C220FDF15BE000785F0 /* NSObject+SBJSON.h in Headers */,
 				C4E59C280FDF1612000785F0 /* FJSDownloader.h in Headers */,
+				C41910670FDF546600D23A82 /* FJSMultiSelectTableViewCell.h in Headers */,
+				C41910720FDF54FB00D23A82 /* FJSMultiSelectTableViewController.h in Headers */,
+				C41910740FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.h in Headers */,
+				C41910840FDF554E00D23A82 /* FJSTableViewController.h in Headers */,
+				C41910860FDF554E00D23A82 /* FJSTableViewCellController.h in Headers */,
+				C41910940FDF55C400D23A82 /* MultiRowDeleteTableViewController.h in Headers */,
+				C41910960FDF55C400D23A82 /* AbstractGenericViewController.h in Headers */,
+				C41910980FDF55C400D23A82 /* SelectionListViewController.h in Headers */,
+				C419109A0FDF55C400D23A82 /* TextFieldEditingViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +523,15 @@
 				C4E59C1F0FDF15BE000785F0 /* NSString+SBJSON.m in Sources */,
 				C4E59C210FDF15BE000785F0 /* NSObject+SBJSON.m in Sources */,
 				C4E59C290FDF1612000785F0 /* FJSDownloader.m in Sources */,
+				C41910680FDF546600D23A82 /* FJSMultiSelectTableViewCell.m in Sources */,
+				C41910730FDF54FB00D23A82 /* FJSMultiSelectTableViewController.m in Sources */,
+				C41910750FDF54FB00D23A82 /* FJSMultiSelectTableViewCellController.m in Sources */,
+				C41910850FDF554E00D23A82 /* FJSTableViewController.m in Sources */,
+				C41910870FDF554E00D23A82 /* FJSTableViewCellController.m in Sources */,
+				C41910950FDF55C400D23A82 /* MultiRowDeleteTableViewController.m in Sources */,
+				C41910970FDF55C400D23A82 /* AbstractGenericViewController.m in Sources */,
+				C41910990FDF55C400D23A82 /* SelectionListViewController.m in Sources */,
+				C419109B0FDF55C400D23A82 /* TextFieldEditingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
