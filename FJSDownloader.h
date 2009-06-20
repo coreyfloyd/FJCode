@@ -23,7 +23,7 @@
     
 }
 @property(nonatomic,retain)NSMutableData *responseData;
-@property(nonatomic,retain)id<FJSDownloaderDelegate> delegate;
+@property(nonatomic,assign)id<FJSDownloaderDelegate> delegate;
 
 - (void)sendRequestwithURL:(NSString*)aURL;
 

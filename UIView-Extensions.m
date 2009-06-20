@@ -10,7 +10,7 @@
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
 
-@implementation UIView (Extensions)
+@implementation UIView (animation)
 
 
 - (void)fadeInWithDelay:(CGFloat)delay duration:(CGFloat)duration{
@@ -77,6 +77,11 @@
     
 }
 
+
+@end
+
+@implementation UIView (introspection)
+
 - (BOOL)hasSubviewOfClass:(Class)aClass{
     
     BOOL containsClass = NO;
@@ -135,12 +140,164 @@
     }
     
     //if(!theFirstResponder)
-        //NSLog(@"responder not found");
+    //NSLog(@"responder not found");
     return theFirstResponder;
     
 }
 
 
+@end
 
+
+static const CGFloat kCornerSize = 5.0;
+
+static CGRect rectStrokeAdjust(CGRect rect)
+{
+    rect = CGRectIntegral(rect);
+    
+    rect.origin.x    += 0.5;
+    rect.origin.y    += 0.5;
+    rect.size.width  -= 1.0;
+    rect.size.height -= 1.0;
+    
+    return rect;
+}
+
+static void roundRect(CGContextRef context, CGRect rect,
+                      CGFloat ovalWidth, CGFloat ovalHeight)
+{
+    CGFloat  fw = 0.0;
+    CGFloat  fh = 0.0;
+    
+    assert(ovalWidth  >= 1.0);
+    assert(ovalHeight >= 1.0);
+    
+    CGContextSaveGState(context);
+    CGContextTranslateCTM(context, CGRectGetMinX(rect), CGRectGetMinY(rect));
+    CGContextScaleCTM(context, ovalWidth, ovalHeight); 
+    
+    fw = rect.size.width  / ovalWidth;
+    fh = rect.size.height / ovalHeight; 
+    
+    CGContextMoveToPoint(context, fw, fh / 2.0);
+    CGContextAddArcToPoint(context, fw, fh, fw / 2.0, fh, 1.0);
+    CGContextAddArcToPoint(context, 0.0, fh, 0, fh / 2.0, 1.0);
+    CGContextAddArcToPoint(context, 0.0, 0.0, fw / 2.0, 0, 1.0);
+    CGContextAddArcToPoint(context, fw, 0.0, fw, fh / 2.0, 1.0); 
+    
+    CGContextClosePath(context);
+    CGContextRestoreGState(context);
+}
+
+
+@implementation UIView (drawing)
+
+
+-(void)contextRestore:(CGContextRef)context
+{
+    CGContextRestoreGState(context);
+}
+
+-(CGContextRef)contextSave
+{
+    CGContextRef  ctxt = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(ctxt);
+    
+    return ctxt;
+}
+
+-(void)drawPoint:(CGPoint)point
+{
+    [self drawPoint:point color:nil];
+}
+
+-(void)drawPoint:(CGPoint)point color:(UIColor*)color
+{
+    CGRect  rect = CGRectMake(point.x, point.y, 1.0, 1.0);
+    [self fillRect:rect color:color];
+}
+
+-(void)fillRect:(CGRect)rect
+{
+    [self fillRect:rect color:nil];
+}
+
+-(void)fillRect:(CGRect)rect color:(UIColor*)color
+{
+    CGContextRef  ctxt = [self contextSave];
+    
+    if (color)
+    {
+        CGContextSetFillColorWithColor(ctxt, [color CGColor]);
+    }    
+    
+    UIRectFill(rect);
+    [self contextRestore:ctxt];
+}
+
+-(void)fillRoundRect:(CGRect)rect
+{
+    [self fillRoundRect:rect color:nil];
+}
+
+-(void)fillRoundRect:(CGRect)rect color:(UIColor*)color
+{
+    CGContextRef  ctxt = [self contextSave];
+    
+    roundRect(ctxt, rect, kCornerSize, kCornerSize);
+    
+    if (color)
+    {
+        CGContextSetFillColorWithColor(ctxt, [color CGColor]);
+    }    
+    
+    CGContextFillPath(ctxt);
+    [self contextRestore:ctxt];
+}
+
+-(void)strokeRect:(CGRect)rect
+{
+    [self strokeRect:rect color:nil];
+}
+
+-(void)strokeRect:(CGRect)rect color:(UIColor*)color
+{
+    CGContextRef  ctxt = [self contextSave];
+    
+    if (color)
+    {
+        CGContextSetStrokeColorWithColor(ctxt, [color CGColor]);
+    }    
+    
+    UIRectFrame(rect);
+    [self contextRestore:ctxt];
+}
+
+-(void)strokeRoundRect:(CGRect)rect
+{
+    [self strokeRoundRect:rect color:nil];
+}
+
+-(void)strokeRoundRect:(CGRect)rect color:(UIColor*)color
+{
+    CGContextRef  ctxt = [self contextSave];
+    
+    rect = rectStrokeAdjust(rect);
+    roundRect(ctxt, rect, kCornerSize, kCornerSize);
+    
+    if (color)
+    {
+        CGContextSetStrokeColorWithColor(ctxt, [color CGColor]);
+    }    
+    
+    CGContextStrokePath(ctxt);
+    [self contextRestore:ctxt];
+}
 
 @end
+
+
+
+
+

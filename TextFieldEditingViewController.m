@@ -112,7 +112,8 @@
 }
 - (void)dealloc 
 {
-    
+    //TODO: make sure this doesn't crash
+    [changedValues release];
     [textFields release];
 	[fieldNames release];
 	[fieldKeys release];

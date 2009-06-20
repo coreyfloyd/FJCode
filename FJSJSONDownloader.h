@@ -28,7 +28,7 @@
 }
 @property(nonatomic,retain)NSMutableData *responseData;
 @property(nonatomic,retain)NSString *responseString;
-@property(nonatomic,retain)id<FJSJSONDownloaderDelegate> delegate;
+@property(nonatomic,assign)id<FJSJSONDownloaderDelegate> delegate;
 
 - (void)sendRequestwithURL:(NSString*)aURL;
 

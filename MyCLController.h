@@ -6,14 +6,21 @@
 #import <CoreLocation/CoreLocation.h>
 
 @protocol MyCLControllerDelegate <NSObject>
+
 @required
 - (void)locationUpdate:(CLLocation *)location; 
 - (void)locationError:(NSError *)error;
+
 @end
 
+
+
+
+
 @interface MyCLController : NSObject <CLLocationManagerDelegate> {
+    
 	CLLocationManager *locationManager;
-	id delegate;
+	id <MyCLControllerDelegate> delegate;
 }
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
@@ -25,5 +32,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager
 	   didFailWithError:(NSError *)error;
+
+-(void)stopUpdating;
+-(void)startUpdating;
 
 @end

@@ -47,6 +47,8 @@
 		C461FECA0FC5C1A80036595E /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE9A0FC5C0980036595E /* UIColor+extensions.m */; };
 		C461FECB0FC5C1A90036595E /* UIView-Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FE9D0FC5C0980036595E /* UIView-Extensions.h */; };
 		C461FECC0FC5C1A90036595E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE9E0FC5C0980036595E /* UIView-Extensions.m */; };
+		C46297240FE1865C00C84434 /* UIImage+extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C46297220FE1865C00C84434 /* UIImage+extensions.h */; };
+		C46297250FE1865C00C84434 /* UIImage+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C46297230FE1865C00C84434 /* UIImage+extensions.m */; };
 		C488B2440FD98431004A72A8 /* DummyClass.h in Headers */ = {isa = PBXBuildFile; fileRef = C488B2420FD98431004A72A8 /* DummyClass.h */; };
 		C488B2450FD98431004A72A8 /* DummyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B2430FD98431004A72A8 /* DummyClass.m */; };
 		C488B2C10FD9926F004A72A8 /* FJSCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B2C00FD9926F004A72A8 /* FJSCellDataSource.m */; };
@@ -131,6 +133,8 @@
 		C461FEA00FC5C0980036595E /* FJSCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCode.h; sourceTree = "<group>"; };
 		C461FEAA0FC5C1200036595E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C461FEB30FC5C1510036595E /* libFJSCodeDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFJSCodeDebug.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C46297220FE1865C00C84434 /* UIImage+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+extensions.h"; sourceTree = "<group>"; };
+		C46297230FE1865C00C84434 /* UIImage+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+extensions.m"; sourceTree = "<group>"; };
 		C464CF6E0FC5FDFC00758E05 /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayViewController.h; sourceTree = "<group>"; };
 		C464CF6F0FC5FDFC00758E05 /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
 		C488B2420FD98431004A72A8 /* DummyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyClass.h; sourceTree = "<group>"; };
@@ -407,6 +411,8 @@
 				C461FE9C0FC5C0980036595E /* NSString+extensions.m */,
 				C461FE9D0FC5C0980036595E /* UIView-Extensions.h */,
 				C461FE9E0FC5C0980036595E /* UIView-Extensions.m */,
+				C46297220FE1865C00C84434 /* UIImage+extensions.h */,
+				C46297230FE1865C00C84434 /* UIImage+extensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 				C41910960FDF55C400D23A82 /* AbstractGenericViewController.h in Headers */,
 				C41910980FDF55C400D23A82 /* SelectionListViewController.h in Headers */,
 				C419109A0FDF55C400D23A82 /* TextFieldEditingViewController.h in Headers */,
+				C46297240FE1865C00C84434 /* UIImage+extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +539,7 @@
 				C41910970FDF55C400D23A82 /* AbstractGenericViewController.m in Sources */,
 				C41910990FDF55C400D23A82 /* SelectionListViewController.m in Sources */,
 				C419109B0FDF55C400D23A82 /* TextFieldEditingViewController.m in Sources */,
+				C46297250FE1865C00C84434 /* UIImage+extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +557,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphonesimulator3.0;
 			};
 			name = Debug;
 		};
@@ -564,7 +572,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphonesimulator3.0;
 			};
 			name = Release;
 		};
@@ -579,7 +587,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphonesimulator3.0;
 			};
 			name = "Distribution Beta";
 		};
@@ -613,7 +621,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphonesimulator3.0;
 			};
 			name = "Release from debug";
 		};
@@ -639,6 +647,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -684,7 +693,7 @@
 				C43FAE200FCCA96B00EB4F92 /* Distribution Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C461FEBE0FC5C1680036595E /* Build configuration list for PBXNativeTarget "FJSCodeDebug" */ = {
 			isa = XCConfigurationList;
@@ -695,7 +704,7 @@
 				C43FAE210FCCA96B00EB4F92 /* Distribution Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

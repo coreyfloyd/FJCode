@@ -75,15 +75,14 @@
 //
 // Releases the table group data (it will be recreated when next needed)
 //
-- (void)clearTableGroups
-{
-	[tableHeaders release];
-	tableHeaders = nil;
-	[tableFooters release];
-	tableFooters = nil;
+- (void)clearTableGroups{
+	//[tableHeaders release];
+	//tableHeaders = nil;
+	//[tableFooters release];
+	//tableFooters = nil;
 	
-	[tableGroups release];
-	tableGroups = nil;
+	//[tableGroups release];
+	//tableGroups = nil;
 }
 
 //
@@ -93,6 +92,8 @@
 //
 - (void)updateAndReload
 {
+    //TODO: figure out how I want to handle the releasing of of old data
+    
 	[self clearTableGroups];
 	[self constructTableGroups];
 	[self.tableView reloadData];

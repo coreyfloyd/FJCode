@@ -141,7 +141,7 @@ static NSString *cellDataKey = @"cellData";
 
 - (FJSTableViewCellController*)newCellControllerFromNIB{
     
-    FJSMultiSelectTableViewCellController *cellController = [[[FJSMultiSelectTableViewCellController alloc] init] autorelease];
+    FJSMultiSelectTableViewCellController *cellController = [[FJSMultiSelectTableViewCellController alloc] init];
     [[NSBundle mainBundle] loadNibNamed:tableViewCellControllerNIB owner:cellController options:nil];
     
     return cellController;
@@ -150,7 +150,7 @@ static NSString *cellDataKey = @"cellData";
 
 - (FJSTableViewCellController*)newCellController{
     
-    FJSMultiSelectTableViewCellController *cellController = [[[FJSMultiSelectTableViewCellController alloc] init] autorelease];
+    FJSMultiSelectTableViewCellController *cellController = [[FJSMultiSelectTableViewCellController alloc] init];
     
     return cellController;
     

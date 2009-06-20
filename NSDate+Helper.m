@@ -101,7 +101,7 @@
 			}
 		}
 	}
-
+    //TODO:    [displayFormatter autorelease];
 	// use display formatter to return formatted date string
 	return [displayFormatter stringFromDate:date];
 }
