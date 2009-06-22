@@ -288,8 +288,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -330,6 +328,7 @@
 								<string>C461FE8E0FC5C07B0036595E</string>
 								<string>C43FAC0A0FCC602D00EB4F92</string>
 								<string>C419107F0FDF552C00D23A82</string>
+								<string>C4F6D0090FCA533900F6AD69</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
@@ -339,14 +338,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
-									<integer>13</integer>
+									<integer>27</integer>
+									<integer>21</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 50}, {287, 633}}</string>
+							<string>{{0, 21}, {287, 633}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -363,7 +362,7 @@
 							<real>287</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>26 86 1070 692 0 0 1280 778 </string>
+						<string>49 86 1070 692 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -374,12 +373,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C461FEB60FC5C1680036595E</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FJSTableViewController.m</string>
+								<string>NSString+extensions.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -387,11 +388,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C461FEB70FC5C1680036595E</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FJSTableViewController.m</string>
+										<string>NSString+extensions.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C4ACB3460FE9BA55008906A8</string>
+										<string>C4DF025D0FF042FF00EC7FAA</string>
 										<key>history</key>
 										<array>
 											<string>C4F6D00C0FCA53F200F6AD69</string>
@@ -447,10 +448,11 @@
 											<string>C462972B0FE186A500C84434</string>
 											<string>C46297440FE186D000C84434</string>
 											<string>C462974A0FE1B17500C84434</string>
-											<string>C462974B0FE1B17500C84434</string>
 											<string>C462974C0FE1B17500C84434</string>
-											<string>C4ACB1A00FE99136008906A8</string>
-											<string>C4ACB3450FE9BA55008906A8</string>
+											<string>C4DF01070FF01A4F00EC7FAA</string>
+											<string>C4DF011B0FF0256400EC7FAA</string>
+											<string>C4DF011D0FF0256400EC7FAA</string>
+											<string>C4DF01210FF0256400EC7FAA</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -461,7 +463,6 @@
 											<string>C4F6D0230FCA53F200F6AD69</string>
 											<string>C4F6D0240FCA53F200F6AD69</string>
 											<string>C4F6D0250FCA53F200F6AD69</string>
-											<string>C4F6D0260FCA53F200F6AD69</string>
 											<string>C4F6D0270FCA53F200F6AD69</string>
 											<string>C4F6D0280FCA53F200F6AD69</string>
 											<string>C4F6D02B0FCA53F200F6AD69</string>
@@ -509,7 +510,8 @@
 											<string>C41910AB0FDF567800D23A82</string>
 											<string>C462973B0FE186A500C84434</string>
 											<string>C462973C0FE186A500C84434</string>
-											<string>C4ACB1A20FE99136008906A8</string>
+											<string>C4DF010A0FF01A4F00EC7FAA</string>
+											<string>C4DF011F0FF0256400EC7FAA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -525,7 +527,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {761, 452}}</string>
 								<key>RubberWindowFrame</key>
-								<string>26 86 1070 692 0 0 1280 778 </string>
+								<string>49 86 1070 692 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -550,7 +552,7 @@
 										<key>Frame</key>
 										<string>{{10, 27}, {761, 167}}</string>
 										<key>RubberWindowFrame</key>
-										<string>26 86 1070 692 0 0 1280 778 </string>
+										<string>49 86 1070 692 0 0 1280 778 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -632,11 +634,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C4ACB1A40FE99136008906A8</string>
+				<string>C4DF01CB0FF03DED00EC7FAA</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>C4ACB1A50FE99136008906A8</string>
+				<string>C4DF01CC0FF03DED00EC7FAA</string>
 				<string>C461FEB60FC5C1680036595E</string>
-				<string>C4ACB1A60FE99136008906A8</string>
+				<string>C4DF01CD0FF03DED00EC7FAA</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -787,7 +789,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>266975829.79621899</real>
+	<real>267404031.88384199</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
@@ -805,7 +807,7 @@
 		<string>/Users/coreyfloyd/Xcode/FJSCode/FJSCode.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>26 86 1070 692 0 0 1280 778 </string>
+	<string>49 86 1070 692 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -1637,7 +1639,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>C4F6D09D0FCA53F200F6AD69</string>
-				<string>C4E59C610FDF17E2000785F0</string>
+				<string>C4DF01220FF0256400EC7FAA</string>
 				<string>C4F6D09C0FCA53F200F6AD69</string>
 			</array>
 			<key>WindowString</key>

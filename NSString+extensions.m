@@ -12,6 +12,22 @@
 @implementation NSString (exstensions) 
 
 
++ (NSString*)stringWithInt:(int)anInteger{
+    
+    return [NSString stringWithFormat:@"%i", anInteger];
+    
+}
+
++ (NSString*)stringWithFloat:(float)aFloat decimalPlaces:(int)decimalPlaces{
+    
+    NSMutableString *formatString = [NSMutableString stringWithString:@"%."];
+    [formatString appendString:[NSString stringWithInt:decimalPlaces]];
+    [formatString appendString:@"f"];
+    return [NSString stringWithFormat:formatString, aFloat];
+
+}
+
+
 - (BOOL)doesContainString:(NSString *)aString{
     
     BOOL answer = YES;
@@ -28,6 +44,16 @@
 - (NSRange)fullRange{
     
     return (NSMakeRange(0, [self length]));
+}
+
+- (NSString*)stringByDeletingLastCharacter{
+    
+    if([self length]==0)
+        return self;
+    
+    return [NSString stringWithString:[self substringToIndex:([self length]-1)]];
+    
+    
 }
 
 

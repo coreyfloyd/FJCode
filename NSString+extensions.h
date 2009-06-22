@@ -11,10 +11,13 @@
 
 @interface NSString (exstensions) 
 
++ (NSString*)stringWithInt:(int)anInteger;
++ (NSString*)stringWithFloat:(float)aFloat decimalPlaces:(int)decimalPlaces;
+
 
 - (BOOL)doesContainString:(NSString *)aString;
 - (NSRange)fullRange;
-
+- (NSString*)stringByDeletingLastCharacter;
 
 
 @end
