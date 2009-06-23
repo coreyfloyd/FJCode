@@ -9,48 +9,124 @@
 #import "FJSImageDownloader.h"
 
 
+@interface FJSImageDownloader()
+
+- (void)writeData;
+- (void)loadData;
+- (NSString *)filePath;
+
+@end
+
+
+
+
+
 @implementation FJSImageDownloader
 
+
 @synthesize responseData;
+@synthesize image;
 @synthesize delegate;
 @synthesize baseURL;
 @synthesize cacheDirectoryPath;
+@synthesize cacheFileName;
 @synthesize cacheImages;
 
 
-- (BOOL)imageIsCachedWithName:(NSString*)imageName{
+
+
+- (void)writeData{
     
-    BOOL answer = NO;
+    if(cacheFileName==nil)
+        return;
+    if(cacheDirectoryPath==nil)
+        return;
     
-    //need to make sure it's an image name
-    if(baseURL!=nil){
+    
+	if (![[NSFileManager defaultManager] fileExistsAtPath:[self filePath]]) {        
         
-        //TODO: check image directory for image
+        NSData *imageData = UIImageJPEGRepresentation(self.image, 0.9);
         
+        NSError *writeError= nil;
+       
+        BOOL didWrite =  [imageData writeToFile:[self filePath] options:NSAtomicWrite error:&writeError];
+        
+        if(writeError){
+            NSLog([writeError localizedDescription]);
+            
+            NSDictionary *info = [writeError userInfo];
+            
+            
+            for(NSString *aKey in info){
+
+                NSLog(aKey);
+
+                [[[info objectForKey:aKey] class] description];
+                
+                if([[info objectForKey:aKey] isKindOfClass:[NSString class]])
+                    NSLog([info objectForKey:aKey]);
+            }
+            
+            NSLog([writeError domain]);
+        }
+        
+        
+        if(didWrite)
+            NSLog(@"image saved");
+        else
+            NSLog(@"image not saved = fucked");
+
         
     }
-    
-    // TODO: retrieve image
-    
-    //TODO: return to delegate;
-    
-    
-    return answer;
 }
 
-- (void)fetchCachedImageWithURL:(NSString*)imageName{
+- (void)loadData{
     
-    
-}
-    
+    if(cacheFileName==nil)
+        return;
+    if(cacheDirectoryPath==nil)
+        return;
+        
+    self.image = nil;
 
+	if ([[NSFileManager defaultManager] fileExistsAtPath:[self filePath]]) {
+        
+        self.responseData = [NSData dataWithContentsOfFile:[self filePath]];
+        self.image = [UIImage imageWithData:self.responseData];
+        if(self.image != nil)
+            NSLog(@"image loaded from cache");
+            
+            
+        [delegate didReceiveImage:self.image withError:nil];
+    } 
+}
+
+- (NSString *)filePath{
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES); 
+	NSString *cacheDirectory = [paths objectAtIndex:0]; 
+	NSString *filename = [cacheDirectory stringByAppendingPathComponent:cacheDirectoryPath]; 
+    
+    
+    if(![[NSFileManager defaultManager] fileExistsAtPath:filename])
+        [[NSFileManager defaultManager] createDirectoryAtPath:filename attributes:nil];
+    
+    filename = [filename stringByAppendingPathComponent:cacheFileName]; 
+    NSLog(filename);
+    
+	return filename;
+	
+}
 
 
 - (void)fetchImageWithURL:(NSString*)aURL{
     
-    [self setResponseData:nil];
+    [self loadData];
     
-    if(![self imageIsCachedWithName:aURL]){
+    if(self.image==nil){
+        
+        [self setResponseData:nil];
+        
         
         NSURL *url; 
         
@@ -75,7 +151,7 @@
             NSLog(@"theConnection is NULL");
         }
         
-    }
+    } 
 }
 
 
@@ -98,22 +174,20 @@
     
     NSLog(@"DONE. Received Bytes: %d", [responseData length]);
     
-    UIImage *anImage = [UIImage imageWithData:responseData];
+    self.image = [UIImage imageWithData:responseData];
 
-    if(cacheImages){
-        
-        //TODO: save images to directory
-        
-    }
+    if(cacheImages)
+        [self writeData];
     
-    
-    [delegate didReceiveImage:anImage withError:nil];
-    
+    [delegate didReceiveImage:image withError:nil];
+
 }
 
 - (void)dealloc{
     
     
+    self.image = nil;    
+    self.cacheFileName = nil;    
     self.baseURL = nil;
     self.cacheDirectoryPath = nil;
     [responseData release];

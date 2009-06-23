@@ -19,24 +19,25 @@
 @interface FJSImageDownloader : NSObject {
     
 	NSMutableData *responseData;
-    
+    UIImage *image;
     NSString *baseURL;
     NSString *cacheDirectoryPath;
+    NSString *cacheFileName;
     BOOL cacheImages;
     
     id<FJSImageDownloaderDelegate> delegate;
 
 }
 @property(nonatomic,retain)NSMutableData *responseData;
+@property(nonatomic,retain)UIImage *image;
 @property(nonatomic,retain)NSString *baseURL;
 @property(nonatomic,retain)NSString *cacheDirectoryPath;
+@property(nonatomic,retain)NSString *cacheFileName;
 @property(nonatomic,assign)BOOL cacheImages;
 
 @property(nonatomic,assign)id<FJSImageDownloaderDelegate> delegate;
 
-
-//used as file name so put any '/' in base url
-//if no base url, uses entire url, but won't cache image
+//if no base url, uses entire url
 - (void)fetchImageWithURL:(NSString*)aURL;
 
 @end
