@@ -18,8 +18,9 @@
 - (void)sendRequestwithURL:(NSString*)aURL{
     
     [self setResponseData:nil];
-        
-    NSURL *url = [NSURL URLWithString:aURL];
+    
+    NSString *encodedURL = [aURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];        
+    NSURL *url = [NSURL URLWithString:encodedURL];
     NSLog([url description]);
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];

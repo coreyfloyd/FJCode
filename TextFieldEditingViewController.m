@@ -21,6 +21,7 @@
 
 		for (int i =0; i < 5; i++){
             keyboardTypes[i] = UIKeyboardTypeAlphabet;
+            returnKeyTypes[i] = UIReturnKeyDefault;
             shouldClearOnEditing[i] = NO;
             shouldBeSecure[i] = NO;
         }
@@ -75,6 +76,11 @@
 -(void)setKeyboardType:(UIKeyboardType)theType forIndex:(NSUInteger)index {
 	keyboardTypes[index] = theType;
 }
+
+-(void)setReturnKeyType:(UIReturnKeyType)type forIndex:(NSUInteger)index{
+    returnKeyTypes[index] = type;
+}
+
 
 -(void)setCapitalization:(UITextAutocapitalizationType)theType forIndex:(NSUInteger)index{
     capitalizationType[index] = theType;
@@ -178,6 +184,7 @@
 	textField.keyboardType = keyboardTypes[[indexPath row]];
     textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    textField.returnKeyType = returnKeyTypes[[indexPath row]];
     
     if(!self.textFields){
         NSMutableArray *localArray = [[NSMutableArray alloc] initWithArray:fieldNames];

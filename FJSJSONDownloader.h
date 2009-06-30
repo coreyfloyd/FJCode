@@ -30,6 +30,7 @@
 @property(nonatomic,retain)NSString *responseString;
 @property(nonatomic,assign)id<FJSJSONDownloaderDelegate> delegate;
 
+//URL string will be encoded using UTF8 encoding
 - (void)sendRequestwithURL:(NSString*)aURL;
 
 

@@ -20,6 +20,8 @@
 	NSMutableArray						*changedValues;		// Changes will be stored in this array , which will also be passed back to delegate on save
 	UIKeyboardType						keyboardTypes[5];   // Keyboard types for each field
     UITextAutocapitalizationType        capitalizationType[5];
+    UIReturnKeyType						returnKeyTypes[5];   // return types
+
 	
 	BOOL								shouldClearOnEditing[5]; 
 	
@@ -46,5 +48,7 @@
 -(void)setCapitalization:(UITextAutocapitalizationType)theType forIndex:(NSUInteger)index;
 -(void)setShouldClearOnEdit:(BOOL)doesClear forIndex:(NSUInteger)index;
 -(void)setShouldBeSecure:(BOOL)isSecure forIndex:(NSUInteger)index;
+-(void)setReturnKeyType:(UIReturnKeyType)type forIndex:(NSUInteger)index;
+
 
 @end

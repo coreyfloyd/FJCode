@@ -259,14 +259,6 @@
 }
  */
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        
-        self.model=nil;
-        
-    }
-    return self;
-}
 
 #if FIRMWARE_21_COMPATIBILITY
 - (void)awakeFromNib
@@ -302,17 +294,16 @@
     if (model != aModel) {
         
         //[model setDelegate:nil];
-        [model removeObserver:self forKeyPath:@"data"];
+        //[model removeObserver:self forKeyPath:@"data"];
         
         [aModel retain];
         [model release];
         model = aModel;
         
         //[model setDelegate:self];
-        [model addObserver:self forKeyPath:@"data" options:NSKeyValueObservingOptionNew context:nil];
-        
-        if(model!=nil)
-            [self updateAndReload];
+        //TODO: may need to change to model
+        //[self didChangeValueForKey:@"data"];
+        //[model addObserver:self forKeyPath:@"data" options:NSKeyValueObservingOptionNew context:nil];
         
     }
 }
@@ -332,14 +323,7 @@
 }
 
 
-- (id)init {
-    if (self = [super init]) {
-        
-        self.model=nil;
-        
-    }
-    return self;
-}
+
 
 - (void)dealloc
 {

@@ -31,8 +31,7 @@
 @synthesize cacheDirectoryPath;
 @synthesize cacheFileName;
 @synthesize cacheImages;
-
-
+@synthesize loadFromCache;
 
 
 - (void)writeData{
@@ -41,11 +40,13 @@
         return;
     if(cacheDirectoryPath==nil)
         return;
+    if(cacheImages==NO)
+        return;
     
     
 	if (![[NSFileManager defaultManager] fileExistsAtPath:[self filePath]]) {        
         
-        NSData *imageData = UIImageJPEGRepresentation(self.image, 0.9);
+        NSData *imageData = UIImagePNGRepresentation(self.image);
         
         NSError *writeError= nil;
        
@@ -67,14 +68,13 @@
                     NSLog([info objectForKey:aKey]);
             }
             
-            NSLog([writeError domain]);
         }
         
         
         if(didWrite)
             NSLog(@"image saved");
         else
-            NSLog(@"image not saved = fucked");
+            NSLog(@"image not saved");
 
         
     }
@@ -86,18 +86,24 @@
         return;
     if(cacheDirectoryPath==nil)
         return;
+    if(loadFromCache==NO)
+        return;
+    
         
-    self.image = nil;
 
 	if ([[NSFileManager defaultManager] fileExistsAtPath:[self filePath]]) {
         
         self.responseData = [NSData dataWithContentsOfFile:[self filePath]];
-        self.image = [UIImage imageWithData:self.responseData];
-        if(self.image != nil)
-            NSLog(@"image loaded from cache");
+        if(responseData!=nil){
+            
+            self.image = [UIImage imageWithData:self.responseData];
+            if(self.image != nil)
+                NSLog(@"image loaded from cache");
             
             
-        [delegate didReceiveImage:self.image withError:nil];
+            [delegate didReceiveImage:self.image withError:nil];
+            
+        }
     } 
 }
 
@@ -107,11 +113,22 @@
 	NSString *cacheDirectory = [paths objectAtIndex:0]; 
 	NSString *filename = [cacheDirectory stringByAppendingPathComponent:cacheDirectoryPath]; 
     
+    BOOL isDirectory;
+    
+    if([[NSFileManager defaultManager] fileExistsAtPath:filename isDirectory:&isDirectory]) {
+        
+        if(!isDirectory){
+            [[NSFileManager defaultManager] removeItemAtPath:filename error:nil];
+            [[NSFileManager defaultManager] createDirectoryAtPath:filename attributes:nil];
+        }
+    }
+    
     
     if(![[NSFileManager defaultManager] fileExistsAtPath:filename])
         [[NSFileManager defaultManager] createDirectoryAtPath:filename attributes:nil];
     
     filename = [filename stringByAppendingPathComponent:cacheFileName]; 
+    filename = [filename stringByDeletingPathExtension];
     NSLog(filename);
     
 	return filename;
@@ -121,11 +138,12 @@
 
 - (void)fetchImageWithURL:(NSString*)aURL{
     
+    self.image=nil;
+    [self setResponseData:nil];
+    
     [self loadData];
     
     if(self.image==nil){
-        
-        [self setResponseData:nil];
         
         
         NSURL *url; 
@@ -176,12 +194,20 @@
     
     self.image = [UIImage imageWithData:responseData];
 
-    if(cacheImages)
-        [self writeData];
+    [self writeData];
     
     [delegate didReceiveImage:image withError:nil];
 
 }
+- (id) init{
+    self = [super init];
+    if (self != nil) {
+        self.loadFromCache = YES;
+        self.cacheImages = YES;
+    }
+    return self;
+}
+
 
 - (void)dealloc{
     
