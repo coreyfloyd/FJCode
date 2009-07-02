@@ -9,32 +9,49 @@
 #import <UIKit/UIKit.h>
 
 @class FJSViewController;
-@class FJSSelectableScrollView;
 
 @interface FJSScrollViewController : UIViewController <UIScrollViewDelegate> {
 
 	NSArray *data;
     
-    FJSSelectableScrollView *scrollView;
+    UIScrollView *scrollView;
     NSMutableArray *viewControllers;
     FJSViewController *highlightedViewController;
 
-    UIPageControl *pageController;
     NSInteger currentPage;
 	NSInteger lastPage;
+    
+    CGSize pageSize;
 
 }
 
-@property(nonatomic,retain)IBOutlet UIPageControl *pageController;
-@property(nonatomic,retain)FJSViewController *highlightedViewController;
+
+//viewcontrollers will recieve data[index] to populate them whenever data changes (KVO)
+//should be subclass of FJSViewController
 @property(nonatomic,retain)NSMutableArray *viewControllers;
+
+//change will automaticall propagate to viewControllers
+//elements should be NSDictionaries
 @property(nonatomic,retain)NSArray *data;
+
+//page size used for all size calculations
+//if not set, then the default 416x320 is used
+@property(nonatomic,assign)CGSize pageSize;
+
+//index of current view
 @property(nonatomic,assign)NSInteger currentPage;
+
+//index of previous view
 @property(nonatomic,assign)NSInteger lastPage;
-@property(nonatomic,retain)FJSSelectableScrollView *scrollView;
 
 
-- (id)initWithData:(NSArray*)nameArray;
+@property(nonatomic,retain)FJSViewController *highlightedViewController;
+@property(nonatomic,retain)UIScrollView *scrollView;
+
+//overide this method to create the array of empty viewcontrollers
+//by default this viewControllers.count = 0;
+- (void)createViewControllers;
+
 
 - (void)highlightCurrentPage;
 - (void)dehighlightCurrentPage;

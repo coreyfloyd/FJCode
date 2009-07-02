@@ -56,6 +56,8 @@
 		C488B3840FD9A133004A72A8 /* FJSGenericTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B3820FD9A133004A72A8 /* FJSGenericTableViewDataSource.m */; };
 		C4A189750FCF5DB200E70A29 /* MyCLController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A189730FCF5DB200E70A29 /* MyCLController.h */; };
 		C4A189760FCF5DB200E70A29 /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A189740FCF5DB200E70A29 /* MyCLController.m */; };
+		C4AC6C2A0FFC209100D37504 /* FJSScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE700FC8D0F000F6AD69 /* FJSScrollViewController.h */; };
+		C4AC6C2D0FFC20AA00D37504 /* FJSScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE710FC8D0F000F6AD69 /* FJSScrollViewController.m */; };
 		C4E59B520FDF1065000785F0 /* FJSJSONDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */; };
 		C4E59B530FDF1065000785F0 /* FJSJSONDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */; };
 		C4E59C170FDF15BE000785F0 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E59C0B0FDF15BE000785F0 /* SBJsonBase.h */; };
@@ -424,6 +426,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AC6C2A0FFC209100D37504 /* FJSScrollViewController.h in Headers */,
 				C4F6CFEA0FCA3FA100F6AD69 /* FJSSelectableScrollView.h in Headers */,
 				C461FEBF0FC5C19E0036595E /* FJSCode.h in Headers */,
 				C461FEC60FC5C1A50036595E /* NSString+extensions.h in Headers */,
@@ -506,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AC6C2D0FFC20AA00D37504 /* FJSScrollViewController.m in Sources */,
 				C4F6CFF30FCA3FD500F6AD69 /* FJSSelectableScrollView.m in Sources */,
 				C461FEC50FC5C1A50036595E /* NSDate+Helper.m in Sources */,
 				C461FEC70FC5C1A60036595E /* NSString+extensions.m in Sources */,

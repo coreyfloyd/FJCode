@@ -16,5 +16,7 @@
 }
 @property(nonatomic,retain)NSDictionary *data;
 
+//implement - (void)observeValueForKeyPath:ofObject:change:context:
+//to respond to changes in data
 
 @end

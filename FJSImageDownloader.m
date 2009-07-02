@@ -100,9 +100,6 @@
             if(self.image != nil)
                 NSLog(@"image loaded from cache");
             
-            
-            [delegate didReceiveImage:self.image withError:nil];
-            
         }
     } 
 }
@@ -169,7 +166,11 @@
             NSLog(@"theConnection is NULL");
         }
         
-    } 
+    } else{
+        
+        [delegate didReceiveImage:self.image withError:nil];
+
+    }
 }
 
 
@@ -190,7 +191,8 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     
-    NSLog(@"DONE. Received Bytes: %d", [responseData length]);
+    //NSLog(@"DONE. Received Bytes: %d", [responseData length]);
+    //NSLog([responseData description]);
     
     self.image = [UIImage imageWithData:responseData];
 

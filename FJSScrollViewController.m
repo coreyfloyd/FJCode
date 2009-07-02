@@ -17,32 +17,22 @@
 - (void)setViewFrames;
 
 
-
 @end
-
-
-
 
 
 @implementation FJSScrollViewController
 
-@synthesize pageController;
+static CGFloat kScrollObjHeight	= 416;
+static CGFloat kScrollObjWidth	= 320;
+
+
 @synthesize highlightedViewController;
 @synthesize viewControllers;
 @synthesize data;
 @synthesize currentPage;
 @synthesize lastPage;
 @synthesize scrollView;
-
-
-const CGFloat kScrollObjHeight	= 436;
-const CGFloat kScrollObjWidth	= 320;
-const NSUInteger kNumObjects	= 7;
-
-
-
-
-
+@synthesize pageSize;
 
 #pragma mark -
 #pragma mark selection and highlight 
@@ -103,15 +93,20 @@ const NSUInteger kNumObjects	= 7;
     }
 }
 
-- (void)sizeScrollViewToFitViews{
+- (void)createScrollView{
+    
+    CGSize size;
+    if(CGSizeEqualToSize(CGSizeZero, pageSize))
+        size = CGSizeMake(kScrollObjWidth, kScrollObjHeight);
+    else
+        size = pageSize;
     
     if(!scrollView){
         
-        FJSSelectableScrollView *aScrollView = [[FJSSelectableScrollView alloc] init];
+        UIScrollView *aScrollView = [[UIScrollView alloc] init];
         self.scrollView = aScrollView;
         
         CGPoint origin = CGPointMake(0,0);
-        CGSize size = CGSizeMake(kScrollObjWidth, kScrollObjHeight);
         CGRect myFrame;
         myFrame.size = size;
         myFrame.origin = origin;
@@ -128,22 +123,30 @@ const NSUInteger kNumObjects	= 7;
         [self.view addSubview:scrollView];
     }
     
-    [scrollView setContentSize:CGSizeMake(([viewControllers count] * kScrollObjWidth), kScrollObjHeight)];
-    
+    [scrollView setContentSize:CGSizeMake(([viewControllers count] * size.width), size.height)];
+
 }
 
 - (void)setViewFrames{
     
+    
     for(FJSViewController *controller in viewControllers){
         
         int index = [viewControllers indexOfObject:controller];
-                
+        
 		CGRect frame = self.view.frame;
-        frame.origin.x = kScrollObjWidth * index;
+        
+        CGSize size;
+        if(CGSizeEqualToSize(CGSizeZero, pageSize))
+            size = CGSizeMake(kScrollObjWidth, kScrollObjHeight);
+        else
+            size = pageSize;
+        
+        frame.origin.x = size.width * index;
         frame.origin.y = 0;
-		frame.size.width= kScrollObjWidth;
+		frame.size.width= size.width;
         controller.view.frame = frame;
-        [self.view addSubview:controller.view];
+        [self.scrollView addSubview:controller.view];
         
     }
 }
@@ -153,28 +156,33 @@ const NSUInteger kNumObjects	= 7;
 #pragma mark UIScrollViewDelegate
 
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    
         
+    
+}
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender{
+    
+    CGSize size;
+    if(CGSizeEqualToSize(CGSizeZero, pageSize))
+        size = CGSizeMake(kScrollObjWidth, kScrollObjHeight);
+    else
+        size = pageSize;
+    
+    
     self.lastPage = currentPage;
     
-    CGPoint pageOrigin = [(UIScrollView *)[self view] contentOffset];
-    currentPage = pageOrigin.x/kScrollObjWidth;
+    CGPoint pageOrigin = [self.scrollView contentOffset];
+    
+    currentPage = pageOrigin.x/size.width;
         
 }
+ 
 
 #pragma mark -
 #pragma mark FJSScrollViewController
-
-- (id)initWithData:(NSArray*)dataArray{
-    
-    if(self = [self init]){
-        
-        self.data = dataArray;
-        
-    }    
-    return self;
-}
-
 
 
 #pragma mark -
@@ -183,10 +191,22 @@ const NSUInteger kNumObjects	= 7;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CGSize size;
+    if(CGSizeEqualToSize(CGSizeZero, pageSize))
+        size = CGSizeMake(kScrollObjWidth, kScrollObjHeight);
+    else
+        size = pageSize;
+    
+    
+    [self.view setFrame:CGRectMake(0, 0, size.width, size.height)];
+    [self createViewControllers];
+    [self createScrollView];
+    [self setViewFrames];
+
+
 	        
 }
-
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -204,7 +224,6 @@ const NSUInteger kNumObjects	= 7;
         [self addObserver:self forKeyPath:@"data" options:NSKeyValueObservingOptionNew context:NULL];
         [self addObserver:self forKeyPath:@"viewControllers" options:NSKeyValueObservingOptionNew context:NULL];
         
-        [self.view setFrame:[[UIScreen mainScreen] applicationFrame]];
     }
     
     return self;
@@ -223,7 +242,6 @@ const NSUInteger kNumObjects	= 7;
         
     } else if([keyPath isEqualToString:@"viewControllers"]){
         
-        [self sizeScrollViewToFitViews];
         [self setViewFrames];
         
     }
@@ -237,8 +255,6 @@ const NSUInteger kNumObjects	= 7;
     
     
     [scrollView release];    
-    [pageController release];
-    pageController = nil;    
 	[viewControllers release];
 	viewControllers = nil;
 	[data release];
