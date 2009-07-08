@@ -270,8 +270,7 @@
 }
 #endif
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
 	// rows (such as choices) that were updated in child view controllers need to be updated

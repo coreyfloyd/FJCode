@@ -95,6 +95,8 @@
 		8D1107310486CEB800E47090 /* FJSCode-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FJSCode-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSImageDownloader.h; sourceTree = "<group>"; };
 		C4049DB70FDDB3C3001693C1 /* FJSImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSImageDownloader.m; sourceTree = "<group>"; };
+		C40A51640FFF27CD001D4CDE /* KBCollectionExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBCollectionExtensions.m; sourceTree = "<group>"; };
+		C40A51650FFF27CD001D4CDE /* KBCollectionExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBCollectionExtensions.h; sourceTree = "<group>"; };
 		C41910650FDF546600D23A82 /* FJSMultiSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSMultiSelectTableViewCell.h; sourceTree = "<group>"; };
 		C41910660FDF546600D23A82 /* FJSMultiSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSMultiSelectTableViewCell.m; sourceTree = "<group>"; };
 		C419106E0FDF54FB00D23A82 /* FJSMultiSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSMultiSelectTableViewController.h; sourceTree = "<group>"; };
@@ -405,6 +407,8 @@
 		C4F6D0090FCA533900F6AD69 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C40A51640FFF27CD001D4CDE /* KBCollectionExtensions.m */,
+				C40A51650FFF27CD001D4CDE /* KBCollectionExtensions.h */,
 				C461FE910FC5C0980036595E /* NSDate+Helper.h */,
 				C461FE920FC5C0980036595E /* NSDate+Helper.m */,
 				C461FE990FC5C0980036595E /* UIColor+extensions.h */,

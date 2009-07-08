@@ -18,5 +18,6 @@
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)string;
 + (NSString *)stringFromDate:(NSDate *)date;
 + (NSString *)stringForDisplayFromDate:(NSDate *)date;
++ (NSString *)stringForDisplayForFutureDates:(NSDate *)date;
 
 @end

@@ -61,8 +61,12 @@
     
     NSError *error;
     SBJSON *json = [[SBJSON new] autorelease];
-    id data = [json objectWithString:responseString error:&error];
-            
+    id data = nil;
+    data = [json objectWithString:responseString error:&error];
+    
+    if(data!=nil)
+        error=nil;
+    
     [delegate didReceiveResponse:data withError:error];
     
     [self setResponseData:nil];

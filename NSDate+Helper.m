@@ -106,4 +106,79 @@
 	return [displayFormatter stringFromDate:date];
 }
 
+
++ (NSString *)stringForDisplayForFutureDates:(NSDate *)date{
+    /* 
+     * if the date is in today, display 12-hour time with meridian,
+     * if it is within the last 7 days, display weekday name (Friday)
+     * if within the calendar year, display as Jan 23
+     * else display as Nov 11, 2008
+     */
+    
+    NSString *readableDate = nil;
+	NSDate *today = [NSDate date];
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSDateComponents *offsetComponents = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) 
+                                                     fromDate:today];
+    
+    //today
+	NSDate *midnight = [calendar dateFromComponents:offsetComponents];
+    
+	NSDateFormatter *displayFormatter = [[NSDateFormatter alloc] init];
+	
+    //tomorrow
+    NSDateComponents *componentsToAdd = [[NSDateComponents alloc] init];
+    [componentsToAdd setDay:+1];
+    NSDate *tomorrow = [calendar dateByAddingComponents:componentsToAdd toDate:today options:0];
+    [componentsToAdd release];
+    componentsToAdd = nil;
+    
+    // compare to midnight today and midnight tomorrow
+    if ([date compare:midnight] == NSOrderedDescending) {
+        
+        if([date compare:tomorrow] ==NSOrderedAscending){
+            
+            readableDate = [NSString stringWithString:@"Today"];
+        }
+        
+	} else {
+        //check to see if after today
+        if([date compare:tomorrow] ==NSOrderedDescending){
+            
+            // check if date is within next 7 days
+            componentsToAdd = [[NSDateComponents alloc] init];
+            [componentsToAdd setDay:+7];
+            NSDate *nextWeek = [calendar dateByAddingComponents:componentsToAdd toDate:today options:0];
+            [componentsToAdd release];
+            
+            if ([date compare:nextWeek] == NSOrderedAscending) {
+                [displayFormatter setDateFormat:@"EEEE"]; // Tuesday
+                readableDate = [displayFormatter stringFromDate:date];
+            }
+        }
+    }
+    
+    //any other date (past date or more than 7 days in the future
+    if(readableDate==nil){
+        // check if same calendar year
+        NSInteger thisYear = [offsetComponents year];
+        
+        NSDateComponents *dateComponents = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) 
+                                                       fromDate:date];
+        NSInteger thatYear = [dateComponents year];			
+        if (thatYear >= thisYear) {
+            [displayFormatter setDateFormat:@"MMM d"];
+        } else {
+            [displayFormatter setDateFormat:@"MMM d, YYYY"];
+        }
+        
+        readableDate = [displayFormatter stringFromDate:date];
+    }
+        
+    //TODO:    [displayFormatter autorelease];
+	// use display formatter to return formatted date string
+	return readableDate;
+    
+}
+
 @end
