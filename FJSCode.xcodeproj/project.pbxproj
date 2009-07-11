@@ -81,6 +81,9 @@
 		C4F6CFF40FCA3FD500F6AD69 /* FJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE6C0FC8D0F000F6AD69 /* FJSViewController.m */; };
 		C4F6CFF50FCA3FD500F6AD69 /* FJSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE6E0FC8D0F000F6AD69 /* FJSImageViewController.m */; };
 		C4FD3EB60FD242EB0084CFE3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FD3EB50FD242EA0084CFE3 /* CoreLocation.framework */; };
+		C4FEBDBB10084B27006978F7 /* TouchProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = C4FEBDB910084B27006978F7 /* TouchProcessor.h */; };
+		C4FEBDBC10084B27006978F7 /* TouchProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FEBDBA10084B27006978F7 /* TouchProcessor.m */; };
+		C4FEBDBE10084B36006978F7 /* MacroUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C4FEBDBD10084B36006978F7 /* MacroUtilities.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +178,9 @@
 		C4F6CE790FC8D29D00F6AD69 /* FJSImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSImageScrollViewController.h; sourceTree = "<group>"; };
 		C4F6CE7A0FC8D29D00F6AD69 /* FJSImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSImageScrollViewController.m; sourceTree = "<group>"; };
 		C4FD3EB50FD242EA0084CFE3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C4FEBDB910084B27006978F7 /* TouchProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchProcessor.h; sourceTree = "<group>"; };
+		C4FEBDBA10084B27006978F7 /* TouchProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchProcessor.m; sourceTree = "<group>"; };
+		C4FEBDBD10084B36006978F7 /* MacroUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroUtilities.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +323,7 @@
 		C461FE8E0FC5C07B0036595E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C4FEBDB810084B14006978F7 /* Touch */,
 				C4E59C230FDF15C7000785F0 /* JSON */,
 				C4049DB50FDDB3B2001693C1 /* Network */,
 				C4A189720FCF5D9D00E70A29 /* CoreLocation */,
@@ -329,6 +336,7 @@
 				C4F6D0080FCA532200F6AD69 /* Views */,
 				C4F6D0070FCA530300F6AD69 /* View Controllers */,
 				C4F6CE6F0FC8D0F000F6AD69 /* FJSScrollView */,
+				C4FEBDBD10084B36006978F7 /* MacroUtilities.h */,
 				C461FE9F0FC5C0980036595E /* SynthesizeSingleton.h */,
 				C461FEA00FC5C0980036595E /* FJSCode.h */,
 				C488B2420FD98431004A72A8 /* DummyClass.h */,
@@ -423,6 +431,15 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		C4FEBDB810084B14006978F7 /* Touch */ = {
+			isa = PBXGroup;
+			children = (
+				C4FEBDB910084B27006978F7 /* TouchProcessor.h */,
+				C4FEBDBA10084B27006978F7 /* TouchProcessor.m */,
+			);
+			name = Touch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -468,6 +485,8 @@
 				C41910980FDF55C400D23A82 /* SelectionListViewController.h in Headers */,
 				C419109A0FDF55C400D23A82 /* TextFieldEditingViewController.h in Headers */,
 				C46297240FE1865C00C84434 /* UIImage+extensions.h in Headers */,
+				C4FEBDBB10084B27006978F7 /* TouchProcessor.h in Headers */,
+				C4FEBDBE10084B36006978F7 /* MacroUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +567,7 @@
 				C41910990FDF55C400D23A82 /* SelectionListViewController.m in Sources */,
 				C419109B0FDF55C400D23A82 /* TextFieldEditingViewController.m in Sources */,
 				C46297250FE1865C00C84434 /* UIImage+extensions.m in Sources */,
+				C4FEBDBC10084B27006978F7 /* TouchProcessor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

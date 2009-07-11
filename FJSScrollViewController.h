@@ -30,7 +30,7 @@
 //should be subclass of FJSViewController
 @property(nonatomic,retain)NSMutableArray *viewControllers;
 
-//change will automaticall propagate to viewControllers
+//change will automatically propagate to viewControllers
 //elements should be NSDictionaries
 @property(nonatomic,retain)NSArray *data;
 
@@ -57,6 +57,8 @@
 - (void)dehighlightCurrentPage;
 - (void)selectCurrentPage;
 
+//call to reconfigure scrollView if it is dirty
+- (void)setViewFrames;
 
 
 

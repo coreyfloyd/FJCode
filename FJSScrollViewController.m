@@ -129,6 +129,7 @@ static CGFloat kScrollObjWidth	= 320;
 
 - (void)setViewFrames{
     
+    [self createScrollView];
     
     for(FJSViewController *controller in viewControllers){
         
@@ -201,11 +202,11 @@ static CGFloat kScrollObjWidth	= 320;
     
     [self.view setFrame:CGRectMake(0, 0, size.width, size.height)];
     [self createViewControllers];
-    [self createScrollView];
-    [self setViewFrames];
+    [self setViewFrames];	        
+    
+    [self addObserver:self forKeyPath:@"data" options:NSKeyValueObservingOptionNew context:NULL];
+    [self addObserver:self forKeyPath:@"viewControllers" options:NSKeyValueObservingOptionNew context:NULL];
 
-
-	        
 }
 
 
@@ -221,9 +222,7 @@ static CGFloat kScrollObjWidth	= 320;
     
     if(self = [super init]){
         
-        [self addObserver:self forKeyPath:@"data" options:NSKeyValueObservingOptionNew context:NULL];
-        [self addObserver:self forKeyPath:@"viewControllers" options:NSKeyValueObservingOptionNew context:NULL];
-        
+               
     }
     
     return self;

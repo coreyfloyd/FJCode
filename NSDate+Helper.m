@@ -61,19 +61,19 @@
 
 + (NSString *)stringForDisplayFromDate:(NSDate *)date {
 	/* 
-	* if the date is in today, display 12-hour time with meridian,
-	* if it is within the last 7 days, display weekday name (Friday)
-	* if within the calendar year, display as Jan 23
-	* else display as Nov 11, 2008
-	*/
-
+     * if the date is in today, display 12-hour time with meridian,
+     * if it is within the last 7 days, display weekday name (Friday)
+     * if within the calendar year, display as Jan 23
+     * else display as Nov 11, 2008
+     */
+    
 	NSDate *today = [NSDate date];
 	NSCalendar *calendar = [NSCalendar currentCalendar];
 	NSDateComponents *offsetComponents = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) 
-	fromDate:today];
-
+                                                     fromDate:today];
+    
 	NSDate *midnight = [calendar dateFromComponents:offsetComponents];
-
+    
 	NSDateFormatter *displayFormatter = [[NSDateFormatter alloc] init];
 	
 	// comparing against midnight
@@ -90,7 +90,7 @@
 		} else {
 			// check if same calendar year
 			NSInteger thisYear = [offsetComponents year];
-
+            
 			NSDateComponents *dateComponents = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) 
 														   fromDate:date];
 			NSInteger thatYear = [dateComponents year];			
@@ -174,7 +174,7 @@
         
         readableDate = [displayFormatter stringFromDate:date];
     }
-        
+    
     //TODO:    [displayFormatter autorelease];
 	// use display formatter to return formatted date string
 	return readableDate;

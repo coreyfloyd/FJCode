@@ -11,7 +11,6 @@
 //
 
 #import "FJSGenericTableViewController.h"
-
 #import "FJSCellController.h"
 //#import "IFTextViewTableView.h"
 
@@ -216,6 +215,36 @@
 
 	return title;
 }
+
+//TODO: implement when FJSCellController protocol has property for cellIndexPath  ???
+/*
+- (NSIndexPath*)indexPathOfCellWithCellController:(id<FJSCellController>)aCellController{
+    
+    //array to hold indexes of visible cells 
+    NSMutableArray *visibleCellIndexPaths = [NSMutableArray array];
+    for(UITableViewCell *aCell in [self.tableView visibleCells])
+        [visibleCellIndexPaths addObject:[self.tableView indexPathForCell:aCell]];
+    
+    
+    NSIndexPath *cellPath = [aCellController cellIndexPath];                
+    
+    NSComparisonResult comparisonWithVisiableCells;
+    for(NSIndexPath *aVisibleIndexPath in visibleCellIndexPaths){
+        comparisonWithVisiableCells = [cellPath compare:aVisibleIndexPath];
+        if(comparisonWithVisiableCells==NSOrderedSame)
+            break;
+    }
+    
+    //mark cell for deletion animation if it is non nil AND it is visable;
+    if(!(comparisonWithVisiableCells==NSOrderedSame)){
+        
+        cellPath = nil;        
+    }     
+    
+    return cellPath;
+}
+*/
+
 
 //
 // didReceiveMemoryWarning
