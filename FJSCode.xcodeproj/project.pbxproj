@@ -56,6 +56,8 @@
 		C488B3840FD9A133004A72A8 /* FJSGenericTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B3820FD9A133004A72A8 /* FJSGenericTableViewDataSource.m */; };
 		C4A189750FCF5DB200E70A29 /* MyCLController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A189730FCF5DB200E70A29 /* MyCLController.h */; };
 		C4A189760FCF5DB200E70A29 /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A189740FCF5DB200E70A29 /* MyCLController.m */; };
+		C4A3A1AC100A8BCC007FCD3F /* TouchProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */; };
+		C4A3A1AD100A8BCC007FCD3F /* TouchProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */; };
 		C4AC6C2A0FFC209100D37504 /* FJSScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE700FC8D0F000F6AD69 /* FJSScrollViewController.h */; };
 		C4AC6C2D0FFC20AA00D37504 /* FJSScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE710FC8D0F000F6AD69 /* FJSScrollViewController.m */; };
 		C4E59B520FDF1065000785F0 /* FJSJSONDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */; };
@@ -81,8 +83,6 @@
 		C4F6CFF40FCA3FD500F6AD69 /* FJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE6C0FC8D0F000F6AD69 /* FJSViewController.m */; };
 		C4F6CFF50FCA3FD500F6AD69 /* FJSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE6E0FC8D0F000F6AD69 /* FJSImageViewController.m */; };
 		C4FD3EB60FD242EB0084CFE3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FD3EB50FD242EA0084CFE3 /* CoreLocation.framework */; };
-		C4FEBDBB10084B27006978F7 /* TouchProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = C4FEBDB910084B27006978F7 /* TouchProcessor.h */; };
-		C4FEBDBC10084B27006978F7 /* TouchProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FEBDBA10084B27006978F7 /* TouchProcessor.m */; };
 		C4FEBDBE10084B36006978F7 /* MacroUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C4FEBDBD10084B36006978F7 /* MacroUtilities.h */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +151,8 @@
 		C488B3820FD9A133004A72A8 /* FJSGenericTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSGenericTableViewDataSource.m; sourceTree = "<group>"; };
 		C4A189730FCF5DB200E70A29 /* MyCLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCLController.h; sourceTree = "<group>"; };
 		C4A189740FCF5DB200E70A29 /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCLController.m; sourceTree = "<group>"; };
+		C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchProcessor.h; sourceTree = "<group>"; };
+		C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchProcessor.m; sourceTree = "<group>"; };
 		C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSJSONDownloader.h; sourceTree = "<group>"; };
 		C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSJSONDownloader.m; sourceTree = "<group>"; };
 		C4E59C0B0FDF15BE000785F0 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
@@ -178,8 +180,6 @@
 		C4F6CE790FC8D29D00F6AD69 /* FJSImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSImageScrollViewController.h; sourceTree = "<group>"; };
 		C4F6CE7A0FC8D29D00F6AD69 /* FJSImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSImageScrollViewController.m; sourceTree = "<group>"; };
 		C4FD3EB50FD242EA0084CFE3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		C4FEBDB910084B27006978F7 /* TouchProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchProcessor.h; sourceTree = "<group>"; };
-		C4FEBDBA10084B27006978F7 /* TouchProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchProcessor.m; sourceTree = "<group>"; };
 		C4FEBDBD10084B36006978F7 /* MacroUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroUtilities.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -434,8 +434,8 @@
 		C4FEBDB810084B14006978F7 /* Touch */ = {
 			isa = PBXGroup;
 			children = (
-				C4FEBDB910084B27006978F7 /* TouchProcessor.h */,
-				C4FEBDBA10084B27006978F7 /* TouchProcessor.m */,
+				C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */,
+				C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */,
 			);
 			name = Touch;
 			sourceTree = "<group>";
@@ -485,8 +485,8 @@
 				C41910980FDF55C400D23A82 /* SelectionListViewController.h in Headers */,
 				C419109A0FDF55C400D23A82 /* TextFieldEditingViewController.h in Headers */,
 				C46297240FE1865C00C84434 /* UIImage+extensions.h in Headers */,
-				C4FEBDBB10084B27006978F7 /* TouchProcessor.h in Headers */,
 				C4FEBDBE10084B36006978F7 /* MacroUtilities.h in Headers */,
+				C4A3A1AC100A8BCC007FCD3F /* TouchProcessor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,7 +567,7 @@
 				C41910990FDF55C400D23A82 /* SelectionListViewController.m in Sources */,
 				C419109B0FDF55C400D23A82 /* TextFieldEditingViewController.m in Sources */,
 				C46297250FE1865C00C84434 /* UIImage+extensions.m in Sources */,
-				C4FEBDBC10084B27006978F7 /* TouchProcessor.m in Sources */,
+				C4A3A1AD100A8BCC007FCD3F /* TouchProcessor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

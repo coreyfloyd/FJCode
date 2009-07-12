@@ -14,6 +14,9 @@
 
 @optional
 
+//update current location (only for single finger touch)
+- (void)touchLocationDidMoveTo:(CGPoint)aPoint;
+
 //respond to taps
 - (void)wasTappedWithCount:(int)taps;
 
@@ -32,22 +35,26 @@
 
 //respond to scaling by pinching
 - (void)wasScaledByXFactor:(float)xScalingFactor yFactor:(float)yScalingFactor;
+- (void)wasScaledByFactor:(float)scalingFactor;
 
 //respond to swipes
 - (void)wasSwipedHorizontally;
 - (void)wasSwipedVertically;
 
+//respond to strokes (consecutive non-directional swipes)
+//consecutive strokes must be 90* out of phase
+- (void)wasStroked:(int)times;
 
-//unimplemented
-- (void)pathOfTouch:(CGPathRef)path;
+//get path of completed touch (only works with single finger touches
+- (void)pathOfTouch:(NSArray*)path;
 
 @end
 
 
 @interface TouchProcessor : NSObject {
-        
+    
     float holdDelay;
-
+    
     NSTimer *TouchHoldTimer;                    ///< Fires after a fraction of a second (1/5) to represent a held touch fires ever 1/5 second until holdDelay
     NSInteger TouchAndHoldCounter;              ///< Number of times the the timer fired and updated the touch and hold variable (could be changed to a BOOL)
     NSDate *FirstTouchTime;                     ///< Used for informational purposes only.
@@ -66,12 +73,18 @@
     BOOL isSwiped;
     float swipeLength;
     float swipeVariance;
-
-
+    
+    int strokes;
+    CGPoint strokePoint;
+    float lastStrokeDirection;
+    
+    NSMutableArray *touchPath;
+    
+    
     UIView *view;
     
     id<TouchProcessorDelegate> delegate;
-
+    
 }
 
 //set delay for timer in seconds. Default 1.0
@@ -92,8 +105,6 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
-
-- (void)didReceiveMemoryWarning;
 
 
 @end
