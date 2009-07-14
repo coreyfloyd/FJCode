@@ -18,6 +18,7 @@
 - (BOOL)doesContainString:(NSString *)aString;
 - (NSRange)fullRange;
 - (NSString*)stringByDeletingLastCharacter;
+- (BOOL)isEmpty;
 
 
 @end

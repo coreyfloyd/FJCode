@@ -27,6 +27,9 @@
 @synthesize swipeLength;
 @synthesize swipeVariance;
 @synthesize delegate;
+@synthesize currentTouchPoint;
+@synthesize sendPositionUpdates;
+
 
 /*********************************************************************/
 #pragma mark -
@@ -73,7 +76,7 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
     
     if([delegate respondsToSelector:@selector(wasScaledByFactor:)])
         [delegate wasScaledByFactor:scaleFactor];
-
+    
     
 }
 
@@ -92,6 +95,7 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
         if(TouchAndHoldCounter < 1){
             if([delegate respondsToSelector:@selector(wasTappedandHeld)])
                 [delegate wasTappedandHeld];
+            
         }
         
         TouchAndHoldCounter += 1;
@@ -145,6 +149,10 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
     // sometime ago.  We have our own NSMutableArray* ActiveTouches to 
     // do so.
     
+    if(touchPath == nil)
+        touchPath = [[NSMutableArray alloc] init];
+
+    
     if (ActiveTouches == nil)
         ActiveTouches = [[NSMutableArray alloc] init];
     
@@ -156,17 +164,20 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
     UITouch *touch = [touches anyObject];
     UIView *theView = [touch view];
     gestureStartPoint = [touch locationInView:theView];
-    strokePoint = gestureStartPoint;
     
     
-    if([delegate respondsToSelector:@selector(touchLocationDidMoveTo:)])
-        [delegate touchLocationDidMoveTo:gestureStartPoint];
-
+    if(sendPositionUpdates){
+        if([delegate respondsToSelector:@selector(touchDidMoveToLocation:)])
+            [delegate touchDidMoveToLocation:gestureStartPoint];   
+    }
+    
     
     
     if ([ActiveTouches count] == 1) { //single finger touch
         
-        touchPath = [[NSMutableArray alloc] init];
+        currentTouchPoint = gestureStartPoint;
+        strokePoint = gestureStartPoint;
+        
         [touchPath addObject:[NSValue valueWithCGPoint:gestureStartPoint]];
         
         //Start touch timer
@@ -196,23 +207,26 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
         
         UITouch *touch = [touches anyObject]; 
         UIView *theView = [touch view];
-        CGPoint currentPosition = [touch locationInView:theView];         
+        currentTouchPoint = [touch locationInView:theView];         
         
-        if([delegate respondsToSelector:@selector(touchLocationDidMoveTo:)])
-            [delegate touchLocationDidMoveTo:currentPosition];
+        if(sendPositionUpdates){
+            if([delegate respondsToSelector:@selector(touchDidMoveToLocation:)])
+                [delegate touchDidMoveToLocation:currentTouchPoint];
+        }
         
-        [touchPath addObject:[NSValue valueWithCGPoint:currentPosition]];
         
-               
+        [touchPath addObject:[NSValue valueWithCGPoint:currentTouchPoint]];
+        
+        
         if(swipeLength == 0)
             self.swipeLength = kMinimumGestureLength;
         if(swipeVariance == 0)
             self.swipeVariance = kMaximumVariance;
-                
+        
         if(!isSwiped){
             
-            CGFloat deltaX = fabsf(gestureStartPoint.x - currentPosition.x); 
-            CGFloat deltaY = fabsf(gestureStartPoint.y - currentPosition.y);             
+            CGFloat deltaX = fabsf(gestureStartPoint.x - currentTouchPoint.x); 
+            CGFloat deltaY = fabsf(gestureStartPoint.y - currentTouchPoint.y);             
             
             if (deltaX >= swipeLength && deltaY <= swipeVariance) { 
                 //horizontal swipe detected
@@ -237,7 +251,7 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
             
         }
         
-        CGSize difference = CGSizeDistanceBetween2Points(strokePoint, currentPosition); 
+        CGSize difference = CGSizeDistanceBetween2Points(strokePoint, currentTouchPoint); 
         CGFloat strokeDelta = sqrt(pow(difference.width, 2) + pow(difference.height, 2));
         
         float direction = atan2(difference.height, -difference.width);
@@ -245,7 +259,6 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
         
         //NSLog([NSString stringWithFormat:@"direction: %f", direction]);
         //NSLog([NSString stringWithFormat:@"stroke length: %f", strokeDelta]);
-        
         
         
         if((strokeDelta >= swipeLength) && 
@@ -257,16 +270,9 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
                 [delegate wasStroked:strokes];
             
             lastStrokeDirection = direction;
-            strokePoint = currentPosition;
+            strokePoint = currentTouchPoint;
         }
         
-        
-        //TODO: decide whether to return a release even if the touch moved
-        //for now we do not
-        //cancelling timers setting counters to 0
-        [self cleanupTimers];
-        TouchAndHoldCounter = 0;
-        DoubleTapAndHoldCounter = 0;
         
         // do nothing
     } else if ([ActiveTouches count] == 2) { //two finger touch
@@ -309,10 +315,10 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
             if([delegate respondsToSelector:@selector(pathOfTouch:)])
                 [delegate pathOfTouch:[touchPath autorelease]];            
         } else {
-            [touchPath release];
+            [touchPath removeAllObjects];
         }
-
-                       
+        
+        
         
         
         // do nothing

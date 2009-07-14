@@ -15,18 +15,21 @@
 @optional
 
 //update current location (only for single finger touch)
-- (void)touchLocationDidMoveTo:(CGPoint)aPoint;
+- (void)touchDidMoveToLocation:(CGPoint)aPoint;
 
 //respond to taps
 - (void)wasTappedWithCount:(int)taps;
 
 //respond to held taps
+//called even if touch is moved
 - (void)wasTappedandHeld;
 
 //respond to taps held for a specified duration which is given as the argument
+//called even if touch is moved
 - (void)wasTappedandHeldForDuration:(float)delay;
 
 //respond to a double tap and hold
+//called even if touch is moved
 - (void)wasDoubleTappedAndHeld;
 
 //respond to releasing of single or double tap
@@ -70,6 +73,7 @@
     CGSize OriginalDifference;                  ///< Used for calulating the relative difference between two multi-taps for pinch/strech and zoom/unzoom
     
     CGPoint gestureStartPoint;
+    CGPoint currentTouchPoint;
     BOOL isSwiped;
     float swipeLength;
     float swipeVariance;
@@ -80,12 +84,20 @@
     
     NSMutableArray *touchPath;
     
-    
-    UIView *view;
-    
+    BOOL sendPositionUpdates;
+        
     id<TouchProcessorDelegate> delegate;
     
 }
+//get the current location of the touch
+//only valid for single finger
+//not defined if no touch is currently occuring
+@property(nonatomic,readonly)CGPoint currentTouchPoint;
+
+//toggles if touchDidMoveToLocation: is called on delegate.
+//default is NO.
+@property(nonatomic,assign)BOOL sendPositionUpdates;
+
 
 //set delay for timer in seconds. Default 1.0
 @property(nonatomic,assign)float holdDelay;

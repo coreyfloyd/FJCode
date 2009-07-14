@@ -27,6 +27,17 @@
 
 }
 
+- (BOOL)isEmpty{
+    
+    BOOL answer = NO;
+    
+    if([self length]==0)
+        answer = YES;
+    else if([self isEqualToString:@" "])
+        answer = YES;
+    
+    return answer;
+}
 
 - (BOOL)doesContainString:(NSString *)aString{
     

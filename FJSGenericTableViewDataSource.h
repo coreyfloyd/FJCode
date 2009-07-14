@@ -15,6 +15,9 @@
 
 - (void)updateData;
 
+@optional
+- (void)loadDataFromCache;
+
 @end
 
 

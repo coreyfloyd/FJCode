@@ -49,6 +49,8 @@
 		C461FECC0FC5C1A90036595E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE9E0FC5C0980036595E /* UIView-Extensions.m */; };
 		C46297240FE1865C00C84434 /* UIImage+extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C46297220FE1865C00C84434 /* UIImage+extensions.h */; };
 		C46297250FE1865C00C84434 /* UIImage+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C46297230FE1865C00C84434 /* UIImage+extensions.m */; };
+		C467D202100A94490002409E /* TouchProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */; };
+		C467D203100A94540002409E /* TouchProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */; };
 		C488B2440FD98431004A72A8 /* DummyClass.h in Headers */ = {isa = PBXBuildFile; fileRef = C488B2420FD98431004A72A8 /* DummyClass.h */; };
 		C488B2450FD98431004A72A8 /* DummyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B2430FD98431004A72A8 /* DummyClass.m */; };
 		C488B2C10FD9926F004A72A8 /* FJSCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B2C00FD9926F004A72A8 /* FJSCellDataSource.m */; };
@@ -56,10 +58,10 @@
 		C488B3840FD9A133004A72A8 /* FJSGenericTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B3820FD9A133004A72A8 /* FJSGenericTableViewDataSource.m */; };
 		C4A189750FCF5DB200E70A29 /* MyCLController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A189730FCF5DB200E70A29 /* MyCLController.h */; };
 		C4A189760FCF5DB200E70A29 /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A189740FCF5DB200E70A29 /* MyCLController.m */; };
-		C4A3A1AC100A8BCC007FCD3F /* TouchProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */; };
-		C4A3A1AD100A8BCC007FCD3F /* TouchProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */; };
 		C4AC6C2A0FFC209100D37504 /* FJSScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE700FC8D0F000F6AD69 /* FJSScrollViewController.h */; };
 		C4AC6C2D0FFC20AA00D37504 /* FJSScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE710FC8D0F000F6AD69 /* FJSScrollViewController.m */; };
+		C4D222AC100C07B200E88C0B /* FJSFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C4D222AA100C07B200E88C0B /* FJSFileManager.h */; };
+		C4D222AD100C07B200E88C0B /* FJSFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D222AB100C07B200E88C0B /* FJSFileManager.m */; };
 		C4E59B520FDF1065000785F0 /* FJSJSONDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */; };
 		C4E59B530FDF1065000785F0 /* FJSJSONDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */; };
 		C4E59C170FDF15BE000785F0 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E59C0B0FDF15BE000785F0 /* SBJsonBase.h */; };
@@ -153,6 +155,8 @@
 		C4A189740FCF5DB200E70A29 /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCLController.m; sourceTree = "<group>"; };
 		C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchProcessor.h; sourceTree = "<group>"; };
 		C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchProcessor.m; sourceTree = "<group>"; };
+		C4D222AA100C07B200E88C0B /* FJSFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSFileManager.h; sourceTree = "<group>"; };
+		C4D222AB100C07B200E88C0B /* FJSFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSFileManager.m; sourceTree = "<group>"; };
 		C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSJSONDownloader.h; sourceTree = "<group>"; };
 		C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSJSONDownloader.m; sourceTree = "<group>"; };
 		C4E59C0B0FDF15BE000785F0 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 				C4FEBDB810084B14006978F7 /* Touch */,
 				C4E59C230FDF15C7000785F0 /* JSON */,
 				C4049DB50FDDB3B2001693C1 /* Network */,
+				C4D222AE100C091D00E88C0B /* Files */,
 				C4A189720FCF5D9D00E70A29 /* CoreLocation */,
 				C43FAC0A0FCC602D00EB4F92 /* TableViews */,
 				C419107F0FDF552C00D23A82 /* TableViews Old */,
@@ -354,6 +359,15 @@
 				C4A189740FCF5DB200E70A29 /* MyCLController.m */,
 			);
 			name = CoreLocation;
+			sourceTree = "<group>";
+		};
+		C4D222AE100C091D00E88C0B /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4D222AA100C07B200E88C0B /* FJSFileManager.h */,
+				C4D222AB100C07B200E88C0B /* FJSFileManager.m */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 		C4E59C230FDF15C7000785F0 /* JSON */ = {
@@ -447,6 +461,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C467D202100A94490002409E /* TouchProcessor.h in Headers */,
 				C4AC6C2A0FFC209100D37504 /* FJSScrollViewController.h in Headers */,
 				C4F6CFEA0FCA3FA100F6AD69 /* FJSSelectableScrollView.h in Headers */,
 				C461FEBF0FC5C19E0036595E /* FJSCode.h in Headers */,
@@ -486,7 +501,7 @@
 				C419109A0FDF55C400D23A82 /* TextFieldEditingViewController.h in Headers */,
 				C46297240FE1865C00C84434 /* UIImage+extensions.h in Headers */,
 				C4FEBDBE10084B36006978F7 /* MacroUtilities.h in Headers */,
-				C4A3A1AC100A8BCC007FCD3F /* TouchProcessor.h in Headers */,
+				C4D222AC100C07B200E88C0B /* FJSFileManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C467D203100A94540002409E /* TouchProcessor.m in Sources */,
 				C4AC6C2D0FFC20AA00D37504 /* FJSScrollViewController.m in Sources */,
 				C4F6CFF30FCA3FD500F6AD69 /* FJSSelectableScrollView.m in Sources */,
 				C461FEC50FC5C1A50036595E /* NSDate+Helper.m in Sources */,
@@ -567,7 +583,7 @@
 				C41910990FDF55C400D23A82 /* SelectionListViewController.m in Sources */,
 				C419109B0FDF55C400D23A82 /* TextFieldEditingViewController.m in Sources */,
 				C46297250FE1865C00C84434 /* UIImage+extensions.m in Sources */,
-				C4A3A1AD100A8BCC007FCD3F /* TouchProcessor.m in Sources */,
+				C4D222AD100C07B200E88C0B /* FJSFileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
