@@ -49,6 +49,8 @@
 		C461FECC0FC5C1A90036595E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE9E0FC5C0980036595E /* UIView-Extensions.m */; };
 		C46297240FE1865C00C84434 /* UIImage+extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C46297220FE1865C00C84434 /* UIImage+extensions.h */; };
 		C46297250FE1865C00C84434 /* UIImage+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C46297230FE1865C00C84434 /* UIImage+extensions.m */; };
+		C466B4EA100E91EE00829882 /* FJSNetworkImageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C466B4E8100E91EE00829882 /* FJSNetworkImageViewController.h */; };
+		C466B4EB100E91EE00829882 /* FJSNetworkImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C466B4E9100E91EE00829882 /* FJSNetworkImageViewController.m */; };
 		C467D202100A94490002409E /* TouchProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */; };
 		C467D203100A94540002409E /* TouchProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */; };
 		C488B2440FD98431004A72A8 /* DummyClass.h in Headers */ = {isa = PBXBuildFile; fileRef = C488B2420FD98431004A72A8 /* DummyClass.h */; };
@@ -146,6 +148,8 @@
 		C46297230FE1865C00C84434 /* UIImage+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+extensions.m"; sourceTree = "<group>"; };
 		C464CF6E0FC5FDFC00758E05 /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayViewController.h; sourceTree = "<group>"; };
 		C464CF6F0FC5FDFC00758E05 /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
+		C466B4E8100E91EE00829882 /* FJSNetworkImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSNetworkImageViewController.h; sourceTree = "<group>"; };
+		C466B4E9100E91EE00829882 /* FJSNetworkImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSNetworkImageViewController.m; sourceTree = "<group>"; };
 		C488B2420FD98431004A72A8 /* DummyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyClass.h; sourceTree = "<group>"; };
 		C488B2430FD98431004A72A8 /* DummyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyClass.m; sourceTree = "<group>"; };
 		C488B2C00FD9926F004A72A8 /* FJSCellDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSCellDataSource.m; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 				C4F6CE6E0FC8D0F000F6AD69 /* FJSImageViewController.m */,
 				C464CF6E0FC5FDFC00758E05 /* OverlayViewController.h */,
 				C464CF6F0FC5FDFC00758E05 /* OverlayViewController.m */,
+				C466B4E8100E91EE00829882 /* FJSNetworkImageViewController.h */,
+				C466B4E9100E91EE00829882 /* FJSNetworkImageViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				C46297240FE1865C00C84434 /* UIImage+extensions.h in Headers */,
 				C4FEBDBE10084B36006978F7 /* MacroUtilities.h in Headers */,
 				C4D222AC100C07B200E88C0B /* FJSFileManager.h in Headers */,
+				C466B4EA100E91EE00829882 /* FJSNetworkImageViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +591,7 @@
 				C419109B0FDF55C400D23A82 /* TextFieldEditingViewController.m in Sources */,
 				C46297250FE1865C00C84434 /* UIImage+extensions.m in Sources */,
 				C4D222AD100C07B200E88C0B /* FJSFileManager.m in Sources */,
+				C466B4EB100E91EE00829882 /* FJSNetworkImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,9 @@
 
 @interface FJSImageDownloader()
 
+@property(nonatomic,assign)BOOL isFetching;
+
+- (void)sendCachedPhoto;
 - (void)writeData;
 - (void)loadData;
 - (NSString *)filePath;
@@ -28,9 +31,11 @@
 @synthesize image;
 @synthesize delegate;
 @synthesize baseURL;
+@synthesize url;
 @synthesize cacheDirectoryPath;
 @synthesize cacheFileName;
 @synthesize cacheImages;
+@synthesize isFetching;
 @synthesize loadFromCache;
 
 
@@ -135,6 +140,13 @@
 
 - (void)fetchImageWithURL:(NSString*)aURL{
     
+    if(isFetching)
+        return;
+    
+    self.isFetching = YES;
+    
+    self.url = aURL;
+    
     self.image=nil;
     [self setResponseData:nil];
     
@@ -143,17 +155,17 @@
     if(self.image==nil){
         
         
-        NSURL *url; 
+        NSURL *theURL; 
         
         if(baseURL==nil)
-            url = [NSURL URLWithString:aURL];
+            theURL = [NSURL URLWithString:aURL];
         else
-            url = [NSURL URLWithString:[baseURL stringByAppendingString:aURL]];
+            theURL = [NSURL URLWithString:[baseURL stringByAppendingString:aURL]];
         
         
-        NSLog([url description]);
+        NSLog([theURL description]);
         
-        NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+        NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:theURL];
         
         [theRequest setHTTPMethod:@"GET"];
         
@@ -168,9 +180,17 @@
         
     } else{
         
-        [delegate didReceiveImage:self.image withError:nil];
+        [self performSelector:@selector(sendCachedPhoto) withObject:nil afterDelay:0.2];
 
     }
+}
+
+
+- (void)sendCachedPhoto{
+    
+    [delegate didReceiveImage:self.image withError:nil];
+
+    
 }
 
 
@@ -185,6 +205,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
 	NSString *failureMessage = [NSString stringWithFormat:@"Connection failed: %@", [error description]];
     NSLog(failureMessage);
+    self.isFetching = NO;
     [delegate didReceiveImage:nil withError:error];
 
 }
@@ -194,6 +215,7 @@
     //NSLog(@"DONE. Received Bytes: %d", [responseData length]);
     //NSLog([responseData description]);
     
+    self.isFetching = NO;
     self.image = [UIImage imageWithData:responseData];
 
     [self writeData];
@@ -213,7 +235,7 @@
 
 - (void)dealloc{
     
-    
+    self.url = nil;    
     self.image = nil;    
     self.cacheFileName = nil;    
     self.baseURL = nil;

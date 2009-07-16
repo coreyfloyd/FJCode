@@ -53,4 +53,5 @@ typedef enum  {
 @end
 
 //Additional dictionary Keys
-NSString *saveDateKey = @"SaveDate";
+extern NSString *const saveDateKey;
+

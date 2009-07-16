@@ -21,13 +21,15 @@
 	NSMutableData *responseData;
     UIImage *image;
     NSString *baseURL;
+    NSString *url;
     NSString *cacheDirectoryPath;
     NSString *cacheFileName;
     BOOL cacheImages;
     BOOL loadFromCache;
+    BOOL isFetching;
     
     id<FJSImageDownloaderDelegate> delegate;
-
+    
 }
 //accessable data 
 @property(nonatomic,retain)NSMutableData *responseData;
@@ -35,6 +37,8 @@
 
 //optional. will be concatinated with URL in fetch method
 @property(nonatomic,retain)NSString *baseURL;
+
+@property(nonatomic,retain)NSString *url;
 
 //where to store/load images
 @property(nonatomic,retain)NSString *cacheDirectoryPath;

@@ -90,6 +90,9 @@
 }
 
 
+//SMELL: this possibly is executed before the view is loaded, but probably not
+// if so, then self.view IS NOT the imageView
+
 - (id)init{
 	
 	if(self = [super init]){

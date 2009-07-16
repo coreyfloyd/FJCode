@@ -12,8 +12,16 @@
 @implementation FJSDownloader
 
 @synthesize responseData;
+@synthesize isFetching;
 @synthesize delegate;
+
+
 - (void)sendRequestwithURL:(NSString*)aURL{
+    
+    if(isFetching)
+        return;
+    
+    self.isFetching = YES;
     
     [self setResponseData:nil];
     
@@ -47,6 +55,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
 	NSString *failureMessage = [NSString stringWithFormat:@"Connection failed: %@", [error description]];
     NSLog(failureMessage);
+    self.isFetching = NO;
     [delegate didReceiveResponse:responseData withError:error];
     [self setResponseData:nil];
 
@@ -57,6 +66,7 @@
     
    // NSLog(@"DONE. Received Bytes: %d", [responseData length]);
 
+    self.isFetching=NO;
     [delegate didReceiveResponse:responseData withError:nil];
         
 }

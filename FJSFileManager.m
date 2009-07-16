@@ -10,6 +10,8 @@
 #import "NSString+extensions.h"
 
 
+NSString *const saveDateKey = @"SaveDate";
+
 @implementation FJSFileManager
 
 
@@ -17,7 +19,6 @@
 @synthesize folderName;
 @synthesize saveLocation;
 @synthesize dataCache;
-
 
 
 

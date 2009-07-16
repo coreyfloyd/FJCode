@@ -18,11 +18,14 @@
 @interface FJSDownloader : NSObject {
 	NSMutableData *responseData;
     
+    BOOL isFetching;
+    
     id<FJSDownloaderDelegate> delegate;
     
     
 }
 @property(nonatomic,retain)NSMutableData *responseData;
+@property(nonatomic,assign)BOOL isFetching;
 @property(nonatomic,assign)id<FJSDownloaderDelegate> delegate;
 
 - (void)sendRequestwithURL:(NSString*)aURL;
