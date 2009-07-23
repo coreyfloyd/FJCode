@@ -34,6 +34,7 @@
 
 
 - (void)fetch;
+- (void)setupDownloader;
 
 
 @end
@@ -43,6 +44,8 @@
 @protocol FJSNetworkImageViewControllerDelegate
 
 - (void)imageController:(FJSNetworkImageViewController*)controller didUpdateImageWithError:(NSError*)error;
+
+
 
 
 @end

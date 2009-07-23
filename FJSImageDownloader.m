@@ -38,6 +38,19 @@
 @synthesize isFetching;
 @synthesize loadFromCache;
 
+- (BOOL)imageIsCached{
+    
+    if(cacheFileName==nil)
+        return NO;
+    if(cacheDirectoryPath==nil)
+        return NO;
+    
+    
+    return [[NSFileManager defaultManager] fileExistsAtPath:[self filePath]];
+    
+    
+}
+
 
 - (void)writeData{
     
@@ -95,6 +108,7 @@
         return;
     
         
+    self.image=nil;
 
 	if ([[NSFileManager defaultManager] fileExistsAtPath:[self filePath]]) {
         
@@ -107,6 +121,14 @@
             
         }
     } 
+}
+
+
+- (UIImage*)loadImageFromCache{
+    
+    [self loadData];
+    return self.image;
+    
 }
 
 - (NSString *)filePath{

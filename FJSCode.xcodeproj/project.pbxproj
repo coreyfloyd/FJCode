@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C403FC7A100F866A00DCA31A /* SCListener.h in Headers */ = {isa = PBXBuildFile; fileRef = C403FC78100F866A00DCA31A /* SCListener.h */; };
+		C403FC7B100F866A00DCA31A /* SCListener.m in Sources */ = {isa = PBXBuildFile; fileRef = C403FC79100F866A00DCA31A /* SCListener.m */; };
+		C403FC80100F86A900DCA31A /* SoundEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = C403FC7E100F86A900DCA31A /* SoundEffect.h */; };
+		C403FC81100F86A900DCA31A /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = C403FC7F100F86A900DCA31A /* SoundEffect.m */; };
+		C403FCEA100FA10A00DCA31A /* ListenerController.h in Headers */ = {isa = PBXBuildFile; fileRef = C403FCE8100FA10A00DCA31A /* ListenerController.h */; };
+		C403FCEB100FA10A00DCA31A /* ListenerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C403FCE9100FA10A00DCA31A /* ListenerController.m */; };
 		C4049DB80FDDB3C3001693C1 /* FJSImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */; };
 		C4049DB90FDDB3C3001693C1 /* FJSImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4049DB70FDDB3C3001693C1 /* FJSImageDownloader.m */; };
 		C41910670FDF546600D23A82 /* FJSMultiSelectTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C41910650FDF546600D23A82 /* FJSMultiSelectTableViewCell.h */; };
@@ -100,6 +106,12 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* FJSCode_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCode_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* FJSCode-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FJSCode-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C403FC78100F866A00DCA31A /* SCListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCListener.h; sourceTree = "<group>"; };
+		C403FC79100F866A00DCA31A /* SCListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCListener.m; sourceTree = "<group>"; };
+		C403FC7E100F86A900DCA31A /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
+		C403FC7F100F86A900DCA31A /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
+		C403FCE8100FA10A00DCA31A /* ListenerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListenerController.h; sourceTree = "<group>"; };
+		C403FCE9100FA10A00DCA31A /* ListenerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListenerController.m; sourceTree = "<group>"; };
 		C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSImageDownloader.h; sourceTree = "<group>"; };
 		C4049DB70FDDB3C3001693C1 /* FJSImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSImageDownloader.m; sourceTree = "<group>"; };
 		C40A51640FFF27CD001D4CDE /* KBCollectionExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBCollectionExtensions.m; sourceTree = "<group>"; };
@@ -253,6 +265,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C403FC77100F865300DCA31A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				C403FC7E100F86A900DCA31A /* SoundEffect.h */,
+				C403FC7F100F86A900DCA31A /* SoundEffect.m */,
+				C403FC78100F866A00DCA31A /* SCListener.h */,
+				C403FC79100F866A00DCA31A /* SCListener.m */,
+				C403FCE8100FA10A00DCA31A /* ListenerController.h */,
+				C403FCE9100FA10A00DCA31A /* ListenerController.m */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
 		C4049DB50FDDB3B2001693C1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +356,7 @@
 		C461FE8E0FC5C07B0036595E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C403FC77100F865300DCA31A /* Audio */,
 				C4FEBDB810084B14006978F7 /* Touch */,
 				C4E59C230FDF15C7000785F0 /* JSON */,
 				C4049DB50FDDB3B2001693C1 /* Network */,
@@ -509,6 +535,9 @@
 				C4FEBDBE10084B36006978F7 /* MacroUtilities.h in Headers */,
 				C4D222AC100C07B200E88C0B /* FJSFileManager.h in Headers */,
 				C466B4EA100E91EE00829882 /* FJSNetworkImageViewController.h in Headers */,
+				C403FC7A100F866A00DCA31A /* SCListener.h in Headers */,
+				C403FC80100F86A900DCA31A /* SoundEffect.h in Headers */,
+				C403FCEA100FA10A00DCA31A /* ListenerController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +621,9 @@
 				C46297250FE1865C00C84434 /* UIImage+extensions.m in Sources */,
 				C4D222AD100C07B200E88C0B /* FJSFileManager.m in Sources */,
 				C466B4EB100E91EE00829882 /* FJSNetworkImageViewController.m in Sources */,
+				C403FC7B100F866A00DCA31A /* SCListener.m in Sources */,
+				C403FC81100F86A900DCA31A /* SoundEffect.m in Sources */,
+				C403FCEB100FA10A00DCA31A /* ListenerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

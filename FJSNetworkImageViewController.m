@@ -22,13 +22,20 @@
 
 - (void)fetch{
     
+    [self setupDownloader];
+    
+    [downloader fetchImageWithURL:imageURL];
+}
+
+- (void)setupDownloader{
+    
     if(downloader==nil)
         self.downloader = [[[FJSImageDownloader alloc] init] autorelease];
     
     self.imageLoaded=NO;
     [downloader setDelegate:self];
     [downloader setCacheImages:NO];
-
+    
     
     if(cacheDirectory!=nil){
         if(![cacheDirectory isEmpty]){
@@ -38,7 +45,7 @@
     }
     
     [downloader setCacheFileName:[imageURL lastPathComponent]];
-    [downloader fetchImageWithURL:imageURL];
+
 }
 
 

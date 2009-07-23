@@ -231,7 +231,6 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
             if (deltaX >= swipeLength && deltaY <= swipeVariance) { 
                 //horizontal swipe detected
                 isSwiped=YES;
-                [self cleanupTimers];
                 
                 
                 if([delegate respondsToSelector:@selector(wasSwipedHorizontally)])
@@ -242,7 +241,6 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
                      deltaX <= swipeVariance){ 
                 //vertical swipe detected
                 isSwiped=YES;
-                [self cleanupTimers];
                 
                 
                 if([delegate respondsToSelector:@selector(wasSwipedVertically)])
@@ -297,8 +295,6 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
                 [delegate wasTappedWithCount:[[touches anyObject] tapCount]];
             
         }
-        
-        if(!isSwiped){
             
             if(TouchAndHoldCounter > 0 || DoubleTapAndHoldCounter > 0){
                 
@@ -307,7 +303,6 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
             }
             
             TouchAndHoldCounter = 0;
-        }
         
         DoubleTapAndHoldCounter = 0;
         
@@ -317,8 +312,6 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
         } else {
             [touchPath removeAllObjects];
         }
-        
-        
         
         
         // do nothing

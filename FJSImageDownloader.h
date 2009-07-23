@@ -22,8 +22,10 @@
     UIImage *image;
     NSString *baseURL;
     NSString *url;
+    
     NSString *cacheDirectoryPath;
     NSString *cacheFileName;
+    
     BOOL cacheImages;
     BOOL loadFromCache;
     BOOL isFetching;
@@ -50,10 +52,17 @@
 @property(nonatomic,assign)BOOL cacheImages;
 @property(nonatomic,assign)BOOL loadFromCache;
 
-
+//recieve image loaded notifications
 @property(nonatomic,assign)id<FJSImageDownloaderDelegate> delegate;
 
 //if no base url, uses entire url
 - (void)fetchImageWithURL:(NSString*)aURL;
+
+//load image from cache directly. This occurs normally with the fetch method if the BOOL is set
+- (UIImage*)loadImageFromCache;
+
+//make sure cache directory and file name are set
+- (BOOL)imageIsCached;
+
 
 @end
