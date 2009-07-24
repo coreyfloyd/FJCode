@@ -22,7 +22,7 @@ NSString *const saveDateKey = @"SaveDate";
 
 
 
-- (BOOL)saveData:(NSDictionary*)data withError:(NSError*)error{
+- (BOOL)saveData:(NSDictionary*)data withError:(NSError**)error{
     
     BOOL didWrite = NO;
     
@@ -44,7 +44,7 @@ NSString *const saveDateKey = @"SaveDate";
     
     
 }
-- (NSDictionary*)loadDataWithError:(NSError*)error{
+- (NSDictionary*)loadDataWithError:(NSError**)error{
     
     [dataCache release];
     dataCache=nil;
@@ -62,7 +62,7 @@ NSString *const saveDateKey = @"SaveDate";
 }
 
 
-- (BOOL)deleteFileWithError:(NSError*)error{
+- (BOOL)deleteFileWithError:(NSError**)error{
     
     
     return [[NSFileManager defaultManager] removeItemAtPath:[self filePath] error:nil];
@@ -70,7 +70,7 @@ NSString *const saveDateKey = @"SaveDate";
     
 }
 
-- (BOOL)deleteFolderWithError:(NSError*)error{
+- (BOOL)deleteFolderWithError:(NSError**)error{
     
     
     return [[NSFileManager defaultManager] removeItemAtPath:[self folderPath] error:nil];
@@ -102,7 +102,7 @@ NSString *const saveDateKey = @"SaveDate";
     
 }
 
-- (BOOL)emptyFolderWithError:(NSError*)error{
+- (BOOL)emptyFolderWithError:(NSError**)error{
     BOOL answer = YES;
     
     BOOL isDirectory;
@@ -116,19 +116,19 @@ NSString *const saveDateKey = @"SaveDate";
             for (NSString *eachPath in files){
                 
                 if(![[NSFileManager defaultManager] removeItemAtPath:[[self folderPath] stringByAppendingPathComponent:eachPath] error:nil]){
-                    error = [NSError errorWithDomain:NSCocoaErrorDomain code:512 userInfo:nil];
+                    *error = [NSError errorWithDomain:NSCocoaErrorDomain code:512 userInfo:nil];
                     answer = NO;
                 }
                 
             }
         } else {
-            error = [NSError errorWithDomain:NSCocoaErrorDomain code:4 userInfo:nil];
+            *error = [NSError errorWithDomain:NSCocoaErrorDomain code:4 userInfo:nil];
             answer = NO;
         }
 
     }else{
         
-        error = [NSError errorWithDomain:NSCocoaErrorDomain code:4 userInfo:nil];
+        *error = [NSError errorWithDomain:NSCocoaErrorDomain code:4 userInfo:nil];
         answer = NO;
     }
     

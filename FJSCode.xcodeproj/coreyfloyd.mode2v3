@@ -265,17 +265,16 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>C44EAA961016DB3500C13AC8</string>
+						<string>C4FBB7D510194ECD00D1DC55</string>
 						<key>history</key>
 						<array>
 							<string>C44EAA901016DB3500C13AC8</string>
-							<string>C44EAA911016DB3500C13AC8</string>
+							<string>C44EAA961016DB3500C13AC8</string>
 						</array>
 						<key>prevStack</key>
 						<array>
 							<string>C44EAA921016DB3500C13AC8</string>
 							<string>C44EAA931016DB3500C13AC8</string>
-							<string>C44EAA941016DB3500C13AC8</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -287,11 +286,11 @@
 			<key>Geometry</key>
 			<dict>
 				<key>Frame</key>
-				<string>{{0, 20}, {901, 1006}}</string>
+				<string>{{0, 20}, {901, 1004}}</string>
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>15 126 901 1047 0 0 1920 1178 </string>
+				<string>15 133 901 1045 0 0 1920 1178 </string>
 			</dict>
 		</dict>
 	</array>
@@ -371,7 +370,7 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>30</integer>
+											<integer>34</integer>
 											<integer>27</integer>
 											<integer>1</integer>
 											<integer>0</integer>
@@ -538,8 +537,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C44EAA821016D90A00C13AC8</string>
-				<string>C44EAA831016D90A00C13AC8</string>
+				<string>C4FBB7D310194ECD00D1DC55</string>
+				<string>C4FBB7D410194ECD00D1DC55</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -557,7 +556,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>269933365.69684303</real>
+	<real>270094029.73168999</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
@@ -573,8 +572,9 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>/Users/coreyfloyd/Xcode/FJSCode/FJSCode.xcodeproj</string>
+		<string>C4FBB7D610194ECD00D1DC55</string>
 		<string>C44EAA841016D90A00C13AC8</string>
+		<string>/Users/coreyfloyd/Xcode/FJSCode/FJSCode.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>1550 182 369 517 0 0 1920 1178 </string>
@@ -735,7 +735,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NSDate+Helper.h</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -793,7 +793,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>C44EAA8A1016DB1E00C13AC8</string>
+				<string>C4FBB7D010194E9800D1DC55</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

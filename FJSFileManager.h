@@ -35,17 +35,17 @@ typedef enum  {
 @property(nonatomic,readonly)NSDictionary *dataCache;
 
 //save and load data
-- (BOOL)saveData:(NSDictionary*)data withError:(NSError*)error;
-- (NSDictionary*)loadDataWithError:(NSError*)error;
+- (BOOL)saveData:(NSDictionary*)data withError:(NSError**)error;
+- (NSDictionary*)loadDataWithError:(NSError**)error;
 
 //deleted file at path to fileName
-- (BOOL)deleteFileWithError:(NSError*)error;
+- (BOOL)deleteFileWithError:(NSError**)error;
 
 //create folder at path to folderName
 - (BOOL)createFolder;
 
 //delete contents of folderName
-- (BOOL)emptyFolderWithError:(NSError*)error;
+- (BOOL)emptyFolderWithError:(NSError**)error;
 
 - (NSString *)folderPath;
 - (NSString *)filePath;
