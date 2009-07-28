@@ -15,6 +15,8 @@
 - (BOOL)doesContainString:(NSString *)aString;
 - (NSRange)fullRange;
 - (NSString*)stringByDeletingLastCharacter;
+
+//also tests if string is a single space
 - (BOOL)isEmpty;
 
 

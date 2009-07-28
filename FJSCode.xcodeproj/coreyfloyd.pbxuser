@@ -31,6 +31,10 @@
 			C466B5A1100EB01700829882 /* FJSNetworkImageViewController.m:24 */,
 			C466B5A3100EB01A00829882 /* FJSNetworkImageViewController.m:53 */,
 			C403FD52100FAC5300DCA31A /* ListenerController.m:35 */,
+			C448751E101D4A9500149242 /* FJSJSONDownloader.m:43 */,
+			C4487520101D4A9600149242 /* FJSJSONDownloader.m:47 */,
+			C44876C5101E037600149242 /* TouchProcessor.m:144 */,
+			C44876C7101E037F00149242 /* TouchProcessor.m:283 */,
 		);
 		codeSenseManager = C461FE900FC5C07B0036595E /* Code sense */;
 		perUserDictionary = {
@@ -104,15 +108,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 270093888;
-			PBXWorkspaceStateSaveDate = 270093888;
-		};
-		perUserProjectItems = {
-			C44EAA901016DB3500C13AC8 /* PBXTextBookmark */ = C44EAA901016DB3500C13AC8 /* PBXTextBookmark */;
-			C44EAA921016DB3500C13AC8 /* PBXTextBookmark */ = C44EAA921016DB3500C13AC8 /* PBXTextBookmark */;
-			C44EAA931016DB3500C13AC8 /* PBXTextBookmark */ = C44EAA931016DB3500C13AC8 /* PBXTextBookmark */;
-			C44EAA961016DB3500C13AC8 /* PBXTextBookmark */ = C44EAA961016DB3500C13AC8 /* PBXTextBookmark */;
-			C4FBB7D510194ECD00D1DC55 /* PBXTextBookmark */ = C4FBB7D510194ECD00D1DC55 /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 270405499;
+			PBXWorkspaceStateSaveDate = 270405499;
 		};
 		sourceControlManager = C461FE8F0FC5C07B0036595E /* Source Control */;
 		userBuildSettings = {
@@ -159,9 +156,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 35;
-		location = iBalloon;
-		modificationTime = 269464765.873118;
-		state = 1;
+		modificationTime = 270274470.3137549;
+		state = 0;
 	};
 	C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */ = {
 		uiCtxt = {
@@ -242,6 +238,14 @@
 			sepNavVisRange = "{1730, 981}";
 		};
 	};
+	C41AFD32101E0F910095F37D /* VisualFeedbackHiddenButton.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {714, 972}}";
+			sepNavSelRange = "{655, 0}";
+			sepNavVisRange = "{0, 1045}";
+			sepNavWindowFrame = "{{15, 73}, {773, 1100}}";
+		};
+	};
 	C43FAB660FCC424000EB4F92 /* IFActionToolbar.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {700, 3416}}";
@@ -285,45 +289,120 @@
 			sepNavWindowFrame = "{{15, -1}, {642, 774}}";
 		};
 	};
-	C44EAA901016DB3500C13AC8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C461FE910FC5C0980036595E /* NSDate+Helper.h */;
-		name = "NSDate+Helper.h: 30";
-		rLen = 4;
-		rLoc = 763;
-		rType = 0;
-		vrLen = 1042;
-		vrLoc = 0;
+	C4487167101BBC2900149242 /* IFLinkCellController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {744, 975}}";
+			sepNavSelRange = "{567, 123}";
+			sepNavVisRange = "{0, 696}";
+		};
 	};
-	C44EAA921016DB3500C13AC8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C461FE910FC5C0980036595E /* NSDate+Helper.h */;
-		name = "NSDate+Helper.h: 35";
-		rLen = 0;
-		rLoc = 932;
-		rType = 0;
-		vrLen = 1042;
-		vrLoc = 0;
+	C4487168101BBC2900149242 /* IFLinkCellController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1032, 1288}}";
+			sepNavSelRange = "{1184, 0}";
+			sepNavVisRange = "{514, 1745}";
+			sepNavWindowFrame = "{{10, 75}, {720, 1103}}";
+		};
 	};
-	C44EAA931016DB3500C13AC8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C461FE920FC5C0980036595E /* NSDate+Helper.m */;
-		name = "NSDate+Helper.m: 272";
-		rLen = 0;
-		rLoc = 8611;
-		rType = 0;
-		vrLen = 1862;
-		vrLoc = 6753;
+	C448716B101BBC2900149242 /* IFSwitchCellController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {693, 980}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 602}";
+			sepNavWindowFrame = "{{15, 65}, {752, 1108}}";
+		};
 	};
-	C44EAA961016DB3500C13AC8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C461FE920FC5C0980036595E /* NSDate+Helper.m */;
-		name = "NSDate+Helper.m: 230";
-		rLen = 0;
-		rLoc = 7187;
-		rType = 0;
-		vrLen = 1782;
-		vrLoc = 6829;
+	C4487234101C000100149242 /* FJSLinkCellController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {716, 980}}";
+			sepNavSelRange = "{384, 0}";
+			sepNavVisRange = "{0, 384}";
+			sepNavWindowFrame = "{{856, 70}, {775, 1108}}";
+		};
+	};
+	C44872D8101C1A7800149242 /* IFTextCellController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {864, 977}}";
+			sepNavSelRange = "{470, 0}";
+			sepNavVisRange = "{0, 1599}";
+			sepNavWindowFrame = "{{721, 73}, {743, 1105}}";
+		};
+	};
+	C44872D9101C1A7800149242 /* IFTextCellController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {858, 2548}}";
+			sepNavSelRange = "{2746, 11}";
+			sepNavVisRange = "{1407, 2418}";
+			sepNavWindowFrame = "{{721, 73}, {743, 1105}}";
+		};
+	};
+	C448751E101D4A9500149242 /* FJSJSONDownloader.m:43 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */;
+		functionName = "-connection:didReceiveResponse:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 43;
+		location = HSS;
+		modificationTime = 270355126.119703;
+		state = 1;
+	};
+	C4487520101D4A9600149242 /* FJSJSONDownloader.m:47 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */;
+		functionName = "-connection:didReceiveData:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 47;
+		location = HSS;
+		modificationTime = 270355128.786464;
+		state = 1;
+	};
+	C44876C5101E037600149242 /* TouchProcessor.m:144 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */;
+		functionName = "-touchesBegan:withEvent:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 144;
+		location = HSS;
+		modificationTime = 270402422.304436;
+		state = 1;
+	};
+	C44876C7101E037F00149242 /* TouchProcessor.m:283 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */;
+		functionName = "-touchesEnded:withEvent:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 283;
+		location = HSS;
+		modificationTime = 270402431.616454;
+		state = 1;
 	};
 	C461FE8F0FC5C07B0036595E /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -338,16 +417,17 @@
 	};
 	C461FE910FC5C0980036595E /* NSDate+Helper.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {480, 602}}";
-			sepNavSelRange = "{1034, 0}";
-			sepNavVisRange = "{0, 168}";
+			sepNavIntBoundsRect = "{{0, 0}, {842, 973}}";
+			sepNavSelRange = "{341, 0}";
+			sepNavVisRange = "{0, 1036}";
+			sepNavWindowFrame = "{{15, 77}, {901, 1101}}";
 		};
 	};
 	C461FE920FC5C0980036595E /* NSDate+Helper.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {842, 3808}}";
+			sepNavIntBoundsRect = "{{0, 0}, {842, 3976}}";
 			sepNavSelRange = "{7187, 0}";
-			sepNavVisRange = "{6762, 1849}";
+			sepNavVisRange = "{6762, 1848}";
 			sepNavWindowFrame = "{{15, 75}, {901, 1103}}";
 		};
 	};
@@ -497,9 +577,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 24;
-		location = iBalloon;
-		modificationTime = 269464765.873104;
-		state = 1;
+		modificationTime = 270274470.299826;
+		state = 0;
 	};
 	C466B5A3100EB01A00829882 /* FJSNetworkImageViewController.m:53 */ = {
 		isa = PBXFileBreakpoint;
@@ -514,9 +593,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 53;
-		location = iBalloon;
-		modificationTime = 269464765.873112;
-		state = 1;
+		modificationTime = 270274470.305764;
+		state = 0;
 	};
 	C480026A0FFDC31E00E3EA15 /* FJSJSONDownloader.m:21 */ = {
 		isa = PBXFileBreakpoint;
@@ -531,9 +609,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 21;
-		location = iBalloon;
-		modificationTime = 269464765.873082;
-		state = 1;
+		modificationTime = 270274470.280196;
+		state = 0;
 	};
 	C48002990FFDC86200E3EA15 /* FJSJSONDownloader.m:51 */ = {
 		isa = PBXFileBreakpoint;
@@ -548,8 +625,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 51;
-		location = iBalloon;
-		modificationTime = 269464765.873088;
+		location = HSS;
+		modificationTime = 270355096.3976411;
 		state = 1;
 	};
 	C480029B0FFDC86500E3EA15 /* FJSJSONDownloader.m:58 */ = {
@@ -562,11 +639,11 @@
 		delayBeforeContinue = 0;
 		fileReference = C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */;
 		functionName = "-connectionDidFinishLoading:";
-		hitCount = 0;
+		hitCount = 1;
 		ignoreCount = 0;
 		lineNumber = 58;
-		location = iBalloon;
-		modificationTime = 269464765.873094;
+		location = HSS;
+		modificationTime = 270355132.867856;
 		state = 1;
 	};
 	C488B2420FD98431004A72A8 /* DummyClass.h */ = {
@@ -647,9 +724,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 194;
-		location = iBalloon;
-		modificationTime = 269464765.8730661;
-		state = 1;
+		modificationTime = 270274470.266768;
+		state = 0;
 	};
 	C4AC6C9D0FFC22D200D37504 /* FJSScrollViewController.m:222 */ = {
 		isa = PBXFileBreakpoint;
@@ -664,15 +740,15 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 222;
-		location = iBalloon;
-		modificationTime = 269464765.873075;
-		state = 1;
+		modificationTime = 270274470.274625;
+		state = 0;
 	};
 	C4D222AA100C07B200E88C0B /* FJSFileManager.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 812}}";
-			sepNavSelRange = "{466, 0}";
-			sepNavVisRange = "{24, 1179}";
+			sepNavIntBoundsRect = "{{0, 0}, {752, 975}}";
+			sepNavSelRange = "{387, 0}";
+			sepNavVisRange = "{0, 1377}";
+			sepNavWindowFrame = "{{15, 70}, {811, 1103}}";
 		};
 	};
 	C4D222AB100C07B200E88C0B /* FJSFileManager.m */ = {
@@ -695,9 +771,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 67;
-		location = iBalloon;
-		modificationTime = 269464765.873046;
-		state = 1;
+		modificationTime = 270274470.2603;
+		state = 0;
 	};
 	C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */ = {
 		uiCtxt = {
@@ -708,10 +783,10 @@
 	};
 	C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 1260}}";
-			sepNavSelRange = "{258, 0}";
-			sepNavVisRange = "{0, 1090}";
-			sepNavWindowFrame = "{{15, 11}, {1134, 762}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1075, 1260}}";
+			sepNavSelRange = "{1553, 0}";
+			sepNavVisRange = "{1090, 1108}";
+			sepNavWindowFrame = "{{218, 390}, {1134, 762}}";
 		};
 	};
 	C4E59C0B0FDF15BE000785F0 /* SBJsonBase.h */ = {
@@ -823,16 +898,6 @@
 			sepNavSelRange = "{322, 0}";
 			sepNavVisRange = "{0, 579}";
 		};
-	};
-	C4FBB7D510194ECD00D1DC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C461FE920FC5C0980036595E /* NSDate+Helper.m */;
-		name = "NSDate+Helper.m: 230";
-		rLen = 0;
-		rLoc = 7187;
-		rType = 0;
-		vrLen = 1849;
-		vrLoc = 6762;
 	};
 	C4FEBDBD10084B36006978F7 /* MacroUtilities.h */ = {
 		uiCtxt = {

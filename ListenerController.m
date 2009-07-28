@@ -23,9 +23,8 @@ static float kDefaultRefreshInterval = 0.25;
 - (void) dealloc{
     
     [self endMonitoringAudio];
-    
+    self.myListener = nil;
     self.refreshTimer = nil;    
-    
     [super dealloc];
 }
 

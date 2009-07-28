@@ -25,6 +25,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
+
+@optional
 //re-attach any subviews of the content view of a requed cell to the ivars of the controller
 //typically this is done through the use of tags
 - (void)attachOutletsToCell;

@@ -51,7 +51,7 @@
 	NSString *failureMessage = [NSString stringWithFormat:@"Connection failed: %@", [error description]];
     NSLog(failureMessage);
     [delegate didReceiveResponse:nil withError:error];
-
+    
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
@@ -59,7 +59,7 @@
     // NSLog(@"DONE. Received Bytes: %d", [responseData length]);
     self.responseString = [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] autorelease];
     
-    NSError *error;
+    NSError *error = nil;
     SBJSON *json = [[SBJSON new] autorelease];
     id data = nil;
     data = [json objectWithString:responseString error:&error];
@@ -72,7 +72,7 @@
     [self setResponseData:nil];
     [self setResponseString:nil];
     
-       
+    
 }
 
 - (void)dealloc{

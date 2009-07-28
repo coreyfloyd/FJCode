@@ -138,13 +138,11 @@ NSString *const saveDateKey = @"SaveDate";
 
 - (NSString *)folderPath{
     
-    NSArray *paths; 
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
     
     if(saveLocation==UserFolderCache)
         paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    else if(saveLocation==UserFolderDocuments)
-        paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    
+      
     NSString *filePath = [paths objectAtIndex:0]; 
     
     if(folderName!=nil){

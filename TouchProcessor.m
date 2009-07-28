@@ -162,8 +162,8 @@ CGSize CGSizeDistanceBetween2Points(CGPoint point1, CGPoint point2)
     }
     
     UITouch *touch = [touches anyObject];
-    UIView *theView = [touch view];
-    gestureStartPoint = [touch locationInView:theView];
+    UIView *aView = [touch view];
+    gestureStartPoint = [touch locationInView:aView];
     
     
     if(sendPositionUpdates){
