@@ -15,7 +15,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = "Distribution Beta";
 		activeSDKPreference = iphoneos3.0;
 		activeTarget = C461FEB20FC5C1510036595E /* FJSCodeDebug */;
 		addToTargets = (
@@ -35,6 +35,8 @@
 			C4487520101D4A9600149242 /* FJSJSONDownloader.m:47 */,
 			C44876C5101E037600149242 /* TouchProcessor.m:144 */,
 			C44876C7101E037F00149242 /* TouchProcessor.m:283 */,
+			C49D42451021332C00FF8BCC /* FJSGlossyButton.m:54 */,
+			C49D425B1021335B00FF8BCC /* FJSGlossyButton.m:91 */,
 		);
 		codeSenseManager = C461FE900FC5C07B0036595E /* Code sense */;
 		perUserDictionary = {
@@ -108,8 +110,26 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 270405499;
-			PBXWorkspaceStateSaveDate = 270405499;
+			PBXPerProjectTemplateStateSaveDate = 270615847;
+			PBXWorkspaceStateSaveDate = 270615847;
+		};
+		perUserProjectItems = {
+			C49D43D11022140D00FF8BCC /* PBXTextBookmark */ = C49D43D11022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43D21022140D00FF8BCC /* PBXTextBookmark */ = C49D43D21022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43D31022140D00FF8BCC /* PBXTextBookmark */ = C49D43D31022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43D41022140D00FF8BCC /* PBXTextBookmark */ = C49D43D41022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43D51022140D00FF8BCC /* PBXTextBookmark */ = C49D43D51022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43D61022140D00FF8BCC /* PBXTextBookmark */ = C49D43D61022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43D71022140D00FF8BCC /* PBXTextBookmark */ = C49D43D71022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43D81022140D00FF8BCC /* PBXTextBookmark */ = C49D43D81022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43D91022140D00FF8BCC /* PBXTextBookmark */ = C49D43D91022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43DA1022140D00FF8BCC /* PBXTextBookmark */ = C49D43DA1022140D00FF8BCC /* PBXTextBookmark */;
+			C49D43DB1022140D00FF8BCC /* PBXTextBookmark */ = C49D43DB1022140D00FF8BCC /* PBXTextBookmark */;
+			C49D44701022205D00FF8BCC /* PBXTextBookmark */ = C49D44701022205D00FF8BCC /* PBXTextBookmark */;
+			C49D44711022205D00FF8BCC /* PBXTextBookmark */ = C49D44711022205D00FF8BCC /* PBXTextBookmark */;
+			C49D44721022205D00FF8BCC /* PBXTextBookmark */ = C49D44721022205D00FF8BCC /* PBXTextBookmark */;
+			C49D44731022205D00FF8BCC /* PBXTextBookmark */ = C49D44731022205D00FF8BCC /* PBXTextBookmark */;
+			C49D44C2102224E000FF8BCC /* PBXTextBookmark */ = C49D44C2102224E000FF8BCC /* PBXTextBookmark */;
 		};
 		sourceControlManager = C461FE8F0FC5C07B0036595E /* Source Control */;
 		userBuildSettings = {
@@ -156,8 +176,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 35;
-		modificationTime = 270274470.3137549;
-		state = 0;
+		modificationTime = 270600455.857103;
+		state = 1;
 	};
 	C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */ = {
 		uiCtxt = {
@@ -177,9 +197,9 @@
 	};
 	C40A51640FFF27CD001D4CDE /* KBCollectionExtensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 3626}}";
-			sepNavSelRange = "{166, 0}";
-			sepNavVisRange = "{0, 673}";
+			sepNavIntBoundsRect = "{{0, 0}, {3966, 3248}}";
+			sepNavSelRange = "{4107, 0}";
+			sepNavVisRange = "{3304, 1730}";
 		};
 	};
 	C40A51650FFF27CD001D4CDE /* KBCollectionExtensions.h */ = {
@@ -346,11 +366,10 @@
 		delayBeforeContinue = 0;
 		fileReference = C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */;
 		functionName = "-connection:didReceiveResponse:";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 43;
-		location = HSS;
-		modificationTime = 270355126.119703;
+		modificationTime = 270600455.856835;
 		state = 1;
 	};
 	C4487520101D4A9600149242 /* FJSJSONDownloader.m:47 */ = {
@@ -363,11 +382,10 @@
 		delayBeforeContinue = 0;
 		fileReference = C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */;
 		functionName = "-connection:didReceiveData:";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 47;
-		location = HSS;
-		modificationTime = 270355128.786464;
+		modificationTime = 270600455.85687;
 		state = 1;
 	};
 	C44876C5101E037600149242 /* TouchProcessor.m:144 */ = {
@@ -383,8 +401,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 144;
-		location = HSS;
-		modificationTime = 270402422.304436;
+		modificationTime = 270600455.857075;
 		state = 1;
 	};
 	C44876C7101E037F00149242 /* TouchProcessor.m:283 */ = {
@@ -400,8 +417,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 283;
-		location = HSS;
-		modificationTime = 270402431.616454;
+		modificationTime = 270600455.8569;
 		state = 1;
 	};
 	C461FE8F0FC5C07B0036595E /* Source Control */ = {
@@ -461,17 +477,18 @@
 	};
 	C461FE990FC5C0980036595E /* UIColor+extensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {746, 4522}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{937, 1225}";
+			sepNavIntBoundsRect = "{{0, 0}, {722, 4606}}";
+			sepNavSelRange = "{242, 0}";
+			sepNavVisRange = "{0, 1148}";
+			sepNavWindowFrame = "{{15, 69}, {781, 1104}}";
 		};
 	};
 	C461FE9A0FC5C0980036595E /* UIColor+extensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1122, 4760}}";
-			sepNavSelRange = "{660, 0}";
-			sepNavVisRange = "{0, 4614}";
-			sepNavWindowFrame = "{{395, 84}, {805, 1092}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1122, 5418}}";
+			sepNavSelRange = "{677, 0}";
+			sepNavVisRange = "{72, 3222}";
+			sepNavWindowFrame = "{{15, 69}, {781, 1104}}";
 		};
 	};
 	C461FE9B0FC5C0980036595E /* NSString+extensions.h */ = {
@@ -577,8 +594,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 24;
-		modificationTime = 270274470.299826;
-		state = 0;
+		modificationTime = 270600455.856588;
+		state = 1;
 	};
 	C466B5A3100EB01A00829882 /* FJSNetworkImageViewController.m:53 */ = {
 		isa = PBXFileBreakpoint;
@@ -593,8 +610,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 53;
-		modificationTime = 270274470.305764;
-		state = 0;
+		modificationTime = 270600455.856595;
+		state = 1;
 	};
 	C480026A0FFDC31E00E3EA15 /* FJSJSONDownloader.m:21 */ = {
 		isa = PBXFileBreakpoint;
@@ -609,8 +626,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 21;
-		modificationTime = 270274470.280196;
-		state = 0;
+		modificationTime = 270600455.856579;
+		state = 1;
 	};
 	C48002990FFDC86200E3EA15 /* FJSJSONDownloader.m:51 */ = {
 		isa = PBXFileBreakpoint;
@@ -625,8 +642,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 51;
-		location = HSS;
-		modificationTime = 270355096.3976411;
+		modificationTime = 270600455.85701;
 		state = 1;
 	};
 	C480029B0FFDC86500E3EA15 /* FJSJSONDownloader.m:58 */ = {
@@ -639,11 +655,10 @@
 		delayBeforeContinue = 0;
 		fileReference = C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */;
 		functionName = "-connectionDidFinishLoading:";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 58;
-		location = HSS;
-		modificationTime = 270355132.867856;
+		modificationTime = 270600455.856671;
 		state = 1;
 	};
 	C488B2420FD98431004A72A8 /* DummyClass.h */ = {
@@ -680,6 +695,261 @@
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 258}";
 		};
+	};
+	C49D41AC102121CC00FF8BCC /* FJSGlossyButton.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = FJSGlossyButton.m;
+		path = /Users/coreyfloyd/Xcode/FJSCode/FJSGlossyButton.m;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {792, 1568}}";
+			sepNavSelRange = "{2945, 0}";
+			sepNavVisRange = "{464, 2180}";
+			sepNavWindowFrame = "{{512, 74}, {781, 1104}}";
+		};
+	};
+	C49D42451021332C00FF8BCC /* FJSGlossyButton.m:54 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = C49D41AC102121CC00FF8BCC /* FJSGlossyButton.m */;
+		functionName = "-observeValueForKeyPath:ofObject:change:context:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 54;
+		location = HSS;
+		modificationTime = 270611598.216183;
+		state = 2;
+	};
+	C49D425B1021335B00FF8BCC /* FJSGlossyButton.m:91 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = C49D41AC102121CC00FF8BCC /* FJSGlossyButton.m */;
+		functionName = "-initWithFrame:tintColor:text:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 91;
+		location = HSS;
+		modificationTime = 270611394.076891;
+		state = 1;
+	};
+	C49D434B1021454500FF8BCC /* AQGlassButton.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {722, 976}}";
+			sepNavSelRange = "{849, 2}";
+			sepNavVisRange = "{0, 1883}";
+			sepNavWindowFrame = "{{1126, 74}, {781, 1104}}";
+		};
+	};
+	C49D434C1021454500FF8BCC /* AQGlassButton.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {738, 3010}}";
+			sepNavSelRange = "{4497, 0}";
+			sepNavVisRange = "{3958, 1724}";
+			sepNavWindowFrame = "{{1126, 74}, {781, 1104}}";
+		};
+	};
+	C49D439510214AE700FF8BCC /* FJSSegmentButton.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {722, 976}}";
+			sepNavSelRange = "{149, 0}";
+			sepNavVisRange = "{0, 794}";
+			sepNavWindowFrame = "{{701, 74}, {781, 1104}}";
+		};
+	};
+	C49D439610214AE700FF8BCC /* FJSSegmentButton.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {762, 1736}}";
+			sepNavSelRange = "{1915, 0}";
+			sepNavVisRange = "{1811, 441}";
+			sepNavWindowFrame = "{{205, 74}, {781, 1104}}";
+		};
+	};
+	C49D439B10220C8B00FF8BCC /* UIButton+Glossy.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {722, 976}}";
+			sepNavSelRange = "{580, 0}";
+			sepNavVisRange = "{0, 580}";
+			sepNavWindowFrame = "{{15, 69}, {781, 1104}}";
+		};
+	};
+	C49D439D10220C9200FF8BCC /* UIButton+Glossy.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {786, 4830}}";
+			sepNavSelRange = "{9886, 0}";
+			sepNavVisRange = "{8297, 2518}";
+		};
+	};
+	C49D43D11022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */;
+		name = "FJSSegmentButton.h: 12";
+		rLen = 0;
+		rLoc = 271;
+		rType = 0;
+		vrLen = 224;
+		vrLoc = 0;
+	};
+	C49D43D21022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */;
+		name = "FJSSegmentButton.m: 50";
+		rLen = 0;
+		rLoc = 3048;
+		rType = 0;
+		vrLen = 1865;
+		vrLoc = 0;
+	};
+	C49D43D31022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */;
+		name = "FJSSegmentButton.h: 12";
+		rLen = 0;
+		rLoc = 271;
+		rType = 0;
+		vrLen = 224;
+		vrLoc = 0;
+	};
+	C49D43D41022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */;
+		name = "FJSSegmentButton.m: 50";
+		rLen = 0;
+		rLoc = 3048;
+		rType = 0;
+		vrLen = 1865;
+		vrLoc = 0;
+	};
+	C49D43D51022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */;
+		name = "FJSSegmentButton.h: 14";
+		rLen = 151;
+		rLoc = 223;
+		rType = 0;
+		vrLen = 671;
+		vrLoc = 0;
+	};
+	C49D43D61022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */;
+		name = "FJSSegmentButton.m: 33";
+		rLen = 0;
+		rLoc = 2522;
+		rType = 0;
+		vrLen = 1998;
+		vrLoc = 0;
+	};
+	C49D43D71022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */;
+		name = "FJSSegmentButton.h: 18";
+		rLen = 0;
+		rLoc = 329;
+		rType = 0;
+		vrLen = 721;
+		vrLoc = 0;
+	};
+	C49D43D81022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */;
+		name = "FJSSegmentButton.m: 72";
+		rLen = 0;
+		rLoc = 2521;
+		rType = 0;
+		vrLen = 1654;
+		vrLoc = 0;
+	};
+	C49D43D91022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */;
+		name = "FJSSegmentButton.h: 23";
+		rLen = 0;
+		rLoc = 442;
+		rType = 0;
+		vrLen = 721;
+		vrLoc = 0;
+	};
+	C49D43DA1022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */;
+		name = "FJSSegmentButton.m: 77";
+		rLen = 0;
+		rLoc = 2521;
+		rType = 0;
+		vrLen = 1638;
+		vrLoc = 38;
+	};
+	C49D43DB1022140D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */;
+		name = "FJSSegmentButton.h: 8";
+		rLen = 0;
+		rLoc = 149;
+		rType = 0;
+		vrLen = 746;
+		vrLoc = 0;
+	};
+	C49D44701022205D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */;
+		name = "FJSSegmentButton.h: 8";
+		rLen = 0;
+		rLoc = 149;
+		rType = 0;
+		vrLen = 794;
+		vrLoc = 0;
+	};
+	C49D44711022205D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */;
+		name = "FJSSegmentButton.m: 87";
+		rLen = 0;
+		rLoc = 2792;
+		rType = 0;
+		vrLen = 2388;
+		vrLoc = 870;
+	};
+	C49D44721022205D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */;
+		name = "FJSSegmentButton.m: 87";
+		rLen = 0;
+		rLoc = 2792;
+		rType = 0;
+		vrLen = 2388;
+		vrLoc = 870;
+	};
+	C49D44731022205D00FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */;
+		name = "FJSSegmentButton.h: 8";
+		rLen = 0;
+		rLoc = 149;
+		rType = 0;
+		vrLen = 794;
+		vrLoc = 0;
+	};
+	C49D44C2102224E000FF8BCC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */;
+		name = "FJSSegmentButton.m: 95";
+		rLen = 0;
+		rLoc = 3048;
+		rType = 0;
+		vrLen = 2519;
+		vrLoc = 773;
 	};
 	C4A189730FCF5DB200E70A29 /* MyCLController.h */ = {
 		uiCtxt = {
@@ -724,8 +994,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 194;
-		modificationTime = 270274470.266768;
-		state = 0;
+		modificationTime = 270600455.856352;
+		state = 1;
 	};
 	C4AC6C9D0FFC22D200D37504 /* FJSScrollViewController.m:222 */ = {
 		isa = PBXFileBreakpoint;
@@ -740,8 +1010,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 222;
-		modificationTime = 270274470.274625;
-		state = 0;
+		modificationTime = 270600455.85661;
+		state = 1;
 	};
 	C4D222AA100C07B200E88C0B /* FJSFileManager.h */ = {
 		uiCtxt = {
@@ -771,8 +1041,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 67;
-		modificationTime = 270274470.2603;
-		state = 0;
+		modificationTime = 270600455.856664;
+		state = 1;
 	};
 	C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */ = {
 		uiCtxt = {

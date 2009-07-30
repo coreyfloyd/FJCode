@@ -96,6 +96,12 @@
 		C488B2C10FD9926F004A72A8 /* FJSCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B2C00FD9926F004A72A8 /* FJSCellDataSource.m */; };
 		C488B3830FD9A133004A72A8 /* FJSGenericTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = C488B3810FD9A133004A72A8 /* FJSGenericTableViewDataSource.h */; };
 		C488B3840FD9A133004A72A8 /* FJSGenericTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B3820FD9A133004A72A8 /* FJSGenericTableViewDataSource.m */; };
+		C49D434D1021454500FF8BCC /* AQGlassButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C49D434B1021454500FF8BCC /* AQGlassButton.h */; };
+		C49D434E1021454500FF8BCC /* AQGlassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D434C1021454500FF8BCC /* AQGlassButton.m */; };
+		C49D439710214AE700FF8BCC /* FJSSegmentButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */; };
+		C49D439810214AE700FF8BCC /* FJSSegmentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */; };
+		C49D439C10220C8B00FF8BCC /* UIButton+Glossy.h in Headers */ = {isa = PBXBuildFile; fileRef = C49D439B10220C8B00FF8BCC /* UIButton+Glossy.h */; };
+		C49D439E10220C9200FF8BCC /* UIButton+Glossy.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D439D10220C9200FF8BCC /* UIButton+Glossy.m */; };
 		C4A189750FCF5DB200E70A29 /* MyCLController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A189730FCF5DB200E70A29 /* MyCLController.h */; };
 		C4A189760FCF5DB200E70A29 /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A189740FCF5DB200E70A29 /* MyCLController.m */; };
 		C4AC6C2A0FFC209100D37504 /* FJSScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE700FC8D0F000F6AD69 /* FJSScrollViewController.h */; };
@@ -231,6 +237,12 @@
 		C488B2C00FD9926F004A72A8 /* FJSCellDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSCellDataSource.m; sourceTree = "<group>"; };
 		C488B3810FD9A133004A72A8 /* FJSGenericTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSGenericTableViewDataSource.h; sourceTree = "<group>"; };
 		C488B3820FD9A133004A72A8 /* FJSGenericTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSGenericTableViewDataSource.m; sourceTree = "<group>"; };
+		C49D434B1021454500FF8BCC /* AQGlassButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGlassButton.h; sourceTree = "<group>"; };
+		C49D434C1021454500FF8BCC /* AQGlassButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGlassButton.m; sourceTree = "<group>"; };
+		C49D439510214AE700FF8BCC /* FJSSegmentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSSegmentButton.h; sourceTree = "<group>"; };
+		C49D439610214AE700FF8BCC /* FJSSegmentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSSegmentButton.m; sourceTree = "<group>"; };
+		C49D439B10220C8B00FF8BCC /* UIButton+Glossy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Glossy.h"; sourceTree = "<group>"; };
+		C49D439D10220C9200FF8BCC /* UIButton+Glossy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Glossy.m"; sourceTree = "<group>"; };
 		C4A189730FCF5DB200E70A29 /* MyCLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCLController.h; sourceTree = "<group>"; };
 		C4A189740FCF5DB200E70A29 /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCLController.m; sourceTree = "<group>"; };
 		C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchProcessor.h; sourceTree = "<group>"; };
@@ -494,6 +506,7 @@
 				C419108B0FDF55A600D23A82 /* Table Views LaMarche */,
 				C43FAB610FCC422000EB4F92 /* Bars */,
 				C4F6D0090FCA533900F6AD69 /* Categories */,
+				C49D41AA102121A500FF8BCC /* Buttons */,
 				C4F6D0080FCA532200F6AD69 /* Views */,
 				C4F6D0070FCA530300F6AD69 /* View Controllers */,
 				C4F6CE6F0FC8D0F000F6AD69 /* FJSScrollView */,
@@ -506,6 +519,19 @@
 				1D3623250D0F684500981E51 /* FJSCodeAppDelegate.m */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		C49D41AA102121A500FF8BCC /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C49D439B10220C8B00FF8BCC /* UIButton+Glossy.h */,
+				C49D439D10220C9200FF8BCC /* UIButton+Glossy.m */,
+				C49D434B1021454500FF8BCC /* AQGlassButton.h */,
+				C49D434C1021454500FF8BCC /* AQGlassButton.m */,
+				C49D439510214AE700FF8BCC /* FJSSegmentButton.h */,
+				C49D439610214AE700FF8BCC /* FJSSegmentButton.m */,
+			);
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 		C4A189720FCF5D9D00E70A29 /* CoreLocation */ = {
@@ -683,6 +709,9 @@
 				C4487236101C000100149242 /* FJSLinkCellController.h in Headers */,
 				C44872DA101C1A7800149242 /* IFTextCellController.h in Headers */,
 				C41AFD33101E0F910095F37D /* VisualFeedbackHiddenButton.h in Headers */,
+				C49D434D1021454500FF8BCC /* AQGlassButton.h in Headers */,
+				C49D439710214AE700FF8BCC /* FJSSegmentButton.h in Headers */,
+				C49D439C10220C8B00FF8BCC /* UIButton+Glossy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +813,9 @@
 				C4487237101C000100149242 /* FJSLinkCellController.m in Sources */,
 				C44872DB101C1A7800149242 /* IFTextCellController.m in Sources */,
 				C41AFD34101E0F910095F37D /* VisualFeedbackHiddenButton.m in Sources */,
+				C49D434E1021454500FF8BCC /* AQGlassButton.m in Sources */,
+				C49D439810214AE700FF8BCC /* FJSSegmentButton.m in Sources */,
+				C49D439E10220C9200FF8BCC /* UIButton+Glossy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,37 @@
 
 @implementation UIColor(MoreColors)
 
+
++(UIColor*)colorWithString:(NSString*)aString{
+    
+    NSString* r;
+    NSString* g;
+    NSString* b;
+    
+    NSString *separatorString = @","; 
+    
+    NSScanner *aScanner = [NSScanner scannerWithString:aString]; 
+    
+    [aScanner scanUpToString:separatorString intoString:&r];
+    [aScanner scanString:separatorString intoString:NULL];
+    
+    [aScanner scanUpToString:separatorString intoString:&g];
+    [aScanner scanString:separatorString intoString:NULL];
+    
+    b = [[aScanner string] substringFromIndex:[aScanner scanLocation]];
+
+    float red = [r floatValue]/255.0f;
+    float green = [g floatValue]/255.0f;
+    float blue = [b floatValue]/255.0f;
+    
+    UIColor* aColor = [UIColor colorWithRed:red green:green blue:blue alpha:1]; 
+    
+    //vendColor(red, blue, green);
+    
+    return aColor;
+}
+
+
 +(id)tableCellNonEditableTextColor {vendColor(81, 102, 145);}
 
 +(UIColor *)randomColor
