@@ -96,6 +96,12 @@
 		C488B2C10FD9926F004A72A8 /* FJSCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B2C00FD9926F004A72A8 /* FJSCellDataSource.m */; };
 		C488B3830FD9A133004A72A8 /* FJSGenericTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = C488B3810FD9A133004A72A8 /* FJSGenericTableViewDataSource.h */; };
 		C488B3840FD9A133004A72A8 /* FJSGenericTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C488B3820FD9A133004A72A8 /* FJSGenericTableViewDataSource.m */; };
+		C489B6711032764500514567 /* NSArray+FJSCoreDataExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C489B66D1032764500514567 /* NSArray+FJSCoreDataExtensions.h */; };
+		C489B6731032764500514567 /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C489B66F1032764500514567 /* NSArray+FJSCoreDataExtensions.m */; };
+		C489B6A11032782B00514567 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C489B6A01032782B00514567 /* CoreData.framework */; };
+		C489B6B510327C2A00514567 /* NSManagedObject+FJSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C489B6B310327C2A00514567 /* NSManagedObject+FJSExtensions.m */; };
+		C489B73A1032A8C200514567 /* NSManagedObjectContext+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C489B7381032A8C200514567 /* NSManagedObjectContext+Extensions.h */; };
+		C489B73B1032A8C200514567 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C489B7391032A8C200514567 /* NSManagedObjectContext+Extensions.m */; };
 		C49D434D1021454500FF8BCC /* AQGlassButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C49D434B1021454500FF8BCC /* AQGlassButton.h */; };
 		C49D434E1021454500FF8BCC /* AQGlassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D434C1021454500FF8BCC /* AQGlassButton.m */; };
 		C49D439710214AE700FF8BCC /* FJSSegmentButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */; };
@@ -104,10 +110,17 @@
 		C49D439E10220C9200FF8BCC /* UIButton+Glossy.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D439D10220C9200FF8BCC /* UIButton+Glossy.m */; };
 		C4A189750FCF5DB200E70A29 /* MyCLController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A189730FCF5DB200E70A29 /* MyCLController.h */; };
 		C4A189760FCF5DB200E70A29 /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A189740FCF5DB200E70A29 /* MyCLController.m */; };
+		C4A4577A10337607002CBE45 /* FJSCoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A4577810337607002CBE45 /* FJSCoreDataStack.h */; };
+		C4A4577B10337607002CBE45 /* FJSCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A4577910337607002CBE45 /* FJSCoreDataStack.m */; };
+		C4A4596A10339C30002CBE45 /* NSManagedObject+FJSExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A4596910339C30002CBE45 /* NSManagedObject+FJSExtensions.h */; };
 		C4AC6C2A0FFC209100D37504 /* FJSScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE700FC8D0F000F6AD69 /* FJSScrollViewController.h */; };
 		C4AC6C2D0FFC20AA00D37504 /* FJSScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE710FC8D0F000F6AD69 /* FJSScrollViewController.m */; };
 		C4D222AC100C07B200E88C0B /* FJSFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C4D222AA100C07B200E88C0B /* FJSFileManager.h */; };
 		C4D222AD100C07B200E88C0B /* FJSFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D222AB100C07B200E88C0B /* FJSFileManager.m */; };
+		C4D94F3E103CA8CF00912142 /* FJSCoreDataTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4D94F3C103CA8CF00912142 /* FJSCoreDataTableViewController.h */; };
+		C4D94F3F103CA8CF00912142 /* FJSCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D94F3D103CA8CF00912142 /* FJSCoreDataTableViewController.m */; };
+		C4D94FEB103CC86100912142 /* FJSCoreDataCellController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4D94FE9103CC86100912142 /* FJSCoreDataCellController.h */; };
+		C4D94FEC103CC86100912142 /* FJSCoreDataCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D94FEA103CC86100912142 /* FJSCoreDataCellController.m */; };
 		C4E59B520FDF1065000785F0 /* FJSJSONDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */; };
 		C4E59B530FDF1065000785F0 /* FJSJSONDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */; };
 		C4E59C170FDF15BE000785F0 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E59C0B0FDF15BE000785F0 /* SBJsonBase.h */; };
@@ -237,6 +250,12 @@
 		C488B2C00FD9926F004A72A8 /* FJSCellDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSCellDataSource.m; sourceTree = "<group>"; };
 		C488B3810FD9A133004A72A8 /* FJSGenericTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSGenericTableViewDataSource.h; sourceTree = "<group>"; };
 		C488B3820FD9A133004A72A8 /* FJSGenericTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSGenericTableViewDataSource.m; sourceTree = "<group>"; };
+		C489B66D1032764500514567 /* NSArray+FJSCoreDataExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FJSCoreDataExtensions.h"; sourceTree = "<group>"; };
+		C489B66F1032764500514567 /* NSArray+FJSCoreDataExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FJSCoreDataExtensions.m"; sourceTree = "<group>"; };
+		C489B6A01032782B00514567 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = ../../../../../Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = FJSCODE_SRC; };
+		C489B6B310327C2A00514567 /* NSManagedObject+FJSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FJSExtensions.m"; sourceTree = "<group>"; };
+		C489B7381032A8C200514567 /* NSManagedObjectContext+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extensions.h"; sourceTree = "<group>"; };
+		C489B7391032A8C200514567 /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
 		C49D434B1021454500FF8BCC /* AQGlassButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGlassButton.h; sourceTree = "<group>"; };
 		C49D434C1021454500FF8BCC /* AQGlassButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGlassButton.m; sourceTree = "<group>"; };
 		C49D439510214AE700FF8BCC /* FJSSegmentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSSegmentButton.h; sourceTree = "<group>"; };
@@ -247,8 +266,15 @@
 		C4A189740FCF5DB200E70A29 /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCLController.m; sourceTree = "<group>"; };
 		C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchProcessor.h; sourceTree = "<group>"; };
 		C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchProcessor.m; sourceTree = "<group>"; };
+		C4A4577810337607002CBE45 /* FJSCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCoreDataStack.h; sourceTree = "<group>"; };
+		C4A4577910337607002CBE45 /* FJSCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSCoreDataStack.m; sourceTree = "<group>"; };
+		C4A4596910339C30002CBE45 /* NSManagedObject+FJSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FJSExtensions.h"; sourceTree = "<group>"; };
 		C4D222AA100C07B200E88C0B /* FJSFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSFileManager.h; sourceTree = "<group>"; };
 		C4D222AB100C07B200E88C0B /* FJSFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSFileManager.m; sourceTree = "<group>"; };
+		C4D94F3C103CA8CF00912142 /* FJSCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCoreDataTableViewController.h; sourceTree = "<group>"; };
+		C4D94F3D103CA8CF00912142 /* FJSCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSCoreDataTableViewController.m; sourceTree = "<group>"; };
+		C4D94FE9103CC86100912142 /* FJSCoreDataCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCoreDataCellController.h; sourceTree = "<group>"; };
+		C4D94FEA103CC86100912142 /* FJSCoreDataCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSCoreDataCellController.m; sourceTree = "<group>"; };
 		C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSJSONDownloader.h; sourceTree = "<group>"; };
 		C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSJSONDownloader.m; sourceTree = "<group>"; };
 		C4E59C0B0FDF15BE000785F0 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
@@ -285,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4FD3EB60FD242EB0084CFE3 /* CoreLocation.framework in Frameworks */,
+				C489B6A11032782B00514567 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +359,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C489B6A01032782B00514567 /* CoreData.framework */,
 				C4FD3EB50FD242EA0084CFE3 /* CoreLocation.framework */,
 				C461FEAA0FC5C1200036595E /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -357,6 +385,7 @@
 		C4049DB50FDDB3B2001693C1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C4E59C230FDF15C7000785F0 /* JSON */,
 				C4E59C260FDF1612000785F0 /* FJSDownloader.h */,
 				C4E59C270FDF1612000785F0 /* FJSDownloader.m */,
 				C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */,
@@ -493,9 +522,9 @@
 		C461FE8E0FC5C07B0036595E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C489B66C1032762E00514567 /* CoreData */,
 				C403FC77100F865300DCA31A /* Audio */,
 				C4FEBDB810084B14006978F7 /* Touch */,
-				C4E59C230FDF15C7000785F0 /* JSON */,
 				C4049DB50FDDB3B2001693C1 /* Network */,
 				C4D222AE100C091D00E88C0B /* Files */,
 				C4A189720FCF5D9D00E70A29 /* CoreLocation */,
@@ -505,7 +534,7 @@
 				C419106D0FDF54DF00D23A82 /* Multi Select Table */,
 				C419108B0FDF55A600D23A82 /* Table Views LaMarche */,
 				C43FAB610FCC422000EB4F92 /* Bars */,
-				C4F6D0090FCA533900F6AD69 /* Categories */,
+				C4F6D0090FCA533900F6AD69 /* Generic Categories */,
 				C49D41AA102121A500FF8BCC /* Buttons */,
 				C4F6D0080FCA532200F6AD69 /* Views */,
 				C4F6D0070FCA530300F6AD69 /* View Controllers */,
@@ -519,6 +548,17 @@
 				1D3623250D0F684500981E51 /* FJSCodeAppDelegate.m */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		C489B66C1032762E00514567 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C4A4577810337607002CBE45 /* FJSCoreDataStack.h */,
+				C4A4577910337607002CBE45 /* FJSCoreDataStack.m */,
+				C4D9508C103CE6A300912142 /* Categories */,
+				C4D9508D103CE6B600912142 /* Table View */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		C49D41AA102121A500FF8BCC /* Buttons */ = {
@@ -550,6 +590,30 @@
 				C4D222AB100C07B200E88C0B /* FJSFileManager.m */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		C4D9508C103CE6A300912142 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C489B66D1032764500514567 /* NSArray+FJSCoreDataExtensions.h */,
+				C489B66F1032764500514567 /* NSArray+FJSCoreDataExtensions.m */,
+				C4A4596910339C30002CBE45 /* NSManagedObject+FJSExtensions.h */,
+				C489B6B310327C2A00514567 /* NSManagedObject+FJSExtensions.m */,
+				C489B7381032A8C200514567 /* NSManagedObjectContext+Extensions.h */,
+				C489B7391032A8C200514567 /* NSManagedObjectContext+Extensions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		C4D9508D103CE6B600912142 /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				C4D94F3C103CA8CF00912142 /* FJSCoreDataTableViewController.h */,
+				C4D94F3D103CA8CF00912142 /* FJSCoreDataTableViewController.m */,
+				C4D94FE9103CC86100912142 /* FJSCoreDataCellController.h */,
+				C4D94FEA103CC86100912142 /* FJSCoreDataCellController.m */,
+			);
+			name = "Table View";
 			sourceTree = "<group>";
 		};
 		C4E59C230FDF15C7000785F0 /* JSON */ = {
@@ -612,7 +676,7 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		C4F6D0090FCA533900F6AD69 /* Categories */ = {
+		C4F6D0090FCA533900F6AD69 /* Generic Categories */ = {
 			isa = PBXGroup;
 			children = (
 				C40A51640FFF27CD001D4CDE /* KBCollectionExtensions.m */,
@@ -628,7 +692,7 @@
 				C46297220FE1865C00C84434 /* UIImage+extensions.h */,
 				C46297230FE1865C00C84434 /* UIImage+extensions.m */,
 			);
-			name = Categories;
+			name = "Generic Categories";
 			sourceTree = "<group>";
 		};
 		C4FEBDB810084B14006978F7 /* Touch */ = {
@@ -712,6 +776,12 @@
 				C49D434D1021454500FF8BCC /* AQGlassButton.h in Headers */,
 				C49D439710214AE700FF8BCC /* FJSSegmentButton.h in Headers */,
 				C49D439C10220C8B00FF8BCC /* UIButton+Glossy.h in Headers */,
+				C489B6711032764500514567 /* NSArray+FJSCoreDataExtensions.h in Headers */,
+				C489B73A1032A8C200514567 /* NSManagedObjectContext+Extensions.h in Headers */,
+				C4A4577A10337607002CBE45 /* FJSCoreDataStack.h in Headers */,
+				C4A4596A10339C30002CBE45 /* NSManagedObject+FJSExtensions.h in Headers */,
+				C4D94F3E103CA8CF00912142 /* FJSCoreDataTableViewController.h in Headers */,
+				C4D94FEB103CC86100912142 /* FJSCoreDataCellController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,6 +886,12 @@
 				C49D434E1021454500FF8BCC /* AQGlassButton.m in Sources */,
 				C49D439810214AE700FF8BCC /* FJSSegmentButton.m in Sources */,
 				C49D439E10220C9200FF8BCC /* UIButton+Glossy.m in Sources */,
+				C489B6731032764500514567 /* NSArray+FJSCoreDataExtensions.m in Sources */,
+				C489B6B510327C2A00514567 /* NSManagedObject+FJSExtensions.m in Sources */,
+				C489B73B1032A8C200514567 /* NSManagedObjectContext+Extensions.m in Sources */,
+				C4A4577B10337607002CBE45 /* FJSCoreDataStack.m in Sources */,
+				C4D94F3F103CA8CF00912142 /* FJSCoreDataTableViewController.m in Sources */,
+				C4D94FEC103CC86100912142 /* FJSCoreDataCellController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,7 +909,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.0;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -848,7 +924,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.0;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};
@@ -863,7 +939,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.0;
+				SDKROOT = iphoneos3.0;
 			};
 			name = "Distribution Beta";
 		};
@@ -882,6 +958,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				PRODUCT_NAME = FJSCodeDebug;
+				SDKROOT = iphoneos3.0;
 				ZERO_LINK = NO;
 			};
 			name = "Distribution Beta";
@@ -897,7 +974,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.0;
+				SDKROOT = iphoneos3.0;
 			};
 			name = "Release from debug";
 		};
@@ -916,6 +993,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				PRODUCT_NAME = FJSCodeDebug;
+				SDKROOT = iphoneos3.0;
 			};
 			name = "Release from debug";
 		};
@@ -935,6 +1013,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				PRODUCT_NAME = FJSCodeDebug;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -953,6 +1032,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				PRODUCT_NAME = FJSCodeDebug;
+				SDKROOT = iphoneos3.0;
 				ZERO_LINK = NO;
 			};
 			name = Release;

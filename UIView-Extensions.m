@@ -10,6 +10,50 @@
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
 
+
+@implementation UIView (points)
+
+-(CGPoint)bottomCenter{
+    
+    return CGPointMake(self.bounds.size.width/2, self.bounds.size.height); 
+}
+-(CGPoint)topCenter{
+    
+    return CGPointMake(self.bounds.size.width/2, self.bounds.origin.y); 
+}
+-(CGPoint)leftCenter{
+    
+    return CGPointMake(self.bounds.origin.x, self.bounds.size.height/2); 
+}
+-(CGPoint)rightCenter{
+    
+    return CGPointMake(self.bounds.size.width, self.bounds.size.height/2); 
+}
+-(CGPoint)upperRightCorner{
+    
+    return CGPointMake(self.bounds.size.width, self.bounds.origin.y); 
+}
+-(CGPoint)upperLeftCorner{
+        
+    return CGPointMake(self.bounds.origin.x, self.bounds.origin.y); 
+}
+-(CGPoint)lowerLeftCorner{
+    
+    return CGPointMake(self.bounds.origin.x, self.bounds.size.height); 
+}
+-(CGPoint)lowerRightCorner{
+    
+    return CGPointMake(self.bounds.size.width, self.bounds.size.height); 
+}
+
+
+
+@end
+
+
+
+
+
 @implementation UIView (animation)
 
 

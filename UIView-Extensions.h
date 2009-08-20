@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+//returns points relative to bounds
+@interface UIView (points)
+
+-(CGPoint)bottomCenter;
+-(CGPoint)topCenter;
+-(CGPoint)leftCenter;
+-(CGPoint)rightCenter;
+-(CGPoint)upperRightCorner;
+-(CGPoint)upperLeftCorner;
+-(CGPoint)lowerLeftCorner;
+-(CGPoint)lowerRightCorner;
+
+
+@end
+
+
+
 @interface UIView (animation)
 
 - (void)fadeInWithDelay:(CGFloat)delay duration:(CGFloat)duration;

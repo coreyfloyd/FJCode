@@ -7,9 +7,6 @@
 
 @interface UIColor(extensions)
 
-+(UIColor*)colorWithString:(NSString*)aString;
-
-
 +(id)tableCellNonEditableTextColor;
 
 +(UIColor *)randomColor;

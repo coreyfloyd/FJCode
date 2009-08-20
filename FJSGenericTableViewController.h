@@ -22,7 +22,6 @@
 
 	NSObject<FJSGenericTableViewDataSource> *model;
 }
-
 @property (nonatomic, retain)NSObject<FJSGenericTableViewDataSource> *model;
 
 - (void)updateAndReload;

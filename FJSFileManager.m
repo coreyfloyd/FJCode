@@ -116,19 +116,24 @@ NSString *const saveDateKey = @"SaveDate";
             for (NSString *eachPath in files){
                 
                 if(![[NSFileManager defaultManager] removeItemAtPath:[[self folderPath] stringByAppendingPathComponent:eachPath] error:nil]){
-                    *error = [NSError errorWithDomain:NSCocoaErrorDomain code:512 userInfo:nil];
+                    if (error != NULL){
+                        *error = [NSError errorWithDomain:NSCocoaErrorDomain code:512 userInfo:nil];
+                    }
                     answer = NO;
                 }
                 
             }
         } else {
-            *error = [NSError errorWithDomain:NSCocoaErrorDomain code:4 userInfo:nil];
+            if (error != NULL){
+                *error = [NSError errorWithDomain:NSCocoaErrorDomain code:4 userInfo:nil];
+            }
             answer = NO;
         }
 
     }else{
-        
-        *error = [NSError errorWithDomain:NSCocoaErrorDomain code:4 userInfo:nil];
+        if (error != NULL){
+            *error = [NSError errorWithDomain:NSCocoaErrorDomain code:4 userInfo:nil];
+        }
         answer = NO;
     }
     

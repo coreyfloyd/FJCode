@@ -11,11 +11,11 @@
 
 @protocol FJSGenericTableViewDataSource <NSObject>
 
-@property(nonatomic,retain)NSArray *data;
+@optional
+
+@property(nonatomic,retain)id data;
 
 - (void)updateData;
-
-@optional
 - (void)loadDataFromCache;
 
 @end
