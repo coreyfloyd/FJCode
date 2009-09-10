@@ -11,11 +11,18 @@
 
 @protocol FJSCoreDataCellController <NSObject>
 
+//set in cellForRowAtIndexPath:
 @property(nonatomic,assign)UITableViewCell *cell;
-@property(nonatomic,assign)NSFetchedResultsController *fetchedResultsController;
 @property(nonatomic,retain)NSIndexPath *cellIndexPath;
 
+//will be set by the TableViewController, use to fetch the cells content in refreshCell
+@property(nonatomic,assign)NSFetchedResultsController *fetchedResultsController;
+
+//update the conents of the cell
+//check to see if all properties are set before performing
 - (void)refreshCell;
+
+//initialize cell and call refreshCell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
@@ -23,7 +30,6 @@
 
 
 @end
-
 
 
 

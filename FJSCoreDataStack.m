@@ -8,12 +8,9 @@
 
 #import "FJSCoreDataStack.h"
 #import "NSString+extensions.h"
-#import "SynthesizeSingleton.h"
 
 
 @implementation FJSCoreDataStack
-
-SYNTHESIZE_SINGLETON_FOR_CLASS(FJSCoreDataStack)
 
 static NSString *kDefaultFileName = @"storage";
 

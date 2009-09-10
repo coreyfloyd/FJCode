@@ -17,15 +17,18 @@
     NSFetchedResultsController* fetchedResultsController;
     NSManagedObjectContext *managedObjectContext;
 }
+//Set the context or errors will ensue...
+@property(nonatomic,retain)NSManagedObjectContext *managedObjectContext;
 
+@property(nonatomic,retain)NSFetchedResultsController *fetchedResultsController;
 
-//You MUST overide the getter to configure the fetchedResultsController dependent upon state
-//be sure to set fetchedResultsController.delegate = self if you require add/remove support
-@property(nonatomic,retain, readonly)NSFetchedResultsController *fetchedResultsController;
+//You MUST overide this method to configure the fetchedResultsController dependent upon state
+- (void)configureFetchedResultsController;
 
 
 //You MUST overide this method to return a newly configured "empty" Cell Controller
 //It will be populated with with the proper model data before being displayed on screen.
+//must create a new UItableViewCell instance for the cellForRowAtIndexPath:
 //default returns nil
 - (id<FJSCoreDataCellController>)newCellControllerforIndexPath:(NSIndexPath*)indexPath;
 

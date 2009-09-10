@@ -7,13 +7,12 @@
 //
 
 #import "FJSCoreDataTableViewController.h"
-#import "FJSCoreDataStack.h"
 
 
 @interface FJSCoreDataTableViewController()
 
 @property(nonatomic,retain)NSMutableArray *cellControllers;
-@property(nonatomic,retain)NSManagedObjectContext *managedObjectContext;
+
 
 - (id<FJSCoreDataCellController>)cellControllerForIndexPath:(NSIndexPath*)indexPath;
 - (void)fetch;
@@ -23,18 +22,19 @@
 
 
 @implementation FJSCoreDataTableViewController
- 
+
 @synthesize cellControllers;
 @synthesize fetchedResultsController;
 @synthesize managedObjectContext;
 
 
+
 - (void)dealloc {
     /*
-    [[NSNotificationCenter defaultCenter] removeObserver:self 
-                                                    name:NSManagedObjectContextDidSaveNotification 
-                                                  object:self.managedObjectContext];
-    */
+     [[NSNotificationCenter defaultCenter] removeObserver:self 
+     name:NSManagedObjectContextDidSaveNotification 
+     object:self.managedObjectContext];
+     */
     self.managedObjectContext = nil;
     self.cellControllers = nil;
     [fetchedResultsController release];
@@ -48,12 +48,12 @@
     self.tableView = nil;
     
     /*
-    [[NSNotificationCenter defaultCenter] removeObserver:self 
-                                                    name:NSManagedObjectContextDidSaveNotification 
-                                                  object:self.managedObjectContext];
-    */
+     [[NSNotificationCenter defaultCenter] removeObserver:self 
+     name:NSManagedObjectContextDidSaveNotification 
+     object:self.managedObjectContext];
+     */
     [super viewDidUnload];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,15 +90,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    managedObjectContext = [[FJSCoreDataStack sharedFJSCoreDataStack] managedObjectContext];
-
     /*
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(handleSaveNotification:) 
-                                                 name:NSManagedObjectContextDidSaveNotification 
-                                               object:self.managedObjectContext];
-
+     
+     [[NSNotificationCenter defaultCenter] addObserver:self 
+     selector:@selector(handleSaveNotification:) 
+     name:NSManagedObjectContextDidSaveNotification 
+     object:self.managedObjectContext];
+     
      */
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -120,18 +118,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    NSInteger count = [[fetchedResultsController sections] count];
+    if(fetchedResultsController==nil)
+        return 0;
     
+    NSInteger count = [[fetchedResultsController sections] count];
+   
+    /*
 	if (count == 0) {
 		count = 1;
 	}
-	
+	*/
     return count;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if(fetchedResultsController==nil)
+        return 0;
     
     NSInteger numberOfRows = 0;
 	
@@ -145,8 +150,23 @@
 
 
 - (NSString *)tableView:(UITableView *)table titleForHeaderInSection:(NSInteger)section { 
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
-    return [NSString stringWithFormat:NSLocalizedString(@"%@", @"%@"), [sectionInfo name]];
+    
+    if(fetchedResultsController==nil)
+        return nil;
+    
+    NSString *title = nil;
+    
+    if ([[fetchedResultsController sections] count] > 0) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
+        title =  [NSString stringWithFormat:NSLocalizedString(@"%@", @"%@"), [sectionInfo name]];
+        
+        
+    }else {
+        
+        title = @"Empty";
+    }
+    
+    return title;
     
 }
 
@@ -216,12 +236,12 @@
 #pragma mark -
 #pragma mark Dragging
 
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-     
-          
- }
- 
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    
+    
+}
+
 
 
 /*
@@ -337,17 +357,17 @@
 
 //Uncomment to handle merging multiple contexts, also uncomment notification methods in viewDidLoad, etc...
 /*
-- (void)handleSaveNotification:(NSNotification *)aNotification {
-    
-    [managedObjectContext mergeChangesFromContextDidSaveNotification:aNotification];
-    [self fetch];
-}
-*/
+ - (void)handleSaveNotification:(NSNotification *)aNotification {
+ 
+ [managedObjectContext mergeChangesFromContextDidSaveNotification:aNotification];
+ [self fetch];
+ }
+ */
 
 - (void)refresh{
     self.cellControllers = nil;
-    [fetchedResultsController release];
-    fetchedResultsController = nil;
+    [self configureFetchedResultsController];
+    self.fetchedResultsController.delegate = self;
     [self fetch];
 }
 
@@ -358,45 +378,47 @@
     [self.tableView reloadData];
 }
 
-
-- (NSFetchedResultsController *)fetchedResultsController {
-        
+- (void)configureFetchedResultsController{
+    
+    if(self.managedObjectContext==nil)
+        return;
+    
+    self.fetchedResultsController = nil;
+    
     // Set up the fetched results controller if needed.
     if (fetchedResultsController == nil) {
         
         //example code on how to create fetchedResultsController
         
         /*
-        // Create the fetch request for the entity.
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        // Edit the entity name as appropriate.
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Recipe" inManagedObjectContext:managedObjectContext];
-        [fetchRequest setEntity:entity];
-        
-        // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        
-        [fetchRequest setSortDescriptors:sortDescriptors];
-        
-        // Edit the section name key path and cache name if appropriate.
-        // nil for section name key path means "no sections".
-        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
-        aFetchedResultsController.delegate = self;
-        self.fetchedResultsController = aFetchedResultsController;
-        
-        [aFetchedResultsController release];
-        [fetchRequest release];
-        [sortDescriptor release];
-        [sortDescriptors release];
+         // Create the fetch request for the entity.
+         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+         // Edit the entity name as appropriate.
+         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Recipe" inManagedObjectContext:managedObjectContext];
+         [fetchRequest setEntity:entity];
+         
+         // Edit the sort key as appropriate.
+         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+         
+         [fetchRequest setSortDescriptors:sortDescriptors];
+         
+         // Edit the section name key path and cache name if appropriate.
+         // nil for section name key path means "no sections".
+         NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
+         aFetchedResultsController.delegate = self;
+         self.fetchedResultsController = aFetchedResultsController;
+         
+         [aFetchedResultsController release];
+         [fetchRequest release];
+         [sortDescriptor release];
+         [sortDescriptors release];
          
          */
     }
 	
-	return fetchedResultsController;
-}   
-
-
+    
+}
 
 @end
 

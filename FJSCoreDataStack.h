@@ -23,8 +23,6 @@
     
     
 }
-+(FJSCoreDataStack*)sharedFJSCoreDataStack;
-
 
 //set sqlite db name, no file extension
 //default is "storage"
