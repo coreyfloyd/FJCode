@@ -1,15 +1,15 @@
 //
-//  IFTextCellController.m
-//  Thunderbird
+//  FJSTextCellController.m
+//  FJSCode
 //
-//	Created by Craig Hockenberry on 1/29/09.
-//	Copyright 2009 The Iconfactory. All rights reserved.
+//  Created by Corey Floyd on 10/29/09.
+//  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
-#import "IFTextCellController.h"
+#import "FJSTextCellController.h"
 #import	"IFControlTableViewCell.h"
 
-@implementation IFTextCellController
+@implementation FJSTextCellController
 
 @synthesize updateTarget, updateAction;
 
@@ -24,37 +24,12 @@
 @synthesize beginEditingAction;
 @synthesize beginEditingTarget;
 
+@synthesize editField;
 
 
 
+@synthesize editing;
 
-
-//
-// init
-//
-// Init method for the object.
-//
-- (id)initWithLabel:(NSString *)newLabel andPlaceholder:(NSString *)newPlaceholder atKey:(NSString *)newKey inModel:(id<IFCellModel>)newModel
-{
-	self = [super init];
-	if (self != nil)
-	{
-		label = [newLabel retain];
-		placeholder = [newPlaceholder retain];
-		key = [newKey retain];
-		model = [newModel retain];
-
-		keyboardType = UIKeyboardTypeAlphabet;
-        returnKey = UIReturnKeyDone;
-		autocapitalizationType = UITextAutocapitalizationTypeNone;
-		autocorrectionType = UITextAutocorrectionTypeNo;
-		secureTextEntry = NO;
-        adjustsFontSizeToWidth = NO;
-		indentationLevel = 0;
-        fontSize = 17.0;
-	}
-	return self;
-}
 
 //
 // dealloc
@@ -67,9 +42,40 @@
 	[placeholder release];
 	[key release];
 	[model release];
-	
+    self.editField = nil;
 	[super dealloc];
 }
+
+
+//
+// init
+//
+// Init method for the object.
+//
+- (id)initWithLabel:(NSString *)newLabel andPlaceholder:(NSString *)newPlaceholder atKey:(NSString *)newKey inModel:(id<IFCellModel>)newModel
+{
+	self = [super init];
+	if (self != nil)
+	{
+        self.editing = NO;
+        
+		label = [newLabel retain];
+		placeholder = [newPlaceholder retain];
+		key = [newKey retain];
+		model = [newModel retain];
+        
+		keyboardType = UIKeyboardTypeAlphabet;
+        returnKey = UIReturnKeyDone;
+		autocapitalizationType = UITextAutocapitalizationTypeNone;
+		autocorrectionType = UITextAutocorrectionTypeNo;
+		secureTextEntry = NO;
+        adjustsFontSizeToWidth = NO;
+		indentationLevel = 0;
+        fontSize = 17.0;
+	}
+	return self;
+}
+
 
 //
 // tableView:cellForRowAtIndexPath:
@@ -83,17 +89,17 @@
     IFControlTableViewCell *cell = (IFControlTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (cell == nil)
 	{
-		cell = [[[IFControlTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
+		//cell = [[[IFControlTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[[IFControlTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
+
     }
-	
+	    
     
-    
-    
-	cell.font = [UIFont boldSystemFontOfSize:fontSize];
-	cell.text = label;
+	//cell.font = [UIFont boldSystemFontOfSize:fontSize];
+	cell.textLabel.text = label;
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	cell.indentationLevel = indentationLevel;
-
+    
 	// NOTE: The documentation states that the indentation width is 10 "points". It's more like 20
 	// pixels and changing the property has no effect on the indentation. We'll use 20.0f here
 	// and cross our fingers that this doesn't screw things up in the future.
@@ -108,10 +114,10 @@
 	else
 	{
 		// use about half of the cell (this matches the metrics in the Settings app)
-
+        
 		viewWidth = 150.0f;
 	}
-		
+    
 	// add a text field to the cell
 	CGRect frame = CGRectMake(0.0f, 0.0f, viewWidth, 21.0f);
 	UITextField *textField = [[UITextField alloc] initWithFrame:frame];
@@ -131,9 +137,39 @@
     [textField setAdjustsFontSizeToFitWidth:adjustsFontSizeToWidth];
 	[textField setSecureTextEntry:secureTextEntry];
 	cell.view = textField;
+    self.editField = textField;
 	[textField release];
+    
+    if(self.editing){
+        
+        textField.alpha = 1.0;
+        textField.userInteractionEnabled = YES;
+
+        
+    }else {
+        textField.alpha = 0.0;
+        textField.userInteractionEnabled = NO;
+    }
+
 	
     return cell;
+}
+
+- (void)setEditing:(BOOL)flag{
+    
+    editing = flag;
+    
+    if(self.editing){
+        
+        self.editField.alpha = 1.0;
+        self.editField.userInteractionEnabled = YES;
+        
+        
+    }else {
+        
+        self.editField.alpha = 0.0;
+        self.editField.userInteractionEnabled = NO;
+    }
 }
 
 - (void)updateValue:(id)sender
@@ -157,7 +193,7 @@
 		// action is peformed after keyboard has had a chance to resign
 		[updateTarget performSelector:updateAction withObject:textField];
 	}
-
+    
 	return YES;
 }
 
@@ -181,5 +217,6 @@
 	
 	return YES;
 }
+
 
 @end

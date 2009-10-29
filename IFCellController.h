@@ -6,7 +6,7 @@
 //  Copyright 2008 Matt Gallagher. All rights reserved.
 //
 
-@protocol IFCellController
+@protocol IFCellController <NSObject>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 

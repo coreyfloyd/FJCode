@@ -130,6 +130,10 @@
 		C489B6B510327C2A00514567 /* NSManagedObject+FJSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C489B6B310327C2A00514567 /* NSManagedObject+FJSExtensions.m */; };
 		C489B73A1032A8C200514567 /* NSManagedObjectContext+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C489B7381032A8C200514567 /* NSManagedObjectContext+Extensions.h */; };
 		C489B73B1032A8C200514567 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C489B7391032A8C200514567 /* NSManagedObjectContext+Extensions.m */; };
+		C48FC4AD1099D2BA00B88E90 /* FJSTextCellController.h in Headers */ = {isa = PBXBuildFile; fileRef = C48FC4AB1099D2BA00B88E90 /* FJSTextCellController.h */; };
+		C48FC4AE1099D2BA00B88E90 /* FJSTextCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48FC4AC1099D2BA00B88E90 /* FJSTextCellController.m */; };
+		C48FC4AF1099D2BA00B88E90 /* FJSTextCellController.h in Headers */ = {isa = PBXBuildFile; fileRef = C48FC4AB1099D2BA00B88E90 /* FJSTextCellController.h */; };
+		C48FC4B01099D2BA00B88E90 /* FJSTextCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48FC4AC1099D2BA00B88E90 /* FJSTextCellController.m */; };
 		C49D434D1021454500FF8BCC /* AQGlassButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C49D434B1021454500FF8BCC /* AQGlassButton.h */; };
 		C49D434E1021454500FF8BCC /* AQGlassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D434C1021454500FF8BCC /* AQGlassButton.m */; };
 		C49D439710214AE700FF8BCC /* FJSSegmentButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C49D439510214AE700FF8BCC /* FJSSegmentButton.h */; };
@@ -535,6 +539,8 @@
 		C489B6B310327C2A00514567 /* NSManagedObject+FJSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FJSExtensions.m"; sourceTree = "<group>"; };
 		C489B7381032A8C200514567 /* NSManagedObjectContext+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extensions.h"; sourceTree = "<group>"; };
 		C489B7391032A8C200514567 /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
+		C48FC4AB1099D2BA00B88E90 /* FJSTextCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTextCellController.h; sourceTree = "<group>"; };
+		C48FC4AC1099D2BA00B88E90 /* FJSTextCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTextCellController.m; sourceTree = "<group>"; };
 		C49D434B1021454500FF8BCC /* AQGlassButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGlassButton.h; sourceTree = "<group>"; };
 		C49D434C1021454500FF8BCC /* AQGlassButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGlassButton.m; sourceTree = "<group>"; };
 		C49D439510214AE700FF8BCC /* FJSSegmentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSSegmentButton.h; sourceTree = "<group>"; };
@@ -819,21 +825,21 @@
 			children = (
 				C419108B0FDF55A600D23A82 /* Table Views LaMarche */,
 				C419106D0FDF54DF00D23A82 /* Multi Select Table */,
-				C4487150101BBB8000149242 /* Preference Table */,
+				C4487150101BBB8000149242 /* IFTableView */,
 				C468A5E6105AD6B900302D93 /* FJSTableViews */,
 				C419107F0FDF552C00D23A82 /* Old FJSTableViews */,
 			);
 			name = TableViews;
 			sourceTree = "<group>";
 		};
-		C4487150101BBB8000149242 /* Preference Table */ = {
+		C4487150101BBB8000149242 /* IFTableView */ = {
 			isa = PBXGroup;
 			children = (
 				C4487165101BBC0F00149242 /* Cell Controllers */,
 				C4487164101BBBF700149242 /* Models */,
 				C4487159101BBBCE00149242 /* Generic Files */,
 			);
-			name = "Preference Table";
+			name = IFTableView;
 			sourceTree = "<group>";
 		};
 		C4487159101BBBCE00149242 /* Generic Files */ = {
@@ -869,6 +875,8 @@
 				C4487235101C000100149242 /* FJSLinkCellController.m */,
 				C44872D8101C1A7800149242 /* IFTextCellController.h */,
 				C44872D9101C1A7800149242 /* IFTextCellController.m */,
+				C48FC4AB1099D2BA00B88E90 /* FJSTextCellController.h */,
+				C48FC4AC1099D2BA00B88E90 /* FJSTextCellController.m */,
 				C448716B101BBC2900149242 /* IFSwitchCellController.h */,
 				C448716C101BBC2900149242 /* IFSwitchCellController.m */,
 				C448716D101BBC2900149242 /* IFButtonCellController.h */,
@@ -1223,6 +1231,7 @@
 				C468A5F2105AD7D400302D93 /* DebugLog.h in Headers */,
 				C468A74E105B07C500302D93 /* IFTweetLabel.h in Headers */,
 				C4D47010108E110A0043B431 /* SlidingMessageViewController.h in Headers */,
+				C48FC4AF1099D2BA00B88E90 /* FJSTextCellController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1308,6 +1317,7 @@
 				C4A1A41D106C018A00AC2F9D /* IFTweetLabel.h in Headers */,
 				C4A1A7B8106C0BD100AC2F9D /* FJSImageDownloader.h in Headers */,
 				C4D47012108E110A0043B431 /* SlidingMessageViewController.h in Headers */,
+				C48FC4AD1099D2BA00B88E90 /* FJSTextCellController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1565,6 +1575,7 @@
 				C468A5F3105AD7D400302D93 /* DebugLog.m in Sources */,
 				C468A74F105B07C500302D93 /* IFTweetLabel.m in Sources */,
 				C4D47011108E110A0043B431 /* SlidingMessageViewController.m in Sources */,
+				C48FC4B01099D2BA00B88E90 /* FJSTextCellController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1647,6 +1658,7 @@
 				C4A1A466106C018A00AC2F9D /* IFTweetLabel.m in Sources */,
 				C4A1A7B9106C0BD200AC2F9D /* FJSImageDownloader.m in Sources */,
 				C4D47013108E110A0043B431 /* SlidingMessageViewController.m in Sources */,
+				C48FC4AE1099D2BA00B88E90 /* FJSTextCellController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
