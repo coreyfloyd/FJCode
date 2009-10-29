@@ -26,6 +26,7 @@
 @property(nonatomic,retain)UIFont *font;
 @property(nonatomic,assign)float fontSize;
 @property(nonatomic,retain)UIColor *fontColor;
+@property(nonatomic)BOOL enabled;
 
 - (void)addTarget:(id)target action:(SEL)action;
 - (void)drawText;

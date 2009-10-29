@@ -75,13 +75,8 @@
 // Releases the table group data (it will be recreated when next needed)
 //
 - (void)clearTableGroups{
-	[tableHeaders release];
-	tableHeaders = nil;
-	[tableFooters release];
-	tableFooters = nil;
-	
-	[tableGroups release];
-	tableGroups = nil;
+    
+        
 }
 
 //
@@ -362,7 +357,7 @@
     
 	self.model = nil;
     
-	[self clearTableGroups];
+	//[self clearTableGroups];
 	[super dealloc];
 }
 

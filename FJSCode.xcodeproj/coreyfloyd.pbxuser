@@ -1,38 +1,25 @@
 // !$*UTF8*$!
 {
-	1D3623240D0F684500981E51 /* FJSCodeAppDelegate.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {700, 420}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 333}";
-		};
-	};
-	1D3623250D0F684500981E51 /* FJSCodeAppDelegate.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {700, 420}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 487}";
-		};
-	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
-		activeSDKPreference = iphoneos3.0;
-		activeTarget = C461FEB20FC5C1510036595E /* FJSCodeDebug */;
+		activeSDKPreference = iphoneos3.1;
+		activeTarget = C4FCA293107146E9004DF747 /* All Libraries */;
 		addToTargets = (
 			C461FEB20FC5C1510036595E /* FJSCodeDebug */,
+			C4A1A3D0106C018A00AC2F9D /* UIKitCode */,
 		);
 		breakpoints = (
 			C4DF07580FF1485400EC7FAA /* FJSImageDownloader.m:67 */,
 			C4AC6C9B0FFC22D000D37504 /* FJSScrollViewController.m:194 */,
 			C4AC6C9D0FFC22D200D37504 /* FJSScrollViewController.m:222 */,
-			C480026A0FFDC31E00E3EA15 /* FJSJSONDownloader.m:21 */,
-			C48002990FFDC86200E3EA15 /* FJSJSONDownloader.m:51 */,
-			C480029B0FFDC86500E3EA15 /* FJSJSONDownloader.m:58 */,
+			C480026A0FFDC31E00E3EA15 /* FJSJSONDownloader.m:24 */,
+			C48002990FFDC86200E3EA15 /* FJSJSONDownloader.m:31 */,
+			C480029B0FFDC86500E3EA15 /* FJSJSONDownloader.m:43 */,
 			C466B5A1100EB01700829882 /* FJSNetworkImageViewController.m:24 */,
 			C466B5A3100EB01A00829882 /* FJSNetworkImageViewController.m:53 */,
 			C403FD52100FAC5300DCA31A /* ListenerController.m:35 */,
-			C448751E101D4A9500149242 /* FJSJSONDownloader.m:43 */,
-			C4487520101D4A9600149242 /* FJSJSONDownloader.m:47 */,
+			C448751E101D4A9500149242 /* FJSJSONDownloader.m:26 */,
+			C4487520101D4A9600149242 /* FJSJSONDownloader.m:26 */,
 			C44876C5101E037600149242 /* TouchProcessor.m:144 */,
 			C44876C7101E037F00149242 /* TouchProcessor.m:283 */,
 			C49D42451021332C00FF8BCC /* FJSGlossyButton.m:54 */,
@@ -54,12 +41,26 @@
 					PBXErrorsWarningsDataSource_LocationID,
 				);
 			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					556,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					142,
+					1372,
 					20,
 					48,
 					43,
@@ -81,7 +82,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					200,
-					506,
+					682,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXFindDataSource_MessageID,
@@ -93,7 +94,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					464,
+					628,
 					60,
 					20,
 					48,
@@ -110,28 +111,19 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 274233722;
-			PBXWorkspaceStateSaveDate = 274233722;
+			PBXPerProjectTemplateStateSaveDate = 278508839;
+			PBXWorkspaceStateSaveDate = 278508839;
 		};
 		perUserProjectItems = {
-			C48986201058755F00225250 /* PBXTextBookmark */ = C48986201058755F00225250 /* PBXTextBookmark */;
-			C48986211058755F00225250 /* PBXTextBookmark */ = C48986211058755F00225250 /* PBXTextBookmark */;
-			C489886E1058845900225250 /* PBXTextBookmark */ = C489886E1058845900225250 /* PBXTextBookmark */;
-			C489886F1058845900225250 /* PBXTextBookmark */ = C489886F1058845900225250 /* PBXTextBookmark */;
-			C48988701058845900225250 /* PBXTextBookmark */ = C48988701058845900225250 /* PBXTextBookmark */;
-			C48988711058845900225250 /* PBXTextBookmark */ = C48988711058845900225250 /* PBXTextBookmark */;
-			C48988721058845900225250 /* PBXTextBookmark */ = C48988721058845900225250 /* PBXTextBookmark */;
-			C48988731058845900225250 /* PBXTextBookmark */ = C48988731058845900225250 /* PBXTextBookmark */;
-			C48988741058845900225250 /* PBXTextBookmark */ = C48988741058845900225250 /* PBXTextBookmark */;
-			C48988751058845900225250 /* PBXTextBookmark */ = C48988751058845900225250 /* PBXTextBookmark */;
-			C48988761058845900225250 /* PBXTextBookmark */ = C48988761058845900225250 /* PBXTextBookmark */;
-			C4D71F22104F078A002F4E70 /* PBXTextBookmark */ = C4D71F22104F078A002F4E70 /* PBXTextBookmark */;
-			C4D7219210509E7A002F4E70 /* PBXTextBookmark */ = C4D7219210509E7A002F4E70 /* PBXTextBookmark */;
-			C4D7219310509E7A002F4E70 /* PBXTextBookmark */ = C4D7219310509E7A002F4E70 /* PBXTextBookmark */;
-			C4D722E81051B3F5002F4E70 /* PBXTextBookmark */ = C4D722E81051B3F5002F4E70 /* PBXTextBookmark */;
-			C4D722E91051B3F5002F4E70 /* PBXTextBookmark */ = C4D722E91051B3F5002F4E70 /* PBXTextBookmark */;
-			C4D722EA1051B3F5002F4E70 /* PBXTextBookmark */ = C4D722EA1051B3F5002F4E70 /* PBXTextBookmark */;
-			C4E67F901051E02200556E28 /* PBXTextBookmark */ = C4E67F901051E02200556E28 /* PBXTextBookmark */;
+			C4A3C3201099B53C00979C16 /* PBXTextBookmark */ = C4A3C3201099B53C00979C16 /* PBXTextBookmark */;
+			C4A3C3221099B53C00979C16 /* PBXTextBookmark */ = C4A3C3221099B53C00979C16 /* PBXTextBookmark */;
+			C4A3C3271099B67800979C16 /* PBXTextBookmark */ = C4A3C3271099B67800979C16 /* PBXTextBookmark */;
+			C4D4705C108E15570043B431 /* PBXTextBookmark */ = C4D4705C108E15570043B431 /* PBXTextBookmark */;
+			C4D4705D108E15570043B431 /* PBXTextBookmark */ = C4D4705D108E15570043B431 /* PBXTextBookmark */;
+			C4D4705E108E15570043B431 /* PBXTextBookmark */ = C4D4705E108E15570043B431 /* PBXTextBookmark */;
+			C4D4705F108E15570043B431 /* PBXTextBookmark */ = C4D4705F108E15570043B431 /* PBXTextBookmark */;
+			C4D47065108E16100043B431 /* PBXTextBookmark */ = C4D47065108E16100043B431 /* PBXTextBookmark */;
+			C4D47066108E16100043B431 /* PBXTextBookmark */ = C4D47066108E16100043B431 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C461FE8F0FC5C07B0036595E /* Source Control */;
 		userBuildSettings = {
@@ -159,10 +151,17 @@
 	};
 	C403FC79100F866A00DCA31A /* SCListener.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1338, 2562}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1338, 2660}}";
 			sepNavSelRange = "{2216, 0}";
-			sepNavVisRange = "{0, 1277}";
+			sepNavVisRange = "{334, 943}";
 			sepNavWindowFrame = "{{846, 76}, {805, 1092}}";
+		};
+	};
+	C403FCE9100FA10A00DCA31A /* ListenerController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {631, 1344}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 971}";
 		};
 	};
 	C403FD52100FAC5300DCA31A /* ListenerController.m:35 */ = {
@@ -178,39 +177,38 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 35;
-		location = Booker;
-		modificationTime = 274247044.462117;
+		modificationTime = 278459165.825135;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {591, 966}}";
-			sepNavSelRange = "{1489, 18}";
-			sepNavVisRange = "{390, 1200}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 1050}}";
+			sepNavSelRange = "{576, 0}";
+			sepNavVisRange = "{0, 896}";
 			sepNavWindowFrame = "{{1096, 152}, {650, 767}}";
 		};
 	};
 	C4049DB70FDDB3C3001693C1 /* FJSImageDownloader.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {642, 3668}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 3920}}";
 			sepNavSelRange = "{6103, 0}";
-			sepNavVisRange = "{5163, 284}";
+			sepNavVisRange = "{4736, 1136}";
 			sepNavWindowFrame = "{{1096, 152}, {650, 767}}";
 		};
 	};
 	C40A51640FFF27CD001D4CDE /* KBCollectionExtensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {3966, 3248}}";
-			sepNavSelRange = "{4107, 0}";
-			sepNavVisRange = "{3304, 1730}";
+			sepNavIntBoundsRect = "{{0, 0}, {971, 3640}}";
+			sepNavSelRange = "{170, 0}";
+			sepNavVisRange = "{0, 879}";
 		};
 	};
 	C40A51650FFF27CD001D4CDE /* KBCollectionExtensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {690, 1540}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1141}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 1484}}";
+			sepNavSelRange = "{166, 0}";
+			sepNavVisRange = "{0, 1979}";
 		};
 	};
 	C41910650FDF546600D23A82 /* FJSMultiSelectTableViewCell.h */ = {
@@ -225,6 +223,13 @@
 			sepNavIntBoundsRect = "{{0, 0}, {700, 420}}";
 			sepNavSelRange = "{419, 0}";
 			sepNavVisRange = "{0, 547}";
+		};
+	};
+	C41910800FDF554E00D23A82 /* FJSTableViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 645}}";
+			sepNavSelRange = "{156, 0}";
+			sepNavVisRange = "{0, 1023}";
 		};
 	};
 	C41910810FDF554E00D23A82 /* FJSTableViewController.m */ = {
@@ -256,6 +261,13 @@
 			sepNavVisRange = "{0, 1135}";
 		};
 	};
+	C419108F0FDF55C400D23A82 /* AbstractGenericViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1108}";
+		};
+	};
 	C41910920FDF55C400D23A82 /* TextFieldEditingViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {924, 770}}";
@@ -278,6 +290,20 @@
 			sepNavWindowFrame = "{{15, 73}, {773, 1100}}";
 		};
 	};
+	C436D834104844DE004C0376 /* Reachability.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 1246}}";
+			sepNavSelRange = "{2763, 0}";
+			sepNavVisRange = "{2498, 1367}";
+		};
+	};
+	C436D835104844DE004C0376 /* Reachability.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {971, 3458}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2226}";
+		};
+	};
 	C43FAB660FCC424000EB4F92 /* IFActionToolbar.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {700, 3416}}";
@@ -294,7 +320,7 @@
 	};
 	C43FAC0B0FCC604800EB4F92 /* FJSGenericTableViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {758, 975}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 645}}";
 			sepNavSelRange = "{697, 0}";
 			sepNavVisRange = "{0, 729}";
 			sepNavWindowFrame = "{{687, 64}, {817, 1103}}";
@@ -302,9 +328,9 @@
 	};
 	C43FAC0C0FCC604800EB4F92 /* FJSGenericTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {870, 5208}}";
-			sepNavSelRange = "{681, 0}";
-			sepNavVisRange = "{0, 1895}";
+			sepNavIntBoundsRect = "{{0, 0}, {870, 5138}}";
+			sepNavSelRange = "{5082, 0}";
+			sepNavVisRange = "{4219, 1396}";
 			sepNavWindowFrame = "{{754, 75}, {817, 1103}}";
 		};
 	};
@@ -318,7 +344,7 @@
 	};
 	C43FAC110FCC63B200EB4F92 /* FJSCellDataSource.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {583, 646}}";
+			sepNavIntBoundsRect = "{{0, 0}, {631, 705}}";
 			sepNavSelRange = "{333, 0}";
 			sepNavVisRange = "{0, 540}";
 			sepNavWindowFrame = "{{883, 224}, {642, 774}}";
@@ -326,7 +352,7 @@
 	};
 	C4487151101BBBC900149242 /* IFGenericTableViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {704, 973}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 617}}";
 			sepNavSelRange = "{412, 0}";
 			sepNavVisRange = "{0, 652}";
 			sepNavWindowFrame = "{{15, 72}, {763, 1101}}";
@@ -334,15 +360,36 @@
 	};
 	C4487152101BBBC900149242 /* IFGenericTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {870, 3934}}";
+			sepNavIntBoundsRect = "{{0, 0}, {870, 3920}}";
 			sepNavSelRange = "{796, 0}";
-			sepNavVisRange = "{0, 1823}";
+			sepNavVisRange = "{0, 1405}";
 			sepNavWindowFrame = "{{15, 72}, {763, 1101}}";
+		};
+	};
+	C4487153101BBBC900149242 /* IFTextViewTableView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 617}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 775}";
+		};
+	};
+	C4487154101BBBC900149242 /* IFTextViewTableView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 1218}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1368}";
+		};
+	};
+	C4487166101BBC2900149242 /* IFCellController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 635}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 390}";
 		};
 	};
 	C4487167101BBC2900149242 /* IFLinkCellController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {744, 973}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 617}}";
 			sepNavSelRange = "{696, 0}";
 			sepNavVisRange = "{0, 696}";
 			sepNavWindowFrame = "{{796, 54}, {763, 1101}}";
@@ -350,9 +397,9 @@
 	};
 	C4487168101BBC2900149242 /* IFLinkCellController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1032, 1232}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1032, 1246}}";
 			sepNavSelRange = "{1184, 0}";
-			sepNavVisRange = "{469, 1790}";
+			sepNavVisRange = "{799, 1355}";
 			sepNavWindowFrame = "{{10, 75}, {720, 1103}}";
 		};
 	};
@@ -362,6 +409,13 @@
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 602}";
 			sepNavWindowFrame = "{{15, 65}, {752, 1108}}";
+		};
+	};
+	C448716C101BBC2900149242 /* IFSwitchCellController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 1456}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 743}";
 		};
 	};
 	C448716F101BBC2900149242 /* IFChoiceCellController.h */ = {
@@ -389,7 +443,7 @@
 	};
 	C4487175101BBC2900149242 /* IFNamedImage.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {704, 973}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 617}}";
 			sepNavSelRange = "{489, 0}";
 			sepNavVisRange = "{0, 489}";
 			sepNavWindowFrame = "{{15, 72}, {763, 1101}}";
@@ -404,7 +458,7 @@
 	};
 	C4487177101BBC2900149242 /* IFControlTableViewCell.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {704, 973}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 617}}";
 			sepNavSelRange = "{304, 0}";
 			sepNavVisRange = "{0, 304}";
 		};
@@ -419,7 +473,7 @@
 	};
 	C4487234101C000100149242 /* FJSLinkCellController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 618}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 617}}";
 			sepNavSelRange = "{384, 0}";
 			sepNavVisRange = "{0, 384}";
 			sepNavWindowFrame = "{{856, 70}, {775, 1108}}";
@@ -427,28 +481,28 @@
 	};
 	C4487235101C000100149242 /* FJSLinkCellController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {918, 980}}";
+			sepNavIntBoundsRect = "{{0, 0}, {918, 617}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 1073}";
 		};
 	};
 	C44872D8101C1A7800149242 /* IFTextCellController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 826}}";
-			sepNavSelRange = "{693, 0}";
-			sepNavVisRange = "{30, 1209}";
+			sepNavIntBoundsRect = "{{0, 0}, {864, 798}}";
+			sepNavSelRange = "{245, 8}";
+			sepNavVisRange = "{231, 1368}";
 			sepNavWindowFrame = "{{721, 73}, {743, 1105}}";
 		};
 	};
 	C44872D9101C1A7800149242 /* IFTextCellController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {858, 2576}}";
-			sepNavSelRange = "{2746, 11}";
-			sepNavVisRange = "{3777, 908}";
-			sepNavWindowFrame = "{{721, 73}, {743, 1105}}";
+			sepNavIntBoundsRect = "{{0, 0}, {858, 2492}}";
+			sepNavSelRange = "{164, 8}";
+			sepNavVisRange = "{0, 565}";
+			sepNavWindowFrame = "{{431, 74}, {743, 1104}}";
 		};
 	};
-	C448751E101D4A9500149242 /* FJSJSONDownloader.m:43 */ = {
+	C448751E101D4A9500149242 /* FJSJSONDownloader.m:26 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -460,13 +514,13 @@
 		functionName = "-connection:didReceiveResponse:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 43;
+		lineNumber = 26;
 		location = Booker;
-		modificationTime = 274247044.463423;
+		modificationTime = 278459165.825567;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	C4487520101D4A9600149242 /* FJSJSONDownloader.m:47 */ = {
+	C4487520101D4A9600149242 /* FJSJSONDownloader.m:26 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -478,9 +532,9 @@
 		functionName = "-connection:didReceiveData:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 47;
+		lineNumber = 26;
 		location = Booker;
-		modificationTime = 274247044.46474;
+		modificationTime = 278459165.826112;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -498,7 +552,7 @@
 		ignoreCount = 0;
 		lineNumber = 144;
 		location = Booker;
-		modificationTime = 274247044.466115;
+		modificationTime = 278459165.826746;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -516,7 +570,7 @@
 		ignoreCount = 0;
 		lineNumber = 283;
 		location = Booker;
-		modificationTime = 274247044.46761;
+		modificationTime = 278459165.827328;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -536,7 +590,7 @@
 	};
 	C461FE910FC5C0980036595E /* NSDate+Helper.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {842, 973}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
 			sepNavSelRange = "{341, 0}";
 			sepNavVisRange = "{0, 1036}";
 			sepNavWindowFrame = "{{15, 77}, {901, 1101}}";
@@ -544,99 +598,99 @@
 	};
 	C461FE920FC5C0980036595E /* NSDate+Helper.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {842, 3976}}";
-			sepNavSelRange = "{7187, 0}";
-			sepNavVisRange = "{6762, 1848}";
-			sepNavWindowFrame = "{{15, 75}, {901, 1103}}";
+			sepNavIntBoundsRect = "{{0, 0}, {842, 3682}}";
+			sepNavSelRange = "{5191, 0}";
+			sepNavVisRange = "{4439, 2445}";
+			sepNavWindowFrame = "{{624, 77}, {901, 1101}}";
 		};
 	};
 	C461FE930FC5C0980036595E /* FJView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {700, 346}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1550, 765}}";
+			sepNavSelRange = "{290, 0}";
 			sepNavVisRange = "{0, 290}";
 		};
 	};
 	C461FE940FC5C0980036595E /* FJView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {700, 430}}";
+			sepNavIntBoundsRect = "{{0, 0}, {700, 414}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 298}";
 		};
 	};
 	C461FE950FC5C0980036595E /* LoadingView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {462, 667}}";
-			sepNavSelRange = "{572, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1550, 765}}";
+			sepNavSelRange = "{142, 0}";
 			sepNavVisRange = "{0, 579}";
 			sepNavWindowFrame = "{{15, 73}, {763, 1101}}";
 		};
 	};
 	C461FE960FC5C0980036595E /* LoadingView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {704, 4214}}";
+			sepNavIntBoundsRect = "{{0, 0}, {700, 4578}}";
 			sepNavSelRange = "{2041, 0}";
-			sepNavVisRange = "{0, 1497}";
+			sepNavVisRange = "{914, 583}";
 		};
 	};
 	C461FE990FC5C0980036595E /* UIColor+extensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {722, 4564}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 4578}}";
 			sepNavSelRange = "{193, 0}";
-			sepNavVisRange = "{0, 1148}";
+			sepNavVisRange = "{0, 644}";
 			sepNavWindowFrame = "{{15, 69}, {781, 1104}}";
 		};
 	};
 	C461FE9A0FC5C0980036595E /* UIColor+extensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1122, 4774}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1122, 4788}}";
 			sepNavSelRange = "{596, 0}";
-			sepNavVisRange = "{0, 4615}";
+			sepNavVisRange = "{0, 2557}";
 			sepNavWindowFrame = "{{544, 66}, {781, 1104}}";
 		};
 	};
 	C461FE9B0FC5C0980036595E /* NSString+extensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {775, 973}}";
-			sepNavSelRange = "{381, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 573}}";
+			sepNavSelRange = "{200, 0}";
 			sepNavVisRange = "{0, 668}";
 			sepNavWindowFrame = "{{58, 75}, {834, 1101}}";
 		};
 	};
 	C461FE9C0FC5C0980036595E /* NSString+extensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {775, 2254}}";
-			sepNavSelRange = "{365, 0}";
-			sepNavVisRange = "{0, 1152}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 2282}}";
+			sepNavSelRange = "{370, 0}";
+			sepNavVisRange = "{206, 711}";
 			sepNavWindowFrame = "{{15, 70}, {817, 1103}}";
 		};
 	};
 	C461FE9D0FC5C0980036595E /* UIView-Extensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {712, 1372}}";
-			sepNavSelRange = "{413, 0}";
-			sepNavVisRange = "{0, 1664}";
+			sepNavIntBoundsRect = "{{0, 0}, {631, 1302}}";
+			sepNavSelRange = "{423, 0}";
+			sepNavVisRange = "{904, 1255}";
 		};
 	};
 	C461FE9E0FC5C0980036595E /* UIView-Extensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {712, 5068}}";
+			sepNavIntBoundsRect = "{{0, 0}, {631, 4830}}";
 			sepNavSelRange = "{768, 0}";
-			sepNavVisRange = "{0, 1390}";
+			sepNavVisRange = "{876, 1083}";
 			sepNavWindowFrame = "{{855, 74}, {771, 1104}}";
 		};
 	};
 	C461FE9F0FC5C0980036595E /* SynthesizeSingleton.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 826}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 471}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 826}}";
+			sepNavSelRange = "{135, 0}";
+			sepNavVisRange = "{0, 658}";
 		};
 	};
 	C461FEA00FC5C0980036595E /* FJSCode.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 413}}";
-			sepNavSelRange = "{555, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 593}}";
+			sepNavSelRange = "{394, 0}";
 			sepNavVisRange = "{0, 556}";
 		};
 	};
@@ -645,16 +699,16 @@
 	};
 	C46297220FE1865C00C84434 /* UIImage+extensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 603}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
 			sepNavSelRange = "{175, 0}";
 			sepNavVisRange = "{0, 266}";
 		};
 	};
 	C46297230FE1865C00C84434 /* UIImage+extensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 1946}}";
+			sepNavIntBoundsRect = "{{0, 0}, {631, 1778}}";
 			sepNavSelRange = "{186, 0}";
-			sepNavVisRange = "{0, 898}";
+			sepNavVisRange = "{0, 1199}";
 		};
 	};
 	C464CF6E0FC5FDFC00758E05 /* OverlayViewController.h */ = {
@@ -701,7 +755,7 @@
 		ignoreCount = 0;
 		lineNumber = 24;
 		location = Booker;
-		modificationTime = 274247044.459052;
+		modificationTime = 278459165.824564;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -719,11 +773,89 @@
 		ignoreCount = 0;
 		lineNumber = 53;
 		location = Booker;
-		modificationTime = 274247044.46028;
+		modificationTime = 278459165.824845;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	C480026A0FFDC31E00E3EA15 /* FJSJSONDownloader.m:21 */ = {
+	C468A598105AA6D500302D93 /* NSObject+AssociatedObjects.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 587}}";
+			sepNavSelRange = "{381, 0}";
+			sepNavVisRange = "{0, 381}";
+			sepNavWindowFrame = "{{15, 74}, {763, 1101}}";
+		};
+	};
+	C468A599105AA6D500302D93 /* NSObject+AssociatedObjects.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 587}}";
+			sepNavSelRange = "{437, 0}";
+			sepNavVisRange = "{0, 437}";
+		};
+	};
+	C468A5DF105AD69000302D93 /* JSONKit.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 798}}";
+			sepNavSelRange = "{1890, 0}";
+			sepNavVisRange = "{724, 1252}";
+		};
+	};
+	C468A5E0105AD69000302D93 /* JSONKit.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 8022}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2183}";
+		};
+	};
+	C468A5F0105AD7D400302D93 /* DebugLog.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 580}}";
+			sepNavSelRange = "{227, 0}";
+			sepNavVisRange = "{0, 361}";
+		};
+	};
+	C468A5F1105AD7D400302D93 /* DebugLog.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 580}}";
+			sepNavSelRange = "{359, 0}";
+			sepNavVisRange = "{0, 943}";
+		};
+	};
+	C468A6B6105B005300302D93 /* IFTweetLabel.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 6454}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 855}";
+		};
+	};
+	C468A6B7105B005300302D93 /* IFTweetLabel.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 798}}";
+			sepNavSelRange = "{175, 0}";
+			sepNavVisRange = "{3, 1175}";
+		};
+	};
+	C468A711105B067F00302D93 /* RegexKitLite.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 2366}}";
+			sepNavSelRange = "{1839, 0}";
+			sepNavVisRange = "{819, 1436}";
+		};
+	};
+	C468A712105B067F00302D93 /* RKLMatchEnumerator.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 209}";
+		};
+	};
+	C468A713105B067F00302D93 /* RegexKitLite.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 13902}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{475, 1728}";
+		};
+	};
+	C480026A0FFDC31E00E3EA15 /* FJSJSONDownloader.m:24 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -735,13 +867,13 @@
 		functionName = "-sendRequestwithURL:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 21;
+		lineNumber = 24;
 		location = Booker;
-		modificationTime = 274247044.45406;
+		modificationTime = 278459165.823546;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	C48002990FFDC86200E3EA15 /* FJSJSONDownloader.m:51 */ = {
+	C48002990FFDC86200E3EA15 /* FJSJSONDownloader.m:31 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -753,13 +885,13 @@
 		functionName = "-connection:didFailWithError:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 51;
+		lineNumber = 31;
 		location = Booker;
-		modificationTime = 274247044.455488;
+		modificationTime = 278459165.823821;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	C480029B0FFDC86500E3EA15 /* FJSJSONDownloader.m:58 */ = {
+	C480029B0FFDC86500E3EA15 /* FJSJSONDownloader.m:43 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -771,15 +903,15 @@
 		functionName = "-connectionDidFinishLoading:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 58;
+		lineNumber = 43;
 		location = Booker;
-		modificationTime = 274247044.457696;
+		modificationTime = 278459165.824209;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
 	C48875F210479FAE00CAD948 /* SDNextRunloopProxy.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {402, 667}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
 			sepNavSelRange = "{328, 0}";
 			sepNavVisRange = "{0, 334}";
 			sepNavWindowFrame = "{{15, 75}, {763, 1101}}";
@@ -787,23 +919,9 @@
 	};
 	C48875F310479FAE00CAD948 /* SDNextRunloopProxy.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {704, 973}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 630}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 964}";
-		};
-	};
-	C488B2420FD98431004A72A8 /* DummyClass.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 413}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 391}";
-		};
-	};
-	C488B2430FD98431004A72A8 /* DummyClass.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 966}}";
-			sepNavSelRange = "{429, 0}";
-			sepNavVisRange = "{0, 893}";
+			sepNavVisRange = "{0, 957}";
 		};
 	};
 	C488B2C00FD9926F004A72A8 /* FJSCellDataSource.m */ = {
@@ -816,7 +934,7 @@
 	};
 	C488B3810FD9A133004A72A8 /* FJSGenericTableViewDataSource.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {758, 975}}";
+			sepNavIntBoundsRect = "{{0, 0}, {631, 705}}";
 			sepNavSelRange = "{297, 0}";
 			sepNavVisRange = "{0, 416}";
 			sepNavWindowFrame = "{{15, 70}, {817, 1103}}";
@@ -829,119 +947,23 @@
 			sepNavVisRange = "{0, 260}";
 		};
 	};
-	C48986201058755F00225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C48875F210479FAE00CAD948 /* SDNextRunloopProxy.h */;
-		name = "SDNextRunloopProxy.h: 20";
-		rLen = 0;
-		rLoc = 328;
-		rType = 0;
-		vrLen = 334;
-		vrLoc = 0;
+	C48989FC1059641100225250 /* UIResponder+AdvancedTouch.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 1148}}";
+			sepNavSelRange = "{578, 0}";
+			sepNavVisRange = "{0, 1119}";
+		};
 	};
-	C48986211058755F00225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C461FE950FC5C0980036595E /* LoadingView.h */;
-		name = "LoadingView.h: 26";
-		rLen = 0;
-		rLoc = 572;
-		rType = 0;
-		vrLen = 579;
-		vrLoc = 0;
-	};
-	C489886E1058845900225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C489B6B310327C2A00514567 /* NSManagedObject+FJSExtensions.m */;
-		name = "NSManagedObject+FJSExtensions.m: 12";
-		rLen = 0;
-		rLoc = 245;
-		rType = 0;
-		vrLen = 360;
-		vrLoc = 0;
-	};
-	C489886F1058845900225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C489B7381032A8C200514567 /* NSManagedObjectContext+Extensions.h */;
-		name = "NSManagedObjectContext+Extensions.h: 56";
-		rLen = 0;
-		rLoc = 2141;
-		rType = 0;
-		vrLen = 1975;
-		vrLoc = 167;
-	};
-	C48988701058845900225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4A4596910339C30002CBE45 /* NSManagedObject+FJSExtensions.h */;
-		name = "NSManagedObject+FJSExtensions.h: 21";
-		rLen = 0;
-		rLoc = 420;
-		rType = 0;
-		vrLen = 420;
-		vrLoc = 0;
-	};
-	C48988711058845900225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C489B7391032A8C200514567 /* NSManagedObjectContext+Extensions.m */;
-		name = "NSManagedObjectContext+Extensions.m: 9";
-		rLen = 0;
-		rLoc = 212;
-		rType = 0;
-		vrLen = 1774;
-		vrLoc = 0;
-	};
-	C48988721058845900225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4D94FEA103CC86100912142 /* FJSCoreDataCellController.m */;
-		name = "FJSCoreDataCellController.m: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 247;
-		vrLoc = 0;
-	};
-	C48988731058845900225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4D94FE9103CC86100912142 /* FJSCoreDataCellController.h */;
-		name = "FJSCoreDataCellController.h: 33";
-		rLen = 0;
-		rLoc = 938;
-		rType = 0;
-		vrLen = 1000;
-		vrLoc = 0;
-	};
-	C48988741058845900225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4A4577810337607002CBE45 /* FJSCoreDataStack.h */;
-		name = "FJSCoreDataStack.h: 20";
-		rLen = 0;
-		rLoc = 563;
-		rType = 0;
-		vrLen = 1091;
-		vrLoc = 0;
-	};
-	C48988751058845900225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4D94F3C103CA8CF00912142 /* FJSCoreDataTableViewController.h */;
-		name = "FJSCoreDataTableViewController.h: 21";
-		rLen = 0;
-		rLoc = 508;
-		rType = 0;
-		vrLen = 1336;
-		vrLoc = 0;
-	};
-	C48988761058845900225250 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4D94F3C103CA8CF00912142 /* FJSCoreDataTableViewController.h */;
-		name = "FJSCoreDataTableViewController.h: 19";
-		rLen = 0;
-		rLoc = 508;
-		rType = 0;
-		vrLen = 1336;
-		vrLoc = 0;
+	C48989FD1059641100225250 /* UIResponder+AdvancedTouch.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
+			sepNavSelRange = "{283, 0}";
+			sepNavVisRange = "{0, 292}";
+		};
 	};
 	C489B66D1032764500514567 /* NSArray+FJSCoreDataExtensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {758, 975}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 593}}";
 			sepNavSelRange = "{211, 0}";
 			sepNavVisRange = "{0, 238}";
 			sepNavWindowFrame = "{{15, 70}, {817, 1103}}";
@@ -949,7 +971,7 @@
 	};
 	C489B66F1032764500514567 /* NSArray+FJSCoreDataExtensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {758, 975}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
 			sepNavSelRange = "{340, 0}";
 			sepNavVisRange = "{0, 340}";
 			sepNavWindowFrame = "{{15, 70}, {817, 1103}}";
@@ -957,7 +979,7 @@
 	};
 	C489B6B310327C2A00514567 /* NSManagedObject+FJSExtensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {402, 667}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
 			sepNavSelRange = "{245, 0}";
 			sepNavVisRange = "{0, 360}";
 			sepNavWindowFrame = "{{15, 70}, {817, 1103}}";
@@ -965,17 +987,17 @@
 	};
 	C489B7381032A8C200514567 /* NSManagedObjectContext+Extensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {768, 840}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 840}}";
 			sepNavSelRange = "{2141, 0}";
-			sepNavVisRange = "{167, 1975}";
+			sepNavVisRange = "{235, 1907}";
 			sepNavWindowFrame = "{{15, 72}, {763, 1101}}";
 		};
 	};
 	C489B7391032A8C200514567 /* NSManagedObjectContext+Extensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {660, 1624}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 1624}}";
 			sepNavSelRange = "{212, 0}";
-			sepNavVisRange = "{0, 1774}";
+			sepNavVisRange = "{0, 1661}";
 			sepNavWindowFrame = "{{830, 81}, {779, 1097}}";
 		};
 	};
@@ -1001,7 +1023,7 @@
 		ignoreCount = 0;
 		lineNumber = 54;
 		location = HSS;
-		modificationTime = 274247044.477271;
+		modificationTime = 278459165.82787;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
@@ -1019,45 +1041,45 @@
 		ignoreCount = 0;
 		lineNumber = 91;
 		location = HSS;
-		modificationTime = 274247044.478797;
+		modificationTime = 278459165.828374;
 		originalNumberOfMultipleMatches = 0;
 		state = 1;
 	};
 	C49D434B1021454500FF8BCC /* AQGlassButton.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {722, 976}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 686}}";
 			sepNavSelRange = "{849, 2}";
-			sepNavVisRange = "{0, 1883}";
+			sepNavVisRange = "{3, 1880}";
 			sepNavWindowFrame = "{{1126, 74}, {781, 1104}}";
 		};
 	};
 	C49D434C1021454500FF8BCC /* AQGlassButton.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {738, 3010}}";
+			sepNavIntBoundsRect = "{{0, 0}, {722, 2968}}";
 			sepNavSelRange = "{4497, 0}";
-			sepNavVisRange = "{3958, 1724}";
+			sepNavVisRange = "{1648, 2710}";
 			sepNavWindowFrame = "{{1126, 74}, {781, 1104}}";
 		};
 	};
 	C49D439510214AE700FF8BCC /* FJSSegmentButton.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {722, 976}}";
-			sepNavSelRange = "{149, 0}";
-			sepNavVisRange = "{0, 794}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 645}}";
+			sepNavSelRange = "{175, 0}";
+			sepNavVisRange = "{0, 772}";
 			sepNavWindowFrame = "{{701, 74}, {781, 1104}}";
 		};
 	};
 	C49D439610214AE700FF8BCC /* FJSSegmentButton.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {762, 1918}}";
-			sepNavSelRange = "{3048, 0}";
-			sepNavVisRange = "{970, 1993}";
+			sepNavSelRange = "{2676, 0}";
+			sepNavVisRange = "{1956, 1692}";
 			sepNavWindowFrame = "{{749, 66}, {781, 1104}}";
 		};
 	};
 	C49D439B10220C8B00FF8BCC /* UIButton+Glossy.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {722, 976}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 645}}";
 			sepNavSelRange = "{580, 0}";
 			sepNavVisRange = "{0, 580}";
 			sepNavWindowFrame = "{{15, 69}, {781, 1104}}";
@@ -1065,9 +1087,9 @@
 	};
 	C49D439D10220C9200FF8BCC /* UIButton+Glossy.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {786, 4830}}";
+			sepNavIntBoundsRect = "{{0, 0}, {786, 4704}}";
 			sepNavSelRange = "{9886, 0}";
-			sepNavVisRange = "{8297, 2518}";
+			sepNavVisRange = "{8050, 1847}";
 		};
 	};
 	C4A189730FCF5DB200E70A29 /* MyCLController.h */ = {
@@ -1085,40 +1107,88 @@
 			sepNavWindowFrame = "{{15, 81}, {805, 1092}}";
 		};
 	};
+	C4A1A270106C009700AC2F9D /* Regex */ = {
+		activeExec = 0;
+	};
+	C4A1A328106C013E00AC2F9D /* FoundationCode */ = {
+		activeExec = 0;
+	};
+	C4A1A3D0106C018A00AC2F9D /* UIKitCode */ = {
+		activeExec = 0;
+	};
+	C4A1A475106C01A300AC2F9D /* AppKitCode */ = {
+		activeExec = 0;
+	};
+	C4A1A651106C047E00AC2F9D /* AudioCode */ = {
+		activeExec = 0;
+	};
+	C4A1A760106C0A2B00AC2F9D /* CoreDataCode */ = {
+		activeExec = 0;
+	};
 	C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 1652}}";
-			sepNavSelRange = "{246, 0}";
-			sepNavVisRange = "{0, 2098}";
+			sepNavIntBoundsRect = "{{0, 0}, {954, 1722}}";
+			sepNavSelRange = "{1270, 0}";
+			sepNavVisRange = "{1328, 1291}";
 			sepNavWindowFrame = "{{159, 82}, {822, 1080}}";
 		};
 	};
 	C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 4592}}";
-			sepNavSelRange = "{8191, 0}";
-			sepNavVisRange = "{5322, 2840}";
+			sepNavIntBoundsRect = "{{0, 0}, {738, 4690}}";
+			sepNavSelRange = "{4510, 0}";
+			sepNavVisRange = "{3987, 983}";
 		};
+	};
+	C4A3C3201099B53C00979C16 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C461FE930FC5C0980036595E /* FJView.h */;
+		name = "FJView.h: 22";
+		rLen = 0;
+		rLoc = 290;
+		rType = 0;
+		vrLen = 290;
+		vrLoc = 0;
+	};
+	C4A3C3221099B53C00979C16 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C461FE950FC5C0980036595E /* LoadingView.h */;
+		name = "LoadingView.h: 26";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 579;
+		vrLoc = 0;
+	};
+	C4A3C3271099B67800979C16 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C461FE950FC5C0980036595E /* LoadingView.h */;
+		name = "LoadingView.h: 7";
+		rLen = 0;
+		rLoc = 142;
+		rType = 0;
+		vrLen = 579;
+		vrLoc = 0;
 	};
 	C4A4577810337607002CBE45 /* FJSCoreDataStack.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {594, 667}}";
-			sepNavSelRange = "{563, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 588}}";
+			sepNavSelRange = "{328, 0}";
 			sepNavVisRange = "{0, 1091}";
 			sepNavWindowFrame = "{{861, 77}, {817, 1101}}";
 		};
 	};
 	C4A4577910337607002CBE45 /* FJSCoreDataStack.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {758, 2142}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 2142}}";
 			sepNavSelRange = "{318, 0}";
-			sepNavVisRange = "{0, 1517}";
+			sepNavVisRange = "{0, 824}";
 			sepNavWindowFrame = "{{683, 77}, {817, 1101}}";
 		};
 	};
 	C4A4596910339C30002CBE45 /* NSManagedObject+FJSExtensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {684, 667}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 593}}";
 			sepNavSelRange = "{420, 0}";
 			sepNavVisRange = "{0, 420}";
 			sepNavWindowFrame = "{{15, 72}, {763, 1101}}";
@@ -1138,7 +1208,7 @@
 		ignoreCount = 0;
 		lineNumber = 194;
 		location = Booker;
-		modificationTime = 274247044.451728;
+		modificationTime = 278459165.82299;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1156,128 +1226,143 @@
 		ignoreCount = 0;
 		lineNumber = 222;
 		location = Booker;
-		modificationTime = 274247044.452802;
+		modificationTime = 278459165.823275;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
 	C4D222AA100C07B200E88C0B /* FJSFileManager.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {752, 975}}";
-			sepNavSelRange = "{387, 0}";
-			sepNavVisRange = "{0, 1377}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 812}}";
+			sepNavSelRange = "{869, 0}";
+			sepNavVisRange = "{268, 1109}";
 			sepNavWindowFrame = "{{15, 70}, {811, 1103}}";
 		};
 	};
 	C4D222AB100C07B200E88C0B /* FJSFileManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {439, 2772}}";
-			sepNavSelRange = "{252, 0}";
-			sepNavVisRange = "{39, 293}";
+			sepNavIntBoundsRect = "{{0, 0}, {858, 2716}}";
+			sepNavSelRange = "{1805, 0}";
+			sepNavVisRange = "{1729, 1525}";
+			sepNavWindowFrame = "{{15, 72}, {763, 1101}}";
 		};
+	};
+	C4D4700E108E110A0043B431 /* SlidingMessageViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {700, 414}}";
+			sepNavSelRange = "{165, 0}";
+			sepNavVisRange = "{0, 339}";
+		};
+	};
+	C4D4700F108E110A0043B431 /* SlidingMessageViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {700, 1820}}";
+			sepNavSelRange = "{3160, 0}";
+			sepNavVisRange = "{374, 674}";
+		};
+	};
+	C4D4705C108E15570043B431 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */;
+		name = "TouchProcessor.m: 158";
+		rLen = 0;
+		rLoc = 4510;
+		rType = 0;
+		vrLen = 983;
+		vrLoc = 3987;
+	};
+	C4D4705D108E15570043B431 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */;
+		name = "TouchProcessor.h: 51";
+		rLen = 0;
+		rLoc = 1270;
+		rType = 0;
+		vrLen = 1291;
+		vrLoc = 1328;
+	};
+	C4D4705E108E15570043B431 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C461FE940FC5C0980036595E /* FJView.m */;
+		name = "FJView.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 298;
+		vrLoc = 0;
+	};
+	C4D4705F108E15570043B431 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4D4700E108E110A0043B431 /* SlidingMessageViewController.h */;
+		name = "SlidingMessageViewController.h: 10";
+		rLen = 0;
+		rLoc = 165;
+		rType = 0;
+		vrLen = 339;
+		vrLoc = 0;
+	};
+	C4D47065108E16100043B431 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4D4700F108E110A0043B431 /* SlidingMessageViewController.m */;
+		name = "SlidingMessageViewController.m: 110";
+		rLen = 0;
+		rLoc = 3160;
+		rType = 0;
+		vrLen = 674;
+		vrLoc = 374;
+	};
+	C4D47066108E16100043B431 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C461FE960FC5C0980036595E /* LoadingView.m */;
+		name = "LoadingView.m: 88";
+		rLen = 0;
+		rLoc = 2041;
+		rType = 0;
+		vrLen = 583;
+		vrLoc = 914;
 	};
 	C4D71F1D104E3CFB002F4E70 /* NSArray+FJSExtensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 618}}";
-			sepNavSelRange = "{201, 13}";
-			sepNavVisRange = "{0, 477}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 587}}";
+			sepNavSelRange = "{220, 0}";
+			sepNavVisRange = "{0, 483}";
 		};
 	};
 	C4D71F1E104E3CFB002F4E70 /* NSArray+FJSExtensions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 618}}";
-			sepNavSelRange = "{415, 0}";
-			sepNavVisRange = "{0, 604}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
+			sepNavSelRange = "{187, 0}";
+			sepNavVisRange = "{0, 634}";
 		};
-	};
-	C4D71F22104F078A002F4E70 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4D71F1D104E3CFB002F4E70 /* NSArray+FJSExtensions.h */;
-		name = "NSArray+FJSExtensions.h: 12";
-		rLen = 13;
-		rLoc = 201;
-		rType = 0;
-		vrLen = 477;
-		vrLoc = 0;
-	};
-	C4D7219210509E7A002F4E70 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4D71F1E104E3CFB002F4E70 /* NSArray+FJSExtensions.m */;
-		name = "NSArray+FJSExtensions.m: 17";
-		rLen = 0;
-		rLoc = 415;
-		rType = 0;
-		vrLen = 604;
-		vrLoc = 0;
-	};
-	C4D7219310509E7A002F4E70 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4E59C270FDF1612000785F0 /* FJSDownloader.m */;
-		name = "FJSDownloader.m: 18";
-		rLen = 0;
-		rLoc = 259;
-		rType = 0;
-		vrLen = 872;
-		vrLoc = 0;
-	};
-	C4D722E81051B3F5002F4E70 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C4487234101C000100149242 /* FJSLinkCellController.h */;
-		name = "FJSLinkCellController.h: 22";
-		rLen = 0;
-		rLoc = 384;
-		rType = 0;
-		vrLen = 384;
-		vrLoc = 0;
-	};
-	C4D722E91051B3F5002F4E70 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C448716B101BBC2900149242 /* IFSwitchCellController.h */;
-		name = "IFSwitchCellController.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 602;
-		vrLoc = 0;
-	};
-	C4D722EA1051B3F5002F4E70 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C44872D9101C1A7800149242 /* IFTextCellController.m */;
-		name = "IFTextCellController.m: 115";
-		rLen = 11;
-		rLoc = 2746;
-		rType = 0;
-		vrLen = 908;
-		vrLoc = 3777;
 	};
 	C4D94F3C103CA8CF00912142 /* FJSCoreDataTableViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {630, 667}}";
-			sepNavSelRange = "{508, 0}";
-			sepNavVisRange = "{0, 1336}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 994}}";
+			sepNavSelRange = "{2718, 0}";
+			sepNavVisRange = "{0, 1632}";
 			sepNavWindowFrame = "{{926, 96}, {786, 1082}}";
 		};
 	};
 	C4D94F3D103CA8CF00912142 /* FJSCoreDataTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2034, 6342}}";
-			sepNavSelRange = "{995, 0}";
-			sepNavVisRange = "{0, 1478}";
+			sepNavIntBoundsRect = "{{0, 0}, {1326, 5474}}";
+			sepNavSelRange = "{12214, 0}";
+			sepNavVisRange = "{10510, 1705}";
 			sepNavWindowFrame = "{{890, 96}, {786, 1082}}";
 		};
 	};
 	C4D94FE9103CC86100912142 /* FJSCoreDataCellController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {630, 667}}";
-			sepNavSelRange = "{938, 0}";
-			sepNavVisRange = "{0, 1000}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 630}}";
+			sepNavSelRange = "{1032, 0}";
+			sepNavVisRange = "{3, 1030}";
 			sepNavWindowFrame = "{{846, 80}, {712, 1094}}";
 		};
 	};
 	C4D94FEA103CC86100912142 /* FJSCoreDataCellController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {402, 667}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 247}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 593}}";
+			sepNavSelRange = "{281, 0}";
+			sepNavVisRange = "{0, 281}";
 		};
 	};
 	C4DF07580FF1485400EC7FAA /* FJSImageDownloader.m:67 */ = {
@@ -1294,22 +1379,23 @@
 		ignoreCount = 0;
 		lineNumber = 67;
 		location = Booker;
-		modificationTime = 274247044.450102;
+		modificationTime = 278459165.822334;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
 	C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 603}}";
-			sepNavSelRange = "{690, 0}";
-			sepNavVisRange = "{0, 742}";
+			sepNavIntBoundsRect = "{{0, 0}, {704, 973}}";
+			sepNavSelRange = "{209, 0}";
+			sepNavVisRange = "{0, 859}";
+			sepNavWindowFrame = "{{1056, 77}, {763, 1101}}";
 		};
 	};
 	C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1075, 1260}}";
-			sepNavSelRange = "{1553, 0}";
-			sepNavVisRange = "{1090, 1108}";
+			sepNavIntBoundsRect = "{{0, 0}, {971, 1050}}";
+			sepNavSelRange = "{1852, 0}";
+			sepNavVisRange = "{615, 1300}";
 			sepNavWindowFrame = "{{218, 390}, {1134, 762}}";
 		};
 	};
@@ -1337,28 +1423,18 @@
 	};
 	C4E59C260FDF1612000785F0 /* FJSDownloader.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {740, 968}}";
-			sepNavSelRange = "{193, 0}";
-			sepNavVisRange = "{0, 640}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 611}}";
+			sepNavSelRange = "{319, 0}";
+			sepNavVisRange = "{0, 860}";
 		};
 	};
 	C4E59C270FDF1612000785F0 /* FJSDownloader.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {817, 1218}}";
-			sepNavSelRange = "{259, 0}";
-			sepNavVisRange = "{0, 872}";
-			sepNavWindowFrame = "{{15, 77}, {799, 1096}}";
+			sepNavIntBoundsRect = "{{0, 0}, {704, 1288}}";
+			sepNavSelRange = "{909, 0}";
+			sepNavVisRange = "{0, 1690}";
+			sepNavWindowFrame = "{{287, 77}, {763, 1101}}";
 		};
-	};
-	C4E67F901051E02200556E28 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = C44872D8101C1A7800149242 /* IFTextCellController.h */;
-		name = "IFTextCellController.h: 31";
-		rLen = 0;
-		rLoc = 693;
-		rType = 0;
-		vrLen = 1209;
-		vrLoc = 30;
 	};
 	C4F6CE6B0FC8D0F000F6AD69 /* FJSViewController.h */ = {
 		uiCtxt = {
@@ -1392,9 +1468,9 @@
 	};
 	C4F6CE700FC8D0F000F6AD69 /* FJSScrollViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 882}}";
+			sepNavIntBoundsRect = "{{0, 0}, {846, 924}}";
 			sepNavSelRange = "{200, 0}";
-			sepNavVisRange = "{0, 1060}";
+			sepNavVisRange = "{0, 1061}";
 			sepNavWindowFrame = "{{15, 6}, {650, 767}}";
 		};
 	};
@@ -1433,11 +1509,15 @@
 			sepNavVisRange = "{0, 579}";
 		};
 	};
+	C4FCA293107146E9004DF747 /* All Libraries */ = {
+		activeExec = 0;
+	};
 	C4FEBDBD10084B36006978F7 /* MacroUtilities.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {822, 1176}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 898}";
+			sepNavIntBoundsRect = "{{0, 0}, {948, 2366}}";
+			sepNavSelRange = "{918, 0}";
+			sepNavVisRange = "{0, 1116}";
+			sepNavWindowFrame = "{{15, 74}, {763, 1101}}";
 		};
 	};
 }

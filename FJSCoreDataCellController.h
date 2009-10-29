@@ -6,6 +6,8 @@
 //  Copyright 2009 Flying Jalapeno Software. All rights reserved.
 //
 
+#ifdef TARGET_OS_IPHONE
+
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
@@ -38,3 +40,5 @@
 }
 
 @end
+
+#endif

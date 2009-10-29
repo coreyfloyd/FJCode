@@ -18,6 +18,17 @@
 @synthesize fontSize;
 @synthesize fontColor;
 
+- (BOOL)enabled{
+    
+    return glossyBackground.enabled;
+    
+}
+
+- (void)setEnabled:(BOOL)enabled{
+    
+    glossyBackground.enabled = enabled;
+    
+}
 
 - (void)dealloc {
     

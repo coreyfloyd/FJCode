@@ -7,78 +7,69 @@
 //
 
 #import "FJSJSONDownloader.h"
-#import "JSON.h"
+#import "JSONKit.h"
+//#import "JSON.h"
 
 @implementation FJSJSONDownloader
 
-@synthesize responseData;
+@synthesize JSONObject;
 @synthesize responseString;
-@synthesize delegate;
 
 - (void)sendRequestwithURL:(NSString*)aURL{
+
+    [self setResponseString:nil];
+    [self setJSONObject:nil];
     
-    [self setResponseData:nil];
-    
-    NSString *encodedURL = [aURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];        
-    NSURL *url = [NSURL URLWithString:encodedURL];
-    NSLog([url description]);
-    
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-    
-    [theRequest setHTTPMethod:@"GET"];
-    
-    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    
-    if( theConnection ){
-		self.responseData = [NSMutableData data];
+    [super sendRequestwithURL:aURL];
         
-    }else{
-		NSLog(@"theConnection is NULL");
-	}
-    
-}
-
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-	[responseData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	[responseData appendData:data];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+
+    [super connection:connection didFailWithError:error];
+    
 	NSString *failureMessage = [NSString stringWithFormat:@"Connection failed: %@", [error description]];
     NSLog(failureMessage);
-    [delegate didReceiveResponse:nil withError:error];
+    
+    if([delegate respondsToSelector:@selector(didReceiveJSONResponse:withError:)])
+        [(id <FJSJSONDownloaderDelegate>)delegate didReceiveJSONResponse:nil withError:error];
+
     
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     
+    [super connectionDidFinishLoading:connection];
+    
     // NSLog(@"DONE. Received Bytes: %d", [responseData length]);
     self.responseString = [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] autorelease];
     
     NSError *error = nil;
+    
+    /*
     SBJSON *json = [[SBJSON new] autorelease];
     id data = nil;
     data = [json objectWithString:responseString error:&error];
+    */
     
-    if(data!=nil)
-        error=nil;
+    self.JSONObject = [NSObject objectWithJSON:responseString]; 
     
-    [delegate didReceiveResponse:data withError:error];
+    //got data but the json conversion went wrong
+    if((responseString!=nil) && (JSONObject==nil)){
+        error = [NSError errorWithDomain:@"FJSError" code:1 userInfo:nil];
+        JSONObject = responseData;
+    }
     
-    [self setResponseData:nil];
-    [self setResponseString:nil];
-    
+    if([delegate respondsToSelector:@selector(didReceiveJSONResponse:withError:)])
+        [(id <FJSJSONDownloaderDelegate>)delegate didReceiveJSONResponse:JSONObject withError:error];
     
 }
 
 - (void)dealloc{
+
+    self.JSONObject = nil;    
     
     [responseString release];
-    [responseData release];
     [super dealloc];
     
 }

@@ -5,8 +5,10 @@
 //  Copyright 2008 Kickingbear. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
+#import <Foundation/NSObjCRuntime.h>
+#import <objc/runtime.h>
 
 /*
  

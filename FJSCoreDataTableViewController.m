@@ -15,7 +15,6 @@
 
 
 - (id<FJSCoreDataCellController>)cellControllerForIndexPath:(NSIndexPath*)indexPath;
-- (void)fetch;
 
 @end
 
@@ -26,6 +25,7 @@
 @synthesize cellControllers;
 @synthesize fetchedResultsController;
 @synthesize managedObjectContext;
+@synthesize showSectionIndexes;
 
 
 
@@ -63,29 +63,12 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-
-/*
- - (void)viewWillAppear:(BOOL)animated {
- [super viewWillAppear:animated];
- }
- */
-/*
- - (void)viewDidAppear:(BOOL)animated {
- [super viewDidAppear:animated];
- }
- */
-
-
-/*
- - (void)viewWillDisappear:(BOOL)animated {
- [super viewWillDisappear:animated];
- }
- */
-/*
- - (void)viewDidDisappear:(BOOL)animated {
- [super viewDidDisappear:animated];
- }
- */
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    fetchedResultsController.delegate = nil;
+    [super viewWillDisappear:animated];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -102,7 +85,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    fetchedResultsController.delegate = self;
+    
+    
+}
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -156,28 +145,17 @@
     
     NSString *title = nil;
     
-    if ([[fetchedResultsController sections] count] > 0) {
+    if(section < [[fetchedResultsController sections] count]){
         id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
         title =  [NSString stringWithFormat:NSLocalizedString(@"%@", @"%@"), [sectionInfo name]];
-        
-        
     }else {
-        
-        title = @"Empty";
+        title = nil;
     }
+    
+    
     
     return title;
     
-}
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)table {
-    // return list of section titles to display in section index view (e.g. "ABCD...Z#")
-    return [fetchedResultsController sectionIndexTitles];
-}
-
-- (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    // tell table which section corresponds to section title/index (e.g. "B",1))
-    return [fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
 }
 
 
@@ -193,25 +171,48 @@
     
     id<FJSCoreDataCellController> cellController = [self cellControllerForIndexPath:indexPath];
     if([cellController respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)])
-        [cellController tableView:tableView cellForRowAtIndexPath:indexPath];
+        [cellController tableView:tableView didSelectRowAtIndexPath:indexPath];
     
 }
+
+
+
+#pragma mark -
+#pragma mark sectionIndexTitlesForTableView
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)table {
+    if(fetchedResultsController==nil)
+        return nil;
+    if(showSectionIndexes==NO)
+       return nil;
+    
+    // return list of section titles to display in section index view (e.g. "ABCD...Z#")
+
+    return [fetchedResultsController sectionIndexTitles];
+}
+
+- (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    if(fetchedResultsController==nil)
+        return 0;
+    if(showSectionIndexes==NO)
+        return 0;
+    
+    // tell table which section corresponds to section title/index (e.g. "B",1))
+    return [fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+}
+
 
 
 #pragma mark -
 #pragma mark Editing
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(fetchedResultsController==nil)
+        return;
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the managed object for the given index path
 		NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
@@ -230,28 +231,6 @@
 		}
 	}   
 }
-
-
-
-#pragma mark -
-#pragma mark Dragging
-
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-    
-    
-}
-
-
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
 
 
 #pragma mark -
@@ -364,14 +343,14 @@
  }
  */
 
-- (void)refresh{
+- (void)updateTableforCurrentState{
     self.cellControllers = nil;
     [self configureFetchedResultsController];
     self.fetchedResultsController.delegate = self;
-    [self fetch];
+    [self fetchAndReloadTable];
 }
 
-- (void)fetch{
+- (void)fetchAndReloadTable{
     NSError *error = nil;
     BOOL success = [self.fetchedResultsController performFetch:&error];
     NSAssert2(success, @"Unhandled error performing fetch at SongsViewController.m, line %d: %@", __LINE__, [error localizedDescription]);
@@ -421,4 +400,3 @@
 }
 
 @end
-

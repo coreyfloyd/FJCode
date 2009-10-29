@@ -87,6 +87,9 @@
 		cell = [[[IFControlTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
     }
 	
+    
+    
+    
 	cell.font = [UIFont boldSystemFontOfSize:fontSize];
 	cell.text = label;
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -7,7 +7,7 @@
 
 #import "KBCollectionExtensions.h"
 
-#import <objc/objc-runtime.h>
+
 
 
 static IMP _originalValueForKeyPathMethod = NULL; // saved off implementation of the original valueForKeyPath method

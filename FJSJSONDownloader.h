@@ -7,31 +7,36 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FJSDownloader.h"
 
+//TODO: test, now uses jsonkit
+//TODO: test, no longer niling out response after completeion (seemed unnecesary)
+//specifically if i do a test anywhere like : if([downloader data] == nil)
 
-@protocol FJSJSONDownloaderDelegate
+@protocol FJSJSONDownloaderDelegate <NSObject>
 
--(void)didReceiveResponse:(id)anObject withError:(NSError*)error;
+@optional
+
+//Implement this method in your delegate to receive the JSON object
+-(void)didReceiveJSONResponse:(id)anObject withError:(NSError*)error;
 
 @end
 
 
 
 
-@interface FJSJSONDownloader : NSObject {
-    NSMutableData *responseData;
-    NSString *responseString;
-        
-    id<FJSJSONDownloaderDelegate> delegate;
-
+@interface FJSJSONDownloader : FJSDownloader {
     
+    NSString *responseString;
+    id JSONObject;
+        
 }
-@property(nonatomic,retain)NSMutableData *responseData;
+//JSON in string form
 @property(nonatomic,retain)NSString *responseString;
-@property(nonatomic,assign)id<FJSJSONDownloaderDelegate> delegate;
 
-//URL string will be encoded using UTF8 encoding
-- (void)sendRequestwithURL:(NSString*)aURL;
+//JSON Object
+@property(nonatomic,retain)id JSONObject;
+
 
 
 @end

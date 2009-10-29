@@ -71,19 +71,19 @@
         BOOL didWrite =  [imageData writeToFile:[self filePath] options:NSAtomicWrite error:&writeError];
         
         if(writeError){
-            NSLog([writeError localizedDescription]);
+            NSLog(@"%@",[writeError localizedDescription]);
             
             NSDictionary *info = [writeError userInfo];
             
             
             for(NSString *aKey in info){
 
-                NSLog(aKey);
+                NSLog(@"%@", aKey);
 
                 [[[info objectForKey:aKey] class] description];
                 
                 if([[info objectForKey:aKey] isKindOfClass:[NSString class]])
-                    NSLog([info objectForKey:aKey]);
+                    NSLog(@"%@",[info objectForKey:aKey]);
             }
             
         }
@@ -153,7 +153,7 @@
     
     filename = [filename stringByAppendingPathComponent:cacheFileName]; 
     filename = [filename stringByDeletingPathExtension];
-    NSLog(filename);
+    NSLog(@"%@",filename);
     
 	return filename;
 	
@@ -185,7 +185,7 @@
             theURL = [NSURL URLWithString:[baseURL stringByAppendingString:aURL]];
         
         
-        NSLog([theURL description]);
+        NSLog(@"%@",[theURL description]);
         
         NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:theURL];
         
@@ -226,7 +226,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
 	NSString *failureMessage = [NSString stringWithFormat:@"Connection failed: %@", [error description]];
-    NSLog(failureMessage);
+    NSLog(@"%@",failureMessage);
     self.isFetching = NO;
     [delegate didReceiveImage:nil withError:error];
 

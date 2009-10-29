@@ -130,7 +130,7 @@
     
     BOOL containsClass = NO;
     for(UIView *aSubview in self.subviews){
-        NSLog([[aSubview class] description]);
+        NSLog(@"%@",[[aSubview class] description]);
         if([aSubview isKindOfClass:aClass]){
             containsClass = YES;
             break;
@@ -150,7 +150,7 @@
     for(UIView *subview in self.subviews){
         
         CGPoint convertedPoint = [subview convertPoint:aPoint fromView:[self superview]];
-        NSLog([[subview class] description]);
+        NSLog(@"%@",[[subview class] description]);
         if(CGRectContainsPoint(subview.frame, convertedPoint)){
             if([subview isKindOfClass:aClass]){
                 touchIsInClass = YES;

@@ -18,6 +18,8 @@
 
 - (void)sendRequestwithURL:(NSString*)aURL{
     
+    [self setResponseData:nil];
+    
     if(isFetching)
         return;
     
@@ -56,8 +58,9 @@
 	NSString *failureMessage = [NSString stringWithFormat:@"Connection failed: %@", [error description]];
     NSLog(failureMessage);
     self.isFetching = NO;
-    [delegate didReceiveResponse:responseData withError:error];
-    [self setResponseData:nil];
+    
+    if([delegate respondsToSelector:@selector(didReceiveResponse:withError:)])
+        [delegate didReceiveResponse:responseData withError:error];
 
 
 }
@@ -67,7 +70,9 @@
    // NSLog(@"DONE. Received Bytes: %d", [responseData length]);
 
     self.isFetching=NO;
-    [delegate didReceiveResponse:responseData withError:nil];
+    
+    if([delegate respondsToSelector:@selector(didReceiveResponse:withError:)])
+        [delegate didReceiveResponse:responseData withError:nil];
         
 }
 

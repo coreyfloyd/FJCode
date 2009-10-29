@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSArray (FJS)
+@interface NSArray (TableViews)
 
-/*!
+/*
  This method will return an object contained with an array 
  contained within this array. It is intended to allow 
  single-step retrieval of objects in the nested array 

@@ -7,9 +7,9 @@
 //
 
 #import "NSArray+FJSExtensions.h"
+#import <UIKit/UIKit.h>
 
-
-@implementation NSArray (FJS)
+@implementation NSArray (TableViews)
 
 - (id)nestedObjectAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = [indexPath row];
