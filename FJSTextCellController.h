@@ -13,11 +13,15 @@
 
 @interface FJSTextCellController : NSObject <IFCellController, UITextFieldDelegate> 
 {
+    UITableViewCell *cell;
     
 	NSString *label;
 	NSString *placeholder;
 	id<IFCellModel> model;
 	NSString *key;
+    
+    UIImage *placeholderImage;
+    NSString *imageKey;
 	
     UITextField* editField;
     
@@ -39,13 +43,15 @@
     BOOL editing;
     
 }
-
+@property(nonatomic,retain)UITableViewCell *cell;
 @property (nonatomic, assign) SEL updateAction;
 @property (nonatomic, assign) id updateTarget;
 @property(nonatomic,assign)SEL beginEditingAction;
 @property(nonatomic,assign)id beginEditingTarget;
 
 @property(nonatomic,retain)UITextField *editField;
+@property(nonatomic,retain)UIImage *placeholderImage;
+@property(nonatomic,retain)NSString *imageKey;
 
 
 @property (nonatomic, assign) UIKeyboardType keyboardType;
@@ -60,5 +66,12 @@
 @property(nonatomic, getter=isEditing) BOOL editing;
 
 - (id)initWithLabel:(NSString *)newLabel andPlaceholder:(NSString *)newPlaceholder atKey:(NSString *)newKey inModel:(id<IFCellModel>)newModel;
+- (id)initWithLabel:(NSString *)newLabel 
+     andPlaceholder:(NSString *)newPlaceholder 
+              atKey:(NSString *)newKey
+   imagePlaceHolder:(UIImage  *)image
+           imageKey:(NSString *)imageKey
+            inModel:(id<IFCellModel>)newModel;
+
 
 @end

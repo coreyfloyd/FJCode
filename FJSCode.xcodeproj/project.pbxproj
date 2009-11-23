@@ -239,8 +239,6 @@
 		C4A1A456106C018A00AC2F9D /* AQGlassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D434C1021454500FF8BCC /* AQGlassButton.m */; };
 		C4A1A457106C018A00AC2F9D /* FJSSegmentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D439610214AE700FF8BCC /* FJSSegmentButton.m */; };
 		C4A1A458106C018A00AC2F9D /* UIButton+Glossy.m in Sources */ = {isa = PBXBuildFile; fileRef = C49D439D10220C9200FF8BCC /* UIButton+Glossy.m */; };
-		C4A1A464106C018A00AC2F9D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = C468A713105B067F00302D93 /* RegexKitLite.m */; };
-		C4A1A465106C018A00AC2F9D /* RKLMatchEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C468A714105B067F00302D93 /* RKLMatchEnumerator.m */; };
 		C4A1A466106C018A00AC2F9D /* IFTweetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C468A6B6105B005300302D93 /* IFTweetLabel.m */; };
 		C4A1A468106C018A00AC2F9D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FD3EB50FD242EA0084CFE3 /* CoreLocation.framework */; };
 		C4A1A469106C018A00AC2F9D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C489B6A01032782B00514567 /* CoreData.framework */; };
@@ -295,6 +293,14 @@
 		C4A4596A10339C30002CBE45 /* NSManagedObject+FJSExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A4596910339C30002CBE45 /* NSManagedObject+FJSExtensions.h */; };
 		C4AC6C2A0FFC209100D37504 /* FJSScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE700FC8D0F000F6AD69 /* FJSScrollViewController.h */; };
 		C4AC6C2D0FFC20AA00D37504 /* FJSScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE710FC8D0F000F6AD69 /* FJSScrollViewController.m */; };
+		C4AFF9B810B23A0F00801655 /* UIBarButtonItem+extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C4AFF9B610B23A0F00801655 /* UIBarButtonItem+extensions.h */; };
+		C4AFF9B910B23A0F00801655 /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF9B710B23A0F00801655 /* UIBarButtonItem+extensions.m */; };
+		C4AFF9BA10B23A0F00801655 /* UIBarButtonItem+extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C4AFF9B610B23A0F00801655 /* UIBarButtonItem+extensions.h */; };
+		C4AFF9BB10B23A0F00801655 /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF9B710B23A0F00801655 /* UIBarButtonItem+extensions.m */; };
+		C4B60DC510A97FA700DBD144 /* FJSTextViewCellController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4B60DC310A97FA700DBD144 /* FJSTextViewCellController.h */; };
+		C4B60DC610A97FA700DBD144 /* FJSTextViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B60DC410A97FA700DBD144 /* FJSTextViewCellController.m */; };
+		C4B60DC710A97FA700DBD144 /* FJSTextViewCellController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4B60DC310A97FA700DBD144 /* FJSTextViewCellController.h */; };
+		C4B60DC810A97FA700DBD144 /* FJSTextViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B60DC410A97FA700DBD144 /* FJSTextViewCellController.m */; };
 		C4D222AC100C07B200E88C0B /* FJSFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C4D222AA100C07B200E88C0B /* FJSFileManager.h */; };
 		C4D222AD100C07B200E88C0B /* FJSFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D222AB100C07B200E88C0B /* FJSFileManager.m */; };
 		C4D47010108E110A0043B431 /* SlidingMessageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4D4700E108E110A0043B431 /* SlidingMessageViewController.h */; };
@@ -563,6 +569,10 @@
 		C4A4577810337607002CBE45 /* FJSCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCoreDataStack.h; sourceTree = "<group>"; };
 		C4A4577910337607002CBE45 /* FJSCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSCoreDataStack.m; sourceTree = "<group>"; };
 		C4A4596910339C30002CBE45 /* NSManagedObject+FJSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FJSExtensions.h"; sourceTree = "<group>"; };
+		C4AFF9B610B23A0F00801655 /* UIBarButtonItem+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+extensions.h"; sourceTree = "<group>"; };
+		C4AFF9B710B23A0F00801655 /* UIBarButtonItem+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+extensions.m"; sourceTree = "<group>"; };
+		C4B60DC310A97FA700DBD144 /* FJSTextViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTextViewCellController.h; sourceTree = "<group>"; };
+		C4B60DC410A97FA700DBD144 /* FJSTextViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTextViewCellController.m; sourceTree = "<group>"; };
 		C4D222AA100C07B200E88C0B /* FJSFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSFileManager.h; sourceTree = "<group>"; };
 		C4D222AB100C07B200E88C0B /* FJSFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSFileManager.m; sourceTree = "<group>"; };
 		C4D4700E108E110A0043B431 /* SlidingMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidingMessageViewController.h; sourceTree = "<group>"; };
@@ -877,6 +887,8 @@
 				C44872D9101C1A7800149242 /* IFTextCellController.m */,
 				C48FC4AB1099D2BA00B88E90 /* FJSTextCellController.h */,
 				C48FC4AC1099D2BA00B88E90 /* FJSTextCellController.m */,
+				C4B60DC310A97FA700DBD144 /* FJSTextViewCellController.h */,
+				C4B60DC410A97FA700DBD144 /* FJSTextViewCellController.m */,
 				C448716B101BBC2900149242 /* IFSwitchCellController.h */,
 				C448716C101BBC2900149242 /* IFSwitchCellController.m */,
 				C448716D101BBC2900149242 /* IFButtonCellController.h */,
@@ -1116,6 +1128,8 @@
 		C4F6D0090FCA533900F6AD69 /* Generic Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C4AFF9B610B23A0F00801655 /* UIBarButtonItem+extensions.h */,
+				C4AFF9B710B23A0F00801655 /* UIBarButtonItem+extensions.m */,
 				C468A598105AA6D500302D93 /* NSObject+AssociatedObjects.h */,
 				C468A599105AA6D500302D93 /* NSObject+AssociatedObjects.m */,
 				C40A51640FFF27CD001D4CDE /* KBCollectionExtensions.m */,
@@ -1232,6 +1246,8 @@
 				C468A74E105B07C500302D93 /* IFTweetLabel.h in Headers */,
 				C4D47010108E110A0043B431 /* SlidingMessageViewController.h in Headers */,
 				C48FC4AF1099D2BA00B88E90 /* FJSTextCellController.h in Headers */,
+				C4B60DC510A97FA700DBD144 /* FJSTextViewCellController.h in Headers */,
+				C4AFF9B810B23A0F00801655 /* UIBarButtonItem+extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1318,6 +1334,8 @@
 				C4A1A7B8106C0BD100AC2F9D /* FJSImageDownloader.h in Headers */,
 				C4D47012108E110A0043B431 /* SlidingMessageViewController.h in Headers */,
 				C48FC4AD1099D2BA00B88E90 /* FJSTextCellController.h in Headers */,
+				C4B60DC710A97FA700DBD144 /* FJSTextViewCellController.h in Headers */,
+				C4AFF9BA10B23A0F00801655 /* UIBarButtonItem+extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1576,6 +1594,8 @@
 				C468A74F105B07C500302D93 /* IFTweetLabel.m in Sources */,
 				C4D47011108E110A0043B431 /* SlidingMessageViewController.m in Sources */,
 				C48FC4B01099D2BA00B88E90 /* FJSTextCellController.m in Sources */,
+				C4B60DC610A97FA700DBD144 /* FJSTextViewCellController.m in Sources */,
+				C4AFF9B910B23A0F00801655 /* UIBarButtonItem+extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1653,12 +1673,12 @@
 				C4A1A456106C018A00AC2F9D /* AQGlassButton.m in Sources */,
 				C4A1A457106C018A00AC2F9D /* FJSSegmentButton.m in Sources */,
 				C4A1A458106C018A00AC2F9D /* UIButton+Glossy.m in Sources */,
-				C4A1A464106C018A00AC2F9D /* RegexKitLite.m in Sources */,
-				C4A1A465106C018A00AC2F9D /* RKLMatchEnumerator.m in Sources */,
 				C4A1A466106C018A00AC2F9D /* IFTweetLabel.m in Sources */,
 				C4A1A7B9106C0BD200AC2F9D /* FJSImageDownloader.m in Sources */,
 				C4D47013108E110A0043B431 /* SlidingMessageViewController.m in Sources */,
 				C48FC4AE1099D2BA00B88E90 /* FJSTextCellController.m in Sources */,
+				C4B60DC810A97FA700DBD144 /* FJSTextViewCellController.m in Sources */,
+				C4AFF9BB10B23A0F00801655 /* UIBarButtonItem+extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

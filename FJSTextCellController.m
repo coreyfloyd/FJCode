@@ -26,6 +26,11 @@
 
 @synthesize editField;
 
+@synthesize cell;
+
+@synthesize placeholderImage;
+@synthesize imageKey;
+
 
 
 @synthesize editing;
@@ -38,6 +43,10 @@
 //
 - (void)dealloc
 {
+    
+    self.placeholderImage = nil;
+    self.imageKey = nil;
+    self.cell = nil;
 	[label release];
 	[placeholder release];
 	[key release];
@@ -77,6 +86,25 @@
 }
 
 
+- (id)initWithLabel:(NSString *)newLabel 
+     andPlaceholder:(NSString *)newPlaceholder 
+              atKey:(NSString *)newKey
+   imagePlaceHolder:(UIImage  *)newImagePlaceholder
+           imageKey:(NSString *)newImageKey
+            inModel:(id<IFCellModel>)newModel
+{
+    
+    
+    [self initWithLabel:newLabel andPlaceholder:newPlaceholder atKey:newKey inModel:newModel];
+    
+    self.imageKey = newImageKey;
+    self.placeholderImage = newImagePlaceholder;
+    
+    return self;
+}
+
+
+
 //
 // tableView:cellForRowAtIndexPath:
 //
@@ -86,19 +114,18 @@
 {
 	static NSString *cellIdentifier = @"TextDataCell";
 	
-    IFControlTableViewCell *cell = (IFControlTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	if (cell == nil)
+    IFControlTableViewCell *newCell = (IFControlTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	if (newCell == nil)
 	{
-		//cell = [[[IFControlTableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
-        cell = [[[IFControlTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
+        newCell = [[[IFControlTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
 
     }
-	    
     
-	//cell.font = [UIFont boldSystemFontOfSize:fontSize];
-	cell.textLabel.text = label;
-	cell.selectionStyle = UITableViewCellSelectionStyleNone;
-	cell.indentationLevel = indentationLevel;
+    self.cell = newCell;
+    
+	newCell.textLabel.text = label;
+	newCell.selectionStyle = UITableViewCellSelectionStyleNone;
+	newCell.indentationLevel = indentationLevel;
     
 	// NOTE: The documentation states that the indentation width is 10 "points". It's more like 20
 	// pixels and changing the property has no effect on the indentation. We'll use 20.0f here
@@ -136,9 +163,25 @@
 	[textField setTextColor:[UIColor colorWithRed:0.20f green:0.31f blue:0.52f alpha:1.0f]];
     [textField setAdjustsFontSizeToFitWidth:adjustsFontSizeToWidth];
 	[textField setSecureTextEntry:secureTextEntry];
-	cell.view = textField;
+    [textField setTextAlignment:UITextAlignmentRight];
+	newCell.view = textField;
     self.editField = textField;
 	[textField release];
+    
+    UIImage* theImage = [model objectForKey:imageKey];
+    
+    if(theImage){
+        
+        newCell.imageView.image = theImage;
+
+    }else if(self.placeholderImage){
+        
+        newCell.imageView.image = self.placeholderImage;
+
+    }
+    
+    
+    newCell.detailTextLabel.text = value;
     
     if(self.editing){
         
@@ -149,28 +192,30 @@
     }else {
         textField.alpha = 0.0;
         textField.userInteractionEnabled = NO;
+
     }
 
 	
-    return cell;
+    return newCell;
 }
 
 - (void)setEditing:(BOOL)flag{
     
     editing = flag;
     
-    if(self.editing){
+    if(editing){
         
         self.editField.alpha = 1.0;
         self.editField.userInteractionEnabled = YES;
-        
         
     }else {
         
         self.editField.alpha = 0.0;
         self.editField.userInteractionEnabled = NO;
+        self.cell.detailTextLabel.text = [model objectForKey:key];
     }
 }
+
 
 - (void)updateValue:(id)sender
 {

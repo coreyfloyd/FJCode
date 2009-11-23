@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@interface UIView (frame)
+
+-(void)setOrigin:(CGPoint)aPoint;
+-(void)setOriginY:(float)value;
+-(void)setOriginX:(float)value;
+-(void)setSize:(CGSize)aSize;
+-(void)setSizeWidth:(float)value;
+-(void)setSizeHeight:(float)value;
+
+@end
+
+
+
 //returns points relative to bounds
 @interface UIView (points)
 

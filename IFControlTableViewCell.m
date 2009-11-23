@@ -9,7 +9,7 @@
 #import "IFControlTableViewCell.h"
 
 
-#define kCellHorizontalOffset 8.0f
+#define kCellHorizontalOffset 10.0f
 
 @implementation IFControlTableViewCell
 
@@ -18,6 +18,15 @@
 - (id)initWithFrame:(CGRect)aRect reuseIdentifier:(NSString *)identifier
 {
 	if (self = [super initWithFrame:aRect reuseIdentifier:identifier])
+	{
+		self.hidesAccessoryWhenEditing = NO;
+	}
+	return self;
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)identifier
+{
+	if (self = [super initWithStyle:style reuseIdentifier:identifier])
 	{
 		self.hidesAccessoryWhenEditing = NO;
 	}

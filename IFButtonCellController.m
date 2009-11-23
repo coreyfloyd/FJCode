@@ -63,6 +63,12 @@
 	}
 }
 
+- (void)setEditing:(BOOL)flag{
+        
+    
+
+}
+
 //
 // tableView:cellForRowAtIndexPath:
 //

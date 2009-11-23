@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSString (parsing) 
+
+-(NSArray *)csvRows;
+
+@end
 
 @interface NSString (exstensions) 
 

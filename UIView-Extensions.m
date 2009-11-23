@@ -11,6 +11,57 @@
 #define degreesToRadians(x) (M_PI * x / 180.0)
 
 
+@implementation UIView (frame)
+
+-(void)setOrigin:(CGPoint)aPoint{
+    
+    CGRect newFrame = self.frame;
+    newFrame.origin = aPoint;
+    self.frame = newFrame;
+    
+}
+-(void)setOriginY:(float)value{
+    
+    CGRect newFrame = self.frame;
+    newFrame.origin.y = value;
+    self.frame = newFrame;
+    
+}
+-(void)setOriginX:(float)value{
+    
+    CGRect newFrame = self.frame;
+    newFrame.origin.x = value;
+    self.frame = newFrame;
+    
+}
+-(void)setSize:(CGSize)aSize{
+    
+    CGRect newFrame = self.frame;
+    newFrame.size = aSize;
+    self.frame = newFrame;
+    
+    
+}
+-(void)setSizeWidth:(float)value{
+    
+    CGRect newFrame = self.frame;
+    newFrame.size.width = value;
+    self.frame = newFrame;
+    
+}
+-(void)setSizeHeight:(float)value{
+    
+    CGRect newFrame = self.frame;
+    newFrame.size.height = value;
+    self.frame = newFrame;
+    
+}
+
+@end
+
+
+
+
 @implementation UIView (points)
 
 -(CGPoint)bottomCenter{
