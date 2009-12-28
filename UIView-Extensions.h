@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+
+CGRect rectExpandedByValue(CGRect rect,  float expandRadius);
+CGRect rectContractedByValue(CGRect rect,  float expandRadius);
+
+
+@interface UIView (utility)
+
+- (void)setBackgroundColor:(UIColor*)aColor recursive:(BOOL)flag;
+
+@end
+
+
 @interface UIView (frame)
 
 -(void)setOrigin:(CGPoint)aPoint;

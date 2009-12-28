@@ -6,7 +6,7 @@
 //  Copyright 2009 Flying Jalapeno Software. All rights reserved.
 //
 
-#import "NSArray+FJSExtensions.h"
+#import "NSArray+TableView.h"
 #import <UIKit/UIKit.h>
 
 @implementation NSArray (TableViews)

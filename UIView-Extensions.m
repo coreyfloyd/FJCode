@@ -11,6 +11,52 @@
 #define degreesToRadians(x) (M_PI * x / 180.0)
 
 
+CGRect rectExpandedByValue(CGRect rect,  float expandRadius){
+    
+    rect.size.width += (2*expandRadius);
+    rect.size.height += (2*expandRadius);
+    
+    rect.origin.x -= expandRadius;
+    rect.origin.y -= expandRadius;
+    
+    
+    return rect;
+    
+}
+
+
+CGRect rectContractedByValue(CGRect rect,  float expandRadius){
+    
+    rect.size.width -= (2*expandRadius);
+    rect.size.height -= (2*expandRadius);
+    
+    rect.origin.x += expandRadius;
+    rect.origin.y += expandRadius;
+    
+    return rect;    
+    
+}
+
+
+@implementation UIView (utility)
+
+- (void)setBackgroundColor:(UIColor*)aColor recursive:(BOOL)flag{
+    
+    self.backgroundColor = aColor;
+	
+    if(flag){
+        for(UIView* eachSubview in self.subviews){
+            [eachSubview setBackgroundColor:aColor recursive:YES];
+            
+        }
+    }
+}
+
+@end
+
+
+
+
 @implementation UIView (frame)
 
 -(void)setOrigin:(CGPoint)aPoint{

@@ -15,8 +15,41 @@
  which works just the way it says
  */
 
+#if TARGET_OS_IPHONE
+
+@interface NSManagedObjectContext (BuyingGuide)
+
+- (void)resetCoreDataStore;
+- (void)displayCcoreDataError;
+
+
+@end
+
+#endif
 
 @interface NSManagedObjectContext (CDManagedObjectContextExtensions)
+
+//Containing strings
+- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value;
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value;
+
+//Seems not to work
+//Better
+- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
+- (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
+//-----
+
+//case insensitive
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value;
+- (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value;
+//------
+//exact matches (not strings)
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
+- (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
+//------
+
+
 
 //returns YES if there exists an entity with 'entityName' which has a 'key' with a certain 'value', NO otherwise
 - (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value;
@@ -56,4 +89,15 @@
 @interface NSManagedObjectContext(insert)
 -(NSManagedObject *) insertNewEntityWithName:(NSString *)name;
 @end
+
+
+
+@interface NSArray (CDArrayExtensions)
+
+- (id)firstObject;
+
+@end
+
+
+
 
