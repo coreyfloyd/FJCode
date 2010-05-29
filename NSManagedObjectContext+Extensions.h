@@ -9,47 +9,74 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+
+
+@interface NSManagedObjectContext (CDStack)
+
+/*
+ To use:
+ Delete all the CD ivars, properties and methods in the app delegate.
+ Add the following property and method to the app delegate:
+ 
+ @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+ 
+- (NSManagedObjectContext *) managedObjectContext {
+	return [NSManagedObjectContext defaultManagedObjectContext];
+}
+*/
++ (NSManagedObjectContext *)defaultManagedObjectContext;
++ (NSManagedObjectContext *)scratchpadManagedObjectContext;
++ (NSManagedObjectModel *)managedObjectModel;
++ (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
+
++ (NSString *)applicationDocumentsDirectory;
++ (void)deleteStore;
++ (void)resetCoreDataStore;
+
+
+@end
+
+
+
+@interface NSManagedObjectContext(insert)
+/*
+ This very short little category allows me to insert new objects into a context by simply doing this:
+ [context insertNewEntityWityName:[entity name]];
+ */
+-(NSManagedObject *) insertNewEntityWithName:(NSString *)name;
+@end
+
+
+
+@interface NSManagedObjectContext (Entities)
+
 /*
  Almost all methods here have comparable syntax.
  It's all something like '...entitiyWithName: whereKey: like:',
  which works just the way it says
  */
 
-#if TARGET_OS_IPHONE
-
-@interface NSManagedObjectContext (BuyingGuide)
-
-- (void)resetCoreDataStore;
-- (void)displayCcoreDataError;
-
-
-@end
-
-#endif
-
-@interface NSManagedObjectContext (CDManagedObjectContextExtensions)
-
-//Containing strings
-- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value;
-- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value;
-
-//Seems not to work
-//Better
-- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
-- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
-- (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
-//-----
-
-//case insensitive
-- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value;
-- (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value;
-//------
 //exact matches (not strings)
+- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 - (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 - (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 //------
 
+//Containing strings (case insensitive)
+- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value;
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value;
+- (NSArray*)entitiesWithName:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value;
+//------
 
+//Case Insensitive optional
+- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
+//-----
+
+//case insensitive
+- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value;
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value;
+//------
 
 //returns YES if there exists an entity with 'entityName' which has a 'key' with a certain 'value', NO otherwise
 - (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value;
@@ -79,17 +106,6 @@
 @end
 
 
-/*
- This very short little category allows me to insert new objects into a context by simply doing this:
- 
- [context insertNewEntityWityName:[entity name]];
- */
-
-
-@interface NSManagedObjectContext(insert)
--(NSManagedObject *) insertNewEntityWithName:(NSString *)name;
-@end
-
 
 
 @interface NSArray (CDArrayExtensions)
@@ -97,7 +113,5 @@
 - (id)firstObject;
 
 @end
-
-
 
 

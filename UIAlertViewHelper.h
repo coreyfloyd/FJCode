@@ -18,4 +18,10 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 
 + (id)presentAlertViewWithTitle:(NSString*)aTitle message:(NSString*)aMessage delegate:(id)object;
 
+
+//Specific Alerts
++ (id)presentNoInternetAlertWithDelegate:(id)object;
+
++ (id)presentIncorrectPasswordAlertWithDelegate:(id)object;
+
 @end

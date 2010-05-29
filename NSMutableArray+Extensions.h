@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
+@interface  NSMutableArray(primatives)
+
+- (void)addInt:(int)integer;
+
+@end
+
 @interface  NSMutableArray(Stack)
 
 -(void) push:(id)item;
@@ -21,3 +28,4 @@
 -(id) dequeue;
 
 @end
+

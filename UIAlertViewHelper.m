@@ -7,6 +7,7 @@
 //
 
 #import "UIAlertViewHelper.h"
+#import "NSString+extensions.h"
 
 void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButtonTitle) {
 	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:LocalizedString(title) 
@@ -31,7 +32,34 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 										  otherButtonTitles:nil
 						  ];
 	[alert show];
-	[alert autorelease];
+	return [alert autorelease];
+	
+}
+
++ (id)presentNoInternetAlertWithDelegate:(id)object{
+	
+
+	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Could not Connect"
+													  message:@"Network Unavailable. Please ensure your Wifi or 3G is turned on and try again."
+													 delegate:object 
+											cancelButtonTitle:@"OK" 
+											otherButtonTitles:nil];
+	[alert show];
+	return [alert autorelease];
+	
+	
+}
+
++ (id)presentIncorrectPasswordAlertWithDelegate:(id)object{
+	
+
+	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Could not authenticate"
+													message:@"Please check your username and password and try again."
+												   delegate:object 
+										  cancelButtonTitle:@"OK" 
+										  otherButtonTitles:nil];
+	[alert show];
+	return [alert autorelease];
 	
 }
 

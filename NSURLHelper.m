@@ -7,6 +7,7 @@
 //
 
 #import "NSURLHelper.h"
+#import "NSString+extensions.h"
 
 
 @implementation NSURL (Helper)
@@ -42,14 +43,14 @@
 		NSString* baseString = [self absoluteString];
 		
 		if(![[self path] isEqualToString:@"/"]) {
-			baseString = [baseString replaceString:[self path] withString:@""];
+			baseString = [baseString stringByReplacingOccurrencesOfString:[self path] withString:@""];
 		}
 		
 		if(self.query) {
-			baseString = [baseString replaceString:[self query] withString:@""];
+			baseString = [baseString stringByReplacingOccurrencesOfString:[self query] withString:@""];
 		}
 		
-		baseString = [baseString replaceString:@"?" withString:@""];
+		baseString = [baseString stringByReplacingOccurrencesOfString:@"?" withString:@""];
 		
 		if(![baseString hasSuffix:@"/"]) {
 			baseString = [baseString stringByAppendingString:@"/"];

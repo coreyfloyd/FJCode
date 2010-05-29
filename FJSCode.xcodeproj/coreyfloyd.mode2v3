@@ -200,10 +200,7 @@
 			<key>XCObserverAutoDisconnectKey</key>
 			<true/>
 			<key>XCObserverDefintionKey</key>
-			<dict>
-				<key>PBXStatusErrorsKey</key>
-				<integer>0</integer>
-			</dict>
+			<dict/>
 			<key>XCObserverFactoryKey</key>
 			<string>XCPerspectivesSpecificationIdentifier</string>
 			<key>XCObserverGUIDKey</key>
@@ -215,103 +212,11 @@
 			<key>XCObserverTriggerKey</key>
 			<string>awakenModuleWithObserver:</string>
 			<key>XCObserverValidationKey</key>
-			<dict>
-				<key>PBXStatusErrorsKey</key>
-				<integer>2</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>XCObserverAutoDisconnectKey</key>
-			<true/>
-			<key>XCObserverDefintionKey</key>
-			<dict>
-				<key>PBXStatusWarningsKey</key>
-				<integer>0</integer>
-			</dict>
-			<key>XCObserverFactoryKey</key>
-			<string>XCPerspectivesSpecificationIdentifier</string>
-			<key>XCObserverGUIDKey</key>
-			<string>XCObserverProjectIdentifier</string>
-			<key>XCObserverNotificationKey</key>
-			<string>PBXStatusBuildStateMessageNotification</string>
-			<key>XCObserverTargetKey</key>
-			<string>XCMainBuildResultsModuleGUID</string>
-			<key>XCObserverTriggerKey</key>
-			<string>awakenModuleWithObserver:</string>
-			<key>XCObserverValidationKey</key>
-			<dict>
-				<key>PBXStatusWarningsKey</key>
-				<integer>2</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>XCObserverAutoDisconnectKey</key>
-			<true/>
-			<key>XCObserverDefintionKey</key>
-			<dict>
-				<key>PBXStatusAnalyzerResultsKey</key>
-				<integer>0</integer>
-			</dict>
-			<key>XCObserverFactoryKey</key>
-			<string>XCPerspectivesSpecificationIdentifier</string>
-			<key>XCObserverGUIDKey</key>
-			<string>XCObserverProjectIdentifier</string>
-			<key>XCObserverNotificationKey</key>
-			<string>PBXStatusBuildStateMessageNotification</string>
-			<key>XCObserverTargetKey</key>
-			<string>XCMainBuildResultsModuleGUID</string>
-			<key>XCObserverTriggerKey</key>
-			<string>awakenModuleWithObserver:</string>
-			<key>XCObserverValidationKey</key>
-			<dict>
-				<key>PBXStatusAnalyzerResultsKey</key>
-				<integer>2</integer>
-			</dict>
+			<dict/>
 		</dict>
 	</array>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>C4D71C27104CB054002F4E70</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>FJSCoreDataTableViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>C4D71C28104CB054002F4E70</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>FJSCoreDataTableViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>C4D71C29104CB054002F4E70</string>
-						<key>history</key>
-						<array>
-							<string>C4D71C0B104CAA34002F4E70</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {786, 985}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 147 786 1026 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -322,11 +227,10 @@
 			<key>ChosenToolbarItems</key>
 			<array>
 				<string>active-combo-popup</string>
-				<string>debugger-enable-breakpoints</string>
 				<string>build-and-go</string>
 				<string>com.apple.ide.PBXToolbarStopButton</string>
-				<string>NSToolbarFlexibleSpaceItem</string>
-				<string>get-info</string>
+				<string>clean</string>
+				<string>servicesModulefind</string>
 			</array>
 			<key>ControllerClassBaseName</key>
 			<string></string>
@@ -340,7 +244,7 @@
 			<array>
 				<dict>
 					<key>Proportion</key>
-					<string>356pt</string>
+					<string>470pt</string>
 					<key>Tabs</key>
 					<array>
 						<dict>
@@ -361,7 +265,7 @@
 									<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 									<array>
 										<real>22</real>
-										<real>211</real>
+										<real>325</real>
 										<real>20</real>
 										<real>43</real>
 										<real>43</real>
@@ -381,24 +285,19 @@
 									<array>
 										<string>29B97314FDCFA39411CA2CEA</string>
 										<string>C461FE8E0FC5C07B0036595E</string>
-										<string>C489B66C1032762E00514567</string>
-										<string>C4D9508D103CE6B600912142</string>
-										<string>C43FAC0A0FCC602D00EB4F92</string>
 										<string>29B97317FDCFA39411CA2CEA</string>
 										<string>29B97323FDCFA39411CA2CEA</string>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>9</integer>
-											<integer>6</integer>
-											<integer>2</integer>
+											<integer>27</integer>
 											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 0}, {339, 338}}</string>
+									<string>{{0, 0}, {453, 965}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -408,13 +307,13 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{10, 27}, {356, 356}}</string>
+								<string>{{10, 27}, {470, 983}}</string>
 								<key>GroupTreeTableConfiguration</key>
 								<array>
 									<string>TargetStatusColumn</string>
 									<real>22</real>
 									<string>MainColumn</string>
-									<real>211</real>
+									<real>325</real>
 									<string>FileBuiltColumn</string>
 									<real>20</real>
 									<string>ErrorsColumn</string>
@@ -423,7 +322,7 @@
 									<real>43</real>
 								</array>
 								<key>RubberWindowFrame</key>
-								<string>1563 280 356 424 0 0 1920 1178 </string>
+								<string>1135 127 470 1051 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXSmartGroupTreeModule</string>
@@ -562,8 +461,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C4D71BAF104CA320002F4E70</string>
-				<string>C4D71BB0104CA320002F4E70</string>
+				<string>C4AC0F2111B1AF9000FEE0ED</string>
+				<string>C4AC0F2211B1AF9000FEE0ED</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -583,7 +482,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>273461332.66632497</real>
+	<real>296857570.86839998</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
@@ -599,11 +498,10 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>C4D71C27104CB054002F4E70</string>
 		<string>/Users/coreyfloyd/Development/libraries/FJSCode/FJSCode.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>1563 280 356 424 0 0 1920 1178 </string>
+	<string>1135 127 470 1051 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -785,9 +683,9 @@
 								<key>PBXProjectModuleLabel</key>
 								<string>Build Results</string>
 								<key>XCBuildResultsTrigger_Collapse</key>
-								<integer>1023</integer>
+								<integer>1024</integer>
 								<key>XCBuildResultsTrigger_Open</key>
-								<integer>1013</integer>
+								<integer>1010</integer>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
@@ -817,7 +715,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>C4D71BB6104CA320002F4E70</string>
+				<string>C4AC0F2311B1AF9000FEE0ED</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

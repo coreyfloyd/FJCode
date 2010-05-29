@@ -9,32 +9,40 @@
 #import "NSMutableArray+Extensions.h"
 
 
+@implementation  NSMutableArray(primatives)
+
+- (void)addInt:(int)integer{
+	
+	[self addObject:[NSNumber numberWithInt:integer]];
+}
+
+@end
+
+
 @implementation  NSMutableArray(Stack)
 
 
 -(void) push:(id) item {
-	[list addObject:item] // where list is the actual array in your stack
-	count++;
+	[self addObject:item]; // where list is the actual array in your stack
 }
 
 -(id) pop {
-	id r = [list lastObject];
-	[list removeLastObject];
-	count--;
-	return r;
+	id r = [[self lastObject] retain];
+	[self removeLastObject];
+	return [r autorelease];
 }
+
+@end
 
 @implementation  NSMutableArray(Queue)
 
 -(void) enqueue:(id) item {
-	[list insertObject:item atIndex:0];
-	count++;
+	[self insertObject:item atIndex:0];
 }
 
 -(id) dequeue {
-	id r = [list lastObject];
-	[list removeLastObject];
-	count--;
-	return r;
+	id r = [[self lastObject] retain];
+	[self removeLastObject];
+	return [r autorelease];
 }
 @end
