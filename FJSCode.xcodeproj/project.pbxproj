@@ -296,8 +296,6 @@
 		C4A1A779106C0A2B00AC2F9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		C4A1A784106C0A4B00AC2F9D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A1A783106C0A4B00AC2F9D /* CoreData.framework */; };
 		C4A1A786106C0A5F00AC2F9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A1A785106C0A5F00AC2F9D /* UIKit.framework */; };
-		C4A1A7B6106C0BBE00AC2F9D /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = C436D834104844DE004C0376 /* Reachability.h */; };
-		C4A1A7B7106C0BBE00AC2F9D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C436D835104844DE004C0376 /* Reachability.m */; };
 		C4A1A7B8106C0BD100AC2F9D /* FJSImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = C4049DB60FDDB3C3001693C1 /* FJSImageDownloader.h */; };
 		C4A1A7B9106C0BD200AC2F9D /* FJSImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4049DB70FDDB3C3001693C1 /* FJSImageDownloader.m */; };
 		C4A1A7C3106C0C5800AC2F9D /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C468A5DF105AD69000302D93 /* JSONKit.h */; };
@@ -562,8 +560,6 @@
 		C42E952F10D6CEE900754443 /* UIColor+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extensions.m"; sourceTree = "<group>"; };
 		C42E97A310D86D4300754443 /* NSString+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+extensions.h"; path = "../../ProductionProjects/HRC/BuyingGuide/NSString+extensions.h"; sourceTree = SOURCE_ROOT; };
 		C42E97A410D86D4300754443 /* NSString+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+extensions.m"; path = "../../ProductionProjects/HRC/BuyingGuide/NSString+extensions.m"; sourceTree = SOURCE_ROOT; };
-		C436D834104844DE004C0376 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		C436D835104844DE004C0376 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C43FAB660FCC424000EB4F92 /* IFActionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFActionToolbar.m; sourceTree = "<group>"; };
 		C43FAB670FCC424000EB4F92 /* IFActionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFActionToolbar.h; sourceTree = "<group>"; };
 		C43FAC0B0FCC604800EB4F92 /* FJSGenericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSGenericTableViewController.h; sourceTree = "<group>"; };
@@ -745,6 +741,8 @@
 		C4E59C270FDF1612000785F0 /* FJSDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSDownloader.m; sourceTree = "<group>"; };
 		C4EFEC9D10E1D13C005180AC /* FJSDatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSDatePickerController.h; sourceTree = "<group>"; };
 		C4EFEC9E10E1D13C005180AC /* FJSDatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSDatePickerController.m; sourceTree = "<group>"; };
+		C4F64E5211BC3DCC000A4993 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C4F64E5311BC3DCC000A4993 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C4F6CE6B0FC8D0F000F6AD69 /* FJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSViewController.h; sourceTree = "<group>"; };
 		C4F6CE6C0FC8D0F000F6AD69 /* FJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSViewController.m; sourceTree = "<group>"; };
 		C4F6CE6D0FC8D0F000F6AD69 /* FJSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSImageViewController.h; sourceTree = "<group>"; };
@@ -921,8 +919,8 @@
 				C4049DB70FDDB3C3001693C1 /* FJSImageDownloader.m */,
 				C4E59B500FDF1065000785F0 /* FJSJSONDownloader.h */,
 				C4E59B510FDF1065000785F0 /* FJSJSONDownloader.m */,
-				C436D834104844DE004C0376 /* Reachability.h */,
-				C436D835104844DE004C0376 /* Reachability.m */,
+				C4F64E5211BC3DCC000A4993 /* Reachability.h */,
+				C4F64E5311BC3DCC000A4993 /* Reachability.m */,
 				C4CC173210DE052600DBE821 /* Reachabilityv15.h */,
 				C4CC173310DE052600DBE821 /* Reachabilityv15.m */,
 			);
@@ -1553,7 +1551,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4A1A7B6106C0BBE00AC2F9D /* Reachability.h in Headers */,
 				C4A1A624106C024A00AC2F9D /* NSArray+TableView.h in Headers */,
 				C4A1A627106C024D00AC2F9D /* NSDate+Helper.h in Headers */,
 				C4A1A62D106C027A00AC2F9D /* DebugLog.h in Headers */,
@@ -1943,7 +1940,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4A1A7B7106C0BBE00AC2F9D /* Reachability.m in Sources */,
 				C4A1A625106C024B00AC2F9D /* KBCollectionExtensions.m in Sources */,
 				C4A1A626106C024C00AC2F9D /* NSArray+TableView.m in Sources */,
 				C4A1A628106C024E00AC2F9D /* NSDate+Helper.m in Sources */,
