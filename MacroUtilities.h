@@ -10,143 +10,75 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "DebugLog.h"
 
 #define NSYES [NSNumber numberWithBool:YES]
 #define NSNO [NSNumber numberWithBool:NO]
 
-//#if DEBUG==1
+#define ZAssert(condition, ...) do { if (!(condition)) { ALog(__VA_ARGS__); }} while(0)
+
+
+#if DEBUG==1
 
 #define FJSLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
-
 #define MARK	FJSLog(@"%s", __PRETTY_FUNCTION__);
-
 #define START_TIMER NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
 #define END_TIMER(msg) 	NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; FJSLog([NSString stringWithFormat:@"%@ Time = %f", msg, stop-start]);
 
-/*
+
+#define DLOG(object)    (NSLog(@"" #object @" %d",object ));
+#define FLOG(object)    (NSLog(@"" #object @" %f",object ));
+#define OBJECT_LOG(object)    (NSLog(@"" @"%s:" #object @" %@", __PRETTY_FUNCTION__, [object description]));
+
+#define POINTLOG(point)    (NSLog(@""  #point @" x:%f y:%f", point.x, point.y ));
+#define SIZELOG(size)    (NSLog(@""  #size @" width:%f height:%f", size.width, size.height ));
+#define RECTLOG(rect)    (NSLog(@""  #rect @" x:%f y:%f w:%f h:%f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height ));
+
+#define SELECTOR_LOG    (NSLog(@"%@ in %s", NSStringFromSelector(_cmd), __FILE__));
+#define METHOD_LOG    (NSLog(@"%@ %s\n%@", NSStringFromSelector(_cmd), __FILE__, self))
+#define METHOD_LOG_THREAD    (NSLog(@"%@ %@ %s\n%@", NSStringFromSelector(_cmd), [NSThread currentThread], __FILE__, self))
+
+
+#define ALog(...) [[NSAssertionHandler currentHandler] handleFailureInFunction:[NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSUTF8StringEncoding] file:[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lineNumber:__LINE__ description:__VA_ARGS__]
+#define NOT_NIL_ASSERT(x)    NSAssert4((x != nil), @"\n\n    ****  Unexpected Nil Assertion  ****\n    ****  " #x @" is nil.\nin file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
+#define ALWAYS_ASSERT    NSAssert4(0, @"\n\n    ****  Unexpected Assertion  **** \nAssertion in file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
+#define MSG_ASSERT(x)    NSAssert5(0, @"\n\n    ****  Unexpected Assertion  **** \nReason: %@\nAssertion in file:%s at line %i in Method %@ with object:\n %@", x, __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
+#define ASSERT_TRUE(test)    NSAssert4(test, @"\n\n    ****  Unexpected Assertion  **** \nAssertion in file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
+#define MSG_ASSERT_TRUE(test, msg)    NSAssert5(test, @"\n\n    ****  Unexpected Assertion  **** \nReason: %@\nAssertion in file:%s at line %i in Method %@ with object:\n %@", msg, __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
+
+
+
+
+
+
 #else
 #define FJSLog(format, ...)
 #define MARK
 #define START_TIMER
 #define END_TIMER(msg)
- */
-//#endif
 
 
+#define DLOG(object)    
+#define FLOG(object)   
+#define OBJECT_LOG(object)   
 
-#if !defined(DLOG)
-#define DLOG(object)    (NSLog(@"" #object @" %d",object ));
+#define POINTLOG(point)    
+#define SIZELOG(size)   
+#define RECTLOG(rect)   
+
+#define SELECTOR_LOG  
+#define METHOD_LOG    
+#define METHOD_LOG_THREAD    
+
+#define ALog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+#define NOT_NIL_ASSERT(x)    
+#define ALWAYS_ASSERT    
+#define MSG_ASSERT(x)   
+#define ASSERT_TRUE(test)    
+#define MSG_ASSERT_TRUE(test, msg) 
+
+
+#ifndef NS_BLOCK_ASSERTIONS
+ #define NS_BLOCK_ASSERTIONS
 #endif
 
-#if !defined(FLOG)
-#define FLOG(object)    (NSLog(@"" #object @" %f",object ));
 #endif
-
-#if !defined(OBJECT_LOG) //one argument
-#define OBJECT_LOG(object)    (NSLog(@"" @"%s:" #object @" %@", __PRETTY_FUNCTION__, [object description]));
-#endif
-
-#if !defined(POINTLOG) //one argument
-#define POINTLOG(point)    (NSLog(@""  #point @" x:%f y:%f", point.x, point.y ));
-#endif
-
-#if !defined(SIZELOG) //one argument
-#define SIZELOG(size)    (NSLog(@""  #size @" width:%f height:%f", size.width, size.height ));
-#endif
-
-#if !defined(RECTLOG) //one argument
-#define RECTLOG(rect)    (NSLog(@""  #rect @" x:%f y:%f w:%f h:%f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height ));
-#endif
-
-#if !defined(SELECTOR_LOG) //No arguments
-#define SELECTOR_LOG    (NSLog(@"%@ in %s", NSStringFromSelector(_cmd), __FILE__));
-#endif
-
-#if !defined(METHOD_LOG) //No arguments
-#define METHOD_LOG    (NSLog(@"%@ %s\n%@", NSStringFromSelector(_cmd), __FILE__, self))
-#endif
-
-#if !defined(METHOD_LOG_THREAD) //No arguments
-#define METHOD_LOG_THREAD    (NSLog(@"%@ %@ %s\n%@", NSStringFromSelector(_cmd), [NSThread currentThread], __FILE__, self))
-#endif
-
-#if !defined(NOT_NIL_ASSERT) //one argument
-#define NOT_NIL_ASSERT(x)    NSAssert4((x != nil), @"\n\n    ****  Unexpected Nil Assertion  ****\n    ****  " #x @" is nil.\nin file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-#if !defined(ALWAYS_ASSERT) //No arguments
-#define ALWAYS_ASSERT    NSAssert4(0, @"\n\n    ****  Unexpected Assertion  **** \nAssertion in file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-#if !defined(MSG_ASSERT) //one argument
-#define MSG_ASSERT(x)    NSAssert5(0, @"\n\n    ****  Unexpected Assertion  **** \nReason: %@\nAssertion in file:%s at line %i in Method %@ with object:\n %@", x, __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-#if !defined(ASSERT_TRUE) //one argument, if the argument is false, raise the assert
-#define ASSERT_TRUE(test)    NSAssert4(test, @"\n\n    ****  Unexpected Assertion  **** \nAssertion in file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-#if !defined(MSG_ASSERT_TRUE) //two arguments, if the argument is false, raise the assert and display the message
-#define MSG_ASSERT_TRUE(test, msg)    NSAssert5(test, @"\n\n    ****  Unexpected Assertion  **** \nReason: %@\nAssertion in file:%s at line %i in Method %@ with object:\n %@", msg, __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-
-/*
-#if !defined(DLOG)
-#define DLOG(object)    (NSLog(@"" #object @" %d",object ));
-#endif
-
-#if !defined(FLOG)
-#define FLOG(object)    (NSLog(@"" #object @" %f",object ));
-#endif
-
-#if !defined(OBJECT_LOG) //one argument
-#define OBJECT_LOG(object)    (NSLog(@""  #object @" %@",[object description] ));
-#endif
-
-#if !defined(POINTLOG) //one argument
-#define POINTLOG(point)    (NSLog(@""  #point @" x:%f y:%f", point.x, point.y ));
-#endif
-
-#if !defined(SIZELOG) //one argument
-#define SIZELOG(size)    (NSLog(@""  #size @" width:%f height:%f", size.width, size.height ));
-#endif
-
-#if !defined(RECTLOG) //one argument
-#define RECTLOG(rect)    (NSLog(@""  #rect @" x:%f y:%f w:%f h:%f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height ));
-#endif
-
-#if !defined(SELECTOR_LOG) //No arguments
-#define SELECTOR_LOG    (NSLog(@"%@ in %s", NSStringFromSelector(_cmd), __FILE__));
-#endif
-
-#if !defined(METHOD_LOG) //No arguments
-#define METHOD_LOG    (NSLog(@"%@ %s\n%@", NSStringFromSelector(_cmd), __FILE__, self))
-#endif
-
-#if !defined(METHOD_LOG_THREAD) //No arguments
-#define METHOD_LOG_THREAD    (NSLog(@"%@ %@ %s\n%@", NSStringFromSelector(_cmd), [NSThread currentThread], __FILE__, self))
-#endif
-
-#if !defined(NOT_NIL_ASSERT) //one argument
-#define NOT_NIL_ASSERT(x)    NSAssert4((x != nil), @"\n\n    ****  Unexpected Nil Assertion  ****\n    ****  " #x @" is nil.\nin file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-#if !defined(ALWAYS_ASSERT) //No arguments
-#define ALWAYS_ASSERT    NSAssert4(0, @"\n\n    ****  Unexpected Assertion  **** \nAssertion in file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-#if !defined(MSG_ASSERT) //one argument
-#define MSG_ASSERT(x)    NSAssert5(0, @"\n\n    ****  Unexpected Assertion  **** \nReason: %@\nAssertion in file:%s at line %i in Method %@ with object:\n %@", x, __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-#if !defined(ASSERT_TRUE) //one argument, if the argument is false, raise the assert
-#define ASSERT_TRUE(test)    NSAssert4(test, @"\n\n    ****  Unexpected Assertion  **** \nAssertion in file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-#if !defined(MSG_ASSERT_TRUE) //two arguments, if the argument is false, raise the assert and display the message
-#define MSG_ASSERT_TRUE(test, msg)    NSAssert5(test, @"\n\n    ****  Unexpected Assertion  **** \nReason: %@\nAssertion in file:%s at line %i in Method %@ with object:\n %@", msg, __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
-#endif
-
-*/

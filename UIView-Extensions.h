@@ -71,6 +71,19 @@ CGRect rectContractedByValue(CGRect rect,  float expandRadius);
 @end
 
 
+
+
+
+struct SCRoundedRect {
+	CGFloat xLeft, xLeftCorner;
+	CGFloat xRight, xRightCorner;
+	CGFloat yTop, yTopCorner;
+	CGFloat yBottom, yBottomCorner;
+};
+typedef struct SCRoundedRect SCRoundedRect;
+
+
+
 @interface UIView (drawing)
 
 
@@ -97,6 +110,20 @@ CGRect rectContractedByValue(CGRect rect,  float expandRadius);
 // outlined rects with rounded corners
 -(void)strokeRoundRect:(CGRect)rect;
 -(void)strokeRoundRect:(CGRect)rect color:(UIColor*)color;
+
+
+SCRoundedRect SCRoundedRectMake(CGRect, CGFloat);
+
+void SCContextAddRoundedRect(CGContextRef, CGRect, CGFloat);
+
+void SCContextAddLeftRoundedRect(CGContextRef, CGRect, CGFloat);
+void SCContextAddLeftTopRoundedRect(CGContextRef, CGRect, CGFloat);
+void SCContextAddLeftBottomRoundedRect(CGContextRef, CGRect, CGFloat);
+
+void SCContextAddRightRoundedRect(CGContextRef, CGRect, CGFloat);
+void SCContextAddRightTopRoundedRect(CGContextRef, CGRect, CGFloat);
+void SCContextAddRightBottomRoundedRect(CGContextRef, CGRect, CGFloat);
+
 
 
 //usage:

@@ -63,4 +63,43 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 	
 }
 
+
++ (id)presentDialogForMissingField:(NSString*)fieldName{
+    
+    NSString* t = [NSString stringWithFormat:@"Missing %@", fieldName];
+    NSString* m = [NSString stringWithFormat:@"Please enter a %@", [fieldName lowercaseString]];
+    
+    return [UIAlertView presentAlertViewWithTitle:t message:m delegate:nil];
+    
+}
+
+
++ (id)presentDialogForWifiUnreachabilityWithDelegate:(id)object{
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Wifi Unreachable"
+													message:@"Wifi is required to watch movies in this application. If you are watching a movie, please reconnect to Wifi to continue watching. Playback will automatically pause in 5 minutes"
+												   delegate:object 
+										  cancelButtonTitle:@"OK" 
+										  otherButtonTitles:nil];
+	[alert show];
+	return [alert autorelease];
+    
+    
+}
+
++ (id)presentDialogForWifiRecheckWithDelegate:(id)object{
+    
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Wifi Unreachable"
+													message:@"Playback has been paused. Please reconnect to Wifi to restart the movie."
+												   delegate:object 
+										  cancelButtonTitle:@"OK" 
+										  otherButtonTitles:nil];
+	[alert show];
+	return [alert autorelease];
+    
+    
+    
+}
+
 @end

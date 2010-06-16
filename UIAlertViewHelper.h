@@ -24,4 +24,13 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 
 + (id)presentIncorrectPasswordAlertWithDelegate:(id)object;
 
++ (id)presentDialogForMissingField:(NSString*)fieldName;
+
++ (id)presentDialogForWifiUnreachabilityWithDelegate:(id)object;
+
++ (id)presentDialogForWifiRecheckWithDelegate:(id)object;
+
+
+
+
 @end

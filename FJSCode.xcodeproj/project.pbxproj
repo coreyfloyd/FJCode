@@ -39,10 +39,6 @@
 		C411FBFB11143DB80041F012 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C411FBF911143DB80041F012 /* NSManagedObjectContext+Extensions.m */; };
 		C411FBFC11143DB80041F012 /* NSManagedObjectContext+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C411FBF811143DB80041F012 /* NSManagedObjectContext+Extensions.h */; };
 		C411FBFD11143DB80041F012 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C411FBF911143DB80041F012 /* NSManagedObjectContext+Extensions.m */; };
-		C411FC48111441A60041F012 /* UIAlertViewHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C411FC46111441A60041F012 /* UIAlertViewHelper.h */; };
-		C411FC49111441A60041F012 /* UIAlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C411FC47111441A60041F012 /* UIAlertViewHelper.m */; };
-		C411FC4A111441A60041F012 /* UIAlertViewHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C411FC46111441A60041F012 /* UIAlertViewHelper.h */; };
-		C411FC4B111441A60041F012 /* UIAlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C411FC47111441A60041F012 /* UIAlertViewHelper.m */; };
 		C41910670FDF546600D23A82 /* FJSMultiSelectTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C41910650FDF546600D23A82 /* FJSMultiSelectTableViewCell.h */; };
 		C41910680FDF546600D23A82 /* FJSMultiSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C41910660FDF546600D23A82 /* FJSMultiSelectTableViewCell.m */; };
 		C41910720FDF54FB00D23A82 /* FJSMultiSelectTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C419106E0FDF54FB00D23A82 /* FJSMultiSelectTableViewController.h */; };
@@ -123,8 +119,6 @@
 		C461FEC40FC5C1A40036595E /* NSDate+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FE910FC5C0980036595E /* NSDate+Helper.h */; };
 		C461FEC50FC5C1A50036595E /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE920FC5C0980036595E /* NSDate+Helper.m */; };
 		C461FEC80FC5C1A70036595E /* SynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FE9F0FC5C0980036595E /* SynthesizeSingleton.h */; };
-		C461FECB0FC5C1A90036595E /* UIView-Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FE9D0FC5C0980036595E /* UIView-Extensions.h */; };
-		C461FECC0FC5C1A90036595E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE9E0FC5C0980036595E /* UIView-Extensions.m */; };
 		C466B4EA100E91EE00829882 /* FJSNetworkImageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C466B4E8100E91EE00829882 /* FJSNetworkImageViewController.h */; };
 		C466B4EB100E91EE00829882 /* FJSNetworkImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C466B4E9100E91EE00829882 /* FJSNetworkImageViewController.m */; };
 		C467D202100A94490002409E /* TouchProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */; };
@@ -176,7 +170,6 @@
 		C4A1A3D2106C018A00AC2F9D /* TouchProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A3A1AA100A8BCC007FCD3F /* TouchProcessor.h */; };
 		C4A1A3D3106C018A00AC2F9D /* FJSScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE700FC8D0F000F6AD69 /* FJSScrollViewController.h */; };
 		C4A1A3D4106C018A00AC2F9D /* FJSSelectableScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE720FC8D0F000F6AD69 /* FJSSelectableScrollView.h */; };
-		C4A1A3D8106C018A00AC2F9D /* UIView-Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FE9D0FC5C0980036595E /* UIView-Extensions.h */; };
 		C4A1A3DA106C018A00AC2F9D /* FJSViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE6B0FC8D0F000F6AD69 /* FJSViewController.h */; };
 		C4A1A3DB106C018A00AC2F9D /* FJSImageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F6CE6D0FC8D0F000F6AD69 /* FJSImageViewController.h */; };
 		C4A1A3DC106C018A00AC2F9D /* LoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FE950FC5C0980036595E /* LoadingView.h */; };
@@ -221,7 +214,6 @@
 		C4A1A41F106C018A00AC2F9D /* TouchProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A3A1AB100A8BCC007FCD3F /* TouchProcessor.m */; };
 		C4A1A420106C018A00AC2F9D /* FJSScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE710FC8D0F000F6AD69 /* FJSScrollViewController.m */; };
 		C4A1A421106C018A00AC2F9D /* FJSSelectableScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE730FC8D0F000F6AD69 /* FJSSelectableScrollView.m */; };
-		C4A1A425106C018A00AC2F9D /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE9E0FC5C0980036595E /* UIView-Extensions.m */; };
 		C4A1A426106C018A00AC2F9D /* FJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE6C0FC8D0F000F6AD69 /* FJSViewController.m */; };
 		C4A1A427106C018A00AC2F9D /* FJSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F6CE6E0FC8D0F000F6AD69 /* FJSImageViewController.m */; };
 		C4A1A428106C018A00AC2F9D /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE960FC5C0980036595E /* LoadingView.m */; };
@@ -278,7 +270,6 @@
 		C4A1A628106C024E00AC2F9D /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C461FE920FC5C0980036595E /* NSDate+Helper.m */; };
 		C4A1A62D106C027A00AC2F9D /* DebugLog.h in Headers */ = {isa = PBXBuildFile; fileRef = C468A5F0105AD7D400302D93 /* DebugLog.h */; };
 		C4A1A62E106C027B00AC2F9D /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C468A5F1105AD7D400302D93 /* DebugLog.m */; };
-		C4A1A62F106C027B00AC2F9D /* MacroUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C4FEBDBD10084B36006978F7 /* MacroUtilities.h */; };
 		C4A1A634106C02AA00AC2F9D /* SynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = C461FE9F0FC5C0980036595E /* SynthesizeSingleton.h */; };
 		C4A1A635106C031000AC2F9D /* FJSFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C4D222AA100C07B200E88C0B /* FJSFileManager.h */; };
 		C4A1A636106C031100AC2F9D /* FJSFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D222AB100C07B200E88C0B /* FJSFileManager.m */; };
@@ -315,10 +306,6 @@
 		C4CC16C210DDFB7B00DBE821 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16C010DDFB7B00DBE821 /* BrowserViewController.m */; };
 		C4CC16C310DDFB7B00DBE821 /* BrowserViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16BF10DDFB7B00DBE821 /* BrowserViewController.h */; };
 		C4CC16C410DDFB7B00DBE821 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16C010DDFB7B00DBE821 /* BrowserViewController.m */; };
-		C4CC16C710DDFC3A00DBE821 /* NSError+Alertview.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16C510DDFC3A00DBE821 /* NSError+Alertview.h */; };
-		C4CC16C810DDFC3A00DBE821 /* NSError+Alertview.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16C610DDFC3A00DBE821 /* NSError+Alertview.m */; };
-		C4CC16C910DDFC3A00DBE821 /* NSError+Alertview.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16C510DDFC3A00DBE821 /* NSError+Alertview.h */; };
-		C4CC16CA10DDFC3A00DBE821 /* NSError+Alertview.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16C610DDFC3A00DBE821 /* NSError+Alertview.m */; };
 		C4CC16D510DDFF6700DBE821 /* UIImageHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16D310DDFF6700DBE821 /* UIImageHelper.h */; };
 		C4CC16D610DDFF6700DBE821 /* UIImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16D410DDFF6700DBE821 /* UIImageHelper.m */; };
 		C4CC16D710DDFF6700DBE821 /* UIImageHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16D310DDFF6700DBE821 /* UIImageHelper.h */; };
@@ -327,10 +314,6 @@
 		C4CC16DC10DE004000DBE821 /* UIDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16DA10DE004000DBE821 /* UIDeviceHelper.m */; };
 		C4CC16DD10DE004000DBE821 /* UIDeviceHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16D910DE004000DBE821 /* UIDeviceHelper.h */; };
 		C4CC16DE10DE004000DBE821 /* UIDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16DA10DE004000DBE821 /* UIDeviceHelper.m */; };
-		C4CC16E110DE009F00DBE821 /* NSURLHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16DF10DE009F00DBE821 /* NSURLHelper.h */; };
-		C4CC16E210DE009F00DBE821 /* NSURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16E010DE009F00DBE821 /* NSURLHelper.m */; };
-		C4CC16E310DE009F00DBE821 /* NSURLHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16DF10DE009F00DBE821 /* NSURLHelper.h */; };
-		C4CC16E410DE009F00DBE821 /* NSURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16E010DE009F00DBE821 /* NSURLHelper.m */; };
 		C4CC170010DE011D00DBE821 /* NSArrayHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16FE10DE011D00DBE821 /* NSArrayHelper.h */; };
 		C4CC170110DE011D00DBE821 /* NSArrayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC16FF10DE011D00DBE821 /* NSArrayHelper.m */; };
 		C4CC170210DE011D00DBE821 /* NSArrayHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C4CC16FE10DE011D00DBE821 /* NSArrayHelper.h */; };
@@ -435,7 +418,6 @@
 		C4FCA33F107148AF004DF747 /* NSManagedObject+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A4596910339C30002CBE45 /* NSManagedObject+Extensions.h */; };
 		C4FCA340107148B0004DF747 /* NSManagedObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C489B6B310327C2A00514567 /* NSManagedObject+Extensions.m */; };
 		C4FD3EB60FD242EB0084CFE3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FD3EB50FD242EA0084CFE3 /* CoreLocation.framework */; };
-		C4FEBDBE10084B36006978F7 /* MacroUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C4FEBDBD10084B36006978F7 /* MacroUtilities.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -524,8 +506,6 @@
 		C40A51650FFF27CD001D4CDE /* KBCollectionExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBCollectionExtensions.h; sourceTree = "<group>"; };
 		C411FBF811143DB80041F012 /* NSManagedObjectContext+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extensions.h"; sourceTree = "<group>"; };
 		C411FBF911143DB80041F012 /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
-		C411FC46111441A60041F012 /* UIAlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertViewHelper.h; sourceTree = "<group>"; };
-		C411FC47111441A60041F012 /* UIAlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertViewHelper.m; sourceTree = "<group>"; };
 		C41910650FDF546600D23A82 /* FJSMultiSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSMultiSelectTableViewCell.h; sourceTree = "<group>"; };
 		C41910660FDF546600D23A82 /* FJSMultiSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSMultiSelectTableViewCell.m; sourceTree = "<group>"; };
 		C419106E0FDF54FB00D23A82 /* FJSMultiSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSMultiSelectTableViewController.h; sourceTree = "<group>"; };
@@ -600,8 +580,6 @@
 		C461FE920FC5C0980036595E /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		C461FE950FC5C0980036595E /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		C461FE960FC5C0980036595E /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
-		C461FE9D0FC5C0980036595E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
-		C461FE9E0FC5C0980036595E /* UIView-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Extensions.m"; sourceTree = "<group>"; };
 		C461FE9F0FC5C0980036595E /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		C461FEA00FC5C0980036595E /* FJSCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSCode.h; sourceTree = "<group>"; };
 		C461FEAA0FC5C1200036595E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -622,6 +600,13 @@
 		C468A712105B067F00302D93 /* RKLMatchEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKLMatchEnumerator.h; sourceTree = "<group>"; };
 		C468A713105B067F00302D93 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		C468A714105B067F00302D93 /* RKLMatchEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKLMatchEnumerator.m; sourceTree = "<group>"; };
+		C470930411C96FB20082307C /* NSError+UIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+UIAlertView.h"; sourceTree = "<group>"; };
+		C470930511C96FB20082307C /* NSError+UIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+UIAlertView.m"; sourceTree = "<group>"; };
+		C470931511C971370082307C /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
+		C470931611C971370082307C /* UIView-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Extensions.m"; sourceTree = "<group>"; };
+		C470931911C9715A0082307C /* UIAlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertViewHelper.h; sourceTree = "<group>"; };
+		C470931A11C9715A0082307C /* UIAlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertViewHelper.m; sourceTree = "<group>"; };
+		C470933611C972720082307C /* MacroUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroUtilities.h; sourceTree = "<group>"; };
 		C486534C10BCA7360064A126 /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
 		C486534D10BCA7360064A126 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
 		C486534E10BCA7360064A126 /* UIDevice-IOKitExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-IOKitExtensions.h"; sourceTree = "<group>"; };
@@ -683,14 +668,10 @@
 		C4C652301142268500EAA479 /* NSArray+blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+blocks.h"; sourceTree = "<group>"; };
 		C4CC16BF10DDFB7B00DBE821 /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
 		C4CC16C010DDFB7B00DBE821 /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
-		C4CC16C510DDFC3A00DBE821 /* NSError+Alertview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Alertview.h"; sourceTree = "<group>"; };
-		C4CC16C610DDFC3A00DBE821 /* NSError+Alertview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Alertview.m"; sourceTree = "<group>"; };
 		C4CC16D310DDFF6700DBE821 /* UIImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageHelper.h; sourceTree = "<group>"; };
 		C4CC16D410DDFF6700DBE821 /* UIImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageHelper.m; sourceTree = "<group>"; };
 		C4CC16D910DE004000DBE821 /* UIDeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHelper.h; sourceTree = "<group>"; };
 		C4CC16DA10DE004000DBE821 /* UIDeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHelper.m; sourceTree = "<group>"; };
-		C4CC16DF10DE009F00DBE821 /* NSURLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLHelper.h; sourceTree = "<group>"; };
-		C4CC16E010DE009F00DBE821 /* NSURLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLHelper.m; sourceTree = "<group>"; };
 		C4CC16FE10DE011D00DBE821 /* NSArrayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayHelper.h; sourceTree = "<group>"; };
 		C4CC16FF10DE011D00DBE821 /* NSArrayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayHelper.m; sourceTree = "<group>"; };
 		C4CC170410DE016000DBE821 /* UIBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBezierPath.h; sourceTree = "<group>"; };
@@ -754,7 +735,6 @@
 		C4F6CE790FC8D29D00F6AD69 /* FJSImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSImageScrollViewController.h; sourceTree = "<group>"; };
 		C4F6CE7A0FC8D29D00F6AD69 /* FJSImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSImageScrollViewController.m; sourceTree = "<group>"; };
 		C4FD3EB50FD242EA0084CFE3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		C4FEBDBD10084B36006978F7 /* MacroUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroUtilities.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1136,7 +1116,7 @@
 		C468A5F4105AD7DA00302D93 /* NSLog */ = {
 			isa = PBXGroup;
 			children = (
-				C4FEBDBD10084B36006978F7 /* MacroUtilities.h */,
+				C470933611C972720082307C /* MacroUtilities.h */,
 				C468A5F0105AD7D400302D93 /* DebugLog.h */,
 				C468A5F1105AD7D400302D93 /* DebugLog.m */,
 			);
@@ -1270,16 +1250,16 @@
 			children = (
 				C4CC17B310DE0E6700DBE821 /* L0ExternalURLOpeningDetection.h */,
 				C4CC17B410DE0E6700DBE821 /* L0ExternalURLOpeningDetection.m */,
-				C4CC16C510DDFC3A00DBE821 /* NSError+Alertview.h */,
-				C4CC16C610DDFC3A00DBE821 /* NSError+Alertview.m */,
+				C470930411C96FB20082307C /* NSError+UIAlertView.h */,
+				C470930511C96FB20082307C /* NSError+UIAlertView.m */,
 				C4D71F1D104E3CFB002F4E70 /* NSArray+TableView.h */,
 				C4D71F1E104E3CFB002F4E70 /* NSArray+TableView.m */,
+				C470931511C971370082307C /* UIView-Extensions.h */,
+				C470931611C971370082307C /* UIView-Extensions.m */,
+				C470931911C9715A0082307C /* UIAlertViewHelper.h */,
+				C470931A11C9715A0082307C /* UIAlertViewHelper.m */,
 				C42E952E10D6CEE900754443 /* UIColor+extensions.h */,
 				C42E952F10D6CEE900754443 /* UIColor+extensions.m */,
-				C461FE9D0FC5C0980036595E /* UIView-Extensions.h */,
-				C461FE9E0FC5C0980036595E /* UIView-Extensions.m */,
-				C411FC46111441A60041F012 /* UIAlertViewHelper.h */,
-				C411FC47111441A60041F012 /* UIAlertViewHelper.m */,
 				C4CC17F310DE180700DBE821 /* BlueBadge.h */,
 				C4CC17F410DE180700DBE821 /* BlueBadge.m */,
 				C42E952810D6CEB600754443 /* UIBarButtonItem+extensions.h */,
@@ -1407,8 +1387,6 @@
 				C4CC16FF10DE011D00DBE821 /* NSArrayHelper.m */,
 				C4CC17DB10DE145A00DBE821 /* NSMutableArray+Extensions.h */,
 				C4CC17DC10DE145A00DBE821 /* NSMutableArray+Extensions.m */,
-				C4CC16DF10DE009F00DBE821 /* NSURLHelper.h */,
-				C4CC16E010DE009F00DBE821 /* NSURLHelper.m */,
 				C422B99710FAA0A900925B8E /* NSURL+Extensions.h */,
 				C422B99810FAA0A900925B8E /* NSURL+Extensions.m */,
 				C4A8364B117A256A007D9A2A /* NSOperationQueue+Shared.h */,
@@ -1441,7 +1419,6 @@
 				C4AC6C2A0FFC209100D37504 /* FJSScrollViewController.h in Headers */,
 				C4F6CFEA0FCA3FA100F6AD69 /* FJSSelectableScrollView.h in Headers */,
 				C461FEBF0FC5C19E0036595E /* FJSCode.h in Headers */,
-				C461FECB0FC5C1A90036595E /* UIView-Extensions.h in Headers */,
 				C461FEC40FC5C1A40036595E /* NSDate+Helper.h in Headers */,
 				C4F6CFEB0FCA3FA100F6AD69 /* FJSViewController.h in Headers */,
 				C4F6CFEC0FCA3FA100F6AD69 /* FJSImageViewController.h in Headers */,
@@ -1472,7 +1449,6 @@
 				C41910960FDF55C400D23A82 /* AbstractGenericViewController.h in Headers */,
 				C41910980FDF55C400D23A82 /* SelectionListViewController.h in Headers */,
 				C419109A0FDF55C400D23A82 /* TextFieldEditingViewController.h in Headers */,
-				C4FEBDBE10084B36006978F7 /* MacroUtilities.h in Headers */,
 				C4D222AC100C07B200E88C0B /* FJSFileManager.h in Headers */,
 				C466B4EA100E91EE00829882 /* FJSNetworkImageViewController.h in Headers */,
 				C403FC7A100F866A00DCA31A /* SCListener.h in Headers */,
@@ -1516,10 +1492,8 @@
 				C42E952A10D6CEB600754443 /* UIBarButtonItem+extensions.h in Headers */,
 				C42E953010D6CEE900754443 /* UIColor+extensions.h in Headers */,
 				C4CC16C110DDFB7B00DBE821 /* BrowserViewController.h in Headers */,
-				C4CC16C710DDFC3A00DBE821 /* NSError+Alertview.h in Headers */,
 				C4CC16D510DDFF6700DBE821 /* UIImageHelper.h in Headers */,
 				C4CC16DB10DE004000DBE821 /* UIDeviceHelper.h in Headers */,
-				C4CC16E110DE009F00DBE821 /* NSURLHelper.h in Headers */,
 				C4CC170010DE011D00DBE821 /* NSArrayHelper.h in Headers */,
 				C4CC170510DE016000DBE821 /* UIBezierPath.h in Headers */,
 				C4CC170910DE018300DBE821 /* NSDictionaryHelper.h in Headers */,
@@ -1534,7 +1508,6 @@
 				C4EFEC9F10E1D13C005180AC /* FJSDatePickerController.h in Headers */,
 				C422B99910FAA0A900925B8E /* NSURL+Extensions.h in Headers */,
 				C411FBFA11143DB80041F012 /* NSManagedObjectContext+Extensions.h in Headers */,
-				C411FC48111441A60041F012 /* UIAlertViewHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1554,7 +1527,6 @@
 				C4A1A624106C024A00AC2F9D /* NSArray+TableView.h in Headers */,
 				C4A1A627106C024D00AC2F9D /* NSDate+Helper.h in Headers */,
 				C4A1A62D106C027A00AC2F9D /* DebugLog.h in Headers */,
-				C4A1A62F106C027B00AC2F9D /* MacroUtilities.h in Headers */,
 				C4A1A634106C02AA00AC2F9D /* SynthesizeSingleton.h in Headers */,
 				C4A1A635106C031000AC2F9D /* FJSFileManager.h in Headers */,
 				C4A1A637106C032300AC2F9D /* FJSDownloader.h in Headers */,
@@ -1583,7 +1555,6 @@
 				C4A1A3D2106C018A00AC2F9D /* TouchProcessor.h in Headers */,
 				C4A1A3D3106C018A00AC2F9D /* FJSScrollViewController.h in Headers */,
 				C4A1A3D4106C018A00AC2F9D /* FJSSelectableScrollView.h in Headers */,
-				C4A1A3D8106C018A00AC2F9D /* UIView-Extensions.h in Headers */,
 				C4A1A3DA106C018A00AC2F9D /* FJSViewController.h in Headers */,
 				C4A1A3DB106C018A00AC2F9D /* FJSImageViewController.h in Headers */,
 				C4A1A3DC106C018A00AC2F9D /* LoadingView.h in Headers */,
@@ -1635,10 +1606,8 @@
 				C42E952C10D6CEB600754443 /* UIBarButtonItem+extensions.h in Headers */,
 				C42E953210D6CEE900754443 /* UIColor+extensions.h in Headers */,
 				C4CC16C310DDFB7B00DBE821 /* BrowserViewController.h in Headers */,
-				C4CC16C910DDFC3A00DBE821 /* NSError+Alertview.h in Headers */,
 				C4CC16D710DDFF6700DBE821 /* UIImageHelper.h in Headers */,
 				C4CC16DD10DE004000DBE821 /* UIDeviceHelper.h in Headers */,
-				C4CC16E310DE009F00DBE821 /* NSURLHelper.h in Headers */,
 				C4CC173810DE052600DBE821 /* Reachabilityv15.h in Headers */,
 				C4CC175A10DE068A00DBE821 /* ExceptionHelper.h in Headers */,
 				C4CC17B910DE0E6700DBE821 /* L0ExternalURLOpeningDetection.h in Headers */,
@@ -1675,7 +1644,6 @@
 				C4FCA33B107148AB004DF747 /* FJSCoreDataTableViewController.h in Headers */,
 				C4FCA33F107148AF004DF747 /* NSManagedObject+Extensions.h in Headers */,
 				C411FBFC11143DB80041F012 /* NSManagedObjectContext+Extensions.h in Headers */,
-				C411FC4A111441A60041F012 /* UIAlertViewHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1837,7 +1805,6 @@
 				C4AC6C2D0FFC20AA00D37504 /* FJSScrollViewController.m in Sources */,
 				C4F6CFF30FCA3FD500F6AD69 /* FJSSelectableScrollView.m in Sources */,
 				C461FEC50FC5C1A50036595E /* NSDate+Helper.m in Sources */,
-				C461FECC0FC5C1A90036595E /* UIView-Extensions.m in Sources */,
 				C4F6CFF40FCA3FD500F6AD69 /* FJSViewController.m in Sources */,
 				C4F6CFF50FCA3FD500F6AD69 /* FJSImageViewController.m in Sources */,
 				C461FEC30FC5C1A30036595E /* LoadingView.m in Sources */,
@@ -1906,10 +1873,8 @@
 				C42E952B10D6CEB600754443 /* UIBarButtonItem+extensions.m in Sources */,
 				C42E953110D6CEE900754443 /* UIColor+extensions.m in Sources */,
 				C4CC16C210DDFB7B00DBE821 /* BrowserViewController.m in Sources */,
-				C4CC16C810DDFC3A00DBE821 /* NSError+Alertview.m in Sources */,
 				C4CC16D610DDFF6700DBE821 /* UIImageHelper.m in Sources */,
 				C4CC16DC10DE004000DBE821 /* UIDeviceHelper.m in Sources */,
-				C4CC16E210DE009F00DBE821 /* NSURLHelper.m in Sources */,
 				C4CC170110DE011D00DBE821 /* NSArrayHelper.m in Sources */,
 				C4CC170A10DE018300DBE821 /* NSDictionaryHelper.m in Sources */,
 				C4CC171F10DE020F00DBE821 /* NSObjectHelper.m in Sources */,
@@ -1923,7 +1888,6 @@
 				C4EFECA010E1D13C005180AC /* FJSDatePickerController.m in Sources */,
 				C422B99A10FAA0A900925B8E /* NSURL+Extensions.m in Sources */,
 				C411FBFB11143DB80041F012 /* NSManagedObjectContext+Extensions.m in Sources */,
-				C411FC49111441A60041F012 /* UIAlertViewHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1969,7 +1933,6 @@
 				C4A1A41F106C018A00AC2F9D /* TouchProcessor.m in Sources */,
 				C4A1A420106C018A00AC2F9D /* FJSScrollViewController.m in Sources */,
 				C4A1A421106C018A00AC2F9D /* FJSSelectableScrollView.m in Sources */,
-				C4A1A425106C018A00AC2F9D /* UIView-Extensions.m in Sources */,
 				C4A1A426106C018A00AC2F9D /* FJSViewController.m in Sources */,
 				C4A1A427106C018A00AC2F9D /* FJSImageViewController.m in Sources */,
 				C4A1A428106C018A00AC2F9D /* LoadingView.m in Sources */,
@@ -2018,10 +1981,8 @@
 				C42E952D10D6CEB600754443 /* UIBarButtonItem+extensions.m in Sources */,
 				C42E953310D6CEE900754443 /* UIColor+extensions.m in Sources */,
 				C4CC16C410DDFB7B00DBE821 /* BrowserViewController.m in Sources */,
-				C4CC16CA10DDFC3A00DBE821 /* NSError+Alertview.m in Sources */,
 				C4CC16D810DDFF6700DBE821 /* UIImageHelper.m in Sources */,
 				C4CC16DE10DE004000DBE821 /* UIDeviceHelper.m in Sources */,
-				C4CC16E410DE009F00DBE821 /* NSURLHelper.m in Sources */,
 				C4CC173910DE052600DBE821 /* Reachabilityv15.m in Sources */,
 				C4CC175B10DE068A00DBE821 /* ExceptionHelper.m in Sources */,
 				C4CC17BA10DE0E6700DBE821 /* L0ExternalURLOpeningDetection.m in Sources */,
@@ -2058,7 +2019,6 @@
 				C4FCA33C107148AC004DF747 /* FJSCoreDataTableViewController.m in Sources */,
 				C4FCA340107148B0004DF747 /* NSManagedObject+Extensions.m in Sources */,
 				C411FBFD11143DB80041F012 /* NSManagedObjectContext+Extensions.m in Sources */,
-				C411FC4B111441A60041F012 /* UIAlertViewHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
