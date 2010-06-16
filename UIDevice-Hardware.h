@@ -76,6 +76,13 @@ enum {
 + (NSUInteger) totalMemory;
 + (NSUInteger) userMemory;
 
+
+/*
+ * Available device memory in MB 
+ */
+@property(readonly) double availableMemory;
+
+
 + (NSNumber *) totalDiskSpace;
 + (NSNumber *) freeDiskSpace;
 
