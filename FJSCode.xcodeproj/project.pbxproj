@@ -36,8 +36,6 @@
 		C42E952910D6CEB600754443 /* UIBarButtonItem+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+extensions.m"; sourceTree = "<group>"; };
 		C42E952E10D6CEE900754443 /* UIColor+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+extensions.h"; sourceTree = "<group>"; };
 		C42E952F10D6CEE900754443 /* UIColor+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extensions.m"; sourceTree = "<group>"; };
-		C42E97A310D86D4300754443 /* NSString+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+extensions.h"; path = "../../ProductionProjects/HRC/BuyingGuide/NSString+extensions.h"; sourceTree = SOURCE_ROOT; };
-		C42E97A410D86D4300754443 /* NSString+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+extensions.m"; path = "../../ProductionProjects/HRC/BuyingGuide/NSString+extensions.m"; sourceTree = SOURCE_ROOT; };
 		C43FAB660FCC424000EB4F92 /* IFActionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFActionToolbar.m; sourceTree = "<group>"; };
 		C43FAB670FCC424000EB4F92 /* IFActionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFActionToolbar.h; sourceTree = "<group>"; };
 		C461FE910FC5C0980036595E /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
@@ -60,6 +58,8 @@
 		C470935711C974D30082307C /* NSManagedObjectContext+CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+CoreDataStack.m"; sourceTree = "<group>"; };
 		C470935811C974D30082307C /* NSManagedObjectContext+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Convenience.h"; sourceTree = "<group>"; };
 		C470935911C974D30082307C /* NSManagedObjectContext+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Convenience.m"; sourceTree = "<group>"; };
+		C470953211C97D100082307C /* NSString+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extensions.h"; sourceTree = "<group>"; };
+		C470953311C97D100082307C /* NSString+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extensions.m"; sourceTree = "<group>"; };
 		C486534C10BCA7360064A126 /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
 		C486534D10BCA7360064A126 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
 		C486534E10BCA7360064A126 /* UIDevice-IOKitExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-IOKitExtensions.h"; sourceTree = "<group>"; };
@@ -430,8 +430,8 @@
 				C4A83634117A2369007D9A2A /* NSObject+Proxy.m */,
 				C4CC171C10DE020F00DBE821 /* NSObjectHelper.h */,
 				C4CC171D10DE020F00DBE821 /* NSObjectHelper.m */,
-				C42E97A310D86D4300754443 /* NSString+extensions.h */,
-				C42E97A410D86D4300754443 /* NSString+extensions.m */,
+				C470953211C97D100082307C /* NSString+extensions.h */,
+				C470953311C97D100082307C /* NSString+extensions.m */,
 				C4CC170710DE018300DBE821 /* NSDictionaryHelper.h */,
 				C4CC170810DE018300DBE821 /* NSDictionaryHelper.m */,
 				C4CC16FE10DE011D00DBE821 /* NSArrayHelper.h */,
