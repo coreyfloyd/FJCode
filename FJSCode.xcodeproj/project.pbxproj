@@ -22,6 +22,8 @@
 		C403FCE9100FA10A00DCA31A /* ListenerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListenerController.m; sourceTree = "<group>"; };
 		C40A51640FFF27CD001D4CDE /* KBCollectionExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBCollectionExtensions.m; sourceTree = "<group>"; };
 		C40A51650FFF27CD001D4CDE /* KBCollectionExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBCollectionExtensions.h; sourceTree = "<group>"; };
+		C410226611CBE6E000E651D3 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		C410226711CBE6E000E651D3 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		C41AFD31101E0F910095F37D /* VisualFeedbackHiddenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualFeedbackHiddenButton.h; sourceTree = "<group>"; };
 		C41AFD32101E0F910095F37D /* VisualFeedbackHiddenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisualFeedbackHiddenButton.m; sourceTree = "<group>"; };
 		C41CD42B11308CCB0085A3BF /* FJSTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTweetViewController.h; sourceTree = "<group>"; };
@@ -234,6 +236,8 @@
 			children = (
 				C461FEA00FC5C0980036595E /* FJSCode.h */,
 				C461FE9F0FC5C0980036595E /* SynthesizeSingleton.h */,
+				C410226611CBE6E000E651D3 /* SFHFKeychainUtils.h */,
+				C410226711CBE6E000E651D3 /* SFHFKeychainUtils.m */,
 				C468A5F4105AD7DA00302D93 /* NSLog */,
 				C4F6D0090FCA533900F6AD69 /* Generic Categories */,
 				C489B66C1032762E00514567 /* CoreData Categories */,
