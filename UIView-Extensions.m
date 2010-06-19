@@ -290,7 +290,7 @@ CGRect rectContractedByValue(CGRect rect,  float expandRadius){
             theFirstResponder = aSubview;
             break;
         } else{
-            if(theFirstResponder = [aSubview firstResponder])
+            if((theFirstResponder = [aSubview firstResponder]))
                 break;
         }
     }

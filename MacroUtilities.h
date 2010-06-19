@@ -11,6 +11,12 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define IS_IPAD             (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_OS_4_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0)
+#define IS_OS_32_OR_LATER   ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2)
+
+
 #define NSYES [NSNumber numberWithBool:YES]
 #define NSNO [NSNumber numberWithBool:NO]
 
