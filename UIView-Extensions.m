@@ -219,6 +219,21 @@ CGRect rectContractedByValue(CGRect rect,  float expandRadius){
 }
 
 
+
+- (void)animateAlpha:(float)alphaValue delay:(CGFloat)delay duration:(CGFloat)duration removeFromSuperView:(BOOL)flag{
+    
+    [UIView beginAnimations:@"setAlpha" context:nil];
+	[UIView setAnimationDelay:delay];
+	[UIView setAnimationDuration:duration];
+	self.alpha=alphaValue;
+	[UIView commitAnimations];
+    
+    if(flag)
+        [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:(delay + duration)];
+    
+}
+
+
 @end
 
 @implementation UIView (introspection)

@@ -59,6 +59,7 @@ CGRect rectContractedByValue(CGRect rect,  float expandRadius);
 - (void)changeColor:(UIColor *)aColor withDelay:(CGFloat)delay duration:(CGFloat)duration;
 - (void)rotate:(float)degrees;
 
+- (void)animateAlpha:(float)alphaValue delay:(CGFloat)delay duration:(CGFloat)duration removeFromSuperView:(BOOL)flag;
 
 @end
 
