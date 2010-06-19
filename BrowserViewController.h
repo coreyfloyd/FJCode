@@ -4,13 +4,13 @@
 //
 //  Created by Stephan Burlot, Coriolis Technologies, http://www.coriolis.ch on 29.10.09.
 //
-// This work is licensed under the Creative Commons GNU General Public License License.
-// To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.0/
+// This work is licensed under the Creative Commons Attribution License.
+// To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
 // or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
 //
 
 #import <UIKit/UIKit.h>
-#import "Reachabilityv15.h"
+#import "Reachability.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
@@ -40,6 +40,8 @@
 	BOOL canOpenSafari;	// can we open the current page in Safari?
 	BOOL canRotateLandscape;	// can we rotate?
 	BOOL confirmBeforeExiting;	// need confirmation before exiting the app?
+    
+    Reachability* network;
 
 }
 
@@ -51,6 +53,7 @@
 @property (nonatomic, assign) BOOL canOpenSafari;
 @property (nonatomic, assign) BOOL canRotateLandscape;
 @property (nonatomic, assign) BOOL confirmBeforeExiting;
+@property (nonatomic, retain) Reachability *network;
 
 - (id) initWithURL:(NSURL *)_baseUrl;
 
@@ -61,6 +64,7 @@
 - (void) sendOrOpenCurrentPage;
 - (void) fixToolbarButtons;
 - (void) sendEmailWithSubject:(NSString *)subject body:(NSString *)body to:(NSString *)toPerson cc:(NSString *)ccPerson;
+- (void) showYouTubeVideoInline:(NSURL *)url;
 - (void) confirmBeforeOpeningURL:(NSURL *)externalURL withMessage:(NSString *)msg;
 - (void) openExternalURL:(NSURL *)externalURL;
 - (void) showLoadingView;

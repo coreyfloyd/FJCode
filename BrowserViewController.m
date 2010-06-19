@@ -4,8 +4,8 @@
 //
 //  Created by Stephan Burlot, Coriolis Technologies, http://www.coriolis.ch on 29.10.09.
 //
-// This work is licensed under the Creative Commons GNU General Public License License.
-// To view a copy of this license, visit http://creativecommons.org/licenses/GPL/2.0/
+// This work is licensed under the Creative Commons Attribution License.
+// To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
 // or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
 //
 
@@ -20,26 +20,26 @@
 @implementation UIToolbar (Extras)
 
 - (UIBarButtonItem*)itemWithTag:(NSInteger)tag {
-  for (UIBarButtonItem* button in self.items) {
-    if (button.tag == tag) {
-      return button;
+    for (UIBarButtonItem* button in self.items) {
+        if (button.tag == tag) {
+            return button;
+        }
     }
-  }
-  return nil;  
+    return nil;  
 }
 
 //==========================================================================================
 - (void)replaceItemWithTag:(NSInteger)tag withItem:(UIBarButtonItem*)item {
-  NSInteger index = 0;
-  for (UIBarButtonItem* button in self.items) {
-    if (button.tag == tag) {
-      NSMutableArray* newItems = [NSMutableArray arrayWithArray:self.items];
-      [newItems replaceObjectAtIndex:index withObject:item];
-      self.items = newItems;
-      break;
-    }
-    ++index;
-  }  
+    NSInteger index = 0;
+    for (UIBarButtonItem* button in self.items) {
+        if (button.tag == tag) {
+            NSMutableArray* newItems = [NSMutableArray arrayWithArray:self.items];
+            [newItems replaceObjectAtIndex:index withObject:item];
+            self.items = newItems;
+            break;
+        }
+        ++index;
+    }  
 }
 
 @end
@@ -55,6 +55,11 @@
 @synthesize canOpenSafari;
 @synthesize canRotateLandscape;
 @synthesize confirmBeforeExiting;
+@synthesize network;
+
+
+
+
 
 //==========================================================================================
 - (id) initWithURL:(NSURL *)_baseURL
@@ -65,7 +70,7 @@
 		self.canOpenSafari = TRUE;
 		self.canRotateLandscape = TRUE;
 		self.confirmBeforeExiting = TRUE;
-		[[Reachability sharedReachability] setHostName:[_baseURL host]];
+		self.network = [Reachability reachabilityWithHostName:[_baseURL host]];
 	}
 	return self;
 }
@@ -93,35 +98,35 @@
 		CGFloat toolbarHeight = [toolbar frame].size.height;
 		CGRect mainViewBounds = self.view.bounds;
 		[toolbar setFrame:CGRectMake(CGRectGetMinX(mainViewBounds),
-																 CGRectGetMinY(mainViewBounds) + CGRectGetHeight(mainViewBounds) - toolbarHeight,
-																 CGRectGetWidth(mainViewBounds),
-																 toolbarHeight)];
+                                     CGRectGetMinY(mainViewBounds) + CGRectGetHeight(mainViewBounds) - toolbarHeight,
+                                     CGRectGetWidth(mainViewBounds),
+                                     toolbarHeight)];
 		
 		[self.view addSubview:toolbar];
 		toolbar.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin);
 		
 		UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-																																							target:nil
-																																							action:nil];
+                                                                                  target:nil
+                                                                                  action:nil];
 		UIBarButtonItem *goBackButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"go_left.png"]
-																																		 style:UIBarButtonItemStylePlain
-																																		target:self
-																																		action:@selector(goBackHistory)];
+                                                                         style:UIBarButtonItemStylePlain
+                                                                        target:self
+                                                                        action:@selector(goBackHistory)];
 		goBackButton.tag = GOBACKBUTTON_TAG;
 		UIBarButtonItem *goFwdButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"go_right.png"]
-																																		style:UIBarButtonItemStylePlain
-																																	 target:self
-																																	 action:@selector(goFwdHistory)];
+                                                                        style:UIBarButtonItemStylePlain
+                                                                       target:self
+                                                                       action:@selector(goFwdHistory)];
 		goFwdButton.tag = GOFWDBUTTON_TAG;
 		
 		UIBarButtonItem *reloadButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
-																																									target:self 
-																																									action:@selector(reloadWebview)];
+                                                                                      target:self 
+                                                                                      action:@selector(reloadWebview)];
 		reloadButton.tag = RELOADBUTTON_TAG;
 		
 		UIBarButtonItem *sendButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
-																																								target:self 
-																																								action:@selector(sendOrOpenCurrentPage)];
+                                                                                    target:self 
+                                                                                    action:@selector(sendOrOpenCurrentPage)];
 		sendButton.tag = SENDBUTTON_TAG;
 		
 		NSArray *items = [NSArray arrayWithObjects: flexItem, goBackButton, flexItem, goFwdButton, flexItem, reloadButton, flexItem, sendButton, flexItem, nil];
@@ -152,7 +157,7 @@
 	MARK;
 	NSURLRequest *req = [NSURLRequest requestWithURL:currentURL];
 	[webView loadRequest:req];
-//	[self showLoadingView];
+    //	[self showLoadingView];
 	[super viewDidLoad];
 }
 
@@ -199,6 +204,9 @@
 //==========================================================================================
 - (void)dealloc
 {
+    
+    [network release];
+    network = nil;
 	self.webView = nil;
 	self.currentURL = nil;
 	self.externalURL = nil;
@@ -239,22 +247,22 @@
 	UIActionSheet *actionSheet;
 	if (canOpenSafari) {
 		actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Web Browser", nil)
-																							delegate:self 
-																		 cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-																destructiveButtonTitle:nil
-																		 otherButtonTitles:NSLocalizedString(@"Open with Safari", nil), NSLocalizedString(@"Send link via Email", nil), nil];
+                                                  delegate:self 
+                                         cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                    destructiveButtonTitle:nil
+                                         otherButtonTitles:NSLocalizedString(@"Open with Safari", nil), NSLocalizedString(@"Send link via Email", nil), nil];
 	} else {
 		actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Web Browser", nil)
-																							delegate:self 
-																		 cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-																destructiveButtonTitle:nil
-																		 otherButtonTitles:NSLocalizedString(@"Send link via Email", nil), nil];
+                                                  delegate:self 
+                                         cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                    destructiveButtonTitle:nil
+                                         otherButtonTitles:NSLocalizedString(@"Send link via Email", nil), nil];
 	}
 	actionSheet.tag = ACTION_SENDLINK;
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[actionSheet showInView:self.view];
 	[actionSheet release];
-
+    
 }
 
 //==========================================================================================
@@ -262,16 +270,16 @@
 {
 	if ([webView isLoading]) {
 		UIBarButtonItem *pauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop 
-																																								 target:self 
-																																								 action:@selector(stopLoading)];
+                                                                                     target:self 
+                                                                                     action:@selector(stopLoading)];
 		pauseButton.tag = RELOADBUTTON_TAG;
 		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 		[toolbar replaceItemWithTag:RELOADBUTTON_TAG withItem:pauseButton];
 		[pauseButton release];
 	} else {
 		UIBarButtonItem *reloadButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
-																																									target:self 
-																																									action:@selector(reloadWebview)];
+                                                                                      target:self 
+                                                                                      action:@selector(reloadWebview)];
 		reloadButton.tag = RELOADBUTTON_TAG;
 		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 		[toolbar replaceItemWithTag:RELOADBUTTON_TAG withItem:reloadButton];
@@ -287,7 +295,7 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
 	if (buttonIndex == 1)
-			[self openExternalURL:externalURL];
+        [self openExternalURL:externalURL];
 }
 
 //==========================================================================================
@@ -309,36 +317,34 @@
 						break;
 				}
 			} else {
-					switch (buttonIndex) {
-						case 0:	// Envoyer par email
-							[self sendEmailWithSubject:@"" body:[currentURL absoluteString] to:@"" cc:@""];
-							break;
-						case 1: // Cancel
-							break;
-					}
+                switch (buttonIndex) {
+                    case 0:	// Envoyer par email
+                        [self sendEmailWithSubject:@"" body:[currentURL absoluteString] to:@"" cc:@""];
+                        break;
+                    case 1: // Cancel
+                        break;
+                }
 			}
 			break;
 		case ACTION_OPEN_EXTERNAL:
 			break;
 	}
 }
-	
+
 //==========================================================================================
 #pragma mark Mail stuff
 //==========================================================================================
 - (void) sendEmailWithSubject:(NSString *)subject body:(NSString *)body to:(NSString *)toPerson cc:(NSString *)ccPerson
 {
-	NetworkStatus internetConnectionStatus;
 	NetworkStatus remoteHostStatus;
 	
-	remoteHostStatus         = [[Reachability sharedReachability] remoteHostStatus];
-	internetConnectionStatus = [[Reachability sharedReachability] internetConnectionStatus];
-	if ((internetConnectionStatus == NotReachable) && (remoteHostStatus == NotReachable)) {
+	remoteHostStatus   = [network currentReachabilityStatus];
+	if ((remoteHostStatus == NotReachable)) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", nil)
-																										message:NSLocalizedString(@"You have no internet connection.", nil) 
-																									 delegate:nil 
-																					cancelButtonTitle:NSLocalizedString(@"OK", nil) 
-																					otherButtonTitles:nil];
+                                                        message:NSLocalizedString(@"You have no internet connection.", nil) 
+                                                       delegate:nil 
+                                              cancelButtonTitle:NSLocalizedString(@"OK", nil) 
+                                              otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 		return;
@@ -347,10 +353,10 @@
 #if	!TARGET_IPHONE_SIMULATOR
 	if (![MFMailComposeViewController canSendMail]) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", nil)
-																										message:NSLocalizedString(@"Your iPhone is not configured to send emails.", nil) 
-																									 delegate:nil 
-																					cancelButtonTitle:NSLocalizedString(@"OK", nil) 
-																					otherButtonTitles:nil];
+                                                        message:NSLocalizedString(@"Your iPhone is not configured to send emails.", nil) 
+                                                       delegate:nil 
+                                              cancelButtonTitle:NSLocalizedString(@"OK", nil) 
+                                              otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 		return;
@@ -366,9 +372,7 @@
 	[picker setSubject:subject];
 	
 	[picker setMessageBody:body isHTML:NO];
-	
-	picker.navigationBar.tintColor = [UIColor blackColor];
-	
+    
 	[self presentModalViewController:picker animated:YES];
 	[picker release];
 }
@@ -398,10 +402,10 @@
 	[self dismissModalViewControllerAnimated:YES];
 	if (alertMessage != nil) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sending Email", nil) 
-																										message:alertMessage 
-																									 delegate:nil 
-																					cancelButtonTitle:NSLocalizedString(@"OK", nil)
-																					otherButtonTitles:nil,nil];
+                                                        message:alertMessage 
+                                                       delegate:nil 
+                                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                              otherButtonTitles:nil,nil];
 		[alert show];
 		[alert release];
 	}
@@ -413,12 +417,12 @@
 {
 	// method to split an url "mailto:sburlot@coriolis.ch?cc=info@coriolis.ch&subject=Hello%20From%20iPhone&body=The message's first paragraph.%0A%0aSecond paragraph.%0A%0AThird Paragraph."
 	// into separate elements
-
+    
 	NSString *toPerson = @"";
 	NSString *ccPerson = @"";;
 	NSString *subject = @"";
 	NSString *body = @"";
-
+    
 	NSMutableString *urlString = [NSMutableString stringWithString:[url absoluteString]];
 	[urlString replaceOccurrencesOfString:@"mailto:" withString:@"" options:0 range:NSMakeRange(0, [urlString length])];
 	
@@ -430,7 +434,7 @@
 			NSArray *itemsOfURL = [query componentsSeparatedByString:@"&"];
 			for (NSString *queryItem in itemsOfURL) {
 				NSArray *queryElements = [queryItem componentsSeparatedByString:@"="];
-				CMLog(@"queryElements: %@", queryElements);
+				FJSLog(@"queryElements: %@", queryElements);
 				if ([[queryElements objectAtIndex:0] isEqualToString:@"to"])
 					toPerson = [[queryElements objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 				if ([[queryElements objectAtIndex:0] isEqualToString:@"cc"])
@@ -444,13 +448,13 @@
 	} else {
 		toPerson = urlString;
 	}
-
-	CMLog(@"to: %@", toPerson);
-	CMLog(@"cc: %@", ccPerson);
-	CMLog(@"subject: %@", subject);
-	CMLog(@"body: %@", body);
+    
+	FJSLog(@"to: %@", toPerson);
+	FJSLog(@"cc: %@", ccPerson);
+	FJSLog(@"subject: %@", subject);
+	FJSLog(@"body: %@", body);
 	[self sendEmailWithSubject:subject body:body to:toPerson cc:ccPerson];
-
+    
 }
 
 //==========================================================================================
@@ -463,8 +467,8 @@
 	self.currentURL = _externalURL;
 	[self performSelector:@selector(showLoadingView) withObject:nil afterDelay:0.2];
 	NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:_externalURL] 
-																													delegate:self 
-																									startImmediately:YES];
+                                                            delegate:self 
+                                                    startImmediately:YES];
 	[conn release];
 }
 
@@ -490,10 +494,10 @@
 	self.externalURL = _externalURL;
 	if (confirmBeforeExiting) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", nil)
-																										message:msg
-																									 delegate:self 
-																					cancelButtonTitle:NSLocalizedString(@"Cancel", nil) 
-																					otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
+                                                        message:msg
+                                                       delegate:self 
+                                              cancelButtonTitle:NSLocalizedString(@"Cancel", nil) 
+                                              otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
 		[alert show];
 		[alert release];
 	} else {
@@ -510,7 +514,7 @@
 	loadingView.alpha = 0.8;
 	loadingView.opaque = NO;
 	loadingView.backgroundColor = [UIColor darkGrayColor];
-
+    
 	loadingView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	UIActivityIndicatorView *progressView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(142.0, 222.0, 37.0, 37.0)];
 	progressView.center = loadingView.center;
@@ -524,6 +528,24 @@
 }
 
 //==========================================================================================
+- (void) showYouTubeVideoInline:(NSURL *)url
+{
+	NSString *embedHTML = @"<html><head><style type=\"text/css\">\
+	body { background-color: transparent;color: white; }\
+	</style></head>\
+	<body style=\"margin:0\">\
+	<embed id=\"yt\" src=\"%@\" type=\"application/x-shockwave-flash\" width=\"460.0f\" height=\"320.0f\"></embed>\
+	</body></html>";
+    //	<media:content url='http://www.youtube.com/v/8aYQ_wjmriQ' type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full' yt:format='6'/>
+	// http://code.google.com/apis/youtube/2.0/reference.html#youtube_data_api_tag_media:content
+	// http://gdata.youtube.com/feeds/api/videos/oHg5SJYRHA0?alt=json
+	// http://gdata.youtube.com/feeds/api/videos/oHg5SJYRHA0?alt=json
+	NSString *html = [NSString stringWithFormat:embedHTML, [url absoluteString]]; 
+	[webView loadHTMLString:html baseURL:nil];
+	FJSLog(@"loaded");
+}
+
+//==========================================================================================
 #pragma mark UIWebView delegates
 //==========================================================================================
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)req navigationType:(UIWebViewNavigationType)navigationType
@@ -531,7 +553,7 @@
 	MARK;
 	
 	NSURL *url = [req URL];
-
+    
 	if ([[url scheme] isEqualToString:@"mailto"]) {
 		[self sendMailWithURL:url];
 		return NO;
@@ -544,10 +566,9 @@
 	
 	if ([[url host] rangeOfString:@"youtube.com"].location != NSNotFound) {
 		[self confirmBeforeOpeningURL:url withMessage:NSLocalizedString(@"You are opening YouTube", nil)];
-//		[[UIApplication sharedApplication] openURL: url];
 		return NO;
 	}
-
+    
 	if ([[url host] rangeOfString:@"maps.google."].location != NSNotFound) {
 		[self confirmBeforeOpeningURL:url withMessage:NSLocalizedString(@"You are opening Map", nil)];
 		//		[[UIApplication sharedApplication] openURL: url];
@@ -557,7 +578,7 @@
 	if (navigationType == UIWebViewNavigationTypeLinkClicked) {
 		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 	}
-
+    
 	[self fixToolbarButtons];
 	return YES;
 }
@@ -568,10 +589,10 @@
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	if (([error code] != 102) && ([error code] != NSURLErrorCancelled)) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) 
-																										message:NSLocalizedString(@"Error while loading the page. Please try again.", nil) 
-																									 delegate:nil 
-																					cancelButtonTitle:NSLocalizedString(@"OK", nil) 
-																					otherButtonTitles:nil];
+                                                        message:NSLocalizedString(@"Error while loading the page. Please try again.", nil) 
+                                                       delegate:nil 
+                                              cancelButtonTitle:NSLocalizedString(@"OK", nil) 
+                                              otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 		UIView *view = [self.view viewWithTag:LOADINGVIEW_TAG];
