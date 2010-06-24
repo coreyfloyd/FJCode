@@ -7,6 +7,7 @@
 //
 
 #import "NSDate+Helper.h"
+#import "NSString+extensions.h"
 
 @implementation NSDate (Helper)
 

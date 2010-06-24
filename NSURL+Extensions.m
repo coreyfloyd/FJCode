@@ -36,7 +36,7 @@
 			}
 		}
 		
-		[baseString appendFormat:[self host]];
+		[baseString appendFormat:@"%@",[self host]];
 		
 		if([self port]) {
 			[baseString appendFormat:@":%@", [[self port] integerValue]];
