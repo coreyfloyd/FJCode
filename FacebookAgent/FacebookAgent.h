@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FBConnect/FBConnect.h"
+#import "FBConnect.h"
 
 @class FacebookAgent;
 
@@ -18,12 +18,42 @@ typedef  enum {
 	FacebookAgentActionAskPermission,
 	FacebookAgentActionUploadPhoto,
 	FacebookAgentActionUploadPhotoAskPermission,
+	FacebookAgentActionGrantPermission,
+	FacebookAgentActionLogin
 }FacebookAgentAction;
+
+typedef enum {
+	FacebookAgentFQLTypeNone=0,
+	FacebookAgentFQLTypeFetchFriendList,
+	FacebookAgentFQLTypeFetchAppFriendList,
+	FacebookAgentFQLTypeFetchUserInfo,
+	FacebookAgentFQLTypeFetchPermissions,
+	FacebookAgentFQLTypeGeneral
+} FacebookAgentFQLType;
+
+typedef enum {
+	FacebookAgentPermissionNone=0,/* place holder*/
+	FacebookAgentPermissionStatusUpdate,
+	FacebookAgentPermissionPhotoUpload,
+	FacebookAgentPermissionSMS,
+	FacebookAgentPermissionOfflineAccess,
+	FacebookAgentPermissionEmail,
+	FacebookAgentPermissionCreateEvent,
+	FacebookAgentPermissionRSVPEvent,
+	FacebookAgentPermissionPublishStream,
+	FacebookAgentPermissionReadStream,
+	FacebookAgentPermissionShareItem,
+	FacebookAgentPermissionCreateNote,
+	FacebookAgentPermissionBookmarked,
+	FacebookAgentPermissionTabAdded
+	/*FacebookAgentPermission,*/
+	
+} FacebookAgentPermission;
 
 /**
  * Implement this protocol to use FacebokAgent
  */
-@protocol FacebookAgentDelegate <NSObject>
+@protocol FacebookAgentDelegate
 
 @optional
 
@@ -39,7 +69,29 @@ typedef  enum {
  *
  * This method is called after the agent fetched facebook profile name
  */
-- (void) facebookAgent:(FacebookAgent*)agent didLoadName:(NSString*) name;
+- (void) facebookAgent:(FacebookAgent*)agent didLoadInfo:(NSDictionary*) info;
+
+/**
+ * This method is called after the agent fetched facebook friends
+ */
+- (void) facebookAgent:(FacebookAgent*)agent didLoadFriendList:(NSArray*) data onlyAppUsers:(BOOL)yesOrNo;
+
+/**
+ * This method is called after the agent fetched permissions of the app
+ */
+- (void) facebookAgent:(FacebookAgent*)agent didLoadPermissions:(NSArray*) data;
+
+/**
+ * This method is called after the agent fetched permissions of the app
+ */
+- (void) facebookAgent:(FacebookAgent*)agent didLoadFQL:(NSArray*) data;
+
+/**
+ * This method is called after the agent fetched permissions of the app
+ */
+- (void) facebookAgent:(FacebookAgent*)agent permissionGranted:(FacebookAgentPermission)permission;
+
+
 
 /**
  * Must define this method if uploadPhoto is called
@@ -55,23 +107,12 @@ typedef  enum {
  */
 - (void) facebookAgent:(FacebookAgent*)agent requestFaild:(NSString*) message;
 
-
-/**
- * 
- * This method is called if the agent successfully obtains permission
- */
-
-- (void) facebookAgent:(FacebookAgent*)agent permissiondialog:(FBPermissionDialog*)dialog succededForPermission:(NSString*)permission;
-
-
 @required
 
 /**
  * This method is called if after login or logout
  */
 - (void) facebookAgent:(FacebookAgent*)agent loginStatus:(BOOL) loggedIn;
-
-
 
 /**
  * This method is called on dialog errors
@@ -127,7 +168,7 @@ typedef  enum {
 	/**
 	 * Flag indicating if fb username should be fetched after log in
 	 */
-	BOOL shouldFetchUsernameAfterLogin;
+	BOOL shouldFetchUserInfoAfterLogin;
 	
 	
 	/**
@@ -142,6 +183,7 @@ typedef  enum {
 	 * Then agent first logs in and calls the last action
 	 */
 	FacebookAgentAction pendingAction;
+	FacebookAgentFQLType fqlType;
 	NSString* newStatus;
 	
 	// needed for uploading image
@@ -163,6 +205,31 @@ typedef  enum {
 	 * Try to resume the session first before login?
 	 */
 	BOOL shouldResumeSession;
+	
+	/**
+	 * Grant permission related variables
+	 */
+	FacebookAgentPermission grantingPermission;
+	
+	/**
+	 * Logged in user id
+	 */
+	FBUID userID;
+	
+	/**
+	 * Permission table
+	 */
+	NSDictionary* permissionStatus;
+	
+	/**
+	 * User info
+	 */
+	NSDictionary* userInfo;
+	
+	/**
+	 * current action, need to notify if login is cancelled
+	 */
+	FacebookAgentAction currentAction;
 }
 
 /**
@@ -178,14 +245,19 @@ typedef  enum {
 -(void) logout;
 
 /**
- * You must initize using this method.
+ * You may initize using this method.
  */
 - (id)initWithApiKey:(NSString*)key ApiSecret:(NSString*) secret ApiProxy:(NSString*)proxy;
 
 /**
+ * Introduced to have shared object
+ */
+-(void)initializeWithApiKey:(NSString*)key ApiSecret:(NSString*)secret ApiProxy:(NSString*)proxy;
+
+/**
  * Use this method to obtain extended permission by the user
  */
-- (void) askStatusUpdatePermission;
+- (void) askPermission;
 
 /**
  * Make your own attachment and publish feed.
@@ -284,10 +356,25 @@ typedef  enum {
 - (void) askUploadPhotoToAlbumPermission;
 - (void) getAlbumList;
 
+- (void)getMyFriendList:(BOOL)onlyAppUsers;
+- (void)getPermissions;
+- (void)grantPermission:(FacebookAgentPermission)type;
+- (void)runFQL:(NSString*)fql;
+- (BOOL)hasPermission:(FacebookAgentPermission)type;
 
+- (NSString*)getUserName;
+- (NSString*)getUserProfileSquareImage;
+- (NSString*)getUserProfileImage;
+
+/**
+ * For shared use
+ */
++(FacebookAgent*)sharedAgent;
+
+@property (nonatomic, retain) NSDictionary* userInfo;
 @property (nonatomic, assign) BOOL isLoggedIn;
 @property (nonatomic, assign) BOOL shouldResumeSession;
-@property (nonatomic, assign) BOOL shouldFetchUsernameAfterLogin;
+@property (nonatomic, assign) BOOL shouldFetchUserInfoAfterLogin;
 @property (nonatomic,assign) id<FacebookAgentDelegate> delegate;
 
 @property (nonatomic, retain) NSString* attachment;
@@ -299,9 +386,7 @@ typedef  enum {
 @property (nonatomic, retain) NSString* uploadImageCaption;
 @property (nonatomic, retain) NSString* uploadImageAlbum;
 
-//@property(nonatomic,retain)FBSession *session;
-
-@property (nonatomic, readonly) NSString* sessionKey;
-@property (nonatomic, readonly) NSString* sessionSecret;
+@property (nonatomic, assign) FBUID userID;
+@property (nonatomic, retain) NSDictionary* permissionStatus;
 
 @end
