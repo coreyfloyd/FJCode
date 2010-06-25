@@ -22,6 +22,8 @@
 		C403FCE9100FA10A00DCA31A /* ListenerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListenerController.m; sourceTree = "<group>"; };
 		C40A51640FFF27CD001D4CDE /* KBCollectionExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBCollectionExtensions.m; sourceTree = "<group>"; };
 		C40A51650FFF27CD001D4CDE /* KBCollectionExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBCollectionExtensions.h; sourceTree = "<group>"; };
+		C40B1D2D11D5155200ADE99B /* FacebookAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookAgent.h; sourceTree = "<group>"; };
+		C40B1D2E11D5155200ADE99B /* FacebookAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookAgent.m; sourceTree = "<group>"; };
 		C410226611CBE6E000E651D3 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		C410226711CBE6E000E651D3 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		C41AFD31101E0F910095F37D /* VisualFeedbackHiddenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualFeedbackHiddenButton.h; sourceTree = "<group>"; };
@@ -207,6 +209,15 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		C40B1D2C11D5155200ADE99B /* Facebook Agent */ = {
+			isa = PBXGroup;
+			children = (
+				C40B1D2D11D5155200ADE99B /* FacebookAgent.h */,
+				C40B1D2E11D5155200ADE99B /* FacebookAgent.m */,
+			);
+			name = "Facebook Agent";
+			sourceTree = "<group>";
+		};
 		C41CD521113096470085A3BF /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +265,7 @@
 				C4F6D0080FCA532200F6AD69 /* Progress View */,
 				C41CD521113096470085A3BF /* Twitter */,
 				C470937811C977640082307C /* Date Picker */,
+				C40B1D2C11D5155200ADE99B /* Facebook Agent */,
 				C486535F10BCA73A0064A126 /* UIDevice Categories */,
 				C4CC168A10DDEA5C00DBE821 /* Browser */,
 			);

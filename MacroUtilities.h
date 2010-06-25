@@ -9,7 +9,6 @@
  *  \copyright Copyright 2006-2009 6Tringle LLC. All rights reserved.
  */
 
-#import <Foundation/Foundation.h>
 
 
 #define IS_IPAD             (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -88,3 +87,4 @@
 #endif
 
 #endif
+
