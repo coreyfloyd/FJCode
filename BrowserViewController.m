@@ -10,9 +10,11 @@
 //
 
 #import "BrowserViewController.h"
+#import "UIBarButtonItem+extensions.h"
 
 #define ACTION_SENDLINK 1
 #define ACTION_OPEN_EXTERNAL 2
+
 
 // From Joe Hewitt Three20
 // http://github.com/joehewitt/three20
@@ -56,6 +58,10 @@
 @synthesize canRotateLandscape;
 @synthesize confirmBeforeExiting;
 @synthesize network;
+@synthesize keyURLs;
+@synthesize showsActivitySpinner;
+@synthesize activityIndicator;
+
 
 
 
@@ -148,6 +154,18 @@
 	webView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
 	webView.scalesPageToFit = NO;
 	[self.view addSubview:webView];
+    
+    
+    if(showsActivitySpinner){
+        
+        self.activityIndicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease]; 
+        
+        UIBarButtonItem* b = [UIBarButtonItem itemWithView:self.activityIndicator];
+        
+        self.navigationItem.rightBarButtonItem = b;
+        
+    }
+
 	
 }
 
@@ -155,6 +173,8 @@
 - (void)viewDidLoad
 {
 	MARK;
+    
+    
 	NSURLRequest *req = [NSURLRequest requestWithURL:currentURL];
 	[webView loadRequest:req];
     //	[self showLoadingView];
@@ -197,6 +217,7 @@
 //==========================================================================================
 - (void)viewDidUnload
 {
+    self.activityIndicator = nil;
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
@@ -204,7 +225,10 @@
 //==========================================================================================
 - (void)dealloc
 {
-    
+    [activityIndicator release];
+    activityIndicator = nil;    
+    [keyURLs release];
+    keyURLs = nil;
     [network release];
     network = nil;
 	self.webView = nil;
@@ -545,6 +569,16 @@
 	FJSLog(@"loaded");
 }
 
+
+
+- (void)handleNavigationToKeyURL:(NSURL*)url{
+    
+    
+    //nonop
+    
+    
+}
+
 //==========================================================================================
 #pragma mark UIWebView delegates
 //==========================================================================================
@@ -554,22 +588,34 @@
 	
 	NSURL *url = [req URL];
     
+    FJSLog(@"%@", [url description]);
+    
+    for(NSURL* each in self.keyURLs){
+        
+        if([[url absoluteString] isEqualToString:[each absoluteString]]){
+            
+            [self handleNavigationToKeyURL:url];
+            return NO;
+        }
+    }
+    
+    
 	if ([[url scheme] isEqualToString:@"mailto"]) {
 		[self sendMailWithURL:url];
 		return NO;
 	}
 	
-	if ([[url host] isEqualToString:@"phobos.apple.com"] || [[url host] isEqualToString:@"itunes.apple.com"]) {
+	if ([url host] != nil && [[url host] isEqualToString:@"phobos.apple.com"] || [[url host] isEqualToString:@"itunes.apple.com"]) {
 		[self confirmBeforeOpeningURL:url withMessage:NSLocalizedString(@"You are opening iTunes", nil)];
 		return NO;
 	}
 	
-	if ([[url host] rangeOfString:@"youtube.com"].location != NSNotFound) {
+	if ([url host] != nil && [[url host] rangeOfString:@"youtube.com"].location != NSNotFound) {
 		[self confirmBeforeOpeningURL:url withMessage:NSLocalizedString(@"You are opening YouTube", nil)];
 		return NO;
 	}
     
-	if ([[url host] rangeOfString:@"maps.google."].location != NSNotFound) {
+	if ([url host] != nil && [[url host] rangeOfString:@"maps.google."].location != NSNotFound) {
 		[self confirmBeforeOpeningURL:url withMessage:NSLocalizedString(@"You are opening Map", nil)];
 		//		[[UIApplication sharedApplication] openURL: url];
 		return NO;
@@ -606,9 +652,30 @@
 - (void)webViewDidFinishLoad:(UIWebView *)_webView
 {
 	self.currentURL = _webView.request.URL;
-	self.title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
+    
+    UILabel* l = (UILabel*)self.navigationItem.titleView;
+    
+    if(![l isKindOfClass:[UILabel class]]){
+        
+        float width = 180;
+        if(IS_IPAD)
+            width = 250;
+        
+        l = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 40)] autorelease];
+        l.adjustsFontSizeToFitWidth = YES;
+        l.font = [UIFont boldSystemFontOfSize:17.0];
+        l.shadowColor = [UIColor darkGrayColor];
+        //l.shadowOffset = CGSizeMake(0, 1.0);
+        l.backgroundColor = [UIColor clearColor];
+        l.textColor = [UIColor whiteColor];
+    }
+    
+    l.text = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
+    self.navigationItem.titleView = l;
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	[self fixToolbarButtons];
+    [self.activityIndicator stopAnimating];
+
 }
 
 //==========================================================================================
@@ -616,6 +683,7 @@
 {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 	[self fixToolbarButtons];
+    [self.activityIndicator startAnimating];
 }
 
 @end

@@ -32,6 +32,7 @@
 
 @interface BrowserViewController : UIViewController <UIWebViewDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
 	UIWebView *webView;
+    UIActivityIndicatorView* activityIndicator;
 	NSURL *currentURL;
 	UIToolbar *toolbar;
 	NSURL *externalURL;
@@ -40,7 +41,9 @@
 	BOOL canOpenSafari;	// can we open the current page in Safari?
 	BOOL canRotateLandscape;	// can we rotate?
 	BOOL confirmBeforeExiting;	// need confirmation before exiting the app?
+    BOOL showsActivitySpinner;
     
+    NSArray* keyURLs; //get opportunity to handle specific respond urls
     Reachability* network;
 
 }
@@ -53,7 +56,10 @@
 @property (nonatomic, assign) BOOL canOpenSafari;
 @property (nonatomic, assign) BOOL canRotateLandscape;
 @property (nonatomic, assign) BOOL confirmBeforeExiting;
+@property (nonatomic, retain) NSArray *keyURLs;
 @property (nonatomic, retain) Reachability *network;
+@property (nonatomic) BOOL showsActivitySpinner;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 - (id) initWithURL:(NSURL *)_baseUrl;
 
@@ -68,6 +74,8 @@
 - (void) confirmBeforeOpeningURL:(NSURL *)externalURL withMessage:(NSString *)msg;
 - (void) openExternalURL:(NSURL *)externalURL;
 - (void) showLoadingView;
+
+- (void)handleNavigationToKeyURL:(NSURL*)url; //subclasses should overide to handle navigation to specific URLS
 
 @end
 
