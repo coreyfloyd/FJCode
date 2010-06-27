@@ -44,6 +44,8 @@
 		C42E952F10D6CEE900754443 /* UIColor+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extensions.m"; sourceTree = "<group>"; };
 		C43FAB660FCC424000EB4F92 /* IFActionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFActionToolbar.m; sourceTree = "<group>"; };
 		C43FAB670FCC424000EB4F92 /* IFActionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFActionToolbar.h; sourceTree = "<group>"; };
+		C45F72D211D71B3B0040CF4E /* TwitterEngineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterEngineController.h; sourceTree = "<group>"; };
+		C45F72D311D71B3B0040CF4E /* TwitterEngineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterEngineController.m; sourceTree = "<group>"; };
 		C461FE910FC5C0980036595E /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		C461FE920FC5C0980036595E /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		C461FE9F0FC5C0980036595E /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
@@ -246,6 +248,15 @@
 			name = ToolBar;
 			sourceTree = "<group>";
 		};
+		C45F72D511D71B3E0040CF4E /* Twitter Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C45F72D211D71B3B0040CF4E /* TwitterEngineController.h */,
+				C45F72D311D71B3B0040CF4E /* TwitterEngineController.m */,
+			);
+			name = "Twitter Controller";
+			sourceTree = "<group>";
+		};
 		C461FE8E0FC5C07B0036595E /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +280,7 @@
 				C4F6D0080FCA532200F6AD69 /* Progress View */,
 				C41CD521113096470085A3BF /* Twitter */,
 				C40B1D9711D51ABC00ADE99B /* FacebookAgent */,
+				C45F72D511D71B3E0040CF4E /* Twitter Controller */,
 				C470937811C977640082307C /* Date Picker */,
 				C486535F10BCA73A0064A126 /* UIDevice Categories */,
 				C4CC168A10DDEA5C00DBE821 /* Browser */,
