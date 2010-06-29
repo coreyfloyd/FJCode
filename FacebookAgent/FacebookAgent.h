@@ -53,7 +53,7 @@ typedef enum {
 /**
  * Implement this protocol to use FacebokAgent
  */
-@protocol FacebookAgentDelegate
+@protocol FacebookAgentDelegate <NSObject>
 
 @optional
 

@@ -78,6 +78,38 @@ static FacebookAgent* sharedAgent = nil;
 	} else {
 		_session = [[FBSession sessionForApplication:FBApiKey secret:FBApiSecret delegate:self] retain];
 	}
+
+}
+
+- (BOOL)isLoggedIn{
+    
+    if(isLoggedIn)
+        return isLoggedIn;
+
+    if(shouldResumeSession){ // try to resume first
+		if(! [_session resume] ){
+			if(_session.isConnected){
+				// Alert already logged in?
+                
+                isLoggedIn = YES;
+                
+			}else{
+				isLoggedIn = NO;
+			}
+		}
+	}else {
+		if(_session.isConnected){
+            
+            isLoggedIn = YES;
+            
+			// Alert already logged in?
+		}else{
+            
+            isLoggedIn = NO;
+		}
+	}
+    
+    return isLoggedIn;
 }
 
 - (void)dealloc{
@@ -479,23 +511,28 @@ static FacebookAgent* sharedAgent = nil;
 				NSDictionary* user = [resultData objectAtIndex:0];
 				// Calling the delegate callback
 				self.userInfo = user;
-				[delegate facebookAgent:self didLoadInfo:user];
+                if([delegate respondsToSelector:@selector(facebookAgent:didLoadInfo:)])
+                    [delegate facebookAgent:self didLoadInfo:user];
 				break;
 				}
 			case FacebookAgentFQLTypeFetchFriendList:
 				// Calling the delegate callback
-				[delegate facebookAgent:self didLoadFriendList:resultData onlyAppUsers:NO];
+                if([delegate respondsToSelector:@selector(facebookAgent:didLoadFriendList:onlyAppUsers:)])
+                    [delegate facebookAgent:self didLoadFriendList:resultData onlyAppUsers:NO];
 				break;
 			case FacebookAgentFQLTypeFetchAppFriendList:
 				// Calling the delegate callback
-				[delegate facebookAgent:self didLoadFriendList:resultData onlyAppUsers:YES];
+                if([delegate respondsToSelector:@selector(facebookAgent:didLoadFriendList:onlyAppUsers:)])
+                    [delegate facebookAgent:self didLoadFriendList:resultData onlyAppUsers:YES];
 				break;
 			case FacebookAgentFQLTypeFetchPermissions:
 				self.permissionStatus = [resultData objectAtIndex:0];
-				[delegate facebookAgent:self didLoadPermissions:[resultData objectAtIndex:0]];
+                if([delegate respondsToSelector:@selector(facebookAgent:didLoadPermissions:)])
+                    [delegate facebookAgent:self didLoadPermissions:[resultData objectAtIndex:0]];
 				break;
 			case FacebookAgentFQLTypeGeneral:
-				[delegate facebookAgent:self didLoadFQL:resultData];
+                if([delegate respondsToSelector:@selector(facebookAgent:didLoadFQL:)])
+                    [delegate facebookAgent:self didLoadFQL:resultData];
 				break;
 
 			default:
@@ -511,10 +548,12 @@ static FacebookAgent* sharedAgent = nil;
 		if ([success isEqualToString:@"1"]) {
 			
 			// Calling the delegate callback
-			[delegate facebookAgent:self statusChanged:YES];
+            if([delegate respondsToSelector:@selector(facebookAgent:statusChanged:)])
+                [delegate facebookAgent:self statusChanged:YES];
 			
 		} else {
-			[delegate facebookAgent:self statusChanged:NO];
+            if([delegate respondsToSelector:@selector(facebookAgent:statusChanged:)])
+                [delegate facebookAgent:self statusChanged:NO];
 		}
 	} else if ([request.method isEqualToString:@"facebook.photos.upload"]) {
 		NSDictionary* photoInfo = result;
@@ -523,7 +562,8 @@ static FacebookAgent* sharedAgent = nil;
 		self.uploadImageData = nil;
 		self.uploadImageCaption = nil;
 		self.uploadImageAlbum = nil;
-		[delegate facebookAgent:self photoUploaded:pid];
+        if([delegate respondsToSelector:@selector(facebookAgent:photoUploaded:)])
+            [delegate facebookAgent:self photoUploaded:pid];
 		
 		if(newStatus){
 			[self setStatus:newStatus];
@@ -536,7 +576,8 @@ static FacebookAgent* sharedAgent = nil;
 	NSString* msg = [NSString stringWithFormat:@"Error(%d) %@", error.code,
 				   error.localizedDescription];
 	
-	[delegate facebookAgent:self requestFaild:msg];
+    if([delegate respondsToSelector:@selector(facebookAgent:requestFaild:)])
+        [delegate facebookAgent:self requestFaild:msg];
 }
 
 
@@ -560,13 +601,14 @@ static FacebookAgent* sharedAgent = nil;
 	
 	if(pendingAction == FacebookAgentActionGrantPermission){
 		pendingAction = FacebookAgentActionNone;
-		[self.delegate facebookAgent:self permissionGranted:grantingPermission];
+        if([delegate respondsToSelector:@selector(facebookAgent:permissionGranted:)])
+            [self.delegate facebookAgent:self permissionGranted:grantingPermission];
 	}
 }
 
 - (void)dialogDidCancel:(FBDialog*)dialog{
 	if(currentAction == FacebookAgentActionLogin){
-		[self.delegate facebookAgent:self loginStatus:NO];
+        [self.delegate facebookAgent:self loginStatus:NO];
 		currentAction = FacebookAgentActionNone;
 	}
 }

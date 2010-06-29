@@ -9,6 +9,9 @@
 #import "TwitterEngineController.h"
 #import "MGTwitterEngine.h"
 
+
+//TODO: add type def for method calls so we can track what we are doing.
+
 @interface TwitterEngineController()
 
 @property (nonatomic, retain) MGTwitterEngine *twitterEngine;
@@ -176,9 +179,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
         if([delegate respondsToSelector:@selector(twitterEngineController:didLogin:error:)])
             [delegate twitterEngineController:self didLogin:NO error:error];
     
-        //TODO: display we are fucked!
-        //[error presentAlertViewWithDelegate:nil];	
-        
+
     }else{
         
 
