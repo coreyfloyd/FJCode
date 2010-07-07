@@ -11,13 +11,15 @@
 #import "SynthesizeSingleton.h"
 
 @class MGTwitterEngine;
+@class OAToken;
 
 @protocol TwitterEngineControllerDelegate;
 
 @interface TwitterEngineController : NSObject <MGTwitterEngineDelegate>{
 
     MGTwitterEngine* twitterEngine;
-
+    OAToken* token;
+    
     NSString* username;
     NSString* password;
     

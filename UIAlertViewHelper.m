@@ -29,8 +29,7 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 													message:aMessage
 												   delegate:object 
 										  cancelButtonTitle:@"OK" 
-										  otherButtonTitles:nil
-						  ];
+										  otherButtonTitles:nil];
 	[alert show];
 	return [alert autorelease];
 	

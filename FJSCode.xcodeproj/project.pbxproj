@@ -262,8 +262,7 @@
 			children = (
 				C461FEA00FC5C0980036595E /* FJSCode.h */,
 				C461FE9F0FC5C0980036595E /* SynthesizeSingleton.h */,
-				C410226611CBE6E000E651D3 /* SFHFKeychainUtils.h */,
-				C410226711CBE6E000E651D3 /* SFHFKeychainUtils.m */,
+				C4BCA07F11DACEE0001CCEF7 /* Key Chain */,
 				C468A5F4105AD7DA00302D93 /* NSLog */,
 				C4F6D0090FCA533900F6AD69 /* Generic Categories */,
 				C489B66C1032762E00514567 /* CoreData Categories */,
@@ -392,6 +391,15 @@
 				C4AC0F2511B1AFAD00FEE0ED /* MAKVONotificationCenter.m */,
 			);
 			name = MAKVONotificationCenter;
+			sourceTree = "<group>";
+		};
+		C4BCA07F11DACEE0001CCEF7 /* Key Chain */ = {
+			isa = PBXGroup;
+			children = (
+				C410226611CBE6E000E651D3 /* SFHFKeychainUtils.h */,
+				C410226711CBE6E000E651D3 /* SFHFKeychainUtils.m */,
+			);
+			name = "Key Chain";
 			sourceTree = "<group>";
 		};
 		C4CC168A10DDEA5C00DBE821 /* Browser */ = {

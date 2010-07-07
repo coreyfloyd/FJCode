@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString *username;
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, retain) NSString *XAuthFetchID;
+@property (nonatomic, retain) OAToken *token;
 
 
 @end
@@ -30,6 +31,8 @@
 @synthesize username;
 @synthesize password;
 @synthesize delegate;
+@synthesize token;
+
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
 
@@ -40,6 +43,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     delegate = nil;
     
+    [token release];
+    token = nil;
+        
     [username release];
     username = nil;
     
@@ -68,22 +74,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
         
         self.username = [[NSUserDefaults standardUserDefaults] objectForKey:kTwitterNameKey];
         
-        OAToken* token = [[OAToken alloc] initWithUserDefaultsUsingServiceProviderName:kTwitterProvider prefix:kTwitterPrefix];
+        self.token = [[[OAToken alloc] initWithUserDefaultsUsingServiceProviderName:kTwitterProvider prefix:kTwitterPrefix] autorelease];
         
-        [self.twitterEngine setAccessToken:token];
-        
-        [token release];
-        
+        [self.twitterEngine setAccessToken:self.token];
+                
     }
     return self;
 }
 
 - (BOOL)loggedIn{
     
-    if([self.twitterEngine accessToken] != nil)
-        return YES;
-    
-    return NO;
+    return (self.token != nil);
 }
 
 - (BOOL)loginWithUserName:(NSString*)name password:(NSString*)pwd{
@@ -100,6 +101,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     [OAToken removeFromUserDefaultsWithServiceProviderName:kTwitterProvider prefix:kTwitterPrefix];
     
     [defaults synchronize];
+    
+    self.token = nil;
         
     self.XAuthFetchID = [self.twitterEngine getXAuthAccessTokenForUsername:self.username password:self.password];
     
@@ -142,6 +145,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
 - (void)accessTokenReceived:(OAToken *)aToken forRequest:(NSString *)connectionIdentifier{
     
     self.XAuthFetchID = nil;
+    self.token = aToken;
     
     [aToken storeInUserDefaultsWithServiceProviderName:kTwitterProvider prefix:kTwitterPrefix];
     
