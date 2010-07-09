@@ -198,9 +198,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     NSLog(@"super yeah! %@", [socialGraphInfo description]);
     
-    if([delegate respondsToSelector:@selector(twitterEngineController:didFetchFollowing:error:)])
-       [delegate twitterEngineController:self didFetchFollowing:socialGraphInfo error:nil];
-    
+    if([socialGraphInfo isKindOfClass:[NSArray class]] && [socialGraphInfo count] > 0){
+        
+        NSDictionary* response = [socialGraphInfo objectAtIndex:0];
+        NSArray* ids = [response objectForKey:@"ids"];
+        
+        if([ids count] > 0){
+            
+            if([delegate respondsToSelector:@selector(twitterEngineController:didFetchFollowing:error:)])
+                [delegate twitterEngineController:self didFetchFollowing:ids error:nil];
+            
+        }
+    }
 }
 
 
