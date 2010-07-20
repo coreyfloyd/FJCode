@@ -46,12 +46,13 @@ BOOL createImagesDirectory()
         
         if(!isDirectory){
             [[NSFileManager defaultManager] removeItemAtPath:imageDirectoryPath() error:nil];
-            [[NSFileManager defaultManager] createDirectoryAtPath:imageDirectoryPath() attributes:nil];
+            [[NSFileManager defaultManager] createDirectoryAtPath:imageDirectoryPath() withIntermediateDirectories:NO attributes:nil error:nil];
+
         }
     }
     
     if(![[NSFileManager defaultManager] fileExistsAtPath:imageDirectoryPath()]){
-        [[NSFileManager defaultManager] createDirectoryAtPath:imageDirectoryPath() attributes:nil];
+        [[NSFileManager defaultManager] createDirectoryAtPath:imageDirectoryPath() withIntermediateDirectories:NO attributes:nil error:nil];
         
     } 
     
