@@ -55,6 +55,8 @@
 		C468A599105AA6D500302D93 /* NSObject+AssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AssociatedObjects.m"; sourceTree = "<group>"; };
 		C468A6B6105B005300302D93 /* IFTweetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFTweetLabel.m; sourceTree = "<group>"; };
 		C468A6B7105B005300302D93 /* IFTweetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFTweetLabel.h; sourceTree = "<group>"; };
+		C46C16BA11F6107200377E8C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		C46C16BB11F6107200377E8C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		C470930411C96FB20082307C /* NSError+UIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+UIAlertView.h"; sourceTree = "<group>"; };
 		C470930511C96FB20082307C /* NSError+UIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+UIAlertView.m"; sourceTree = "<group>"; };
 		C470931511C971370082307C /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				C4D222AE100C091D00E88C0B /* Files */,
 				C4A189720FCF5D9D00E70A29 /* CoreLocation */,
 				C43FAB610FCC422000EB4F92 /* ToolBar */,
+				C46C16BD11F6107500377E8C /* Map */,
 				C49D41AA102121A500FF8BCC /* Buttons */,
 				C4AC0F2811B1AFD400FEE0ED /* MAKVONotificationCenter */,
 				C4CC17C510DE10AA00DBE821 /* Solicit Review */,
@@ -293,6 +296,15 @@
 				C470933611C972720082307C /* MacroUtilities.h */,
 			);
 			name = NSLog;
+			sourceTree = "<group>";
+		};
+		C46C16BD11F6107500377E8C /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C46C16BA11F6107200377E8C /* MapViewController.h */,
+				C46C16BB11F6107200377E8C /* MapViewController.m */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		C470937811C977640082307C /* Date Picker */ = {
