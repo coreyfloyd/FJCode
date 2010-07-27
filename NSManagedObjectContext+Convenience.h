@@ -3,6 +3,21 @@
 
 
 
+
+@interface NSArray (CDArrayExtensions)
+
+- (id)firstObject;
+
+@end
+
+
+@interface NSManagedObjectContext (DictionaryExtensions)
+
+- (NSMutableDictionary*) mutableDictionaryForEntityWithName:(NSString*)entityName keyedBy:(NSString*)keyName;
+
+@end
+
+
 @interface NSManagedObjectContext(insert)
 /*
  This very short little category allows me to insert new objects into a context by simply doing this:
@@ -98,21 +113,6 @@
 
 @end
 
-
-
-
-@interface NSArray (CDArrayExtensions)
-
-- (id)firstObject;
-
-@end
-
-
-@interface NSManagedObjectContext (DictionaryExtensions)
-
-- (NSMutableDictionary*) mutableDictionaryForEntityWithName:(NSString*)entityName keyedBy:(NSString*)keyName;
-
-@end
 
 
 

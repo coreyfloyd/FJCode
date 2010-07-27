@@ -9,6 +9,8 @@
 #import "NSManagedObjectContext+CoreDataStack.h"
 
 
+
+
 #pragma mark -
 #pragma mark Core Data stack
 
@@ -17,12 +19,14 @@ static NSPersistentStoreCoordinator* persistentStoreCoordinator = nil;
 static NSManagedObjectContext* managedObjectContext = nil;
 
 static NSString* const kStoreName = @"storedata.sqlite";
-static NSString* const kPersonalStoreName = @"personalstoredata.sqlite";
-
-
 static NSString* const kModelConfigurationName = @"primaryModel";
+
+#ifdef MULTIPLE_STORE_SUPPORT
+
+static NSString* const kPersonalStoreName = @"personalstoredata.sqlite";
 static NSString* const kPersonalModelConfigurationName = @"personalModel";
 
+#endif
 
 @implementation NSManagedObjectContext (CDStack)
 
@@ -34,6 +38,9 @@ static NSString* const kPersonalModelConfigurationName = @"personalModel";
 	return [NSURL fileURLWithPath:storePath];
 	
 }
+
+#ifdef MULTIPLE_STORE_SUPPORT
+
 + (NSURL *)personalStore{
 	
 	NSString *storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:kPersonalStoreName];
@@ -41,6 +48,8 @@ static NSString* const kPersonalModelConfigurationName = @"personalModel";
 	return [NSURL fileURLWithPath:storePath];
 	
 }
+
+#endif
 
 + (void)deleteStore:(NSURL *)url{
 	
@@ -102,7 +111,7 @@ static NSString* const kPersonalModelConfigurationName = @"personalModel";
 	
 	NSError* error = nil;
 	if( ![newContext save:&error]){
-		errLog(@"core data save error:", [error description]);
+		debugLog(@"core data save error:", [error description]);
 		return nil;
 	} else {
 		return newContext;
@@ -156,6 +165,8 @@ static NSString* const kPersonalModelConfigurationName = @"personalModel";
 		}
     }
     
+#ifdef MULTIPLE_STORE_SUPPORT
+    
 	NSURL *personalStoreUrl = [NSManagedObjectContext personalStore];
 	
 	
@@ -170,6 +181,8 @@ static NSString* const kPersonalModelConfigurationName = @"personalModel";
 			abort();
 		}
     }
+    
+#endif
 	
     return persistentStoreCoordinator;
 }
