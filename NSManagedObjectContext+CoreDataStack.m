@@ -153,12 +153,12 @@ static NSString* const kPersonalModelConfigurationName = @"personalModel";
 	
 	NSError *error = nil;
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:kModelConfigurationName URL:storeUrl options:nil error:&error]) {
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
 		
 		//We had an issue, we will delete the store and try again
 		[self deleteStore:storeUrl];
 		
-		if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:kModelConfigurationName URL:storeUrl options:nil error:&error]) {
+		if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
 			debugLog(@"Unresolved error %@, %@", error, [error userInfo]);
 			//Man we are really f*cked
 			abort();
