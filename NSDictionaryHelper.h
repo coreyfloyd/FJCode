@@ -11,6 +11,9 @@
 
 @interface NSDictionary (Helper)
 
+
+- (NSString*)parameterString;
+
 /*
  * Checks to see if the dictionary contains the given key
  */

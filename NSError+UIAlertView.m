@@ -24,7 +24,7 @@
                                                       message:[[[self userInfo] objectForKey:NSUnderlyingErrorKey] localizedDescription]
                                                      delegate:nil 
                                             cancelButtonTitle:@"OK" 
-                                            otherButtonTitles:nil] autorelease];
+                                            otherButtonTitles:nil, nil] autorelease];
     [message show];
 }
 
@@ -42,7 +42,7 @@
 													   message:[[[self userInfo] objectForKey:NSUnderlyingErrorKey] localizedDescription]
 													  delegate:delegate 
 											 cancelButtonTitle:@"OK" 
-											 otherButtonTitles:nil] autorelease];
+											 otherButtonTitles:nil, nil] autorelease];
     [message show];
 }
 

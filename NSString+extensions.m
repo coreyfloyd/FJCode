@@ -114,7 +114,7 @@
     
 	BOOL answer = NO;
     
-	NSString* stripped = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	NSString* stripped = [self stringByTrimmingWhiteSpace];
 	
     if([stripped length]==0)
         answer = YES;
@@ -168,6 +168,14 @@
     }
     
     return aString;
+}
+
+- (NSString*)stringByTrimmingWhiteSpace{
+    
+   	NSString* stripped = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    return stripped;
+    
 }
 
 /*
@@ -230,6 +238,15 @@
 	}
 }
 
+- (NSString *)stringByPreparingForURL {
+	NSString *escapedString = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+																				  (CFStringRef)self,
+																				  NULL,
+																				  (CFStringRef)@":/?=,!$&'()*+;[]@#",
+																				  CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+	
+	return [escapedString autorelease];
+}
 
 
 

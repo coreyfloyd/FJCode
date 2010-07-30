@@ -14,8 +14,7 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 													message:LocalizedString(message) 
 												   delegate:nil 
 										  cancelButtonTitle:LocalizedString(dismissButtonTitle) 
-										  otherButtonTitles:nil
-						  ];
+										  otherButtonTitles:nil, nil];
 	[alert show];
 	[alert autorelease];
 }
@@ -29,7 +28,7 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 													message:aMessage
 												   delegate:object 
 										  cancelButtonTitle:@"OK" 
-										  otherButtonTitles:nil];
+										  otherButtonTitles:nil, nil];
 	[alert show];
 	return [alert autorelease];
 	
@@ -42,7 +41,7 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 													  message:@"Network Unavailable. Please ensure your Wifi or 3G is turned on and try again."
 													 delegate:object 
 											cancelButtonTitle:@"OK" 
-											otherButtonTitles:nil];
+											otherButtonTitles:nil, nil];
 	[alert show];
 	return [alert autorelease];
 	
@@ -56,7 +55,7 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 													message:@"Please check your username and password and try again."
 												   delegate:object 
 										  cancelButtonTitle:@"OK" 
-										  otherButtonTitles:nil];
+										  otherButtonTitles:nil, nil];
 	[alert show];
 	return [alert autorelease];
 	
@@ -79,7 +78,7 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 													message:@"Wifi is required to watch movies in this application. If you are watching a movie, please reconnect to Wifi to continue watching. Playback will automatically pause in 5 minutes"
 												   delegate:object 
 										  cancelButtonTitle:@"OK" 
-										  otherButtonTitles:nil];
+										  otherButtonTitles:nil, nil];
 	[alert show];
 	return [alert autorelease];
     
@@ -93,7 +92,7 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 													message:@"Playback has been paused. Please reconnect to Wifi to restart the movie."
 												   delegate:object 
 										  cancelButtonTitle:@"OK" 
-										  otherButtonTitles:nil];
+										  otherButtonTitles:nil, nil];
 	[alert show];
 	return [alert autorelease];
     

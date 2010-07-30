@@ -74,7 +74,10 @@ enum {
 - (NSString*)stringByTruncatingToLength:(int)length direction:(NSTruncateStringPosition)truncateFrom withEllipsisString:(NSString*)ellipsis;
 
 
+- (NSString*)stringByTrimmingWhiteSpace;
 
+
+- (NSString*) stringByPreparingForURL;
 
 
 @end
