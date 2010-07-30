@@ -1,8 +1,5 @@
 #import "NSManagedObjectContext+Convenience.h"
 
-
-#import "Venue.h"
-
 @implementation NSManagedObjectContext (insert)
 -(NSManagedObject *) insertNewEntityWithName:(NSString *)name
 {

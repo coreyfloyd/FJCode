@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+//#define MULTIPLE_STORE_SUPPORT
 
 
 @interface NSManagedObjectContext (CDStack)
@@ -33,7 +34,12 @@
 
 //urls of stores
 + (NSURL *)primaryStore;
+
+#ifdef MULTIPLE_STORE_SUPPORT
+
 + (NSURL *)personalStore;
+
+#endif
 
 //Deletes store at URL
 + (void)deleteStore:(NSURL *)url;

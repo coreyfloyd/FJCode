@@ -24,10 +24,10 @@
 
 #if DEBUG==1
 
-#define FJSLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
-#define MARK	FJSLog(@"%s", __PRETTY_FUNCTION__);
+#define debugLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
+#define MARK	debugLog(@"%s", __PRETTY_FUNCTION__);
 #define START_TIMER NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
-#define END_TIMER(msg) 	NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; FJSLog([NSString stringWithFormat:@"%@ Time = %f", msg, stop-start]);
+#define END_TIMER(msg) 	NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; debugLog([NSString stringWithFormat:@"%@ Time = %f", msg, stop-start]);
 
 
 #define DLOG(object)    (NSLog(@"" #object @" %d",object ));
@@ -56,7 +56,7 @@
 
 
 #else
-#define FJSLog(format, ...)
+#define debugLog(format, ...)
 #define MARK
 #define START_TIMER
 #define END_TIMER(msg)
