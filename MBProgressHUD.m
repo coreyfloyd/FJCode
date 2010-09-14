@@ -326,6 +326,26 @@
 #pragma mark -
 #pragma mark Showing and execution
 
+
+- (void)require {
+	if (requiredCount == 0)
+		[self show];
+	
+	requiredCount++;
+	
+}
+
+- (void)relinquish {
+	if (requiredCount == 1) 
+		[self hide];
+	
+	requiredCount--;
+
+	if (requiredCount < 0)
+		requiredCount = 0;
+}
+
+
 - (void)show:(BOOL)animated {
 	useAnimation = animated;
 	

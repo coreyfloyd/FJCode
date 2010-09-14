@@ -126,6 +126,8 @@ typedef enum {
     BOOL isFinished;
 	
 	UIView *customView;
+	
+	int requiredCount;
 }
 
 /** 
@@ -256,6 +258,14 @@ typedef enum {
  */
 - (void)hide:(BOOL)animated;
 
+/** 
+ * Increments the requiredCount by 1 and shows the HUD if needed
+ */
+- (void)require;
+/** 
+ * Decrements the requiredCount by 1 and hides the HUD is requiredCount is 0
+ */
+- (void)relinquish;
 /** 
  * Shows the HUD while a background task is executing in a new thread, then hides the HUD.
  *

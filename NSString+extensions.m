@@ -110,14 +110,14 @@
 
 
 
-- (BOOL)isEmpty{
+- (BOOL)isNotEmpty{
     
-	BOOL answer = NO;
+	BOOL answer = YES;
     
 	NSString* stripped = [self stringByTrimmingWhiteSpace];
 	
     if([stripped length]==0)
-        answer = YES;
+        answer = NO;
     return answer;
 }
 
