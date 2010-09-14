@@ -40,6 +40,7 @@ typedef enum {
 	MBProgressHUDModeCustomView
 } MBProgressHUDMode;
 
+@class MBProgressHUD;
 
 /**
  * Defines callback methods for MBProgressHUD delegates.
@@ -51,6 +52,10 @@ typedef enum {
  * A callback function that is called after the HUD was fully hidden from the screen. 
  */
 - (void)hudWasHidden;
+/** 
+ * A callback function that is called if the hud was shown with show:withTimeout: 
+ */
+- (void)hudTimedOut:(MBProgressHUD *)hud;
 
 @end
 
@@ -128,6 +133,7 @@ typedef enum {
 	UIView *customView;
 	
 	int requiredCount;
+	NSTimer *timeoutTimer;
 }
 
 /** 
@@ -242,7 +248,7 @@ typedef enum {
 /** 
  * Display the HUD. You need to make sure that the main thread completes its run loop soon after this method call so
  * the user interface can be updated. Call this method when your task is already set-up to be executed in a new thread
- * (e.g., when using something like NSOperation or calling an asynchronous call like NSUrlRequest).
+ * (e.g., when using something like NSOperation or calling an asynchronous call like NSUrlRequest). This method overides the required count.
  *
  * @param animated If set to YES the HUD will appear using a fade animation. If set to NO the HUD will not use
  * animations while appearing.
@@ -250,8 +256,15 @@ typedef enum {
 - (void)show:(BOOL)animated;
 
 /** 
+ * Calls show and sets a timer that will hide the hud and send the hudTimedOut: message to the delegate on completion
+
+ * @param time The time interval for the timer
+ */
+- (void)show:(BOOL)animated withTimeout:(NSTimeInterval)time;
+
+/** 
  * Hide the HUD, this still calls the hudWasHidden delegate. This is the counterpart of the hide: method. Use it to
- * hide the HUD when your task completes.
+ * hide the HUD when your task completes.  This method overides the required count.
  *
  * @param animated If set to YES the HUD will disappear using a fade animation. If set to NO the HUD will not use
  * animations while disappearing.

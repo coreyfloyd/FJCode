@@ -22,6 +22,7 @@
 
 - (void)handleGraceTimer:(NSTimer *)theTimer;
 - (void)handleMinShowTimer:(NSTimer *)theTimer;
+- (void)timeoutTimerDidFire:(NSTimer *)timer;
 
 @property (retain) UIView *indicator;
 
@@ -30,6 +31,7 @@
 
 @property (retain) NSTimer *graceTimer;
 @property (retain) NSTimer *minShowTimer;
+@property (retain) NSTimer *timeoutTimer;
 
 @property (retain) NSDate *showStarted;
 
@@ -62,6 +64,7 @@
 @synthesize minShowTime;
 @synthesize graceTimer;
 @synthesize minShowTimer;
+@synthesize timeoutTimer;
 @synthesize taskInProgress;
 
 @synthesize customView;
@@ -167,6 +170,8 @@
 	if (!view) {
 		[NSException raise:@"MBProgressHUDViewIsNillException" 
 					format:@"The view used in the MBProgressHUD initializer is nil."];
+		
+		requiredCount = 0;
 	}
 	return [self initWithFrame:view.bounds];
 }
@@ -213,6 +218,7 @@
     [detailsLabelText release];
 	[graceTimer release];
 	[minShowTimer release];
+	[timeoutTimer release];
 	[showStarted release];
 	[customView release];
     [super dealloc];
@@ -329,7 +335,7 @@
 
 - (void)require {
 	if (requiredCount == 0)
-		[self show];
+		[self show:YES];
 	
 	requiredCount++;
 	
@@ -337,7 +343,7 @@
 
 - (void)relinquish {
 	if (requiredCount == 1) 
-		[self hide];
+		[self hide:YES];
 	
 	requiredCount--;
 
@@ -345,8 +351,34 @@
 		requiredCount = 0;
 }
 
+- (void)show:(BOOL)animated withTimeout:(NSTimeInterval)time {
+	[self show:animated];
+	
+				
+	self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:time 
+														 target:self 
+													   selector:@selector(timeoutTimerDidFire:) 
+													   userInfo:nil 
+														repeats:NO];
+
+}
+
+	
+- (void)timeoutTimerDidFire:(NSTimer *)timer {
+	
+	[self hide:YES];
+	
+    if(delegate != nil && [delegate conformsToProtocol:@protocol(MBProgressHUDDelegate)]) {
+		if([delegate respondsToSelector:@selector(hudTimedOut:)]) {
+			[delegate hudTimedOut:self];
+		}
+	}
+}
 
 - (void)show:(BOOL)animated {
+	
+	requiredCount = 1;
+	
 	useAnimation = animated;
 	
 	// If the grace time is set postpone the HUD display
@@ -365,6 +397,9 @@
 }
 
 - (void)hide:(BOOL)animated {
+	
+	requiredCount = 0;
+	
 	useAnimation = animated;
 	
 	// If the minShow time is set, calculate how long the hud was shown,
