@@ -353,7 +353,7 @@
 
 - (void)show:(BOOL)animated withTimeout:(NSTimeInterval)time {
 	[self show:animated];
-	
+	NSLog(@"%s", _cmd);
 				
 	self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:time 
 														 target:self 
@@ -365,7 +365,7 @@
 
 	
 - (void)timeoutTimerDidFire:(NSTimer *)timer {
-	
+	NSLog(@"%s", _cmd);
 	[self hide:YES];
 	
     if(delegate != nil && [delegate conformsToProtocol:@protocol(MBProgressHUDDelegate)]) {
@@ -375,8 +375,14 @@
 	}
 }
 
+- (void)cancelTimeout {
+	if (self.timeoutTimer != nil)
+		[self.timeoutTimer invalidate];
+}
+
+
 - (void)show:(BOOL)animated {
-	
+	NSLog(@"%s", _cmd);
 	requiredCount = 1;
 	
 	useAnimation = animated;
@@ -397,7 +403,7 @@
 }
 
 - (void)hide:(BOOL)animated {
-	
+	NSLog(@"%s", _cmd);
 	requiredCount = 0;
 	
 	useAnimation = animated;

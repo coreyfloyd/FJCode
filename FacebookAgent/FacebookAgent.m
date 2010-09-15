@@ -254,7 +254,7 @@ static FacebookAgent* sharedAgent = nil;
 }
 
 -(void)uploadImage{
-	NSMutableDictionary *params;
+	NSMutableDictionary *params = nil;
 	if(uploadImageCaption){
 		params = [NSMutableDictionary dictionaryWithObjectsAndKeys:uploadImageCaption,@"caption",nil];
 		if(uploadImageAlbum){

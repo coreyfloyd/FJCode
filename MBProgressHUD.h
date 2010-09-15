@@ -262,6 +262,7 @@ typedef enum {
  */
 - (void)show:(BOOL)animated withTimeout:(NSTimeInterval)time;
 
+- (void)cancelTimeout;
 /** 
  * Hide the HUD, this still calls the hudWasHidden delegate. This is the counterpart of the hide: method. Use it to
  * hide the HUD when your task completes.  This method overides the required count.
