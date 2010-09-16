@@ -342,18 +342,16 @@
 }
 
 - (void)relinquish {
-	if (requiredCount == 1) 
+	requiredCount--;
+	
+	if (requiredCount <= 0) 
 		[self hide:YES];
 	
-	requiredCount--;
 
-	if (requiredCount < 0)
-		requiredCount = 0;
 }
 
 - (void)show:(BOOL)animated withTimeout:(NSTimeInterval)time {
 	[self show:animated];
-	NSLog(@"%s", _cmd);
 				
 	self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:time 
 														 target:self 
@@ -365,7 +363,6 @@
 
 	
 - (void)timeoutTimerDidFire:(NSTimer *)timer {
-	NSLog(@"%s", _cmd);
 	[self hide:YES];
 	
     if(delegate != nil && [delegate conformsToProtocol:@protocol(MBProgressHUDDelegate)]) {
@@ -382,9 +379,6 @@
 
 
 - (void)show:(BOOL)animated {
-	NSLog(@"%s", _cmd);
-	requiredCount = 1;
-	
 	useAnimation = animated;
 	
 	// If the grace time is set postpone the HUD display
@@ -403,7 +397,7 @@
 }
 
 - (void)hide:(BOOL)animated {
-	NSLog(@"%s", _cmd);
+
 	requiredCount = 0;
 	
 	useAnimation = animated;
