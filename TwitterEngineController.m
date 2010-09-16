@@ -165,7 +165,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
 
 - (void)requestSucceeded:(NSString *)connectionIdentifier{
     
-    NSLog(@"yeah!");
+    debugLog(@"yeah!");
     
 	//TODO: display results!
 }
@@ -173,7 +173,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
 
 - (void)requestFailed:(NSString *)connectionIdentifier withError:(NSError *)error{
 	
-    NSLog(@"neah!");
+    debugLog(@"neah!");
     
     if(connectionIdentifier == self.XAuthFetchID){
         

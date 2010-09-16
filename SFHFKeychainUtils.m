@@ -219,6 +219,4 @@ static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 	}
 }
 
-
-
 @end
