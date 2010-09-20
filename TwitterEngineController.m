@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, retain) NSString *XAuthFetchID;
 @property (nonatomic, retain) OAToken *token;
+@property (nonatomic, copy) NSString *postID;
 
 
 @end
@@ -32,6 +33,8 @@
 @synthesize password;
 @synthesize delegate;
 @synthesize token;
+@synthesize postID;
+
 
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
@@ -43,6 +46,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     delegate = nil;
     
+    
+    [postID release];
+    postID = nil;
+        
     [token release];
     token = nil;
         
@@ -138,6 +145,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
 }
 
+- (BOOL)postMessage:(NSString*)message{
+    
+    if(self.loggedIn == NO)
+        return NO;
+    
+    self.postID = [self.twitterEngine sendUpdate:message];
+    
+    if(postID != nil)
+        return YES;
+    
+}
 
 #pragma mark -
 #pragma mark MGTwitterEngineDelegate
@@ -146,6 +164,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     self.XAuthFetchID = nil;
     self.token = aToken;
+    
+    [self.twitterEngine setAccessToken:aToken];
     
     [aToken storeInUserDefaultsWithServiceProviderName:kTwitterProvider prefix:kTwitterPrefix];
     
@@ -167,7 +187,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     debugLog(@"yeah!");
     
-	//TODO: display results!
+    if([connectionIdentifier isEqualToString:self.postID]){
+        
+        self.postID = nil;
+        
+        if([delegate respondsToSelector:@selector(twitterEngineController:postSuccessful:error:)])
+            [delegate twitterEngineController:self postSuccessful:YES error:nil];
+                
+    }
+    
 }
 
 
@@ -175,7 +203,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
 	
     debugLog(@"neah!");
     
-    if(connectionIdentifier == self.XAuthFetchID){
+    if([connectionIdentifier isEqualToString:self.XAuthFetchID]){
         
         self.XAuthFetchID = nil;
                 
@@ -184,6 +212,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
             [delegate twitterEngineController:self didLogin:NO error:error];
     
 
+    }else if([connectionIdentifier isEqualToString:self.postID]){
+
+        
+        self.postID = nil;
+        
+        if([delegate respondsToSelector:@selector(twitterEngineController:postSuccessful:error:)])
+            [delegate twitterEngineController:self postSuccessful:NO error:error];
+        
+        
     }else{
         
 

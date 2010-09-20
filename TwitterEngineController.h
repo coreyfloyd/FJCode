@@ -24,6 +24,7 @@
     NSString* password;
     
     NSString* XAuthFetchID;
+    NSString* postID;
     
     id<TwitterEngineControllerDelegate> delegate;
 }
@@ -37,6 +38,8 @@
 - (BOOL)getFollowers;
 - (BOOL)getFollowing;
 
+- (BOOL)postMessage:(NSString*)message;
+
 @end
 
 
@@ -46,6 +49,7 @@
 - (void)twitterEngineController:(TwitterEngineController*)controller didLogin:(BOOL)login error:(NSError*)error;  
 - (void)twitterEngineController:(TwitterEngineController*)controller didFetchFollowers:(NSArray*)followers error:(NSError*)error;  
 - (void)twitterEngineController:(TwitterEngineController*)controller didFetchFollowing:(NSArray*)following error:(NSError*)error;  
+- (void)twitterEngineController:(TwitterEngineController*)controller postSuccessful:(BOOL)login error:(NSError*)error;  
 
 
 
