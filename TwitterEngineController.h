@@ -21,6 +21,7 @@
     OAToken* token;
     
     NSString* username;
+    NSString* userID;
     NSString* password;
     
     NSString* XAuthFetchID;
@@ -30,6 +31,7 @@
 }
 @property (nonatomic, assign) id<TwitterEngineControllerDelegate> delegate;
 @property (nonatomic, readonly) BOOL loggedIn;
+@property (nonatomic, copy, readonly) NSString *userID;
 
 + (TwitterEngineController*)sharedTwitterEngineController;
 

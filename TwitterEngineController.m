@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, retain) NSString *XAuthFetchID;
 @property (nonatomic, retain) OAToken *token;
+@property (nonatomic, copy, readwrite) NSString *userID;
 @property (nonatomic, copy) NSString *postID;
 
 
@@ -34,6 +35,9 @@
 @synthesize delegate;
 @synthesize token;
 @synthesize postID;
+@synthesize userID;
+
+
 
 
 
@@ -46,6 +50,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     delegate = nil;
     
+    
+    [userID release];
+    userID = nil;
     
     [postID release];
     postID = nil;
@@ -164,7 +171,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     self.XAuthFetchID = nil;
     self.token = aToken;
-    
     [self.twitterEngine setAccessToken:aToken];
     
     [aToken storeInUserDefaultsWithServiceProviderName:kTwitterProvider prefix:kTwitterPrefix];
@@ -175,6 +181,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
 	
 	[defaults synchronize];
     
+    self.userID = self.twitterEngine.userID;
+
     if([delegate respondsToSelector:@selector(twitterEngineController:didLogin:error:)])
         [delegate twitterEngineController:self didLogin:YES error:nil];
 
