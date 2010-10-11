@@ -37,6 +37,8 @@
 
 - (BOOL)loginWithUserName:(NSString*)name password:(NSString*)pwd;
 
+- (BOOL)logoutAClearCredentials;
+
 - (BOOL)getFollowers;
 - (BOOL)getFollowing;
 
