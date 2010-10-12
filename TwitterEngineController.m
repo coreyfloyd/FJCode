@@ -127,6 +127,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
 }
 
+- (BOOL)logoutAClearCredentials{
+    
+    [OAToken removeFromUserDefaultsWithServiceProviderName:kTwitterProvider prefix:kTwitterPrefix];
+    
+    self.token = nil;
+    self.userID = nil;
+    self.username = nil;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	[defaults removeObjectForKey:kTwitterNameKey];
+    
+    [defaults synchronize];
+    
+}
 
 - (BOOL)getFollowers{
     
@@ -161,6 +176,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     if(postID != nil)
         return YES;
+    
+    return NO;
+    
     
 }
 
