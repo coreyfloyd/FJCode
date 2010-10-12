@@ -17,7 +17,7 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 @interface UIAlertView (Helper)
 
 + (id)presentAlertViewWithTitle:(NSString*)aTitle message:(NSString*)aMessage delegate:(id)object;
-
++ (id)presentAlertViewWithTitle:(NSString*)aTitle message:(NSString*)aMessage delegate:(id)object otherButtonTitle:(NSString *)otherButtonTitle;
 
 //Specific Alerts
 + (id)presentNoInternetAlertWithDelegate:(id)object;
