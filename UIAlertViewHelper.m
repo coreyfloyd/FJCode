@@ -34,6 +34,18 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 	
 }
 
++ (id)presentAlertViewWithTitle:(NSString*)aTitle message:(NSString*)aMessage delegate:(id)object otherButtonTitle:(NSString *)otherButtonTitle{
+	
+	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:aTitle
+													message:aMessage
+												   delegate:object 
+										  cancelButtonTitle:@"Cancel" 
+										  otherButtonTitles:otherButtonTitle, nil];
+	[alert show];
+	return [alert autorelease];
+	
+}
+
 + (id)presentNoInternetAlertWithDelegate:(id)object{
 	
 
