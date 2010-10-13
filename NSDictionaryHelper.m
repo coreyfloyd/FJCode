@@ -29,6 +29,23 @@
     
 }
 
+- (NSString*)parameterStringUnescaped{
+    
+    NSMutableArray *pairs = [[[NSMutableArray alloc] init] autorelease]; 
+    for (id key in [self allKeys]) { 
+        id value = [self objectForKey:key]; 
+        if ([value isKindOfClass:[NSArray class]]) { 
+            for (id val in value) { 
+                [pairs addObject:[NSString stringWithFormat:@"%@=%@",key, val]];   
+            } 
+        } else { 
+            [pairs addObject:[NSString stringWithFormat:@"%@=%@",key, value ]]; 
+        } 
+    } 
+    return [pairs componentsJoinedByString:@"&"]; 
+    
+    
+}
 
 - (BOOL)containsObjectForKey:(id)key {
 	return [[self allKeys] containsObject:key];

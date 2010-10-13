@@ -141,6 +141,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     [defaults synchronize];
     
+    return YES;
+    
 }
 
 - (BOOL)getFollowers{
@@ -270,6 +272,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
             
             if([delegate respondsToSelector:@selector(twitterEngineController:didFetchFollowing:error:)])
                 [delegate twitterEngineController:self didFetchFollowing:ids error:nil];
+            
+        }else{
+            
+            if([delegate respondsToSelector:@selector(twitterEngineController:didFetchFollowing:error:)])
+                [delegate twitterEngineController:self didFetchFollowing:nil error:nil];
             
         }
     }
