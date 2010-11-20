@@ -62,7 +62,7 @@ enum {
 - (NSString*)stringByRemovingArticlePrefixes;
 
 //also tests if string is a single space
-- (BOOL)isEmpty;
+- (BOOL)isNotEmpty;
 
 - (NSString*)md5;
 

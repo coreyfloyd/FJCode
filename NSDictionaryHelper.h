@@ -14,6 +14,7 @@
 
 - (NSString*)parameterString;
 
+- (NSString*)parameterStringUnescaped;
 /*
  * Checks to see if the dictionary contains the given key
  */

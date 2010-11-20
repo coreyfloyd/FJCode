@@ -19,6 +19,8 @@
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, retain) NSString *XAuthFetchID;
 @property (nonatomic, retain) OAToken *token;
+@property (nonatomic, copy, readwrite) NSString *userID;
+@property (nonatomic, copy) NSString *postID;
 
 
 @end
@@ -32,6 +34,11 @@
 @synthesize password;
 @synthesize delegate;
 @synthesize token;
+@synthesize postID;
+@synthesize userID;
+
+
+
 
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
@@ -43,6 +50,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     delegate = nil;
     
+    
+    [userID release];
+    userID = nil;
+    
+    [postID release];
+    postID = nil;
+        
     [token release];
     token = nil;
         
@@ -113,6 +127,23 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
 }
 
+- (BOOL)logoutAClearCredentials{
+    
+    [OAToken removeFromUserDefaultsWithServiceProviderName:kTwitterProvider prefix:kTwitterPrefix];
+    
+    self.token = nil;
+    self.userID = nil;
+    self.username = nil;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	[defaults removeObjectForKey:kTwitterNameKey];
+    
+    [defaults synchronize];
+    
+    return YES;
+    
+}
 
 - (BOOL)getFollowers{
     
@@ -138,6 +169,20 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
 }
 
+- (BOOL)postMessage:(NSString*)message{
+    
+    if(self.loggedIn == NO)
+        return NO;
+    
+    self.postID = [self.twitterEngine sendUpdate:message];
+    
+    if(postID != nil)
+        return YES;
+    
+    return NO;
+    
+    
+}
 
 #pragma mark -
 #pragma mark MGTwitterEngineDelegate
@@ -146,6 +191,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
     
     self.XAuthFetchID = nil;
     self.token = aToken;
+    [self.twitterEngine setAccessToken:aToken];
     
     [aToken storeInUserDefaultsWithServiceProviderName:kTwitterProvider prefix:kTwitterPrefix];
     
@@ -155,6 +201,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
 	
 	[defaults synchronize];
     
+    self.userID = self.twitterEngine.userID;
+
     if([delegate respondsToSelector:@selector(twitterEngineController:didLogin:error:)])
         [delegate twitterEngineController:self didLogin:YES error:nil];
 
@@ -165,17 +213,25 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
 
 - (void)requestSucceeded:(NSString *)connectionIdentifier{
     
-    NSLog(@"yeah!");
+    debugLog(@"yeah!");
     
-	//TODO: display results!
+    if([connectionIdentifier isEqualToString:self.postID]){
+        
+        self.postID = nil;
+        
+        if([delegate respondsToSelector:@selector(twitterEngineController:postSuccessful:error:)])
+            [delegate twitterEngineController:self postSuccessful:YES error:nil];
+                
+    }
+    
 }
 
 
 - (void)requestFailed:(NSString *)connectionIdentifier withError:(NSError *)error{
 	
-    NSLog(@"neah!");
+    debugLog(@"neah!");
     
-    if(connectionIdentifier == self.XAuthFetchID){
+    if([connectionIdentifier isEqualToString:self.XAuthFetchID]){
         
         self.XAuthFetchID = nil;
                 
@@ -184,6 +240,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
             [delegate twitterEngineController:self didLogin:NO error:error];
     
 
+    }else if([connectionIdentifier isEqualToString:self.postID]){
+
+        
+        self.postID = nil;
+        
+        if([delegate respondsToSelector:@selector(twitterEngineController:postSuccessful:error:)])
+            [delegate twitterEngineController:self postSuccessful:NO error:error];
+        
+        
     }else{
         
 
@@ -207,6 +272,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TwitterEngineController);
             
             if([delegate respondsToSelector:@selector(twitterEngineController:didFetchFollowing:error:)])
                 [delegate twitterEngineController:self didFetchFollowing:ids error:nil];
+            
+        }else{
+            
+            if([delegate respondsToSelector:@selector(twitterEngineController:didFetchFollowing:error:)])
+                [delegate twitterEngineController:self didFetchFollowing:nil error:nil];
             
         }
     }
