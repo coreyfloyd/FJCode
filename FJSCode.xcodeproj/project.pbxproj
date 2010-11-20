@@ -96,6 +96,8 @@
 		C4A8369B117A267F007D9A2A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		C4AC0F2411B1AFAC00FEE0ED /* MAKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKVONotificationCenter.h; sourceTree = "<group>"; };
 		C4AC0F2511B1AFAD00FEE0ED /* MAKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKVONotificationCenter.m; sourceTree = "<group>"; };
+		C4B3A70412984C950084F2C9 /* FJFlipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJFlipViewController.h; sourceTree = "<group>"; };
+		C4B3A70512984C950084F2C9 /* FJFlipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJFlipViewController.m; sourceTree = "<group>"; };
 		C4C4DC9A11592AB3003906C9 /* UIImage+Caching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Caching.h"; sourceTree = "<group>"; };
 		C4C4DC9B11592AB3003906C9 /* UIImage+Caching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Caching.m"; sourceTree = "<group>"; };
 		C4C4DC9C11592AB3003906C9 /* UIImage+Disk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Disk.h"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				C43FAB610FCC422000EB4F92 /* ToolBar */,
 				C46C16BD11F6107500377E8C /* Map */,
 				C49D41AA102121A500FF8BCC /* Buttons */,
+				C4B3A70E12984FE30084F2C9 /* Flip View */,
 				C4AC0F2811B1AFD400FEE0ED /* MAKVONotificationCenter */,
 				C4CC17C510DE10AA00DBE821 /* Solicit Review */,
 				C4F6D0080FCA532200F6AD69 /* Progress View */,
@@ -403,6 +406,15 @@
 				C4AC0F2511B1AFAD00FEE0ED /* MAKVONotificationCenter.m */,
 			);
 			name = MAKVONotificationCenter;
+			sourceTree = "<group>";
+		};
+		C4B3A70E12984FE30084F2C9 /* Flip View */ = {
+			isa = PBXGroup;
+			children = (
+				C4B3A70412984C950084F2C9 /* FJFlipViewController.h */,
+				C4B3A70512984C950084F2C9 /* FJFlipViewController.m */,
+			);
+			name = "Flip View";
 			sourceTree = "<group>";
 		};
 		C4BCA07F11DACEE0001CCEF7 /* Key Chain */ = {
