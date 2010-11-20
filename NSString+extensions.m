@@ -108,7 +108,26 @@
 }
 
 
+- (BOOL)containsCharacters{
 
+    return [self containsCharactersIncludeWhiteSpace:NO];
+}
+
+- (BOOL)containsCharactersIncludeWhiteSpace:(BOOL)flag{
+        
+    if(!flag){
+        
+        NSString* stripped = [self stringByTrimmingWhiteSpace];
+        
+        if([stripped length]==0)
+            return NO;
+    }
+	
+    if([self length] == 0)
+        return NO;
+    
+    return YES;
+}
 
 - (BOOL)isNotEmpty{
     
@@ -120,6 +139,20 @@
         answer = NO;
     return answer;
 }
+
+
+
+- (BOOL)isEmpty{
+    
+	BOOL answer = NO;
+    
+	NSString* stripped = [self stringByTrimmingWhiteSpace];
+	
+    if([stripped length]==0)
+        answer = YES;
+    return answer;
+}
+
 
 - (BOOL)doesContainString:(NSString *)aString{
     

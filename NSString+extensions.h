@@ -61,8 +61,13 @@ enum {
 - (NSString*)stringByDeletingLastCharacter;
 - (NSString*)stringByRemovingArticlePrefixes;
 
-//also tests if string is a single space
-- (BOOL)isNotEmpty;
+//replaces deprecated methods below
+- (BOOL)containsCharacters; //tests if length is > 0, does not count whitespace
+- (BOOL)containsCharactersIncludeWhiteSpace:(BOOL)flag; //whitespace optional
+
+//DEPRECATED, same as above
+- (BOOL)isNotEmpty; __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
+- (BOOL)isEmpty; __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
 
 - (NSString*)md5;
 
