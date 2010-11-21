@@ -20,7 +20,7 @@
 /*
  * Rotate the imageL
  */
--(UIImage*)rotate:(UIImageOrientation)orient;
+- (UIImage*)rotate:(UIImageOrientation)orient;
 
 /*
  * Scales the image to the given size

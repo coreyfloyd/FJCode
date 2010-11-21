@@ -30,6 +30,8 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 
 + (id)presentDialogForWifiRecheckWithDelegate:(id)object;
 
++ (id)presentErrorinAlerView:(NSError*)error;
++ (id)presentErrorinAlerView:(NSError*)error delegate:(id)object;
 
 
 

@@ -13,7 +13,6 @@
 - (id)performIfRespondsToSelector:(SEL)aSelector;
 - (id)performIfRespondsToSelector:(SEL)aSelector withObject:(id)anObject;
 
-
 // Reroutes all calls to the first method, to the second method in the current class
 + (void)swizzleMethod:(SEL)originalMethod withMethod:(SEL)newMethod;
 
@@ -22,5 +21,14 @@
 
 // Replaces calls to this classes method, with the same method from another class
 + (void)replaceMethod:(SEL)aMethod fromClass:(Class)aClass;
+
+@end
+
+
+
+@interface NSObject (AMAssociatedObjects)
+
+- (void)associateValue:(id)value withKey:(void *)key; // Retains value.
+- (id)associatedValueForKey:(void *)key;
 
 @end

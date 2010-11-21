@@ -377,5 +377,11 @@
 	}
 }
 
+// return a comma delimited string
++ (NSString *) commasForNumber: (long long) num
+{
+	if (num < 1000) return [NSString stringWithFormat:@"%d", num];
+	return	[[self commasForNumber:num/1000] stringByAppendingFormat:@",%03d", (num % 1000)];
+}
 
 @end

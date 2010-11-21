@@ -112,4 +112,28 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
     
 }
 
++ (id)presentErrorinAlerView:(NSError*)error{
+
+    [self presentErrorinAlerView:error delegate:nil];
+}
+
+
++ (id)presentErrorinAlerView:(NSError*)error delegate:(id)object{
+ 
+    NSLog(@"%@", [error localizedFailureReason]);
+	NSLog(@"%@", [error localizedDescription]);
+	
+	for(NSString* eachKey in [error userInfo]){
+		
+		NSLog(@"%@: %@", eachKey, [[error userInfo] objectForKey:eachKey]);
+	}
+	UIAlertView* message = [[[UIAlertView alloc] initWithTitle:[[error localizedDescription] capitalizedString]
+                                                       message:[[[error userInfo] objectForKey:NSUnderlyingErrorKey] localizedDescription]
+                                                      delegate:object 
+                                             cancelButtonTitle:@"OK" 
+                                             otherButtonTitles:nil, nil] autorelease];
+    [message show];
+    
+}
+
 @end
