@@ -142,14 +142,7 @@ CGRect rectContractedByValue(CGRect rect,  float expandRadius){
     self.frame = newFrame;
     
 }
--(void)setSize:(CGSize)aSize{
-    
-    CGRect newFrame = self.frame;
-    newFrame.size = aSize;
-    self.frame = newFrame;
-    
-    
-}
+
 -(void)setSizeWidth:(float)value{
     
     CGRect newFrame = self.frame;

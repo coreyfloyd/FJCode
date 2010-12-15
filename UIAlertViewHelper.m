@@ -114,7 +114,7 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 
 + (id)presentErrorinAlerView:(NSError*)error{
 
-    [self presentErrorinAlerView:error delegate:nil];
+    return [self presentErrorinAlerView:error delegate:nil];
 }
 
 
@@ -133,6 +133,8 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
                                              cancelButtonTitle:@"OK" 
                                              otherButtonTitles:nil, nil] autorelease];
     [message show];
+    
+    return message;
     
 }
 

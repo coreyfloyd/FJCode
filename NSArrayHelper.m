@@ -60,6 +60,7 @@
 	return [copy uniqueMembers];
 }
 
+/*
 // A la LISP, will return an array populated with values
 - (NSArray *) map: (SEL) selector withObject: (id) object1 withObject: (id) object2
 {
@@ -80,6 +81,8 @@
 	}
 	return results;
 }
+ 
+ 
 
 - (NSArray *) map: (SEL) selector withObject: (id) object1
 {
@@ -90,6 +93,7 @@
 {
 	return [self map:selector withObject:nil];
 }
+*/
 
 @end
 

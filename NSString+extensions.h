@@ -66,8 +66,8 @@ enum {
 - (BOOL)containsCharactersIncludeWhiteSpace:(BOOL)flag; //whitespace optional
 
 //DEPRECATED, same as above
-- (BOOL)isNotEmpty; __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
-- (BOOL)isEmpty; __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
+- (BOOL)isNotEmpty; //__OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
+- (BOOL)isEmpty; //__OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
 
 + (NSString*)GUIDString;
 - (NSString*)md5;
