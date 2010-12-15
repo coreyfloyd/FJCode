@@ -90,6 +90,12 @@
 		C4A8364C117A256A007D9A2A /* NSOperationQueue+Shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+Shared.m"; sourceTree = "<group>"; };
 		C4A8369A117A267F007D9A2A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C4A8369B117A267F007D9A2A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		C4A9080F12B88DEE006CFE9B /* BNColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNColor.h; sourceTree = "<group>"; };
+		C4A9081012B88DEE006CFE9B /* BNColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNColor.m; sourceTree = "<group>"; };
+		C4A9081F12B88FBB006CFE9B /* SMModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMModelObject.h; sourceTree = "<group>"; };
+		C4A9082012B88FBB006CFE9B /* SMModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMModelObject.m; sourceTree = "<group>"; };
+		C4A9085412B89034006CFE9B /* FJExpandingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJExpandingTextView.h; sourceTree = "<group>"; };
+		C4A9085512B89034006CFE9B /* FJExpandingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJExpandingTextView.m; sourceTree = "<group>"; };
 		C4AC0F2411B1AFAC00FEE0ED /* MAKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKVONotificationCenter.h; sourceTree = "<group>"; };
 		C4AC0F2511B1AFAD00FEE0ED /* MAKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKVONotificationCenter.m; sourceTree = "<group>"; };
 		C4B3A70412984C950084F2C9 /* FJFlipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJFlipViewController.h; sourceTree = "<group>"; };
@@ -304,6 +310,7 @@
 				C489B66C1032762E00514567 /* CoreData Categories */,
 				C4CC16E510DE00D000DBE821 /* UIKit Categories */,
 				C4A83640117A2409007D9A2A /* UIImage */,
+				C4A9082212B88FBE006CFE9B /* Model Object */,
 				C4C921E012996EF1005C12F4 /* Archiving */,
 				C4C921C21299687B005C12F4 /* Exception Helper */,
 				C4C921AE129967D5005C12F4 /* KBCollectionExtensions */,
@@ -317,6 +324,8 @@
 				C403FC77100F865300DCA31A /* Audio */,
 				C46C16BD11F6107500377E8C /* Map */,
 				C49D41AA102121A500FF8BCC /* Buttons */,
+				C4A9085412B89034006CFE9B /* FJExpandingTextView.h */,
+				C4A9085512B89034006CFE9B /* FJExpandingTextView.m */,
 				C4B3A70E12984FE30084F2C9 /* Flip View */,
 				C4AC0F2811B1AFD400FEE0ED /* MAKVONotificationCenter */,
 				C4C921E612996FC3005C12F4 /* KVO Blocks */,
@@ -419,6 +428,15 @@
 				C4C4DC9D11592AB3003906C9 /* UIImage+Disk.m */,
 			);
 			name = UIImage;
+			sourceTree = "<group>";
+		};
+		C4A9082212B88FBE006CFE9B /* Model Object */ = {
+			isa = PBXGroup;
+			children = (
+				C4A9081F12B88FBB006CFE9B /* SMModelObject.h */,
+				C4A9082012B88FBB006CFE9B /* SMModelObject.m */,
+			);
+			name = "Model Object";
 			sourceTree = "<group>";
 		};
 		C4AC0F2811B1AFD400FEE0ED /* MAKVONotificationCenter */ = {
@@ -550,6 +568,8 @@
 				C470931A11C9715A0082307C /* UIAlertViewHelper.m */,
 				C42E952E10D6CEE900754443 /* UIColor+extensions.h */,
 				C42E952F10D6CEE900754443 /* UIColor+extensions.m */,
+				C4A9080F12B88DEE006CFE9B /* BNColor.h */,
+				C4A9081012B88DEE006CFE9B /* BNColor.m */,
 				C4CC17F310DE180700DBE821 /* BlueBadge.h */,
 				C4CC17F410DE180700DBE821 /* BlueBadge.m */,
 				C42E952810D6CEB600754443 /* UIBarButtonItem+extensions.h */,

@@ -110,6 +110,11 @@
 
 
 
+- (NSArray*)objectsWithObjectIDs:(NSArray*)originalObjectIDs;
+
+- (NSArray*)objectsWithObjectsFromOtherContext:(NSArray*)originalObjects;
+
+
 
 @end
 

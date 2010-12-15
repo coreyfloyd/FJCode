@@ -211,6 +211,15 @@
     
 }
 
+
++ (NSString*)GUIDString {
+	CFUUIDRef theUUID = CFUUIDCreate(NULL);
+	CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+	CFRelease(theUUID);
+	return [(NSString *)string autorelease];
+}
+
+
 /*
  * We did not write the method below
  * It's all over Google and we're unable to find the original author
@@ -385,3 +394,73 @@
 }
 
 @end
+
+
+
+@implementation NSString (Validation)
+
++ (NSPredicate *)predicateForWhiteSpace {
+	
+	NSString *whiteSpaceRegex = @"[\\s]*"; 
+	return [NSPredicate predicateWithFormat:@"SELF MATCHES %@", whiteSpaceRegex]; 
+	
+}
+
++ (NSPredicate *)predicateForEmail {
+	
+	//NSString * regex   = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.-]+?\\.[a-zA-Z0-9]{2,6}$";
+	
+	NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"; 
+	return [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+	
+}
+
++ (NSPredicate *)predicateForPhone {
+	
+	NSString *phoneRegex = @"[-0-9 \\(\\)]{7,18}"; 
+	return [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
+	
+}
+
+
+
+- (BOOL)isValid:(int)type acceptWhiteSpace:(BOOL)acceptWhiteSpace {	
+	
+	NSPredicate *primaryPredicate = nil;
+	
+	switch (type) {
+		case StringValidationTypeEmail:
+			primaryPredicate = [[self class] predicateForEmail];
+			break;
+		case StringValidationTypePhone:
+			primaryPredicate = [[self class] predicateForPhone];
+			break;
+	}
+	
+	
+	NSPredicate *finalPredicate = primaryPredicate;
+	
+	if (acceptWhiteSpace) {
+		
+		NSPredicate *whiteSpacePredicate = [[self class] predicateForWhiteSpace];
+        NSArray* a = [NSArray arrayWithObjects:primaryPredicate, whiteSpacePredicate, nil];
+		finalPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:a]; 
+		
+	}
+	
+	return [finalPredicate evaluateWithObject:self];
+	
+}
+
+@end
+
+@implementation NSMutableString (charManipulation)
+
+- (void)removeLastCharacter{
+    
+    [self deleteCharactersInRange:NSMakeRange([self length]-1, 1)];
+    
+}
+
+@end
+

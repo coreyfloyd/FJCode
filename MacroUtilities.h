@@ -22,7 +22,19 @@
 #define ZAssert(condition, ...) do { if (!(condition)) { ALog(__VA_ARGS__); }} while(0)
 
 
+
 #if DEBUG==1
+
+#define extendedDebugLog(format, ...)
+
+#elif DEBUG==2
+
+#define extendedDebugLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
+
+#endif
+
+
+#ifdef DEBUG
 
 #define debugLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
 #define MARK	debugLog(@"%s", __PRETTY_FUNCTION__);
@@ -52,10 +64,9 @@
 
 
 
-
-
-
 #else
+
+#define extendedDebugLog(format, ...)
 #define debugLog(format, ...)
 #define MARK
 #define START_TIMER
@@ -83,7 +94,7 @@
 
 
 #ifndef NS_BLOCK_ASSERTIONS
- #define NS_BLOCK_ASSERTIONS
+#define NS_BLOCK_ASSERTIONS
 #endif
 
 #endif

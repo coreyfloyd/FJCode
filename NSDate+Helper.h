@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NSString * PrettyDateFromInterval( NSInteger epoch );
+
 @interface NSDate (Helper)
 
 - (NSUInteger)daysAgo;

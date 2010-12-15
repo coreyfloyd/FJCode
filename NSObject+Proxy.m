@@ -127,8 +127,57 @@
 
 /****************************************************************************/
 
+@interface FJPerformIfRespondsProxy : NSProxy
+{
+	id realObject;
+}
 
-@implementation NSObject (SDStuff)
+- (id) initWithRealObject:(id)newRealObject;
+
+@end
+
+@implementation FJPerformIfRespondsProxy
+
+- (id) initWithRealObject:(id)newRealObject {
+	//This is a direct subclass of NSProxy, so no super message!
+	realObject = [newRealObject retain];
+	return self;
+}
+- (void) dealloc {
+	[realObject release];
+	[super dealloc];
+}
+- (void) finalize {
+	realObject = nil;
+	[super finalize];
+}
+
+- (void) forwardInvocation:(NSInvocation *)invocation {
+    
+    if([realObject respondsToSelector:[invocation selector]]){
+        
+        [invocation setTarget:realObject];
+        if (![invocation argumentsRetained])
+            [invocation retainArguments];
+        [invocation performSelector:@selector(invoke)];
+    }
+}
+
+- (NSMethodSignature *) methodSignatureForSelector:(SEL)selector {
+    
+    return [realObject methodSignatureForSelector:selector];
+    
+}
+
+
+@end
+
+
+/****************************************************************************/
+
+
+@implementation NSObject (Proxy)
+
 - (id) nextRunloopProxy {
 	return [[SDNextRunloopProxy alloc] initWithTarget:self];
 }
@@ -141,4 +190,10 @@
 - (id) performOnMainThreadProxy {
 	return [[[PRHMainThreadPerformingProxy alloc] initWithRealObject:self] autorelease];
 }
+
+- (id)performIfRespondsToSelectorProxy{
+    return [[[FJPerformIfRespondsProxy alloc] initWithRealObject:self] autorelease];
+    
+}
+
 @end

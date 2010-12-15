@@ -16,13 +16,14 @@
 
 static NSManagedObjectModel* managedObjectModel = nil;
 static NSPersistentStoreCoordinator* persistentStoreCoordinator = nil;
+static NSPersistentStoreCoordinator* inMemoryStoreCoordinator = nil;
 static NSManagedObjectContext* managedObjectContext = nil;
 
 static NSString* const kStoreName = @"storedata.sqlite";
-static NSString* const kModelConfigurationName = @"primaryModel";
 
 #ifdef MULTIPLE_STORE_SUPPORT
 
+static NSString* const kModelConfigurationName = @"primaryModel";
 static NSString* const kPersonalStoreName = @"personalstoredata.sqlite";
 static NSString* const kPersonalModelConfigurationName = @"personalModel";
 
@@ -58,27 +59,39 @@ static NSString* const kPersonalModelConfigurationName = @"personalModel";
 }
 + (void)resetStore:(NSURL *)url{
 	
+    [managedObjectModel release];
+    managedObjectModel = nil;
+    [persistentStoreCoordinator release];
+    persistentStoreCoordinator = nil;
+    [managedObjectContext release];
+    managedObjectContext = nil;
+    
 	NSString* filename = [[url path] lastPathComponent];
 	
 	NSString* extension = [filename pathExtension];
 	
 	filename = [filename stringByDeletingPathExtension];
+    
+    [NSManagedObjectContext deleteStore:url];
 	
 	if([extension isEqualToString:@"sqlite"]){
 		
 		NSString* freshStore = [[NSBundle mainBundle] pathForResource:filename ofType:extension];
 		
-		if(freshStore == nil)
-			return;
-		
-		[NSManagedObjectContext deleteStore:url];
-		
-		debugLog(@"Replacing Store with database located at: %@", freshStore);
-		
-		[[NSFileManager defaultManager] copyItemAtPath:freshStore 
-												toPath:[url path]
-												 error:nil];
-	}
+		if(freshStore != nil){
+            
+            [NSManagedObjectContext deleteStore:url];
+            
+            debugLog(@"Replacing Store with database located at: %@", freshStore);
+            
+            [[NSFileManager defaultManager] copyItemAtPath:freshStore 
+                                                    toPath:[url path]
+                                                     error:nil];
+        }
+    }
+    
+    [self defaultManagedObjectContext];
+    
 }
 
 
@@ -109,13 +122,20 @@ static NSString* const kPersonalModelConfigurationName = @"personalModel";
         [newContext setPersistentStoreCoordinator: coordinator];
     }
 	
-	NSError* error = nil;
-	if( ![newContext save:&error]){
-		debugLog(@"core data save error:", [error description]);
-		return nil;
-	} else {
-		return newContext;
-	}
+    return newContext;
+}
+
+
++ (NSManagedObjectContext *)inmemoryManagedObjectContext{
+	
+	NSPersistentStoreCoordinator *coordinator = [self inMemoryStoreCoordinator];
+	NSManagedObjectContext* newContext = nil;
+    if (coordinator != nil) {
+        newContext = [[[NSManagedObjectContext alloc] init] autorelease];
+        [newContext setPersistentStoreCoordinator: coordinator];
+    }
+	
+    return newContext;
 }
 
 
@@ -185,6 +205,33 @@ static NSString* const kPersonalModelConfigurationName = @"personalModel";
 #endif
 	
     return persistentStoreCoordinator;
+}
+
+
+#pragma mark -
+#pragma mark INmemory
+
+
++ (NSPersistentStoreCoordinator *)inMemoryStoreCoordinator {
+	
+	if (inMemoryStoreCoordinator != nil) {
+        return inMemoryStoreCoordinator;
+    }
+	
+	
+	NSError *error = nil;
+    inMemoryStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+	
+    if (![inMemoryStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType configuration:nil URL:nil options:nil error:&error]) {
+		
+		debugLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		//Man we are really f*cked
+		abort();
+		
+    }
+	
+	
+    return inMemoryStoreCoordinator;
 }
 
 

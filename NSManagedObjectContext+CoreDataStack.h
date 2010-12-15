@@ -25,10 +25,19 @@
  return [NSManagedObjectContext defaultManagedObjectContext];
  }
  */
+
+//standard CD stack
 + (NSManagedObjectContext *)defaultManagedObjectContext;
-+ (NSManagedObjectContext *)scratchpadManagedObjectContext;
-+ (NSManagedObjectModel *)managedObjectModel;
 + (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
++ (NSManagedObjectModel *)managedObjectModel;
+
+//disposable context
++ (NSManagedObjectContext *)scratchpadManagedObjectContext;
+
+//context not attached to store, cannot be persisted
++ (NSManagedObjectContext *)inmemoryManagedObjectContext;
++ (NSPersistentStoreCoordinator *)inMemoryStoreCoordinator;
+
 
 + (NSString *)applicationDocumentsDirectory;
 
@@ -44,7 +53,7 @@
 //Deletes store at URL
 + (void)deleteStore:(NSURL *)url;
 
-//Deletes store at url and replaces it with store of same name from application bundle
+//Deletes store at url and replaces it with store of same name from application bundle, or if not found, an empty store
 + (void)resetStore:(NSURL *)url;
 
 
