@@ -9,6 +9,106 @@
 #import "NSDate+Helper.h"
 #import "NSString+extensions.h"
 
+
+NSString * PrettyDateFromInterval( NSInteger epoch ) {
+    // kindly adapted from Craig Francis at http://www.php.net/manual/en/function.time.php#74652
+    
+    //--------------------------------------------------
+    // Maths
+    int sec = epoch % 60;
+    epoch -= sec;
+    
+    int minSeconds = epoch % 3600;
+    epoch -= minSeconds;
+    int min = (minSeconds / 60);
+    
+    int hourSeconds = epoch % 86400;
+    epoch -= hourSeconds;
+    int hour = (hourSeconds / 3600);
+    
+    int daySeconds = epoch % 604800;
+    epoch -= daySeconds;
+    int day = (daySeconds / 86400);
+    
+    //  int week = (epoch / 604800);
+    
+	
+	int weekSeconds = epoch % 2419200;
+	epoch -= weekSeconds;
+    int week = (weekSeconds / 604800);
+    
+    //	int month = (epoch / 2419200);
+	
+	
+	int monthSeconds = epoch % 29030400;
+	epoch -= monthSeconds;
+    int month = (monthSeconds / 2419200);
+	
+	int year = (epoch / 29030400);
+	
+	
+    //--------------------------------------------------
+    // Text
+    
+    NSString * singleOutput;
+    
+    
+    
+	if (year > 0) {
+		singleOutput = [NSString stringWithFormat:@"%d year%@" ,  year , (
+                                                                          year != 1 ? @"s" : @"")];
+	}
+	else if (month > 0) {
+		singleOutput = [NSString stringWithFormat:@"%d month%@" ,  month , (
+                                                                            month != 1 ? @"s" : @"")];
+	}
+    else if (week > 0) {
+        singleOutput = [NSString stringWithFormat:@"%d week%@" ,  week , (
+                                                                          week != 1 ? @"s" : @"")];
+    }
+    else if (day > 0) {
+        //output[] = day . ' day' . (day != 1 ? 's' : '');
+        singleOutput = [NSString stringWithFormat:@"%d day%@" ,  day , ( day
+                                                                        != 1 ? @"s" : @"")];
+    }
+    else if (hour > 0) {
+        //output[] = hour . ' hour' . (hour != 1 ? 's' : '');
+        singleOutput = [NSString stringWithFormat:@"%d hour%@" ,  hour , (
+                                                                          hour != 1 ? @"s" : @"")];
+    }
+    else if (min > 0) {
+        //output[] = min . ' minute' . (min != 1 ? 's' : '');
+        singleOutput = [NSString stringWithFormat:@"%d min%@" ,  min , ( min
+                                                                        != 1 ? @"s" : @"")];
+    }
+    else {
+        //output[] = sec . ' second' . (sec != 1 ? 's' : '');
+        singleOutput = [NSString stringWithFormat:@"%d sec%@" ,  sec , ( sec
+                                                                        != 1 ? @"s" : @"")];
+    }
+    
+    // [singleOutput retain];
+    //--------------------------------------------------
+    // Grammar
+    
+    /*
+     if( isset(max_phrases) )
+     output = array_slice(output, 0, max_phrases);
+     
+     return = join( ', ', output);
+     
+     return = preg_replace('/, ([^,]+)/', ' and 1', return);
+     
+     //--------------------------------------------------
+     // Return the output
+     
+     return return;
+     */
+    
+    return singleOutput;
+    
+}
+
 @implementation NSDate (Helper)
 
 /*

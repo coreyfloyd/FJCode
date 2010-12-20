@@ -15,6 +15,17 @@
 	return [self count] == 0 ? YES : NO;
 }
 
+
+
+- (NSUInteger)lastIndex{
+    
+    if([self count] == 0)
+        return NSNotFound;
+    
+    return [self count]-1;
+}
+
+
 @end
 
 @implementation NSArray (UtilityExtensions)

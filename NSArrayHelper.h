@@ -16,6 +16,8 @@
  */
 @property(nonatomic,readonly,getter=isEmpty) BOOL empty;
 
+- (NSUInteger)lastIndex; //returns NSNotFound for empty array
+
 @end
 
 

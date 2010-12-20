@@ -273,6 +273,38 @@
 }
 
 
+- (NSArray*)objectsWithObjectIDs:(NSArray*)originalObjectIDs{
+    
+    NSMutableArray* newObjects = [NSMutableArray arrayWithCapacity:[originalObjectIDs count]];
+    
+    [originalObjectIDs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        NSManagedObject* newObj = [self objectWithID:(NSManagedObjectID*)obj];
+        
+        [newObjects addObject:newObj];
+        
+    }];
+    
+    return newObjects;
+}
+
+- (NSArray*)objectsWithObjectsFromOtherContext:(NSArray*)originalObjects{
+    
+    NSMutableArray* newObjects = [NSMutableArray arrayWithCapacity:[originalObjects count]];
+    
+    [originalObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        NSManagedObjectID* anID = [(NSManagedObject*)obj objectID];
+        
+        NSManagedObject* newObj = [self objectWithID:anID];
+        
+        [newObjects addObject:newObj];
+        
+    }];
+    
+    return newObjects;
+}
+
 @end
 
 

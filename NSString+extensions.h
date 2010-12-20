@@ -69,6 +69,7 @@ enum {
 - (BOOL)isNotEmpty; //__OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
 - (BOOL)isEmpty; //__OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
 
++ (NSString*)GUIDString;
 - (NSString*)md5;
 
 /*
@@ -107,3 +108,32 @@ enum {
 
 
 @end
+
+
+
+typedef enum {
+	StringValidationTypeEmail = 0,
+	StringValidationTypePhone
+} StringValidationType;
+
+@interface NSString (Validation)
+
+
++ (NSPredicate *)predicateForWhiteSpace;
++ (NSPredicate *)predicateForEmail;
++ (NSPredicate *)predicateForPhone;
+
+
+- (BOOL)isValid:(int)type acceptWhiteSpace:(BOOL)acceptWhiteSpace;
+
+@end
+
+
+
+@interface NSMutableString (charManipulation)
+
+- (void)removeLastCharacter;
+
+
+@end
+
