@@ -164,7 +164,7 @@ typedef enum {
  * MBProgressHUD operation mode. Switches between indeterminate (MBProgressHUDModeIndeterminate) and determinate
  * progress (MBProgressHUDModeDeterminate). The default is MBProgressHUDModeIndeterminate.
  */
-@property (assign) MBProgressHUDMode mode;
+@property (assign, nonatomic) MBProgressHUDMode mode;
 
 /** 
  * The HUD delegate object. If set the delegate will receive hudWasHidden callbacks when the HUD was hidden. The
@@ -178,13 +178,13 @@ typedef enum {
  * the entire text. If the text is too long it will get clipped by displaying "..." at the end. If left unchanged or
  * set to @"", then no message is displayed.
  */
-@property (copy) NSString *labelText;
+@property (copy, nonatomic) NSString *labelText;
 
 /** 
  * An optional details message displayed below the labelText message. This message is displayed only if the labelText
  * property is also set and is different from an empty string (@"").
  */
-@property (copy) NSString *detailsLabelText;
+@property (copy, nonatomic) NSString *detailsLabelText;
 
 /** 
  * The opacity of the HUD window. Defaults to 0.9 (90% opacity). 
@@ -243,7 +243,7 @@ typedef enum {
 /** 
  * The progress of the progress indicator, from 0.0 to 1.0. Defaults to 0.0. 
  */
-@property (assign) float progress;
+@property (assign, nonatomic) float progress;
 
 /** 
  * Display the HUD. You need to make sure that the main thread completes its run loop soon after this method call so
