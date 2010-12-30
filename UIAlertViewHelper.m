@@ -112,13 +112,13 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
     
 }
 
-+ (id)presentErrorinAlerView:(NSError*)error{
++ (id)presentErrorinAlertView:(NSError*)error{
 
-    return [self presentErrorinAlerView:error delegate:nil];
+    return [self presentErrorinAlertView:error delegate:nil];
 }
 
 
-+ (id)presentErrorinAlerView:(NSError*)error delegate:(id)object{
++ (id)presentErrorinAlertView:(NSError*)error delegate:(id)object{
  
     NSLog(@"%@", [error localizedFailureReason]);
 	NSLog(@"%@", [error localizedDescription]);

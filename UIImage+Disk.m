@@ -64,6 +64,49 @@ BOOL createImagesDirectory()
 @implementation UIImage(File)
 
 
++ (UIImage*)imageFromImageDirectoryNamed:(NSString*)fileName {
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *directory = [paths objectAtIndex:0];
+    NSString *fullPath = [directory stringByAppendingPathComponent:@"Images"];      
+    fullPath = [directory stringByAppendingPathComponent:fileName];
+	UIImage *res = [UIImage imageWithContentsOfFile:fullPath];
+    
+	return res;
+}
+
++ (UIImage*)imageFromImageCacheDirectoryNamed:(NSString*)fileName{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	NSString *directory = [paths objectAtIndex:0];
+    NSString *fullPath = [directory stringByAppendingPathComponent:@"Images"];      
+    fullPath = [directory stringByAppendingPathComponent:fileName];
+    UIImage *res = [UIImage imageWithContentsOfFile:fullPath];
+    
+	return res;
+    
+}
+
+- (BOOL)writeToImageDirectoryWithName:(NSString*)fileName{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *directory = [paths objectAtIndex:0];
+	NSString *fullPath = [directory stringByAppendingPathComponent:@"Images"];      
+    fullPath = [directory stringByAppendingPathComponent:fileName];
+
+    return [self writeToPath:fullPath];
+}
+
+- (BOOL)writeToImageCacheDirectoryWithName:(NSString*)fileName{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	NSString *directory = [paths objectAtIndex:0];
+    NSString *fullPath = [directory stringByAppendingPathComponent:@"Images"];      
+    fullPath = [directory stringByAppendingPathComponent:fileName];
+    
+    return [self writeToPath:fullPath];
+
+}
 
 - (BOOL)writeToFileWithImageName:(NSString*)fileName asynchronous:(BOOL)flag{
 	if(!createImagesDirectory())
@@ -149,127 +192,6 @@ BOOL createImagesDirectory()
 	return YES;
 }
 
-
-
-
-@end
-
-
-
-
-@interface UIImage(DiskCaching)
-
-//+ (id)cacheImageWithContentsOfFile:(NSString*)path asynchronous:(BOOL)flag;
-
-@end
-
-//subscribe to this notification to be notified when the image has ansync fetched from disk
-extern NSString* const ImageFetchedAtPathNotification;
-
-//Check this key in the userInfo dictionary to see if the image is not found on disk
-extern NSString* const FJSImageNotFoundKey;
-
-
-
-
-@implementation UIImage(DiskCaching)
-
-/*
-+ (id)cacheImageWithContentsOfFile:(NSString*)path asynchronous:(BOOL)flag{
-	if(path == nil)
-		return nil;
-	
-	//Load from memory
-	id image = [self associatedValueForKey:path];
-	
-	if(image==nil){
-		
-		FJSLog(@"Missed Cache for File Path: %@ \n -----------", path);	
-		
-		if(flag){
-			
-			//Load from disk on queue		
-			
-			[self associateValue:fetching withKey:path];
-			
-			NSInvocationOperation* cacheOperation = [[[NSInvocationOperation alloc] initWithTarget:self 
-																						  selector:@selector(fetchImageFromDiskAtPath:) 
-																							object:path] autorelease];
-			
-			[[NSOperationQueue sharedOperationQueue] addOperation:cacheOperation];
-			
-		}else {
-			
-			image = [UIImage imageWithContentsOfFile:path];
-			
-			if(image!=nil)
-				[self associateValue:image withKey:path];
-		}
-		
-	}else{
-		
-		FJSLog(@"Hit Cache for File Path: %@ \n -----------", path);	
-	}
-	
-	//is already in que
-	if([image isKindOfClass:[NSString class]])
-		image = nil;
-	
-	return image;
-	
-}
-*/
-
-
-/*
-#pragma mark Fetch operation
-
-+ (void)fetchImageFromDiskAtPath:(NSString*)path{
-	
-	UIImage* image = [UIImage imageWithContentsOfFile:path];
-	
-	if(image!=nil){
-		
-		NSDictionary* imageDictionary = [NSDictionary dictionaryWithObject:image forKey:path];		
-		
-		//Retains object
-		[self performSelectorOnMainThread:@selector(addImageKeyPair:) 
-							   withObject:imageDictionary 
-							waitUntilDone:NO];
-		
-		
-		
-	}else{
-		
-		NSDictionary* userInfo = [NSDictionary dictionaryWithObject:path forKey:FJSImageNotFoundKey];
-		
-		NSNotification* note = [NSNotification notificationWithName:ImageFetchedAtPathNotification 
-															 object:path 
-														   userInfo:userInfo];
-		
-		[[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) 
-															   withObject:note 
-															waitUntilDone:NO];
-	}	
-	
-}
-
-+ (void)addImageKeyPair:(NSDictionary*)data{
-	
-	[UIImage cacheImage:[[data allValues] lastObject]
-				 withKey:[[data allKeys] lastObject]];
-	
-	
-	NSNotification* note = [NSNotification notificationWithName:ImageFetchedAtPathNotification 
-														 object:[[data allKeys] lastObject]
-													   userInfo:[NSDictionary dictionaryWithObject:[[data allValues] lastObject] forKey:FJSImageKey]];
-	
-	[[NSNotificationCenter defaultCenter] postNotification:note];
-	
-}
-
-
-*/
 
 
 
