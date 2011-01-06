@@ -50,6 +50,9 @@ extern NSString* const kDefaultStoreName;
 //convienence methods, most common way to create stores
 
 //default name, location, merging from bundles
+- (BOOL)createFullStackWithDefaultSettings;
+
+//specify a name of the store
 - (BOOL)createFullStackWithSQLiteStoreWithName:(NSString*)name; //no extension
 
 //same, but copies the store from this URL if the store doesn't exist. Use this if you have a default store that ships with the app
