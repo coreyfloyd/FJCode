@@ -22,8 +22,6 @@
  * SOFTWARE.
  */
 
-#import <Cocoa/Cocoa.h>
-
 
 @interface DDCoreDataException : NSException
 {

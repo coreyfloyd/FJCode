@@ -22,7 +22,11 @@
  * SOFTWARE.
  */
 
-#import <Cocoa/Cocoa.h>
+
+//application documents directory
+NSString* defaultStoreLocation();
+
+extern NSString* const kDefaultStoreName; 
 
 
 @interface DDCoreDataStack : NSObject
@@ -37,6 +41,29 @@
 @property (readonly, retain) NSPersistentStoreCoordinator * coordinator;
 @property (readonly, retain) NSPersistentStore * mainStore;
 @property (readonly, retain) NSManagedObjectContext * mainContext;
+@property (readonly, readonly) NSURL * mainStoreURL;
+
+
+- (NSManagedObjectContext *)scratchpadContext; //autoreleased
+
+
+//convienence methods, most common way to create stores
+
+//default name, location, merging from bundles
+- (BOOL)createFullStackWithSQLiteStoreWithName:(NSString*)name; //no extension
+
+//same, but copies the store from this URL if the store doesn't exist. Use this if you have a default store that ships with the app
+- (BOOL)createFullStackWithSQLiteStoreWithName:(NSString*)name copyStoreFromURLIfNeccesary:(NSURL*)storeURL; //must have .sqlite extension
+
+//copy, will not overwrite existing store
+- (BOOL)createFullStackByCopyingStoreAtURL:(NSURL*)storeURL;
+
+//in memory store merging from bundles
+- (BOOL)createFullStackWithInMemoryStore;
+
+
+
+//full stack
 
 - (BOOL)createFullStackWithStoreType:(NSString *)storeType
                                  URL:(NSURL *)url
@@ -56,33 +83,54 @@
 
 - (void)destroyFullStack;
 
+
+
+
+//So you want to do it all yourself?
+
+//(1) model
+
 - (void)createMergedModelFromMainBundle;
 
 - (void)createMergedModelFromBundles:(NSArray *)bundles;
 
 - (void)destroyModel;
 
-- (void)createCoordinator;
+
+
+
+//(2) coordinator
+
+- (void)createCoordinator; //model must exist!!
 
 - (void)destroyCoordinator;
+
+
+//(3) store
 
 - (void)addMainStoreWithType:(NSString *)storeType
                configuration:(NSString *)configuration
                          URL:(NSURL *)url
-                     options:(NSDictionary *)options;
+                     options:(NSDictionary *)options; //coordinator must exist!!
 
 - (BOOL)addMainStoreWithType:(NSString *)storeType
                configuration:(NSString *)configuration
                          URL:(NSURL *)url
                      options:(NSDictionary *)options
-                       error:(NSError **)error;
+                       error:(NSError **)error; //coordinator must exist!!
 
-- (void)removeMainStore;
+- (void)removeMainStore; //does not remove from disk
+
+- (void)removeMainStoreDeleteFromDisk:(BOOL)flag;
+
+- (void)deleteMainStoreFromDisk;
+
+//(4) context
 
 - (void)createMainContext;
 
-- (void)destroyMainContext;
+- (NSManagedObjectContext*)newContext;
 
-- (NSManagedObjectContext *)newContext;
+- (void)destroyMainContext;
 
 @end

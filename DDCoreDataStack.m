@@ -25,6 +25,17 @@
 #import "DDCoreDataStack.h"
 #import "DDCoreDataException.h"
 
+NSString* const kDefaultStoreName = @"storedata";
+
+static NSString* const kStoreExtension = @"sqlite";
+
+NSString* defaultStoreLocation(){
+    
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+
+}
+
+
 
 @implementation DDCoreDataStack
 
@@ -33,11 +44,93 @@
 @synthesize mainStore = _mainStore;
 @synthesize mainContext = _mainContext;
 
+
 - (void)dealloc
 {
     [self destroyFullStack];
     [super dealloc];
 }
+
+- (NSURL*)mainStoreURL{
+    
+    return [[self mainStore] URL];
+    
+}
+
+- (BOOL)createFullStackWithDefaultSettings{
+    
+    return [self createFullStackWithSQLiteStoreWithName:kDefaultStoreName];
+}
+
+- (BOOL)createFullStackWithSQLiteStoreWithName:(NSString*)name{
+    
+    NSString* fileName = [name stringByAppendingPathExtension:kStoreExtension];
+    NSString* path = [defaultStoreLocation() stringByAppendingPathComponent:fileName];
+    
+    NSURL* url = [NSURL fileURLWithPath:path];
+    
+    return [self createFullStackWithStoreType:NSSQLiteStoreType URL:url error:nil];
+}
+
+- (BOOL)createFullStackWithSQLiteStoreWithName:(NSString*)name copyStoreFromURLIfNeccesary:(NSURL*)storeURL{
+    
+    NSString* storePathExtension = [storeURL pathExtension];
+    
+	if(![storePathExtension isEqualToString:@"sqlite"])
+        return NO;
+    
+    NSString* fileName = [name stringByAppendingPathExtension:kStoreExtension];
+    NSString* path = [defaultStoreLocation() stringByAppendingPathComponent:fileName];
+    NSURL* url = [NSURL fileURLWithPath:path];
+
+    if(![[NSFileManager defaultManager] fileExistsAtPath:path]){
+        
+        NSError* error;
+        [[NSFileManager defaultManager] copyItemAtURL:storeURL 
+                                                toURL:url
+                                                 error:&error];
+        
+        if(error != nil)
+            return NO;
+    }
+    
+    
+    return [self createFullStackWithSQLiteStoreWithName:name];
+    
+}
+
+
+- (BOOL)createFullStackByCopyingStoreAtURL:(NSURL*)storeURL{
+    
+    NSString* storePathExtension = [storeURL pathExtension];
+    
+	if(![storePathExtension isEqualToString:@"sqlite"])
+        return NO;
+    
+    NSString* fileName = [kDefaultStoreName stringByAppendingPathExtension:kStoreExtension];
+    NSString* path = [defaultStoreLocation() stringByAppendingPathComponent:fileName];
+    NSURL* url = [NSURL fileURLWithPath:path];
+    
+    NSError* error;
+    [[NSFileManager defaultManager] copyItemAtURL:storeURL 
+                                            toURL:url
+                                            error:&error];
+    
+    if(error != nil)
+        return NO;
+    
+    return [self createFullStackWithDefaultSettings];
+    
+}
+
+       
+
+- (BOOL)createFullStackWithInMemoryStore{
+        
+    return [self createFullStackWithStoreType:NSInMemoryStoreType URL:nil error:nil];
+    
+}
+
 
 - (BOOL)createFullStackWithStoreType:(NSString *)storeType
                                  URL:(NSURL *)url
@@ -179,11 +272,34 @@
     }
 }
 
+- (void)removeMainStoreDeleteFromDisk:(BOOL)flag{
+
+    [self deleteMainStoreFromDisk];
+   
+    if (_mainStore != nil)
+    {
+        [_coordinator removePersistentStore:_mainStore error:nil];
+        [_mainStore release];
+        _mainStore = nil;
+    }
+    
+}
+
 - (void)createMainContext;
 {
     NSAssert(_mainContext == nil, @"Main context is already created");
     _mainContext = [self newContext];
 }
+
+- (NSManagedObjectContext*)newContext{
+    
+    NSAssert(_coordinator != nil, @"Coordinator should not be nil");
+    NSManagedObjectContext * context = [[NSManagedObjectContext alloc] init];
+    [context setPersistentStoreCoordinator:_coordinator];
+    return context;
+    
+}
+
 
 - (void)destroyMainContext
 {
@@ -191,12 +307,23 @@
     _mainContext = nil;
 }
 
-- (NSManagedObjectContext *)newContext;
-{
+
+- (NSManagedObjectContext *)scratchpadContext{
+	
     NSAssert(_coordinator != nil, @"Coordinator should not be nil");
     NSManagedObjectContext * context = [[NSManagedObjectContext alloc] init];
     [context setPersistentStoreCoordinator:_coordinator];
-    return context;
+    return [context autorelease];
+    
 }
+
+- (void)deleteMainStoreFromDisk{
+    
+    [[NSFileManager defaultManager] removeItemAtPath:[[self mainStoreURL] path] error:nil];
+    
+}
+
+
+
 
 @end
