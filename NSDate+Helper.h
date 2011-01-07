@@ -17,8 +17,8 @@ NSString * PrettyDateFromInterval( NSInteger epoch );
 - (NSString *)stringDaysAgo;
 - (NSString *)stringDaysAgoAgainstMidnight:(BOOL)flag;
 
-+ (NSString *)dbFormatString;
-+ (NSDate *)dateFromString:(NSString *)string;
++ (NSString *)dbFormatString; //yyyy-MM-dd HH:mm:ss 
++ (NSDate *)dateFromString:(NSString *)string; //yyyy-MM-dd HH:mm:ss 
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)string;
 + (NSString *)stringFromDate:(NSDate *)date;
 + (NSString *)stringForDisplayFromDate:(NSDate *)date;
