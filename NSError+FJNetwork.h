@@ -10,7 +10,8 @@ typedef enum  {
      FJNetworkErrorJSONParse,
      FJNetworkErrorInvalidResponse,
      FJNetworkErrorNotAuthenticated,
-     FJNetworkErrorCorruptImageResponse
+     FJNetworkErrorCorruptImageResponse,
+     FJNetworkErrorMissingRequiredInfo
     
 } FJNetworkErrorType;
 
@@ -39,5 +40,6 @@ extern NSString* const kCorruptImageResponseDataKey;
 
 + (NSError*)corruptImageResponse:(NSURL*)url data:(NSData*)corruptData;
 
++ (NSError*)missingRequiredDataError;
 
 @end

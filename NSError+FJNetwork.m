@@ -139,4 +139,18 @@ NSString* const kCorruptImageResponseDataKey = @"kCorruptImageResponseDataKey";
     
     
 }
+
++ (NSError*)missingRequiredDataError{
+    
+    
+    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"Required Data missing, request not sent", NSLocalizedDescriptionKey, 
+                          nil];
+    
+    NSError* err = [NSError errorWithDomain: FJNetworkErrorDomain code:FJNetworkErrorMissingRequiredInfo userInfo:dict];
+    
+    return err;
+    
+    
+}
 @end

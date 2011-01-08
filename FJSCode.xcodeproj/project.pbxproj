@@ -167,6 +167,8 @@
 		C4D71B2E104C9F77002F4E70 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C4D71F1D104E3CFB002F4E70 /* NSArray+TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TableView.h"; sourceTree = "<group>"; };
 		C4D71F1E104E3CFB002F4E70 /* NSArray+TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TableView.m"; sourceTree = "<group>"; };
+		C4E41F9B12D7B14D00FC8F83 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		C4E41F9C12D7B14D00FC8F83 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		C4EFEC9D10E1D13C005180AC /* FJSDatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSDatePickerController.h; sourceTree = "<group>"; };
 		C4EFEC9E10E1D13C005180AC /* FJSDatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSDatePickerController.m; sourceTree = "<group>"; };
 		C4F64E5211BC3DCC000A4993 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -611,6 +613,8 @@
 			isa = PBXGroup;
 			children = (
 				C4C921981299664E005C12F4 /* FJFoundationExtensions.h */,
+				C4E41F9B12D7B14D00FC8F83 /* NSData+Base64.h */,
+				C4E41F9C12D7B14D00FC8F83 /* NSData+Base64.m */,
 				C4A83633117A2369007D9A2A /* NSObject+Proxy.h */,
 				C4A83634117A2369007D9A2A /* NSObject+Proxy.m */,
 				C4CC171C10DE020F00DBE821 /* NSObjectHelper.h */,
