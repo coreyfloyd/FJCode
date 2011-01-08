@@ -37,13 +37,27 @@ NSString* const kCorruptImageResponseDataKey = @"kCorruptImageResponseDataKey";
 + (NSError*)invalidNetworkResponseErrorWithStatusCode:(int)status URL:(NSURL*)url{
     
     NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"Invalid Network Status Code", NSLocalizedDescriptionKey, 
+                          [NSString stringWithFormat:@"Invalid Response Status: %i", status], NSLocalizedDescriptionKey, 
                           url, NSURLErrorKey, 
                           nil];   
     
     NSError* err = [NSError errorWithDomain:NSURLErrorDomain code:status userInfo:dict];
     
     return err;
+    
+}
+
++ (NSError*)invalidNetworkResponseErrorWithStatusCode:(int)status message:(NSString*)message URL:(NSURL*)url{
+    
+    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                          [NSString stringWithFormat:@"Invalid Response Status: %i %@", status, message], NSLocalizedDescriptionKey, 
+                          url, NSURLErrorKey, 
+                          nil];   
+    
+    NSError* err = [NSError errorWithDomain:NSURLErrorDomain code:status userInfo:dict];
+    
+    return err;
+    
     
 }
 
