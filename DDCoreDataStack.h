@@ -26,8 +26,8 @@
 //application documents directory
 NSString* defaultStoreLocation();
 
-extern NSString* const kDefaultStoreName; 
-
+extern NSString* const kDefaultStoreName; //storedata
+extern NSString* const kStoreExtension; //sqlite
 
 @interface DDCoreDataStack : NSObject
 {
@@ -86,6 +86,7 @@ extern NSString* const kDefaultStoreName;
 
 - (void)destroyFullStack;
 
+- (void)destroyFullStackAndDeleteStoreFromDisk:(BOOL)flag;
 
 
 

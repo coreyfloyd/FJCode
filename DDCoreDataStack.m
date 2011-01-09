@@ -27,7 +27,7 @@
 
 NSString* const kDefaultStoreName = @"storedata";
 
-static NSString* const kStoreExtension = @"sqlite";
+NSString* const kStoreExtension = @"sqlite";
 
 NSString* defaultStoreLocation(){
     
@@ -191,6 +191,15 @@ NSString* defaultStoreLocation(){
     [self removeMainStore];
     [self destroyCoordinator];
     [self destroyModel];
+}
+
+- (void)destroyFullStackAndDeleteStoreFromDisk:(BOOL)flag{
+    
+    [self destroyMainContext];
+    [self removeMainStoreDeleteFromDisk:flag];
+    [self destroyCoordinator];
+    [self destroyModel];
+    
 }
 
 - (void)createMergedModelFromMainBundle;
