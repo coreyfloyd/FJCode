@@ -26,3 +26,10 @@
 @property(nonatomic,readonly,getter=isEmpty) BOOL empty;
 
 @end
+
+
+@interface NSMutableDictionary (Helper)
+
+- (void)setObjectIfNotNil:(id)anObject forKey:(id)aKey;
+
+@end

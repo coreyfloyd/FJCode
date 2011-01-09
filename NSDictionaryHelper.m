@@ -56,3 +56,15 @@
 }
 
 @end
+
+
+@implementation NSMutableDictionary (Helper)
+
+- (void)setObjectIfNotNil:(id)anObject forKey:(id)aKey{
+    
+    if(anObject != nil)
+        [self setObject:anObject forKey:aKey];
+    
+}
+
+@end
