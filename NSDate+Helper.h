@@ -16,15 +16,27 @@ NSString * PrettyDateFromInterval( NSInteger epoch );
 - (NSUInteger)daysAgoAgainstMidnight;
 - (NSString *)stringDaysAgo;
 - (NSString *)stringDaysAgoAgainstMidnight:(BOOL)flag;
+- (NSUInteger)weekday;
 
-+ (NSString *)dbFormatString; //yyyy-MM-dd HH:mm:ss 
 + (NSDate *)dateFromString:(NSString *)string; //yyyy-MM-dd HH:mm:ss 
++ (NSDate *)dateFromString:(NSString *)string withFormat:(NSString *)format;
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)string;
 + (NSString *)stringFromDate:(NSDate *)date;
 + (NSString *)stringForDisplayFromDate:(NSDate *)date;
 + (NSString *)stringForDisplayFromDate:(NSDate *)date prefixed:(BOOL)prefixed;
 
-+ (NSString *)stringForDisplayForFutureDates:(NSDate *)date;
+- (NSString *)string;
+- (NSString *)stringWithFormat:(NSString *)format;
+- (NSString *)stringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle;
+
+- (NSDate *)beginningOfWeek;
+- (NSDate *)beginningOfDay;
+- (NSDate *)endOfWeek;
+
++ (NSString *)dateFormatString; 
++ (NSString *)timeFormatString;
++ (NSString *)timestampFormatString;
++ (NSString *)dbFormatString;  //yyyy-MM-dd HH:mm:ss 
 
 
 @end
