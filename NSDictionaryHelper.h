@@ -25,6 +25,9 @@
  */
 @property(nonatomic,readonly,getter=isEmpty) BOOL empty;
 
+- (id)objectForKeyNilIfNULL:(id)aKey;
+
+
 @end
 
 
