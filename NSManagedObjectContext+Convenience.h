@@ -114,6 +114,8 @@
 
 - (NSArray*)objectsWithObjectsFromOtherContext:(NSArray*)originalObjects;
 
+- (NSManagedObject*)objectWithObjectFromOtherContext:(NSManagedObject*)originalObject;
+
 
 
 @end

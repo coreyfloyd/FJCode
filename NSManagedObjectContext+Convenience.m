@@ -305,6 +305,16 @@
     return newObjects;
 }
 
+- (NSManagedObject*)objectWithObjectFromOtherContext:(NSManagedObject*)originalObject{
+    
+    NSManagedObjectID* anID = [(NSManagedObject*)originalObject objectID];
+    
+    NSManagedObject* newObj = [self objectWithID:anID];
+    
+    return newObj;
+    
+}
+
 @end
 
 
