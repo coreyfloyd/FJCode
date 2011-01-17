@@ -395,6 +395,17 @@ NSString * PrettyDateFromInterval( NSInteger epoch ) {
     return ret;
 }
 
+- (NSString*)prettyAge{
+    
+    NSCalendar *sysCalendar = [NSCalendar currentCalendar];
+    
+    unsigned int unitFlags = NSMonthCalendarUnit | NSYearCalendarUnit;
+
+    NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:self toDate:[NSDate date] options:0];
+    
+    return [NSString stringWithFormat:@"%d years %d months", [breakdownInfo year], [breakdownInfo month]];
+    
+}
 
 @end
 

@@ -51,6 +51,8 @@ NSString * PrettyDateFromInterval( NSInteger epoch );
 
 + (NSDate *)dateWithoutTime;
 
+- (NSString*)prettyAge;
+
 @end
 
 
