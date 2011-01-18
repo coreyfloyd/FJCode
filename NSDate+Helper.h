@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-NSString * PrettyDateFromInterval( NSInteger epoch );
+NSString* PrettyDateFromInterval( NSInteger epoch );
+NSString* prettyHoursFromInterval(NSTimeInterval seconds); //rounds to half hours
 
 @interface NSDate (Helper)
 
@@ -52,6 +53,7 @@ NSString * PrettyDateFromInterval( NSInteger epoch );
 + (NSDate *)dateWithoutTime;
 
 - (NSString*)prettyAge;
+
 
 @end
 

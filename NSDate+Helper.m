@@ -109,6 +109,18 @@ NSString * PrettyDateFromInterval( NSInteger epoch ) {
     
 }
 
+NSString* prettyHoursFromInterval(NSTimeInterval seconds){
+    
+    float hours = ((float)seconds/(60.0*60.0));
+    
+    float halfHours = roundf(hours/.5)*.5;
+    
+    return [NSString stringWithFormat:@"%.1f hours", halfHours];
+    
+}
+                                                          
+                                                          
+
 @implementation NSDate (Helper)
 
 /*
