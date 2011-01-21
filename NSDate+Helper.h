@@ -54,6 +54,7 @@ NSString* prettyHoursFromInterval(NSTimeInterval seconds); //rounds to half hour
 
 - (NSString*)prettyAge;
 
+- (NSString*)durationInHoursAndMinutesSinceDate:(NSDate*)startDate;
 
 @end
 

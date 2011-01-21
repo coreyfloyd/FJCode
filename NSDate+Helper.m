@@ -419,6 +419,19 @@ NSString* prettyHoursFromInterval(NSTimeInterval seconds){
     
 }
 
+- (NSString*)durationInHoursAndMinutesSinceDate:(NSDate*)startDate{
+    
+    NSCalendar *sysCalendar = [NSCalendar currentCalendar];
+    
+    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit;
+    
+    NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:startDate toDate:self options:0];
+    
+    return [NSString stringWithFormat:@"%d:%d", [breakdownInfo hour], [breakdownInfo minute]];
+    
+}
+
+
 @end
 
 
