@@ -458,7 +458,7 @@
 			NSArray *itemsOfURL = [query componentsSeparatedByString:@"&"];
 			for (NSString *queryItem in itemsOfURL) {
 				NSArray *queryElements = [queryItem componentsSeparatedByString:@"="];
-				FJSLog(@"queryElements: %@", queryElements);
+				debugLog(@"queryElements: %@", queryElements);
 				if ([[queryElements objectAtIndex:0] isEqualToString:@"to"])
 					toPerson = [[queryElements objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 				if ([[queryElements objectAtIndex:0] isEqualToString:@"cc"])
@@ -473,10 +473,10 @@
 		toPerson = urlString;
 	}
     
-	FJSLog(@"to: %@", toPerson);
-	FJSLog(@"cc: %@", ccPerson);
-	FJSLog(@"subject: %@", subject);
-	FJSLog(@"body: %@", body);
+	debugLog(@"to: %@", toPerson);
+	debugLog(@"cc: %@", ccPerson);
+	debugLog(@"subject: %@", subject);
+	debugLog(@"body: %@", body);
 	[self sendEmailWithSubject:subject body:body to:toPerson cc:ccPerson];
     
 }
@@ -566,7 +566,7 @@
 	// http://gdata.youtube.com/feeds/api/videos/oHg5SJYRHA0?alt=json
 	NSString *html = [NSString stringWithFormat:embedHTML, [url absoluteString]]; 
 	[webView loadHTMLString:html baseURL:nil];
-	FJSLog(@"loaded");
+	debugLog(@"loaded");
 }
 
 
@@ -588,7 +588,7 @@
 	
 	NSURL *url = [req URL];
     
-    FJSLog(@"%@", [url description]);
+    debugLog(@"%@", [url description]);
     
     for(NSURL* each in self.keyURLs){
         
