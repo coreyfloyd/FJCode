@@ -427,7 +427,17 @@ NSString* prettyHoursFromInterval(NSTimeInterval seconds){
     
     NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:startDate toDate:self options:0];
     
-    return [NSString stringWithFormat:@"%d:%d", [breakdownInfo hour], [breakdownInfo minute]];
+    NSString* minutes = nil;
+    
+    if([breakdownInfo minute] < 10){
+        
+        minutes = [NSString stringWithFormat:@"0%d", [breakdownInfo minute]];
+    }else{
+        
+        minutes = [NSString stringWithFormat:@"%d", [breakdownInfo minute]];
+    }
+    
+    return [NSString stringWithFormat:@"%d:%@", [breakdownInfo hour], minutes];
     
 }
 
