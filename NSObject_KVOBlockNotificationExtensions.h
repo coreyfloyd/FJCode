@@ -34,7 +34,7 @@ typedef void (^KVOBlock)(NSString *keyPath, id object, NSDictionary *change, id 
 /// KVOBlock extensions to NSObject allow any object to easily register (add) and unregister (remove) block based notifications.
 @interface NSObject (NSObject_KVOBlockNotificationExtensions)
 
-- (void)addObserver:(NSObject *)observer handler:(KVOBlock)inHandler forKeyPath:(NSString *)inKeyPath options:(NSKeyValueObservingOptions)inOptions identifier:(id)inIdentifier;
+- (void)addObserver:(NSObject *)observer handler:(void(^)(NSString *keyPath, id object, NSDictionary *change, id identifier))inHandler forKeyPath:(NSString *)inKeyPath options:(NSKeyValueObservingOptions)inOptions identifier:(id)inIdentifier;
 - (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)inKeyPath identifier:(id)inIdentifier;
 
 @end

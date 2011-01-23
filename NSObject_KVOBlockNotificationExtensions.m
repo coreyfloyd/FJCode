@@ -49,7 +49,7 @@ static NSString *theHelpersKey = @"NSObject_KVOBlockNotificationExtensions_Helpe
 
 @implementation NSObject (NSObject_KVOBlockNotificationExtensions)
 
-- (void)addObserver:(NSObject *)observer handler:(KVOBlock)inHandler forKeyPath:(NSString *)inKeyPath options:(NSKeyValueObservingOptions)inOptions identifier:(id)inIdentifier
+- (void)addObserver:(NSObject *)observer handler:(void(^)(NSString *keyPath, id object, NSDictionary *change, id identifier))inHandler forKeyPath:(NSString *)inKeyPath options:(NSKeyValueObservingOptions)inOptions identifier:(id)inIdentifier
 {
 NSAssert(inHandler != NULL, @"No block");
 NSAssert(inKeyPath != NULL, @"No key path");
