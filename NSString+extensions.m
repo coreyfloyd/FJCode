@@ -129,6 +129,14 @@
     return YES;
 }
 
+- (NSString*)nilIfZeroLength{
+    
+    if([self containsCharacters])
+        return self;
+    
+    return nil;
+}
+
 - (BOOL)isNotEmpty{
     
 	BOOL answer = YES;

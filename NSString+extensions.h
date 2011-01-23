@@ -65,6 +65,8 @@ enum {
 - (BOOL)containsCharacters; //tests if length is > 0, does not count whitespace
 - (BOOL)containsCharactersIncludeWhiteSpace:(BOOL)flag; //whitespace optional
 
+- (NSString*)nilIfZeroLength; //doesNotCountWhiteSpace
+
 //DEPRECATED, same as above
 - (BOOL)isNotEmpty; //__OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
 - (BOOL)isEmpty; //__OSX_AVAILABLE_BUT_DEPRECATED(__MAC_NA,__MAC_NA,__IPHONE_2_0,__IPHONE_3_0)
