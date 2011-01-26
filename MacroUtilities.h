@@ -19,8 +19,7 @@
 #define NSYES [NSNumber numberWithBool:YES]
 #define NSNO [NSNumber numberWithBool:NO]
 
-#define ZAssert(condition, ...) do { if (!(condition)) { ALog(__VA_ARGS__); }} while(0)
-
+#define ASSERT_TRUE_OR_LOG(condition, ...) do { if (!(condition)) { ALog(__VA_ARGS__); }} while(0)
 
 
 #if DEBUG==1
@@ -57,6 +56,7 @@
 
 #define ALog(...) [[NSAssertionHandler currentHandler] handleFailureInFunction:[NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSUTF8StringEncoding] file:[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lineNumber:__LINE__ description:__VA_ARGS__]
 #define NOT_NIL_ASSERT(x)    NSAssert4((x != nil), @"\n\n    ****  Unexpected Nil Assertion  ****\n    ****  " #x @" is nil.\nin file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
+#define NIL_ASSERT(x)    NSAssert4((x == nil), @"\n\n    ****  Unexpected Non-Nil Assertion  ****\n    ****  " #x @" is non-nil.\nin file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
 #define ALWAYS_ASSERT    NSAssert4(0, @"\n\n    ****  Unexpected Assertion  **** \nAssertion in file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
 #define MSG_ASSERT(x)    NSAssert5(0, @"\n\n    ****  Unexpected Assertion  **** \nReason: %@\nAssertion in file:%s at line %i in Method %@ with object:\n %@", x, __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
 #define ASSERT_TRUE(test)    NSAssert4(test, @"\n\n    ****  Unexpected Assertion  **** \nAssertion in file:%s at line %i in Method %@ with object:\n %@", __FILE__, __LINE__, NSStringFromSelector(_cmd), self)
@@ -86,7 +86,8 @@
 #define METHOD_LOG_THREAD    
 
 #define ALog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
-#define NOT_NIL_ASSERT(x)    
+#define NOT_NIL_ASSERT(x)
+#define NIL_ASSERT(x)
 #define ALWAYS_ASSERT    
 #define MSG_ASSERT(x)   
 #define ASSERT_TRUE(test)    

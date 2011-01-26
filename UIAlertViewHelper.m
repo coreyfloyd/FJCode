@@ -122,6 +122,14 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
  
     NSLog(@"%@", [error localizedFailureReason]);
 	NSLog(@"%@", [error localizedDescription]);
+    
+    if([error code] == NSURLErrorNotConnectedToInternet){
+        
+        return [self presentNoInternetAlertWithDelegate:object];
+    }
+    
+    
+    
 	
 	for(NSString* eachKey in [error userInfo]){
 		
