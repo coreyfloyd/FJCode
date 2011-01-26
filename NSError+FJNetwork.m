@@ -61,6 +61,19 @@ NSString* const kCorruptImageResponseDataKey = @"kCorruptImageResponseDataKey";
     
 }
 
++ (NSError*)networkRequestTimeOutErrorWithURL:(NSURL*)url{
+    
+    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"Request timed out", NSLocalizedDescriptionKey, 
+                          url, NSURLErrorKey, 
+                          nil];   
+    
+    NSError* err = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorTimedOut userInfo:dict];
+    
+    return err;
+}
+
+
 + (NSError*)cancelledNetworkRequestWithURL:(NSURL*)url{
     
     NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:

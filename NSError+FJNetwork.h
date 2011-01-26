@@ -28,6 +28,8 @@ extern NSString* const kCorruptImageResponseDataKey;
 
 + (NSError*)invalidNetworkResponseErrorWithStatusCode:(int)status message:(NSString*)message URL:(NSURL*)url;
 
++ (NSError*)networkRequestTimeOutErrorWithURL:(NSURL*)url;
+
 + (NSError*)cancelledNetworkRequestWithURL:(NSURL*)url;
 
 + (NSError*)nilNetworkRespnseErrorWithURL:(NSURL*)url;
