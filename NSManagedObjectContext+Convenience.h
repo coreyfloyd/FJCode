@@ -24,18 +24,26 @@
  [context insertNewEntityWityName:[entity name]];
  */
 -(NSManagedObject *) insertNewEntityWithName:(NSString *)name;
+
 @end
 
 
 
 @interface NSManagedObjectContext (Entities)
 
+
+- (NSSet *)fetchObjectsForEntityName:(NSString *)newEntityName
+                       withPredicate:(id)stringOrPredicate, ...;
+
+
+
+
+
 /*
  Almost all methods here have comparable syntax.
  It's all something like '...entitiyWithName: whereKey: like:',
  which works just the way it says
  */
-
 
 
 //returns the number of entities with a certain name
@@ -108,6 +116,11 @@
 //exact object matches 
 - (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 
+
+/*
+ Help moving between contexts
+ 
+*/
 
 
 - (NSArray*)objectsWithObjectIDs:(NSArray*)originalObjectIDs;
