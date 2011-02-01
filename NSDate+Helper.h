@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 NSString* PrettyDateFromInterval( NSInteger epoch );
-NSString* prettyHoursFromInterval(NSTimeInterval seconds); //rounds to half hours
+
+NSString* prettyHoursFromInterval(NSTimeInterval seconds); //rounds to half hours, appends "hours" to string
+NSString* prettyHoursFromIntervalNumberOnly(NSTimeInterval seconds); //rounds to half hours
 
 @interface NSDate (Helper)
 

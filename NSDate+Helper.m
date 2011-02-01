@@ -118,6 +118,16 @@ NSString* prettyHoursFromInterval(NSTimeInterval seconds){
     return [NSString stringWithFormat:@"%.1f hours", halfHours];
     
 }
+
+NSString* prettyHoursFromIntervalNumberOnly(NSTimeInterval seconds){
+    
+    float hours = ((float)seconds/(60.0*60.0));
+    
+    float halfHours = roundf(hours/.5)*.5;
+    
+    return [NSString stringWithFormat:@"%.1f", halfHours];
+    
+}
                                                           
                                                           
 
