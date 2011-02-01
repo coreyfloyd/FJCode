@@ -45,6 +45,7 @@ NSString* prettyHoursFromInterval(NSTimeInterval seconds); //rounds to half hour
 @interface NSDate (Misc)
 
 - (NSDate *)dateByAddingDays:(NSInteger)numDays;
+- (NSDate *)dateByAddingDays:(NSInteger)numDays hours:(NSInteger)numHours minutes:(NSInteger)numMinutes;
 - (NSDate *)dateAsDateWithoutTime;
 - (int)differenceInDaysTo:(NSDate *)toDate;
 - (NSString *)formattedDateString;

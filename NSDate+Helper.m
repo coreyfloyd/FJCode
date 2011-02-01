@@ -370,6 +370,21 @@ NSString* prettyHoursFromInterval(NSTimeInterval seconds){
     return date;
 }
 
+-(NSDate *)dateByAddingDays:(NSInteger)numDays hours:(NSInteger)numHours minutes:(NSInteger)numMinutes
+{
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setDay:numDays];
+    [comps setHour:numHours];
+    [comps setMinute:numMinutes];
+    
+    NSDate *date = [gregorian dateByAddingComponents:comps toDate:self options:0];
+    [comps release];
+    [gregorian release];
+    return date;
+}
+
 - (NSDate *)dateAsDateWithoutTime
 {
     NSString *formattedString = [self formattedDateString];
