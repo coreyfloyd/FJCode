@@ -670,8 +670,8 @@
         l.textColor = [UIColor whiteColor];
     }
     
-    l.text = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
-    self.navigationItem.titleView = l;
+    //l.text = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
+    //self.navigationItem.titleView = l;
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	[self fixToolbarButtons];
     [self.activityIndicator stopAnimating];
