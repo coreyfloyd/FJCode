@@ -134,7 +134,17 @@ NSString* prettyMinutesAndSecondsFromInterval(NSTimeInterval seconds){
     float minutes = floorf(((float)seconds)/60);
     float leftoverSeconds = roundf(((float)seconds) - minutes * 60);
     
-    return [NSString stringWithFormat:@"%.0f:%.0f", minutes, leftoverSeconds];
+    NSString* secString = nil;
+    if(leftoverSeconds < 10){
+        
+        secString = [NSString stringWithFormat:@"0%.0f", leftoverSeconds];
+        
+    }else{
+        
+        secString = [NSString stringWithFormat:@"%.0f", leftoverSeconds];
+    }
+    
+    return [NSString stringWithFormat:@"%.0f:%@", minutes, secString];
     
 }
                                                           
