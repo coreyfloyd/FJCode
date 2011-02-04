@@ -128,7 +128,15 @@ NSString* prettyHoursFromIntervalNumberOnly(NSTimeInterval seconds){
     return [NSString stringWithFormat:@"%.1f", halfHours];
     
 }
-                                                          
+    
+NSString* prettyMinutesAndSecondsFromInterval(NSTimeInterval seconds){
+    
+    float minutes = floorf(((float)seconds)/60);
+    float leftoverSeconds = roundf(((float)seconds) - minutes * 60);
+    
+    return [NSString stringWithFormat:@"%.0f:%.0f", minutes, leftoverSeconds];
+    
+}
                                                           
 
 @implementation NSDate (Helper)
