@@ -115,7 +115,8 @@ enum {
 
 typedef enum {
 	StringValidationTypeEmail = 0,
-	StringValidationTypePhone
+	StringValidationTypePhone,
+    StringValidationTypeZip
 } StringValidationType;
 
 @interface NSString (Validation)
@@ -124,7 +125,7 @@ typedef enum {
 + (NSPredicate *)predicateForWhiteSpace;
 + (NSPredicate *)predicateForEmail;
 + (NSPredicate *)predicateForPhone;
-
++ (NSPredicate *)predicateForZip;
 
 - (BOOL)isValid:(int)type acceptWhiteSpace:(BOOL)acceptWhiteSpace;
 
