@@ -318,7 +318,7 @@
 //==========================================================================================
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-	if (buttonIndex == 1)
+	if (buttonIndex == 1 && alertView.tag == 999)
         [self openExternalURL:externalURL];
 }
 
@@ -522,6 +522,7 @@
                                                        delegate:self 
                                               cancelButtonTitle:NSLocalizedString(@"Cancel", nil) 
                                               otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
+        alert.tag = 999;
 		[alert show];
 		[alert release];
 	} else {
