@@ -127,9 +127,11 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
         
         return [self presentNoInternetAlertWithDelegate:object];
     }
-    
-    
-    
+   
+    if([error code] == kCFURLErrorNetworkConnectionLost){
+        
+        return [self presentNoInternetAlertWithDelegate:object];
+    }
 	
 	for(NSString* eachKey in [error userInfo]){
 		
