@@ -6,6 +6,23 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		C45954921331E2ED00D6C668 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C45954731331E2EC00D6C668 /* ATMHud.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54 /* ATMHud.app */;
+			remoteInfo = ATMHud;
+		};
+		C45954C31331E37500D6C668 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C45954BB1331E37500D6C668 /* TokenFieldExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54 /* TokenFieldExample.app */;
+			remoteInfo = TokenFieldExample;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -44,6 +61,57 @@
 		C42E952F10D6CEE900754443 /* UIColor+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extensions.m"; sourceTree = "<group>"; };
 		C43FAB660FCC424000EB4F92 /* IFActionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFActionToolbar.m; sourceTree = "<group>"; };
 		C43FAB670FCC424000EB4F92 /* IFActionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFActionToolbar.h; sourceTree = "<group>"; };
+		C45954111331DB4F00D6C668 /* MKNumberBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNumberBadgeView.h; sourceTree = "<group>"; };
+		C45954121331DB4F00D6C668 /* MKNumberBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNumberBadgeView.m; sourceTree = "<group>"; };
+		C45954131331DC2E00D6C668 /* NSObject+DCTBetterDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DCTBetterDescription.h"; sourceTree = "<group>"; };
+		C45954141331DC2E00D6C668 /* NSObject+DCTBetterDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DCTBetterDescription.m"; sourceTree = "<group>"; };
+		C45954151331DC3500D6C668 /* CLLocation+DCTBetterDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+DCTBetterDescription.h"; sourceTree = "<group>"; };
+		C45954161331DC3500D6C668 /* CLLocation+DCTBetterDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+DCTBetterDescription.m"; sourceTree = "<group>"; };
+		C45954171331DC4100D6C668 /* UIFont+DCTBetterDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+DCTBetterDescription.h"; sourceTree = "<group>"; };
+		C45954181331DC4100D6C668 /* UIFont+DCTBetterDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+DCTBetterDescription.m"; sourceTree = "<group>"; };
+		C459546E1331E2EC00D6C668 /* 11-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-x.png"; sourceTree = "<group>"; };
+		C459546F1331E2EC00D6C668 /* 19-check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-check.png"; sourceTree = "<group>"; };
+		C45954701331E2EC00D6C668 /* ATMHud-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ATMHud-Info.plist"; sourceTree = "<group>"; };
+		C45954711331E2EC00D6C668 /* ATMHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMHud.h; sourceTree = "<group>"; };
+		C45954721331E2EC00D6C668 /* ATMHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATMHud.m; sourceTree = "<group>"; };
+		C45954731331E2EC00D6C668 /* ATMHud.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ATMHud.xcodeproj; path = ../../../Desktop/ATMHud/ATMHud.xcodeproj; sourceTree = SOURCE_ROOT; };
+		C45954761331E2EC00D6C668 /* ATMHud_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMHud_Prefix.pch; sourceTree = "<group>"; };
+		C45954771331E2EC00D6C668 /* ATMHudDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMHudDelegate.h; sourceTree = "<group>"; };
+		C45954781331E2EC00D6C668 /* ATMHudQueueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMHudQueueItem.h; sourceTree = "<group>"; };
+		C45954791331E2EC00D6C668 /* ATMHudQueueItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATMHudQueueItem.m; sourceTree = "<group>"; };
+		C459547A1331E2EC00D6C668 /* ATMHudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMHudView.h; sourceTree = "<group>"; };
+		C459547B1331E2EC00D6C668 /* ATMHudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATMHudView.m; sourceTree = "<group>"; };
+		C459547C1331E2EC00D6C668 /* ATMProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMProgressLayer.h; sourceTree = "<group>"; };
+		C459547D1331E2EC00D6C668 /* ATMProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATMProgressLayer.m; sourceTree = "<group>"; };
+		C459547E1331E2EC00D6C668 /* ATMSoundFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMSoundFX.h; sourceTree = "<group>"; };
+		C459547F1331E2EC00D6C668 /* ATMSoundFX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATMSoundFX.m; sourceTree = "<group>"; };
+		C45954801331E2EC00D6C668 /* ATMTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMTextLayer.h; sourceTree = "<group>"; };
+		C45954811331E2EC00D6C668 /* ATMTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATMTextLayer.m; sourceTree = "<group>"; };
+		C45954831331E2EC00D6C668 /* ATMHudAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMHudAppDelegate.h; sourceTree = "<group>"; };
+		C45954841331E2EC00D6C668 /* ATMHudAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATMHudAppDelegate.m; sourceTree = "<group>"; };
+		C45954851331E2EC00D6C668 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		C45954861331E2EC00D6C668 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		C45954871331E2EC00D6C668 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C45954881331E2EC00D6C668 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		C45954891331E2EC00D6C668 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C459548A1331E2ED00D6C668 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C459548B1331E2ED00D6C668 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		C459548C1331E2ED00D6C668 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
+		C459548D1331E2ED00D6C668 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		C45954AD1331E37500D6C668 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C45954AE1331E37500D6C668 /* Names.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Names.h; sourceTree = "<group>"; };
+		C45954AF1331E37500D6C668 /* Names.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Names.m; sourceTree = "<group>"; };
+		C45954B01331E37500D6C668 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		C45954B11331E37500D6C668 /* TITokenFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TITokenFieldView.h; sourceTree = "<group>"; };
+		C45954B21331E37500D6C668 /* TITokenFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TITokenFieldView.m; sourceTree = "<group>"; };
+		C45954B51331E37500D6C668 /* TokenFieldExampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenFieldExampleAppDelegate.h; sourceTree = "<group>"; };
+		C45954B61331E37500D6C668 /* TokenFieldExampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenFieldExampleAppDelegate.m; sourceTree = "<group>"; };
+		C45954B71331E37500D6C668 /* TokenFieldExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenFieldExampleViewController.h; sourceTree = "<group>"; };
+		C45954B81331E37500D6C668 /* TokenFieldExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenFieldExampleViewController.m; sourceTree = "<group>"; };
+		C45954B91331E37500D6C668 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C45954BA1331E37500D6C668 /* TokenFieldExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TokenFieldExample-Info.plist"; sourceTree = "<group>"; };
+		C45954BB1331E37500D6C668 /* TokenFieldExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TokenFieldExample.xcodeproj; path = ../../../Desktop/TITokenFieldView/TokenFieldExample/TokenFieldExample.xcodeproj; sourceTree = SOURCE_ROOT; };
+		C45954BE1331E37500D6C668 /* TokenFieldExample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenFieldExample_Prefix.pch; sourceTree = "<group>"; };
 		C45F72D211D71B3B0040CF4E /* TwitterEngineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterEngineController.h; sourceTree = "<group>"; };
 		C45F72D311D71B3B0040CF4E /* TwitterEngineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterEngineController.m; sourceTree = "<group>"; };
 		C461FE910FC5C0980036595E /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
@@ -291,6 +359,125 @@
 			name = ToolBar;
 			sourceTree = "<group>";
 		};
+		C45954101331DB4F00D6C668 /* MKNumberBadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				C45954111331DB4F00D6C668 /* MKNumberBadgeView.h */,
+				C45954121331DB4F00D6C668 /* MKNumberBadgeView.m */,
+			);
+			path = MKNumberBadgeView;
+			sourceTree = "<group>";
+		};
+		C459541A1331DC4900D6C668 /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				C45954151331DC3500D6C668 /* CLLocation+DCTBetterDescription.h */,
+				C45954161331DC3500D6C668 /* CLLocation+DCTBetterDescription.m */,
+				C45954131331DC2E00D6C668 /* NSObject+DCTBetterDescription.h */,
+				C45954141331DC2E00D6C668 /* NSObject+DCTBetterDescription.m */,
+				C45954171331DC4100D6C668 /* UIFont+DCTBetterDescription.h */,
+				C45954181331DC4100D6C668 /* UIFont+DCTBetterDescription.m */,
+			);
+			name = Description;
+			sourceTree = "<group>";
+		};
+		C459546D1331E2EC00D6C668 /* ATMHud */ = {
+			isa = PBXGroup;
+			children = (
+				C459546E1331E2EC00D6C668 /* 11-x.png */,
+				C459546F1331E2EC00D6C668 /* 19-check.png */,
+				C45954701331E2EC00D6C668 /* ATMHud-Info.plist */,
+				C45954711331E2EC00D6C668 /* ATMHud.h */,
+				C45954721331E2EC00D6C668 /* ATMHud.m */,
+				C45954731331E2EC00D6C668 /* ATMHud.xcodeproj */,
+				C45954761331E2EC00D6C668 /* ATMHud_Prefix.pch */,
+				C45954771331E2EC00D6C668 /* ATMHudDelegate.h */,
+				C45954781331E2EC00D6C668 /* ATMHudQueueItem.h */,
+				C45954791331E2EC00D6C668 /* ATMHudQueueItem.m */,
+				C459547A1331E2EC00D6C668 /* ATMHudView.h */,
+				C459547B1331E2EC00D6C668 /* ATMHudView.m */,
+				C459547C1331E2EC00D6C668 /* ATMProgressLayer.h */,
+				C459547D1331E2EC00D6C668 /* ATMProgressLayer.m */,
+				C459547E1331E2EC00D6C668 /* ATMSoundFX.h */,
+				C459547F1331E2EC00D6C668 /* ATMSoundFX.m */,
+				C45954801331E2EC00D6C668 /* ATMTextLayer.h */,
+				C45954811331E2EC00D6C668 /* ATMTextLayer.m */,
+				C45954821331E2EC00D6C668 /* Classes */,
+				C45954871331E2EC00D6C668 /* Icon.png */,
+				C45954881331E2EC00D6C668 /* Icon@2x.png */,
+				C45954891331E2EC00D6C668 /* LICENSE */,
+				C459548A1331E2ED00D6C668 /* main.m */,
+				C459548B1331E2ED00D6C668 /* MainWindow.xib */,
+				C459548C1331E2ED00D6C668 /* pop.wav */,
+				C459548D1331E2ED00D6C668 /* README.md */,
+			);
+			path = ATMHud;
+			sourceTree = "<group>";
+		};
+		C45954741331E2EC00D6C668 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C45954931331E2ED00D6C668 /* ATMHud.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C45954821331E2EC00D6C668 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C45954831331E2EC00D6C668 /* ATMHudAppDelegate.h */,
+				C45954841331E2EC00D6C668 /* ATMHudAppDelegate.m */,
+				C45954851331E2EC00D6C668 /* DemoViewController.h */,
+				C45954861331E2EC00D6C668 /* DemoViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C45954AC1331E37500D6C668 /* TITokenFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				C45954AD1331E37500D6C668 /* .gitignore */,
+				C45954AE1331E37500D6C668 /* Names.h */,
+				C45954AF1331E37500D6C668 /* Names.m */,
+				C45954B01331E37500D6C668 /* README.markdown */,
+				C45954B11331E37500D6C668 /* TITokenFieldView.h */,
+				C45954B21331E37500D6C668 /* TITokenFieldView.m */,
+				C45954B31331E37500D6C668 /* TokenFieldExample */,
+			);
+			path = TITokenFieldView;
+			sourceTree = "<group>";
+		};
+		C45954B31331E37500D6C668 /* TokenFieldExample */ = {
+			isa = PBXGroup;
+			children = (
+				C45954B41331E37500D6C668 /* Classes */,
+				C45954B91331E37500D6C668 /* main.m */,
+				C45954BA1331E37500D6C668 /* TokenFieldExample-Info.plist */,
+				C45954BB1331E37500D6C668 /* TokenFieldExample.xcodeproj */,
+				C45954BE1331E37500D6C668 /* TokenFieldExample_Prefix.pch */,
+			);
+			path = TokenFieldExample;
+			sourceTree = "<group>";
+		};
+		C45954B41331E37500D6C668 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C45954B51331E37500D6C668 /* TokenFieldExampleAppDelegate.h */,
+				C45954B61331E37500D6C668 /* TokenFieldExampleAppDelegate.m */,
+				C45954B71331E37500D6C668 /* TokenFieldExampleViewController.h */,
+				C45954B81331E37500D6C668 /* TokenFieldExampleViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C45954BC1331E37500D6C668 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C45954C41331E37500D6C668 /* TokenFieldExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C45F72D511D71B3E0040CF4E /* Twitter Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +519,10 @@
 				C4AC0F2811B1AFD400FEE0ED /* MAKVONotificationCenter */,
 				C4C921E612996FC3005C12F4 /* KVO Blocks */,
 				C4CC17C510DE10AA00DBE821 /* Solicit Review */,
+				C45954101331DB4F00D6C668 /* MKNumberBadgeView */,
+				C459541A1331DC4900D6C668 /* Description */,
+				C459546D1331E2EC00D6C668 /* ATMHud */,
+				C45954AC1331E37500D6C668 /* TITokenFieldView */,
 				C4F6D0080FCA532200F6AD69 /* Progress View */,
 				C41CD521113096470085A3BF /* Twitter */,
 				C40B1D9711D51ABC00ADE99B /* FacebookAgent */,
@@ -656,11 +847,38 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C45954741331E2EC00D6C668 /* Products */;
+					ProjectRef = C45954731331E2EC00D6C668 /* ATMHud.xcodeproj */;
+				},
+				{
+					ProductGroup = C45954BC1331E37500D6C668 /* Products */;
+					ProjectRef = C45954BB1331E37500D6C668 /* TokenFieldExample.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C45954931331E2ED00D6C668 /* ATMHud.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ATMHud.app;
+			remoteRef = C45954921331E2ED00D6C668 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C45954C41331E37500D6C668 /* TokenFieldExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TokenFieldExample.app;
+			remoteRef = C45954C31331E37500D6C668 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin XCBuildConfiguration section */
 		C01FCF4F08A954540054247B /* Debug */ = {

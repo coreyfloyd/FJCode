@@ -122,6 +122,26 @@
 	return [r autorelease];
 }
 
+- (id)top{
+    
+    [self lastObject];
+    
+}
+- (NSArray*)popToObject:(id)object{
+    
+    NSMutableArray *returnArray = [[NSMutableArray alloc] init];
+
+    while (![[self top] isEqual:object]) {
+		[returnArray addObject:[self pop]];
+	}
+    
+    return [returnArray autorelease];
+}
+- (void)popToRootObject{
+ 
+    return [self popToObject:[self firstObject]];
+}
+
 @end
 
 @implementation  NSMutableArray(Queue)
