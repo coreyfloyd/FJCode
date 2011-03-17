@@ -430,6 +430,13 @@
 	
 }
 
++ (NSPredicate *)predicateForZip {
+	
+	NSString *phoneRegex = @"[0-9]{5}"; 
+	return [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
+	
+}
+
 
 
 - (BOOL)isValid:(int)type acceptWhiteSpace:(BOOL)acceptWhiteSpace {	
@@ -443,6 +450,9 @@
 		case StringValidationTypePhone:
 			primaryPredicate = [[self class] predicateForPhone];
 			break;
+        case StringValidationTypeZip:
+			primaryPredicate = [[self class] predicateForZip];
+			break;    
 	}
 	
 	
